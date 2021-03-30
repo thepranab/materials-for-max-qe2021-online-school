@@ -1,0 +1,62 @@
+# ========================================================================
+#
+# This is a master script that runs the calculations
+#
+# It makes a 2D potential-energy scan of lateral positions of O @ Al(111)
+#
+# ========================================================================
+
+# load the input data
+import input-data.pwtk
+
+
+# open a file for writing resulting total energies
+set fid [open energies.dat w]
+
+
+# loop over A and B-directions
+foreach ia [seq 0.0 0.2 1.0] {
+    foreach ib [seq 0.0 0.2 1.0] {
+
+	print "\nCalculating point (ia,ib) = ($ia,$ib) ...\n"
+	
+	# name of the I/O files
+	set name O-Al111.relax.ia$ia.ib$ib
+
+	# lateral position of O atom
+	set x [expr $ia - 0.5*$ib]
+	set y [expr sqrt(3)/2*$ib]
+	
+	# note that ia or ib of 1.0 are periodic images;
+	# use results of ia or ib = 0.0        
+	if { $ia == 1.0 || $ib == 1.0 } {
+	    set i [expr $ia == 1.0 ? 0.0 : $ia]
+	    set j [expr $ib == 1.0 ? 0.0 : $ib]
+	    puts $fid "$x $y $Etot($i,$j)"            
+	} else {
+
+	    # REMARK: input_pushpop { ... } does the trick, otherwise
+	    # extra O atom would be added each new iteration
+
+	    input_pushpop {
+		# insert an atom and run a pw.x calculation
+		insertAtoms begin "O  $x  $y  1.35   0  0  1"
+		runPW pw.$name.in
+	    }	
+	
+	    # extract the "total energy" and write it to file
+	    set Etot($ia,$ib) [::pwtk::pwo::totene pw.$name.out]
+	    puts $fid "$x $y $Etot($ia,$ib)"
+	    flush $fid
+	}
+    }
+
+    # add a blank-line (required by gnuplot for "splot")
+    puts $fid ""
+}
+
+close $fid
+
+
+# plot the result with gnuplot
+exec gnuplot plot2D.gp

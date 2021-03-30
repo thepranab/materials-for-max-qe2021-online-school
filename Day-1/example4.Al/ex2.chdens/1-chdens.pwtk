@@ -1,0 +1,39 @@
+load_fromPWI ../pw.al.scf.in
+
+# please insert smearing, degauss, and K-POINTS as determined in the "degauss"
+# excercise
+
+#SYSTEM " smearing = ...insert...
+#         degauss  = ...insert... "
+
+#K_POINTS automatic {
+#   ...insert...
+#}
+
+
+set name Al
+
+# ------------------------------------------------------------------------
+# run SCF pw.x calculation
+
+runPW pw.$name.scf.in
+
+
+# ------------------------------------------------------------------------
+# perform pp.x calculation, i.e. write charge-density to 3D XSF file
+
+INPUTPP {
+    plot_num = 0,
+}
+PLOT {
+    nfile = 1 ,
+    weight(1) = 1.0,
+    fileout = 'chdens.xsf' ,
+    iflag = 3 ,
+    output_format = 5 ,
+}
+
+runPP pp.$name.chdens.in
+
+# plot the calculated charge density
+catch { exec xcrysden --xsf chdens.xsf }

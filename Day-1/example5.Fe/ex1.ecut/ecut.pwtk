@@ -1,0 +1,26 @@
+# load the pw.x input from file
+load_fromPWI ../pw.fe_fm.scf.in
+
+
+foreach dual { 4 8 12 } {
+
+    set fid [open Etot-vs-ecutwfc.dual$dual.dat w]
+
+    foreach ecutwfc { 25 30 35 40 45 50 } {
+        
+        set name pw.Fe.scf.ecutwfc-$ecutwfc.dual-$dual
+        
+        SYSTEM "ecutwfc = $ecutwfc
+                ecutrho = $ecutwfc*$dual "
+        runPW $name.in
+
+        set Etot [::pwtk::pwo::totene $name.out]
+        puts $fid "$ecutwfc $Etot"
+    } 
+
+    close $fid        
+}
+
+
+# plot the result with gnuplot
+exec gnuplot plot.gp

@@ -1,0 +1,46 @@
+load_fromPWI ../pw.si.scf.in
+
+# please insert values as determined in the "alat" & "ecutwfc" excercises
+
+#SYSTEM {
+#    celldm(1) = ...insert...
+#    ecutwfc   = ...insert...
+#}
+
+# please insert values as determined in the "kpoints" excercise
+
+#K_POINTS automatic {
+#    ...insert...
+#}
+
+set name Si
+
+# ------------------------------------------------------------------------
+# run SCF pw.x calculation
+#
+runPW pw.$name.scf.in
+
+# ------------------------------------------------------------------------
+# run calculation = 'bands' pw.x calculation
+#
+CONTROL { calculation = 'bands' }
+SYSTEM  { nbnd = 8 }
+# load the K_POINTS from file
+import kpoint-list.pwtk
+
+runPW pw.$name.bands.in
+
+# ------------------------------------------------------------------------
+# run bands.x calculation
+#
+
+BANDS {
+    filband = 'Si.bands.dat'
+    lsym = .true.
+}
+
+runBANDS bands.$name.in
+
+
+# plot the result with gnuplot
+exec gnuplot plot.gp

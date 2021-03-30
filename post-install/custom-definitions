@@ -1,0 +1,322 @@
+# ------------------------------------------------------------------------
+# Printing options ...
+# 
+# if "Print To File" produces blank images, uncomment the line below
+# (i.e. use screen-dump instead):
+# ------------------------------------------------------------------------
+
+set printSetup(dumpWindow) 1
+
+
+# ------------------------------------------------------------------------
+# Options for OpenGL display 
+#
+# If you experience "X Error of failed request:" crashes, set the 
+# toglOpt(accum) to false.
+#
+# N.B. for all possible options of toglOpt(option) see file
+# $XCRYSDEN_TOPDIR/Tcl/toglOpt.tcl
+# ------------------------------------------------------------------------
+
+set toglOpt(accum)  true 
+set toglOpt(stereo) none
+
+
+# ------------------------------------------------------------------------
+#  do we have CRYSTAL package
+# ------------------------------------------------------------------------
+
+set system(c95_exist) 0
+
+
+# ------------------------------------------------------------------------
+#  CRYSTAL modules
+# ------------------------------------------------------------------------
+
+#set dir /full/path/to/crystal/binaries
+#set system(c95_integrals)  $dir/crystal
+#set system(c95_scf)        $dir/crystal
+#set system(c95_properties) $dir/properties
+
+
+# ------------------------------------------------------------------------
+# xcrysden can use several encoder programs for creating animated GIF
+# (convert, gifsicle, whirlgif) and AVI/MPEG movies
+# (mencoder/ppmtompeg)
+# ------------------------------------------------------------------------
+
+#set xcMisc(gif_encoder)   convert
+#set xcMisc(movie_encoder) mencoder
+
+
+# ------------------------------------------------------------------------
+# NOTICE: Starting from version 1.5, xcrysden tries to automatically
+# find various external packages, nevertheless user can still set
+# them explicitly, as shown below (if you want to do so, uncomment
+# corresponding lines)
+# ------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
+#  An image conversion program: we need PPM to PNG/JPG/GIF/... conversion.
+#  The "convert" program of ImageMagick (http://www.imagemagick.org/) is
+#  a convenient choice.
+# 
+#  It is possible to specify the command-line options. For example:
+#
+#  set xcMisc(ImageMagick.convert) "/usr/bin/convert \
+#                             -quality 90 -border 3x3 -bordercolor black"
+# 
+# Instead one can also use something like:
+#
+#  set xcMisc(ImageMagick.convertOptions) "-quality 90 -antialias \
+#                             -blur 1x1 -trim -bordercolor white \
+#                             -border 20x20 -bordercolor black -border 3x3"
+# ------------------------------------------------------------------------
+#set xcMisc(ImageMagick.convert) "/usr/bin/convert"
+#set xcMisc(ImageMagick.convertOptions) "-quality 90 -bordercolor black -border 3x3"
+
+# ------------------------------------------------------------------------
+#  With "gifsicle" program XCRYSDEN can create an Animated-GIF image
+# ------------------------------------------------------------------------
+
+#set xcMisc(gifsicle) /usr/bin/gifsicle
+
+
+# ------------------------------------------------------------------------
+#  PPMTOMPEG for creating the MPEG movies
+# ------------------------------------------------------------------------
+
+#set xcMisc(ppmtompeg) /usr/bin/ppmtompeg
+
+
+# ------------------------------------------------------------------------
+#  BABEL program
+# ------------------------------------------------------------------------
+#set xcMisc(babel) /home/tone/bin/babel
+# this is the same as environmental BABEL_DIR variable. Note: if
+# BABEL_DIR is defined, then this is not needed!!!  
+#set xcMisc(babel_dir) $env(HOME)/lib/babel
+
+
+# ------------------------------------------------------------------------
+# Custom setting of the atomic radii. The syntax is:
+# ------------------------------------------------------------------------
+# set atmRad(atomic_number) radius
+#
+# Example:
+#
+# set atmRad(1) 0.5; # custom radius for Hydrogen
+# set atmRad(8) 1.2; # custom radius for Oxygen
+# ------------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------------
+# Custom setting of the atomic colors. The syntax is:
+# ------------------------------------------------------------------------
+# set atmCol(atomic_number) {red gren blue}
+#
+# The components (red,gren,blue) must be in range [0,1]
+#
+# Example:
+#
+# set atmCol(1) {0.5 0.5 0.5}; # custom color for Hydrogen
+# set atmCol(8) {0.0 1.0 0.0}; # custom color for Oxygen
+# ------------------------------------------------------------------------
+
+
+
+# -------------------------------------------------------------------------
+# Custom setting for a variety of molecular display parameters, such as
+# ball-factors, specefill scale factors, tessellation factors, etc.
+#
+# Below are the default values. If you would like to change the
+# default for a particular parameter, then uncomment the appropriate
+# line and set the value according to your needs.
+# ------------------------------------------------------------------------
+
+## spacefill scale factor
+#set myParam(ATRAD_SCALE)     1.40
+#
+## tesselation factor
+#set myParam(TESSELLATION)    15.0 
+#
+## RGB color of unibonds (each compoenent must be within [0,1])
+#set myParam(UNIBONDCOLOR)    {1.00 1.00 1.00} 
+#
+## Perspective Fovy, Front and Back parameters. The smaller the Fovy
+## the larger the perception of perspective. Front and Back parameters
+## determine the front and back clipping planes. The smaller the Back
+## parameter the more the structure is clipped from the back side. The
+## Front parameter is counter-intuitive, meaning the smaller it is the
+## more the structure is clipped from the front side.
+#
+#set myParam(PERSPECTIVEFOVY)  2.5
+#set myParam(PERSPECTIVEFRONT) 0.65
+#set myParam(PERSPECTIVEBACK)  3.0
+#
+## ball-factor
+#set myParam(BALLF)           0.4
+#
+## rod-factor
+#set myParam(RODF)            0.6
+#
+## line-width of wireframe display-mode (in pixels)
+#set myParam(WFLINEWIDTH)     1
+#
+## line-width of pointline display-mode (in pixels)
+#set myParam(PLLINEWIDTH)     1
+#
+## line-width of crystal cell's frames
+#set myParam(FRAMELINEWIDTH)  1
+#
+## Lighting-Off outline width
+#set myParam(OUTLINEWIDTH)     1
+#
+## Lighting-On wire line width
+#set myParam(WF3DLINEWIDTH)    1
+#
+## point-size of pointline display-mode (in pixels)
+#set myParam(PLRADIUS)        6
+#
+## chemical connectivity factor
+#set myParam(COV_SCALE)       1.05
+#
+## RGB color of crystal frame (each compoenent must be within [0,1])
+#set myParam(FRAMECOL)        {0.88 1.00 0.67} 
+#
+## line-width of crystal frame
+#set myParam(FRAMELINEWIDTH)  1 
+#
+## rod-factor of crystal frame
+#set myParam(FRAMERODF)       0.1
+#
+## RGB background of XCRYSDEN display window 
+## (each compoenent must be within [0,1])
+#set myParam(BACKGROUND)      {0.00 0.00 0.00}
+#
+## maximum number of cells per direction for CRYSTALs
+#set myParam(CRYSTAL_MAXCELL)  10
+#
+## maximum number of cells per direction for SLABs
+#set myParam(SLAB_MAXCELL)     20
+#
+## maximum number of cells for POLYMERs
+#set myParam(POLYMER_MAXCELL)  50
+#
+## default atomic-label's font (in X11 XLFD format)
+#set myParam(ATOMIC_LABEL_FONT) -adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1
+#
+## default atomic-label's bright and dark color (in clamped-float RGB format)
+#set myParam(ATOMIC_LABEL_BRIGHTCOLOR) {1.0 1.0 0.0}
+#set myParam(ATOMIC_LABEL_DARKCOLOR)   {1.0 0.0 0.0}
+#
+#
+## this are the parameters for the "ppmtompeg" program:
+##--BEGIN::
+#set myParam(MPEG_ENCODE_PARAM_FILE) {
+#PATTERN          IBBPBBPBBPBBPBBP
+#OUTPUT           $output_file
+#BASE_FILE_FORMAT PPM
+#INPUT_FORMAT     UCB
+#$input_convert
+#GOP_SIZE         16
+#SLICES_PER_FRAME 1
+#INPUT_DIR        /
+#INPUT
+#$input_files
+#END_INPUT
+#PIXEL           FULL
+#RANGE           10
+#PSEARCH_ALG     LOGARITHMIC
+#BSEARCH_ALG     CROSS2
+#IQSCALE         8
+#PQSCALE         10
+#BQSCALE         25
+#REFERENCE_FRAME ORIGINAL
+#BIT_RATE        1000000
+#BUFFER_SIZE     327680
+#FRAME_RATE      30
+#}
+##--END
+#
+# ------------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------------
+#
+# Custom settings for FERMI-SURFACE-VIEWER
+#
+# ------------------------------------------------------------------------
+
+## RGB background of Fermi Viewer (each of r,g,b components must be within [0,1])
+#set myParam(FS_BACKGROUND)  {0.0 0.0 0.0}
+
+## the type of the cell: bz | para
+#set myParam(FS_CELLTYPE) bz 
+
+## do we crop the BZ: 1 or 0
+#set myParam(FS_CROPBZ) 1
+
+## display type for the cell: none | wire | solid | solidwire
+#set myParam(FS_CELLDISPLAYTYPE) wire 
+
+## draw style for the Fermi-surface: solid | wire | dot
+#set myParam(FS_DRAWSTYLE) solid      
+
+## draw transparent  Fermi Surface: 0 | 1 
+#set myParam(FS_TRANSPARENT) 0
+
+## shade model for Fermi surface: smooth | flat
+#set myParam(FS_SHADEMODEL) smooth
+
+## set the interpolation (should be small integer number, e.g., 1 2 3
+#set myParam(FS_INTERPOLATIONDEGREE) 1
+
+## what is the frontface of the surface: CW or CCW
+#set myParam(FS_FRONTFACE) CW
+
+## revert the normals of Fermi surface (determines the outside surface): 0 | 1
+#set myParam(FS_REVERTNORMALS) 0
+
+## color of the wire-cell (each of r,g,b,a components must be within [0,1])
+#set myParam(FS_WIRECELLCOLOR)  {1.00 0.00 1.00 1.00}
+
+## color of the solid-cell (each of r,g,b,a components must be within [0,1])
+#set myParam(FS_SOLIDCELLCOLOR)  {0.00 0.95 0.95 0.40}
+
+## use antialiaing: 0 | 1
+#set myParam(FS_ANTIALIAS)      0 
+
+## use depth cuing: 0 | 1
+#set myParam(FS_DEPTHCUING)     0 
+
+# END of settings for FERMI-SURFACE-VIEWER
+# ------------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------------
+#  Here go custom user-specified options
+# ------------------------------------------------------------------------
+#  In order to add an --unknown option to the Xcrysden allowed options,
+#  do the following
+#  
+# Usage: 
+#       addOption option converterProgram description
+#
+# Arguments:
+#       option           ... option to add to XCRYSDEN options
+#       converterProgram ... program that converts from an unknown to XSF format;
+#                            this program must be supplied by the user !!!
+#       description      ... description of the options that will appear in the
+#                            help message (i.e. xcrysden --help).
+# Example: 
+#       addOption --unknown /home/tone/utils/unknown2xsf {
+#               load structure from unknown file format
+#       }
+#
+
+# turn debugging off
+set xcMisc(debug) 0
+
+
+

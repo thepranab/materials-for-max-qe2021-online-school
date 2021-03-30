@@ -1,0 +1,11 @@
+Phonons at Gamma
+ &inputph
+  prefix='AlAs',
+  tr2_ph = 1.0d-14,
+  amass(1) = 26.98,
+  amass(2) = 74.92,
+  outdir='./out'
+  fildyn='AlAs.dyn',
+  epsil = .true.
+ /
+ 0.0  0.0   0.0

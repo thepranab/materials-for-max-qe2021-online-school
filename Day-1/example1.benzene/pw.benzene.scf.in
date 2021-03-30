@@ -1,0 +1,51 @@
+ &CONTROL
+    prefix='benzene',
+
+    ! this is a comment: you can comment out variables
+
+    ! if "pseudo_dir" and "outdir" are not set then pw.x will use the
+    ! values of ESPRESSO_PSEUDO and ESPRESSO_TMPDIR environmental
+    ! variables instead
+
+    !pseudo_dir = 
+    !outdir     =
+ /
+
+ &SYSTEM
+    assume_isolated      =  'martyna-tuckerman',
+    
+    ibrav = 6
+    A = 11.0
+    C = 7.0
+
+    ecutwfc =  20.0,
+    ecutrho =  200.0,
+
+    nat =  12,
+    ntyp =  2,
+
+    nbnd = 16
+ /
+
+ &ELECTRONS
+ /
+
+ATOMIC_SPECIES 
+   C   1.0   C.pbe-rrkjus.UPF 
+   H   1.0   H.pbe-rrkjus.UPF 
+
+ATOMIC_POSITIONS angstrom
+   H   5.5000000   7.98563953   3.5
+   C   5.5000000   6.89520922   3.5
+   C   6.7089386   6.19812524   3.5
+   H   7.6529918   6.74309454   3.5
+   C   6.7089386   4.80187470   3.5
+   H   7.6529918   4.25690561   3.5
+   C   5.5000000   4.10479062   3.5
+   H   5.5000000   3.01436043   3.5
+   C   4.2910612   4.80187468   3.5
+   H   3.3470081   4.25690556   3.5
+   C   4.2910613   6.19812528   3.5
+   H   3.3470082   6.74309458   3.5
+
+K_POINTS gamma

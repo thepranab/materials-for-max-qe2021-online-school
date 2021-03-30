@@ -1,0 +1,16 @@
+&lr_input
+  prefix = 'Benzene',
+  outdir='./out'
+/
+&lr_dav
+  if_dft_spectrum = .false.
+  num_eign = 15             
+  num_init = 30              
+  num_basis_max = 90       
+  residue_conv_thr = 1.0E-6  
+  start = 0.0                
+  finish = 1.0              
+  step = 0.001              
+  broadening  = 0.004         
+  reference   = 0.3            
+/

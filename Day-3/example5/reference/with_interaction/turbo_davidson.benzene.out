@@ -1,0 +1,3279 @@
+
+     Program turboTDDFT v.6.4.1 starts on 30Aug2019 at 11: 4:21 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on      48 processor cores
+     Number of MPI processes:                 8
+     Threads/MPI process:                     6
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+
+     Reading data from directory:
+     ./out/Benzene.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= BLYP
+                           (   1   3   1   3   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        2033    2033    505               162358   162358   20270
+     Max        2036    2036    508               162364   162364   20280
+     Sum       16281   16281   4053              1298895  1298895  162175
+ 
+ Symmetries are disabled for the gamma_only case
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+     Allocating     5 extra bands for projection
+
+     =-----------------------------------------------------------------=
+
+     Please cite the TDDFPT project as:
+       X. Ge, S. J. Binnie, D. Rocca, R. Gebauer, and S. Baroni,
+       Comput. Phys. Commun. 185, 2080 (2014)
+     in publications and presentations arising from this work.
+
+     =-----------------------------------------------------------------=
+
+     Virt read
+
+     Gamma point algorithm
+     Num of eigen values=             15
+     Allocating parameters for davidson ...
+
+     Estimating the RAM requirements:
+          For the basis sets:        5013.06     M
+          For the eigenvectors:        1114.01     M
+          Num_eign =   15     Num_basis_max =   90
+          Reference =  0.30  Ry
+     Do make sure that you have enough RAM.
+
+     poor_of_ram2 is set to .false.. This means that you would like to increase the speed 
+     by storing the D_basis and C_basis vectors which will cause three time of the memory cost.
+     Switch it to .true. if you need to save memory.
+
+     Finished allocating parameters.
+     Initiating variables for davidson ...
+     Lowest energy electron-hole pairs are used as initial vectors ...
+     Calculating the electron-hole pairs for initiating trial vectors ...
+
+              1        15         1           0.369781938401
+              2        15         2           0.369816852178
+              3        14         1           0.369885578357
+              4        14         2           0.369920492134
+              5        15         3           0.411302542791
+              6        14         3           0.411406182747
+              7        15         4           0.452909026788
+              8        14         4           0.453012666744
+              9        15         5           0.459689973139
+             10        14         5           0.459793613095
+             11        13         1           0.524636995669
+             12        12         1           0.524662810623
+             13        13         2           0.524671909446
+             14        12         2           0.524697724400
+             15        13         3           0.566157600059
+             16        12         3           0.566183415013
+             17        11         1           0.567680675196
+             18        11         2           0.567715588972
+             19        13         4           0.607764084056
+             20        12         4           0.607789899009
+             21        11         3           0.609201279585
+             22        13         5           0.614545030407
+             23        12         5           0.614570845361
+             24        11         4           0.650807763582
+             25        11         5           0.657588709933
+             26        10         1           0.667102450435
+             27        10         2           0.667137364212
+             28         9         1           0.667256693706
+             29         9         2           0.667291607483
+             30        10         3           0.708623054824
+             31         9         3           0.708777298096
+             32         8         1           0.713206685227
+             33         8         2           0.713241599003
+             34         7         1           0.739248925009
+             35         7         2           0.739283838785
+             36        10         4           0.750229538821
+             37         9         4           0.750383782092
+             38         8         3           0.754727289616
+             39        10         5           0.757010485173
+             40         9         5           0.757164728444
+             41         7         3           0.780769529398
+             42         8         4           0.796333773613
+             43         8         5           0.803114719965
+             44         7         4           0.822376013395
+             45         7         5           0.829156959747
+             46         6         1           0.856816694979
+             47         6         2           0.856851608756
+             48         6         3           0.898337299369
+             49         6         4           0.939943783366
+             50         6         5           0.946724729717
+     Finished calculating the cv couples.
+     Finished initiating.
+
+     Precondition is used in the algorithm,
+
+     total cpu time spent up to now is        5.4 secs
+
+       ==============================
+
+       Davidson iteration:        1
+       num of basis:   30   total built basis:   30
+        30     Transition energy    1  :                  0.3831043365
+        30     Transition energy    2  :                  0.4109147228
+        30     Transition energy    3  :                  0.4110237928
+        30     Transition energy    4  :                  0.4521502983
+        30     Transition energy    5  :                  0.4524431260
+        30     Transition energy    6  :                  0.4596403457
+        30     Transition energy    7  :                  0.4597440536
+        30     Transition energy    8  :                  0.4842536185
+        30     Transition energy    9  :                  0.5205557342
+        30     Transition energy   10  :                  0.5310135269
+        30     Transition energy   11  :                  0.5310166063
+        30     Transition energy   12  :                  0.5326777749
+        30     Transition energy   13  :                  0.5693444859
+        30     Transition energy   14  :                  0.5693849428
+        30     Transition energy   15  :                  0.5897003559
+     Residue(Squared modulus):    1        0.0440046      0.0000007
+     Residue(Squared modulus):    2        0.0023452      0.0000098
+     Residue(Squared modulus):    3        0.0022575      0.0000098
+     Residue(Squared modulus):    4        0.0028381      0.0000115
+     Residue(Squared modulus):    5        0.0008450      0.0000115
+     Residue(Squared modulus):    6        0.0006852      0.0000085
+     Residue(Squared modulus):    7        0.0006767      0.0000085
+     Residue(Squared modulus):    8        0.5734754      0.0000007
+     Residue(Squared modulus):    9        0.0059150      0.0000007
+     Residue(Squared modulus):   10        0.0221632      0.0000007
+     Residue(Squared modulus):   11        0.0221599      0.0000007
+     Residue(Squared modulus):   12        0.0223532      0.0000007
+     Residue(Squared modulus):   13        0.0093046      0.0000093
+     Residue(Squared modulus):   14        0.0091822      0.0000093
+     Residue(Squared modulus):   15        0.5575572      0.0000020
+       Largest residue:           0.573475394154
+
+     total cpu time spent up to now is       18.3 secs
+
+       ==============================
+
+       Davidson iteration:        2
+       num of basis:   54   total built basis:   54
+        54     Transition energy    1  :                  0.3777427423
+        54     Transition energy    2  :                  0.4107693312
+        54     Transition energy    3  :                  0.4108823698
+        54     Transition energy    4  :                  0.4318528147
+        54     Transition energy    5  :                  0.4519163973
+        54     Transition energy    6  :                  0.4523733471
+        54     Transition energy    7  :                  0.4595887114
+        54     Transition energy    8  :                  0.4596927517
+        54     Transition energy    9  :                  0.5031757744
+        54     Transition energy   10  :                  0.5185290819
+        54     Transition energy   11  :                  0.5198585426
+        54     Transition energy   12  :                  0.5202288087
+        54     Transition energy   13  :                  0.5283639987
+        54     Transition energy   14  :                  0.5283649893
+        54     Transition energy   15  :                  0.5304304453
+     Residue(Squared modulus):    1        0.0025323      0.0002993
+     Residue(Squared modulus):    2        0.0001290      0.0001400
+     Residue(Squared modulus):    3        0.0001215      0.0001324
+     Residue(Squared modulus):    4        0.0762265      0.0064364
+     Residue(Squared modulus):    5        0.0003064      0.0002471
+     Residue(Squared modulus):    6        0.0000939      0.0002087
+     Residue(Squared modulus):    7        0.0000760      0.0000713
+     Residue(Squared modulus):    8        0.0000769      0.0000716
+     Residue(Squared modulus):    9        0.0737621      0.0120493
+     Residue(Squared modulus):   10        0.8398006      0.8505386
+     Residue(Squared modulus):   11        0.8743763      0.8749550
+     Residue(Squared modulus):   12        0.0021034      0.0008514
+     Residue(Squared modulus):   13        0.0029514      0.0014075
+     Residue(Squared modulus):   14        0.0026992      0.0011415
+     Residue(Squared modulus):   15        0.0016914      0.0004052
+       Largest residue:           0.874954977210
+
+     total cpu time spent up to now is       37.6 secs
+
+       ==============================
+
+       Davidson iteration:        3
+       num of basis:   84   total built basis:   84
+        84     Transition energy    1  :                  0.3774609705
+        84     Transition energy    2  :                  0.4107527719
+        84     Transition energy    3  :                  0.4108660293
+        84     Transition energy    4  :                  0.4241596668
+        84     Transition energy    5  :                  0.4518832183
+        84     Transition energy    6  :                  0.4523465311
+        84     Transition energy    7  :                  0.4595720054
+        84     Transition energy    8  :                  0.4596755219
+        84     Transition energy    9  :                  0.4716757252
+        84     Transition energy   10  :                  0.4725406541
+        84     Transition energy   11  :                  0.4910815390
+        84     Transition energy   12  :                  0.5025344240
+        84     Transition energy   13  :                  0.5049353141
+        84     Transition energy   14  :                  0.5200317881
+        84     Transition energy   15  :                  0.5202248253
+     Residue(Squared modulus):    1        0.0004546      0.0001421
+     Residue(Squared modulus):    2        0.0000429      0.0000118
+     Residue(Squared modulus):    3        0.0000421      0.0000117
+     Residue(Squared modulus):    4        0.0175524      0.0020202
+     Residue(Squared modulus):    5        0.0000599      0.0000186
+     Residue(Squared modulus):    6        0.0001000      0.0000390
+     Residue(Squared modulus):    7        0.0000627      0.0000384
+     Residue(Squared modulus):    8        0.0000618      0.0000351
+     Residue(Squared modulus):    9        0.0369197      0.0369427
+     Residue(Squared modulus):   10        0.0342953      0.0347889
+     Residue(Squared modulus):   11        0.0191324      0.0032892
+     Residue(Squared modulus):   12        0.0594284      0.0619747
+     Residue(Squared modulus):   13        0.0635557      0.0657378
+     Residue(Squared modulus):   14        0.0330643      0.0375585
+     Residue(Squared modulus):   15        0.1092857      0.1223769
+       Largest residue:           0.122376946624
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   28   total built basis:   84
+        28     Transition energy    1  :                  0.3774609705
+        28     Transition energy    2  :                  0.4107528084
+        28     Transition energy    3  :                  0.4108661136
+        28     Transition energy    4  :                  0.4241596668
+        28     Transition energy    5  :                  0.4518832183
+        28     Transition energy    6  :                  0.4523465433
+        28     Transition energy    7  :                  0.4595721476
+        28     Transition energy    8  :                  0.4596758572
+        28     Transition energy    9  :                  0.4716757386
+        28     Transition energy   10  :                  0.4725406556
+        28     Transition energy   11  :                  0.4910815390
+        28     Transition energy   12  :                  0.5025344262
+        28     Transition energy   13  :                  0.5049353164
+        28     Transition energy   14  :                  0.5200317887
+        28     Transition energy   15  :                  0.5202248274
+     Residue(Squared modulus):    1        0.0004546      0.0001421
+     Residue(Squared modulus):    2        0.0000450      0.0000115
+     Residue(Squared modulus):    3        0.0000460      0.0000116
+     Residue(Squared modulus):    4        0.0175524      0.0020202
+     Residue(Squared modulus):    5        0.0000599      0.0000186
+     Residue(Squared modulus):    6        0.0000999      0.0000388
+     Residue(Squared modulus):    7        0.0000617      0.0000403
+     Residue(Squared modulus):    8        0.0000606      0.0000380
+     Residue(Squared modulus):    9        0.0369270      0.0369385
+     Residue(Squared modulus):   10        0.0342937      0.0347907
+     Residue(Squared modulus):   11        0.0191324      0.0032892
+     Residue(Squared modulus):   12        0.0594493      0.0619501
+     Residue(Squared modulus):   13        0.0635495      0.0657439
+     Residue(Squared modulus):   14        0.0330647      0.0375567
+     Residue(Squared modulus):   15        0.1092897      0.1223744
+       Largest residue:           0.122374414228
+
+     total cpu time spent up to now is       56.4 secs
+
+       ==============================
+
+       Davidson iteration:        4
+       num of basis:   58   total built basis:  114
+        58     Transition energy    1  :                  0.3774144947
+        58     Transition energy    2  :                  0.4107493382
+        58     Transition energy    3  :                  0.4108627144
+        58     Transition energy    4  :                  0.4229078766
+        58     Transition energy    5  :                  0.4518763859
+        58     Transition energy    6  :                  0.4523174251
+        58     Transition energy    7  :                  0.4594786443
+        58     Transition energy    8  :                  0.4595962948
+        58     Transition energy    9  :                  0.4608933018
+        58     Transition energy   10  :                  0.4614370609
+        58     Transition energy   11  :                  0.4883832659
+        58     Transition energy   12  :                  0.4885666975
+        58     Transition energy   13  :                  0.4908160624
+        58     Transition energy   14  :                  0.5008121877
+        58     Transition energy   15  :                  0.5200436373
+     Residue(Squared modulus):    1        0.0001238      0.0000367
+     Residue(Squared modulus):    2        0.0000090      0.0000079
+     Residue(Squared modulus):    3        0.0000095      0.0000085
+     Residue(Squared modulus):    4        0.0061023      0.0013728
+     Residue(Squared modulus):    5        0.0000298      0.0000436
+     Residue(Squared modulus):    6        0.0002092      0.0002454
+     Residue(Squared modulus):    7        0.0030351      0.0030893
+     Residue(Squared modulus):    8        0.0024150      0.0024507
+     Residue(Squared modulus):    9        0.0390423      0.0388255
+     Residue(Squared modulus):   10        0.0477084      0.0471968
+     Residue(Squared modulus):   11        0.0085091      0.0061471
+     Residue(Squared modulus):   12        0.0269119      0.0297254
+     Residue(Squared modulus):   13        0.0237197      0.0265446
+     Residue(Squared modulus):   14        0.0308354      0.0327666
+     Residue(Squared modulus):   15        0.0001715      0.0000781
+       Largest residue:           0.047708445576
+
+     total cpu time spent up to now is       77.5 secs
+
+       ==============================
+
+       Davidson iteration:        5
+       num of basis:   88   total built basis:  144
+        88     Transition energy    1  :                  0.3773989202
+        88     Transition energy    2  :                  0.4107478103
+        88     Transition energy    3  :                  0.4108611390
+        88     Transition energy    4  :                  0.4222304010
+        88     Transition energy    5  :                  0.4518594796
+        88     Transition energy    6  :                  0.4521410089
+        88     Transition energy    7  :                  0.4539538808
+        88     Transition energy    8  :                  0.4540482309
+        88     Transition energy    9  :                  0.4596022566
+        88     Transition energy   10  :                  0.4597090052
+        88     Transition energy   11  :                  0.4780653258
+        88     Transition energy   12  :                  0.4803815373
+        88     Transition energy   13  :                  0.4843421970
+        88     Transition energy   14  :                  0.4889832262
+        88     Transition energy   15  :                  0.4935199751
+     Residue(Squared modulus):    1        0.0000302      0.0000092
+     Residue(Squared modulus):    2        0.0000022      0.0000017
+     Residue(Squared modulus):    3        0.0000024      0.0000017
+     Residue(Squared modulus):    4        0.0006321      0.0006854
+     Residue(Squared modulus):    5        0.0000653      0.0000601
+     Residue(Squared modulus):    6        0.0006486      0.0006220
+     Residue(Squared modulus):    7        0.0062974      0.0061343
+     Residue(Squared modulus):    8        0.0050664      0.0048210
+     Residue(Squared modulus):    9        0.0000270      0.0000238
+     Residue(Squared modulus):   10        0.0000321      0.0000308
+     Residue(Squared modulus):   11        0.0151335      0.0161061
+     Residue(Squared modulus):   12        0.0128467      0.0140388
+     Residue(Squared modulus):   13        0.0117586      0.0068357
+     Residue(Squared modulus):   14        0.0218124      0.0225983
+     Residue(Squared modulus):   15        0.0327572      0.0336641
+       Largest residue:           0.033664115699
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   27   total built basis:  144
+        27     Transition energy    1  :                  0.3773989202
+        27     Transition energy    2  :                  0.4107478566
+        27     Transition energy    3  :                  0.4108611820
+        27     Transition energy    4  :                  0.4222304010
+        27     Transition energy    5  :                  0.4518594802
+        27     Transition energy    6  :                  0.4521410206
+        27     Transition energy    7  :                  0.4539538810
+        27     Transition energy    8  :                  0.4540482323
+        27     Transition energy    9  :                  0.4596024347
+        27     Transition energy   10  :                  0.4597091950
+        27     Transition energy   11  :                  0.4780658722
+        27     Transition energy   12  :                  0.4803815728
+        27     Transition energy   13  :                  0.4843421971
+        27     Transition energy   14  :                  0.4889832954
+        27     Transition energy   15  :                  0.4935199829
+     Residue(Squared modulus):    1        0.0000302      0.0000092
+     Residue(Squared modulus):    2        0.0000025      0.0000019
+     Residue(Squared modulus):    3        0.0000028      0.0000018
+     Residue(Squared modulus):    4        0.0006321      0.0006854
+     Residue(Squared modulus):    5        0.0000653      0.0000601
+     Residue(Squared modulus):    6        0.0006475      0.0006232
+     Residue(Squared modulus):    7        0.0062972      0.0061347
+     Residue(Squared modulus):    8        0.0050647      0.0048227
+     Residue(Squared modulus):    9        0.0000274      0.0000258
+     Residue(Squared modulus):   10        0.0000315      0.0000334
+     Residue(Squared modulus):   11        0.0151837      0.0160555
+     Residue(Squared modulus):   12        0.0128468      0.0140399
+     Residue(Squared modulus):   13        0.0117586      0.0068356
+     Residue(Squared modulus):   14        0.0218231      0.0225838
+     Residue(Squared modulus):   15        0.0327549      0.0336644
+       Largest residue:           0.033664425813
+
+     total cpu time spent up to now is       95.8 secs
+
+       ==============================
+
+       Davidson iteration:        6
+       num of basis:   57   total built basis:  174
+        57     Transition energy    1  :                  0.3773973379
+        57     Transition energy    2  :                  0.4107475943
+        57     Transition energy    3  :                  0.4108609218
+        57     Transition energy    4  :                  0.4221227570
+        57     Transition energy    5  :                  0.4518284356
+        57     Transition energy    6  :                  0.4519472830
+        57     Transition energy    7  :                  0.4527354883
+        57     Transition energy    8  :                  0.4532344983
+        57     Transition energy    9  :                  0.4595982183
+        57     Transition energy   10  :                  0.4597037713
+        57     Transition energy   11  :                  0.4745423275
+        57     Transition energy   12  :                  0.4754566508
+        57     Transition energy   13  :                  0.4823098067
+        57     Transition energy   14  :                  0.4852118477
+        57     Transition energy   15  :                  0.4861909157
+     Residue(Squared modulus):    1        0.0000052      0.0000031
+     Residue(Squared modulus):    2        0.0000009      0.0000008
+     Residue(Squared modulus):    3        0.0000008      0.0000008
+     Residue(Squared modulus):    4        0.0002743      0.0003864
+     Residue(Squared modulus):    5        0.0001649      0.0001698
+     Residue(Squared modulus):    6        0.0005886      0.0006269
+     Residue(Squared modulus):    7        0.0024682      0.0024761
+     Residue(Squared modulus):    8        0.0013395      0.0013954
+     Residue(Squared modulus):    9        0.0000076      0.0000070
+     Residue(Squared modulus):   10        0.0000097      0.0000090
+     Residue(Squared modulus):   11        0.0093471      0.0098497
+     Residue(Squared modulus):   12        0.0095601      0.0103347
+     Residue(Squared modulus):   13        0.0039020      0.0033949
+     Residue(Squared modulus):   14        0.0052889      0.0054983
+     Residue(Squared modulus):   15        0.0083771      0.0087134
+       Largest residue:           0.010334676084
+
+     total cpu time spent up to now is      114.7 secs
+
+       ==============================
+
+       Davidson iteration:        7
+       num of basis:   83   total built basis:  200
+        83     Transition energy    1  :                  0.3773967917
+        83     Transition energy    2  :                  0.4107475243
+        83     Transition energy    3  :                  0.4108608787
+        83     Transition energy    4  :                  0.4220700121
+        83     Transition energy    5  :                  0.4517654485
+        83     Transition energy    6  :                  0.4518362691
+        83     Transition energy    7  :                  0.4523489295
+        83     Transition energy    8  :                  0.4530158164
+        83     Transition energy    9  :                  0.4595969207
+        83     Transition energy   10  :                  0.4597022943
+        83     Transition energy   11  :                  0.4722613366
+        83     Transition energy   12  :                  0.4725056656
+        83     Transition energy   13  :                  0.4816178023
+        83     Transition energy   14  :                  0.4836992890
+        83     Transition energy   15  :                  0.4843887410
+     Residue(Squared modulus):    1        0.0000015      0.0000011
+     Residue(Squared modulus):    2        0.0000009      0.0000006
+     Residue(Squared modulus):    3        0.0000009      0.0000006
+     Residue(Squared modulus):    4        0.0001294      0.0001881
+     Residue(Squared modulus):    5        0.0002315      0.0002480
+     Residue(Squared modulus):    6        0.0001787      0.0001887
+     Residue(Squared modulus):    7        0.0007997      0.0008377
+     Residue(Squared modulus):    8        0.0003366      0.0003518
+     Residue(Squared modulus):    9        0.0000023      0.0000024
+     Residue(Squared modulus):   10        0.0000034      0.0000032
+     Residue(Squared modulus):   11        0.0043559      0.0044414
+     Residue(Squared modulus):   12        0.0040697      0.0043843
+     Residue(Squared modulus):   13        0.0016906      0.0011135
+     Residue(Squared modulus):   14        0.0019589      0.0021003
+     Residue(Squared modulus):   15        0.0030772      0.0032228
+       Largest residue:           0.004441424246
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   27   total built basis:  200
+        27     Transition energy    1  :                  0.3773967917
+        27     Transition energy    2  :                  0.4107475885
+        27     Transition energy    3  :                  0.4108609407
+        27     Transition energy    4  :                  0.4220700121
+        27     Transition energy    5  :                  0.4517654503
+        27     Transition energy    6  :                  0.4518362734
+        27     Transition energy    7  :                  0.4523489296
+        27     Transition energy    8  :                  0.4530166489
+        27     Transition energy    9  :                  0.4595971341
+        27     Transition energy   10  :                  0.4597024892
+        27     Transition energy   11  :                  0.4722615232
+        27     Transition energy   12  :                  0.4725058766
+        27     Transition energy   13  :                  0.4816178023
+        27     Transition energy   14  :                  0.4836992907
+        27     Transition energy   15  :                  0.4843887419
+     Residue(Squared modulus):    1        0.0000015      0.0000011
+     Residue(Squared modulus):    2        0.0000015      0.0000011
+     Residue(Squared modulus):    3        0.0000015      0.0000012
+     Residue(Squared modulus):    4        0.0001294      0.0001881
+     Residue(Squared modulus):    5        0.0002317      0.0002478
+     Residue(Squared modulus):    6        0.0001790      0.0001885
+     Residue(Squared modulus):    7        0.0007997      0.0008377
+     Residue(Squared modulus):    8        0.0003397      0.0003699
+     Residue(Squared modulus):    9        0.0000037      0.0000040
+     Residue(Squared modulus):   10        0.0000047      0.0000044
+     Residue(Squared modulus):   11        0.0043548      0.0044493
+     Residue(Squared modulus):   12        0.0040864      0.0043783
+     Residue(Squared modulus):   13        0.0016906      0.0011135
+     Residue(Squared modulus):   14        0.0019575      0.0021019
+     Residue(Squared modulus):   15        0.0030769      0.0032231
+       Largest residue:           0.004449271994
+
+     total cpu time spent up to now is      131.7 secs
+
+       ==============================
+
+       Davidson iteration:        8
+       num of basis:   57   total built basis:  230
+        57     Transition energy    1  :                  0.3773966179
+        57     Transition energy    2  :                  0.4107474458
+        57     Transition energy    3  :                  0.4108607958
+        57     Transition energy    4  :                  0.4220542026
+        57     Transition energy    5  :                  0.4517284105
+        57     Transition energy    6  :                  0.4518046665
+        57     Transition energy    7  :                  0.4522389216
+        57     Transition energy    8  :                  0.4529655823
+        57     Transition energy    9  :                  0.4595966234
+        57     Transition energy   10  :                  0.4597018633
+        57     Transition energy   11  :                  0.4714005516
+        57     Transition energy   12  :                  0.4716010741
+        57     Transition energy   13  :                  0.4812354493
+        57     Transition energy   14  :                  0.4833188900
+        57     Transition energy   15  :                  0.4838112231
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000005
+     Residue(Squared modulus):    4        0.0000630      0.0000497
+     Residue(Squared modulus):    5        0.0001153      0.0001161
+     Residue(Squared modulus):    6        0.0001112      0.0001132
+     Residue(Squared modulus):    7        0.0003071      0.0003046
+     Residue(Squared modulus):    8        0.0001538      0.0001462
+     Residue(Squared modulus):    9        0.0000013      0.0000015
+     Residue(Squared modulus):   10        0.0000017      0.0000020
+     Residue(Squared modulus):   11        0.0024342      0.0026009
+     Residue(Squared modulus):   12        0.0023614      0.0024910
+     Residue(Squared modulus):   13        0.0017375      0.0015936
+     Residue(Squared modulus):   14        0.0008742      0.0008955
+     Residue(Squared modulus):   15        0.0015623      0.0016201
+       Largest residue:           0.002600932921
+
+     total cpu time spent up to now is      151.1 secs
+
+       ==============================
+
+       Davidson iteration:        9
+       num of basis:   81   total built basis:  254
+        81     Transition energy    1  :                  0.3773966168
+        81     Transition energy    2  :                  0.4107474264
+        81     Transition energy    3  :                  0.4108607641
+        81     Transition energy    4  :                  0.4220459702
+        81     Transition energy    5  :                  0.4517072539
+        81     Transition energy    6  :                  0.4517853532
+        81     Transition energy    7  :                  0.4521885788
+        81     Transition energy    8  :                  0.4529411499
+        81     Transition energy    9  :                  0.4595964298
+        81     Transition energy   10  :                  0.4597015831
+        81     Transition energy   11  :                  0.4708744502
+        81     Transition energy   12  :                  0.4710138807
+        81     Transition energy   13  :                  0.4806530586
+        81     Transition energy   14  :                  0.4830847986
+        81     Transition energy   15  :                  0.4834255472
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000004      0.0000003
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000166      0.0000194
+     Residue(Squared modulus):    5        0.0000401      0.0000403
+     Residue(Squared modulus):    6        0.0000356      0.0000361
+     Residue(Squared modulus):    7        0.0000810      0.0000792
+     Residue(Squared modulus):    8        0.0000439      0.0000447
+     Residue(Squared modulus):    9        0.0000004      0.0000004
+     Residue(Squared modulus):   10        0.0000005      0.0000005
+     Residue(Squared modulus):   11        0.0010545      0.0010735
+     Residue(Squared modulus):   12        0.0011759      0.0012192
+     Residue(Squared modulus):   13        0.0020141      0.0014605
+     Residue(Squared modulus):   14        0.0004258      0.0004188
+     Residue(Squared modulus):   15        0.0009356      0.0009712
+       Largest residue:           0.002014061311
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   28   total built basis:  254
+        28     Transition energy    1  :                  0.3773966168
+        28     Transition energy    2  :                  0.4107474796
+        28     Transition energy    3  :                  0.4108608162
+        28     Transition energy    4  :                  0.4220459702
+        28     Transition energy    5  :                  0.4517072539
+        28     Transition energy    6  :                  0.4517853532
+        28     Transition energy    7  :                  0.4521885788
+        28     Transition energy    8  :                  0.4529411502
+        28     Transition energy    9  :                  0.4595966379
+        28     Transition energy   10  :                  0.4597017786
+        28     Transition energy   11  :                  0.4708744508
+        28     Transition energy   12  :                  0.4710138808
+        28     Transition energy   13  :                  0.4806530586
+        28     Transition energy   14  :                  0.4830847990
+        28     Transition energy   15  :                  0.4834255476
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000008      0.0000008
+     Residue(Squared modulus):    3        0.0000008      0.0000008
+     Residue(Squared modulus):    4        0.0000166      0.0000194
+     Residue(Squared modulus):    5        0.0000401      0.0000403
+     Residue(Squared modulus):    6        0.0000356      0.0000361
+     Residue(Squared modulus):    7        0.0000810      0.0000792
+     Residue(Squared modulus):    8        0.0000438      0.0000447
+     Residue(Squared modulus):    9        0.0000016      0.0000018
+     Residue(Squared modulus):   10        0.0000017      0.0000017
+     Residue(Squared modulus):   11        0.0010545      0.0010735
+     Residue(Squared modulus):   12        0.0011760      0.0012191
+     Residue(Squared modulus):   13        0.0020141      0.0014605
+     Residue(Squared modulus):   14        0.0004255      0.0004191
+     Residue(Squared modulus):   15        0.0009356      0.0009712
+       Largest residue:           0.002014062064
+
+     total cpu time spent up to now is      165.8 secs
+
+       ==============================
+
+       Davidson iteration:       10
+       num of basis:   52   total built basis:  278
+        52     Transition energy    1  :                  0.3773966164
+        52     Transition energy    2  :                  0.4107474313
+        52     Transition energy    3  :                  0.4108607614
+        52     Transition energy    4  :                  0.4220429961
+        52     Transition energy    5  :                  0.4517003612
+        52     Transition energy    6  :                  0.4517789936
+        52     Transition energy    7  :                  0.4521744537
+        52     Transition energy    8  :                  0.4529338416
+        52     Transition energy    9  :                  0.4595964116
+        52     Transition energy   10  :                  0.4597015366
+        52     Transition energy   11  :                  0.4706771519
+        52     Transition energy   12  :                  0.4707891103
+        52     Transition energy   13  :                  0.4803096003
+        52     Transition energy   14  :                  0.4830122235
+        52     Transition energy   15  :                  0.4832538793
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000098      0.0000112
+     Residue(Squared modulus):    5        0.0000194      0.0000210
+     Residue(Squared modulus):    6        0.0000173      0.0000175
+     Residue(Squared modulus):    7        0.0000373      0.0000373
+     Residue(Squared modulus):    8        0.0000201      0.0000209
+     Residue(Squared modulus):    9        0.0000007      0.0000007
+     Residue(Squared modulus):   10        0.0000006      0.0000008
+     Residue(Squared modulus):   11        0.0004882      0.0005147
+     Residue(Squared modulus):   12        0.0005518      0.0005867
+     Residue(Squared modulus):   13        0.0007802      0.0007146
+     Residue(Squared modulus):   14        0.0001785      0.0001846
+     Residue(Squared modulus):   15        0.0004628      0.0004676
+       Largest residue:           0.000780208495
+
+     total cpu time spent up to now is      179.8 secs
+
+       ==============================
+
+       Davidson iteration:       11
+       num of basis:   72   total built basis:  298
+        72     Transition energy    1  :                  0.3773966158
+        72     Transition energy    2  :                  0.4107474274
+        72     Transition energy    3  :                  0.4108607595
+        72     Transition energy    4  :                  0.4220415403
+        72     Transition energy    5  :                  0.4516970972
+        72     Transition energy    6  :                  0.4517764679
+        72     Transition energy    7  :                  0.4521690344
+        72     Transition energy    8  :                  0.4529306536
+        72     Transition energy    9  :                  0.4595963847
+        72     Transition energy   10  :                  0.4597015058
+        72     Transition energy   11  :                  0.4705847631
+        72     Transition energy   12  :                  0.4706803405
+        72     Transition energy   13  :                  0.4801832584
+        72     Transition energy   14  :                  0.4829748323
+        72     Transition energy   15  :                  0.4831585206
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000049      0.0000063
+     Residue(Squared modulus):    5        0.0000089      0.0000105
+     Residue(Squared modulus):    6        0.0000061      0.0000067
+     Residue(Squared modulus):    7        0.0000132      0.0000146
+     Residue(Squared modulus):    8        0.0000086      0.0000095
+     Residue(Squared modulus):    9        0.0000006      0.0000006
+     Residue(Squared modulus):   10        0.0000005      0.0000006
+     Residue(Squared modulus):   11        0.0002182      0.0002171
+     Residue(Squared modulus):   12        0.0002409      0.0002377
+     Residue(Squared modulus):   13        0.0003616      0.0003203
+     Residue(Squared modulus):   14        0.0000839      0.0000834
+     Residue(Squared modulus):   15        0.0002506      0.0002536
+       Largest residue:           0.000361607169
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   28   total built basis:  298
+        28     Transition energy    1  :                  0.3773966158
+        28     Transition energy    2  :                  0.4107474717
+        28     Transition energy    3  :                  0.4108608031
+        28     Transition energy    4  :                  0.4220415403
+        28     Transition energy    5  :                  0.4516970972
+        28     Transition energy    6  :                  0.4517764679
+        28     Transition energy    7  :                  0.4521690344
+        28     Transition energy    8  :                  0.4529306539
+        28     Transition energy    9  :                  0.4595965632
+        28     Transition energy   10  :                  0.4597016717
+        28     Transition energy   11  :                  0.4705847636
+        28     Transition energy   12  :                  0.4706803405
+        28     Transition energy   13  :                  0.4801832584
+        28     Transition energy   14  :                  0.4829748326
+        28     Transition energy   15  :                  0.4831585209
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000007      0.0000009
+     Residue(Squared modulus):    3        0.0000007      0.0000008
+     Residue(Squared modulus):    4        0.0000049      0.0000063
+     Residue(Squared modulus):    5        0.0000089      0.0000105
+     Residue(Squared modulus):    6        0.0000061      0.0000067
+     Residue(Squared modulus):    7        0.0000132      0.0000146
+     Residue(Squared modulus):    8        0.0000086      0.0000095
+     Residue(Squared modulus):    9        0.0000015      0.0000015
+     Residue(Squared modulus):   10        0.0000014      0.0000014
+     Residue(Squared modulus):   11        0.0002183      0.0002170
+     Residue(Squared modulus):   12        0.0002409      0.0002377
+     Residue(Squared modulus):   13        0.0003616      0.0003203
+     Residue(Squared modulus):   14        0.0000839      0.0000835
+     Residue(Squared modulus):   15        0.0002506      0.0002536
+       Largest residue:           0.000361607940
+
+     total cpu time spent up to now is      193.0 secs
+
+       ==============================
+
+       Davidson iteration:       12
+       num of basis:   52   total built basis:  322
+        52     Transition energy    1  :                  0.3773966149
+        52     Transition energy    2  :                  0.4107474219
+        52     Transition energy    3  :                  0.4108607540
+        52     Transition energy    4  :                  0.4220409420
+        52     Transition energy    5  :                  0.4516956984
+        52     Transition energy    6  :                  0.4517754915
+        52     Transition energy    7  :                  0.4521670658
+        52     Transition energy    8  :                  0.4529292844
+        52     Transition energy    9  :                  0.4595963771
+        52     Transition energy   10  :                  0.4597014927
+        52     Transition energy   11  :                  0.4705431699
+        52     Transition energy   12  :                  0.4706310848
+        52     Transition energy   13  :                  0.4800956033
+        52     Transition energy   14  :                  0.4829573779
+        52     Transition energy   15  :                  0.4831079391
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000004
+     Residue(Squared modulus):    4        0.0000025      0.0000022
+     Residue(Squared modulus):    5        0.0000052      0.0000055
+     Residue(Squared modulus):    6        0.0000037      0.0000036
+     Residue(Squared modulus):    7        0.0000069      0.0000068
+     Residue(Squared modulus):    8        0.0000053      0.0000055
+     Residue(Squared modulus):    9        0.0000006      0.0000006
+     Residue(Squared modulus):   10        0.0000005      0.0000006
+     Residue(Squared modulus):   11        0.0001261      0.0001304
+     Residue(Squared modulus):   12        0.0001493      0.0001566
+     Residue(Squared modulus):   13        0.0004534      0.0003971
+     Residue(Squared modulus):   14        0.0000567      0.0000563
+     Residue(Squared modulus):   15        0.0001633      0.0001638
+       Largest residue:           0.000453397828
+
+     total cpu time spent up to now is      207.0 secs
+
+       ==============================
+
+       Davidson iteration:       13
+       num of basis:   72   total built basis:  342
+        72     Transition energy    1  :                  0.3773966131
+        72     Transition energy    2  :                  0.4107474204
+        72     Transition energy    3  :                  0.4108607524
+        72     Transition energy    4  :                  0.4220406195
+        72     Transition energy    5  :                  0.4516946747
+        72     Transition energy    6  :                  0.4517749249
+        72     Transition energy    7  :                  0.4521660624
+        72     Transition energy    8  :                  0.4529282709
+        72     Transition energy    9  :                  0.4595963682
+        72     Transition energy   10  :                  0.4597014831
+        72     Transition energy   11  :                  0.4705186442
+        72     Transition energy   12  :                  0.4705990952
+        72     Transition energy   13  :                  0.4799545316
+        72     Transition energy   14  :                  0.4829457639
+        72     Transition energy   15  :                  0.4830719538
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000036      0.0000037
+     Residue(Squared modulus):    6        0.0000015      0.0000015
+     Residue(Squared modulus):    7        0.0000024      0.0000025
+     Residue(Squared modulus):    8        0.0000035      0.0000036
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000004      0.0000005
+     Residue(Squared modulus):   11        0.0000629      0.0000634
+     Residue(Squared modulus):   12        0.0000787      0.0000789
+     Residue(Squared modulus):   13        0.0005486      0.0004034
+     Residue(Squared modulus):   14        0.0000336      0.0000336
+     Residue(Squared modulus):   15        0.0001080      0.0001116
+       Largest residue:           0.000548565968
+
+     total cpu time spent up to now is      222.3 secs
+
+       ==============================
+
+       Davidson iteration:       14
+       num of basis:   90   total built basis:  360
+        90     Transition energy    1  :                  0.3773966107
+        90     Transition energy    2  :                  0.4107474180
+        90     Transition energy    3  :                  0.4108607509
+        90     Transition energy    4  :                  0.4220406182
+        90     Transition energy    5  :                  0.4516931153
+        90     Transition energy    6  :                  0.4517744572
+        90     Transition energy    7  :                  0.4521653813
+        90     Transition energy    8  :                  0.4529267956
+        90     Transition energy    9  :                  0.4595963602
+        90     Transition energy   10  :                  0.4597014776
+        90     Transition energy   11  :                  0.4704970221
+        90     Transition energy   12  :                  0.4705698942
+        90     Transition energy   13  :                  0.4796856985
+        90     Transition energy   14  :                  0.4829316470
+        90     Transition energy   15  :                  0.4830291348
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000020      0.0000020
+     Residue(Squared modulus):    6        0.0000004      0.0000004
+     Residue(Squared modulus):    7        0.0000004      0.0000004
+     Residue(Squared modulus):    8        0.0000019      0.0000018
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000004      0.0000004
+     Residue(Squared modulus):   11        0.0000090      0.0000086
+     Residue(Squared modulus):   12        0.0000144      0.0000159
+     Residue(Squared modulus):   13        0.0001692      0.0001386
+     Residue(Squared modulus):   14        0.0000075      0.0000080
+     Residue(Squared modulus):   15        0.0000186      0.0000199
+       Largest residue:           0.000169180730
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   27   total built basis:  360
+        27     Transition energy    1  :                  0.3773966107
+        27     Transition energy    2  :                  0.4107474631
+        27     Transition energy    3  :                  0.4108607955
+        27     Transition energy    4  :                  0.4220406182
+        27     Transition energy    5  :                  0.4516931165
+        27     Transition energy    6  :                  0.4517744573
+        27     Transition energy    7  :                  0.4521653813
+        27     Transition energy    8  :                  0.4529276513
+        27     Transition energy    9  :                  0.4595965430
+        27     Transition energy   10  :                  0.4597016525
+        27     Transition energy   11  :                  0.4704970273
+        27     Transition energy   12  :                  0.4705698944
+        27     Transition energy   13  :                  0.4796856985
+        27     Transition energy   14  :                  0.4829316473
+        27     Transition energy   15  :                  0.4830291351
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000008      0.0000008
+     Residue(Squared modulus):    3        0.0000007      0.0000008
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000021      0.0000020
+     Residue(Squared modulus):    6        0.0000004      0.0000004
+     Residue(Squared modulus):    7        0.0000004      0.0000004
+     Residue(Squared modulus):    8        0.0000164      0.0000178
+     Residue(Squared modulus):    9        0.0000014      0.0000015
+     Residue(Squared modulus):   10        0.0000013      0.0000014
+     Residue(Squared modulus):   11        0.0000089      0.0000087
+     Residue(Squared modulus):   12        0.0000144      0.0000159
+     Residue(Squared modulus):   13        0.0001692      0.0001386
+     Residue(Squared modulus):   14        0.0000075      0.0000080
+     Residue(Squared modulus):   15        0.0000186      0.0000199
+       Largest residue:           0.000169180561
+
+     total cpu time spent up to now is      234.0 secs
+
+       ==============================
+
+       Davidson iteration:       15
+       num of basis:   45   total built basis:  378
+        45     Transition energy    1  :                  0.3773966075
+        45     Transition energy    2  :                  0.4107474172
+        45     Transition energy    3  :                  0.4108607507
+        45     Transition energy    4  :                  0.4220406176
+        45     Transition energy    5  :                  0.4516927599
+        45     Transition energy    6  :                  0.4517744083
+        45     Transition energy    7  :                  0.4521653336
+        45     Transition energy    8  :                  0.4529265406
+        45     Transition energy    9  :                  0.4595963644
+        45     Transition energy   10  :                  0.4597014835
+        45     Transition energy   11  :                  0.4704952801
+        45     Transition energy   12  :                  0.4705671421
+        45     Transition energy   13  :                  0.4796538990
+        45     Transition energy   14  :                  0.4829298278
+        45     Transition energy   15  :                  0.4830251010
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000007      0.0000007
+     Residue(Squared modulus):    6        0.0000002      0.0000002
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000010      0.0000009
+     Residue(Squared modulus):    9        0.0000006      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000005
+     Residue(Squared modulus):   11        0.0000022      0.0000022
+     Residue(Squared modulus):   12        0.0000037      0.0000037
+     Residue(Squared modulus):   13        0.0000353      0.0000252
+     Residue(Squared modulus):   14        0.0000021      0.0000022
+     Residue(Squared modulus):   15        0.0000051      0.0000053
+       Largest residue:           0.000035294354
+
+     total cpu time spent up to now is      242.4 secs
+
+       ==============================
+
+       Davidson iteration:       16
+       num of basis:   56   total built basis:  389
+        56     Transition energy    1  :                  0.3773966065
+        56     Transition energy    2  :                  0.4107474150
+        56     Transition energy    3  :                  0.4108607471
+        56     Transition energy    4  :                  0.4220406172
+        56     Transition energy    5  :                  0.4516927133
+        56     Transition energy    6  :                  0.4517743952
+        56     Transition energy    7  :                  0.4521653285
+        56     Transition energy    8  :                  0.4529264467
+        56     Transition energy    9  :                  0.4595963599
+        56     Transition energy   10  :                  0.4597014800
+        56     Transition energy   11  :                  0.4704948592
+        56     Transition energy   12  :                  0.4705664399
+        56     Transition energy   13  :                  0.4796491085
+        56     Transition energy   14  :                  0.4829293224
+        56     Transition energy   15  :                  0.4830240695
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000005
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000005
+     Residue(Squared modulus):   11        0.0000013      0.0000012
+     Residue(Squared modulus):   12        0.0000015      0.0000015
+     Residue(Squared modulus):   13        0.0000112      0.0000078
+     Residue(Squared modulus):   14        0.0000014      0.0000015
+     Residue(Squared modulus):   15        0.0000025      0.0000027
+       Largest residue:           0.000011220511
+
+     total cpu time spent up to now is      250.0 secs
+
+       ==============================
+
+       Davidson iteration:       17
+       num of basis:   66   total built basis:  399
+        66     Transition energy    1  :                  0.3773966058
+        66     Transition energy    2  :                  0.4107474121
+        66     Transition energy    3  :                  0.4108607439
+        66     Transition energy    4  :                  0.4220406166
+        66     Transition energy    5  :                  0.4516926986
+        66     Transition energy    6  :                  0.4517743929
+        66     Transition energy    7  :                  0.4521653247
+        66     Transition energy    8  :                  0.4529264304
+        66     Transition energy    9  :                  0.4595963569
+        66     Transition energy   10  :                  0.4597014772
+        66     Transition energy   11  :                  0.4704945610
+        66     Transition energy   12  :                  0.4705659988
+        66     Transition energy   13  :                  0.4796476127
+        66     Transition energy   14  :                  0.4829289352
+        66     Transition energy   15  :                  0.4830234252
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000009      0.0000010
+     Residue(Squared modulus):   13        0.0000030      0.0000020
+     Residue(Squared modulus):   14        0.0000009      0.0000010
+     Residue(Squared modulus):   15        0.0000013      0.0000013
+       Largest residue:           0.000002950927
+
+     total cpu time spent up to now is      255.6 secs
+
+       ==============================
+
+       Davidson iteration:       18
+       num of basis:   70   total built basis:  403
+        70     Transition energy    1  :                  0.3773966057
+        70     Transition energy    2  :                  0.4107474114
+        70     Transition energy    3  :                  0.4108607429
+        70     Transition energy    4  :                  0.4220406163
+        70     Transition energy    5  :                  0.4516926968
+        70     Transition energy    6  :                  0.4517743910
+        70     Transition energy    7  :                  0.4521653228
+        70     Transition energy    8  :                  0.4529264272
+        70     Transition energy    9  :                  0.4595963564
+        70     Transition energy   10  :                  0.4597014766
+        70     Transition energy   11  :                  0.4704945537
+        70     Transition energy   12  :                  0.4705659718
+        70     Transition energy   13  :                  0.4796465920
+        70     Transition energy   14  :                  0.4829289138
+        70     Transition energy   15  :                  0.4830229765
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000022      0.0000023
+     Residue(Squared modulus):   14        0.0000009      0.0000009
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000002331474
+
+     total cpu time spent up to now is      259.1 secs
+
+       ==============================
+
+       Davidson iteration:       19
+       num of basis:   72   total built basis:  405
+        72     Transition energy    1  :                  0.3773966055
+        72     Transition energy    2  :                  0.4107474113
+        72     Transition energy    3  :                  0.4108607428
+        72     Transition energy    4  :                  0.4220406161
+        72     Transition energy    5  :                  0.4516926956
+        72     Transition energy    6  :                  0.4517743909
+        72     Transition energy    7  :                  0.4521653226
+        72     Transition energy    8  :                  0.4529264257
+        72     Transition energy    9  :                  0.4595963563
+        72     Transition energy   10  :                  0.4597014766
+        72     Transition energy   11  :                  0.4704945504
+        72     Transition energy   12  :                  0.4705659628
+        72     Transition energy   13  :                  0.4796455026
+        72     Transition energy   14  :                  0.4829289075
+        72     Transition energy   15  :                  0.4830229760
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000041      0.0000037
+     Residue(Squared modulus):   14        0.0000010      0.0000010
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000004089293
+
+     total cpu time spent up to now is      262.1 secs
+
+       ==============================
+
+       Davidson iteration:       20
+       num of basis:   74   total built basis:  407
+        74     Transition energy    1  :                  0.3773966055
+        74     Transition energy    2  :                  0.4107474112
+        74     Transition energy    3  :                  0.4108607427
+        74     Transition energy    4  :                  0.4220406146
+        74     Transition energy    5  :                  0.4516926953
+        74     Transition energy    6  :                  0.4517743907
+        74     Transition energy    7  :                  0.4521653222
+        74     Transition energy    8  :                  0.4529264250
+        74     Transition energy    9  :                  0.4595963563
+        74     Transition energy   10  :                  0.4597014765
+        74     Transition energy   11  :                  0.4704945477
+        74     Transition energy   12  :                  0.4705659559
+        74     Transition energy   13  :                  0.4796441288
+        74     Transition energy   14  :                  0.4829289004
+        74     Transition energy   15  :                  0.4830229746
+     Residue(Squared modulus):    1        0.0000009      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000026      0.0000029
+     Residue(Squared modulus):   14        0.0000010      0.0000010
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000002851364
+
+     total cpu time spent up to now is      265.7 secs
+
+       ==============================
+
+       Davidson iteration:       21
+       num of basis:   77   total built basis:  410
+        77     Transition energy    1  :                  0.3773966050
+        77     Transition energy    2  :                  0.4107474108
+        77     Transition energy    3  :                  0.4108607427
+        77     Transition energy    4  :                  0.4220406145
+        77     Transition energy    5  :                  0.4516926949
+        77     Transition energy    6  :                  0.4517743906
+        77     Transition energy    7  :                  0.4521653218
+        77     Transition energy    8  :                  0.4529264246
+        77     Transition energy    9  :                  0.4595963562
+        77     Transition energy   10  :                  0.4597014765
+        77     Transition energy   11  :                  0.4704945257
+        77     Transition energy   12  :                  0.4705659479
+        77     Transition energy   13  :                  0.4796434476
+        77     Transition energy   14  :                  0.4829285110
+        77     Transition energy   15  :                  0.4830229678
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000010      0.0000010
+     Residue(Squared modulus):   14        0.0000010      0.0000009
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000001018966
+
+     total cpu time spent up to now is      268.8 secs
+
+       ==============================
+
+       Davidson iteration:       22
+       num of basis:   78   total built basis:  411
+        78     Transition energy    1  :                  0.3773966044
+        78     Transition energy    2  :                  0.4107474107
+        78     Transition energy    3  :                  0.4108607426
+        78     Transition energy    4  :                  0.4220406140
+        78     Transition energy    5  :                  0.4516926949
+        78     Transition energy    6  :                  0.4517743904
+        78     Transition energy    7  :                  0.4521653216
+        78     Transition energy    8  :                  0.4529264244
+        78     Transition energy    9  :                  0.4595963561
+        78     Transition energy   10  :                  0.4597014764
+        78     Transition energy   11  :                  0.4704945188
+        78     Transition energy   12  :                  0.4705659433
+        78     Transition energy   13  :                  0.4796432381
+        78     Transition energy   14  :                  0.4829284799
+        78     Transition energy   15  :                  0.4830229669
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000008      0.0000004
+     Residue(Squared modulus):   14        0.0000011      0.0000010
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000001105516
+
+     total cpu time spent up to now is      271.3 secs
+
+       ==============================
+
+       Davidson iteration:       23
+       num of basis:   79   total built basis:  412
+        79     Transition energy    1  :                  0.3773966043
+        79     Transition energy    2  :                  0.4107474107
+        79     Transition energy    3  :                  0.4108607425
+        79     Transition energy    4  :                  0.4220406140
+        79     Transition energy    5  :                  0.4516926949
+        79     Transition energy    6  :                  0.4517743903
+        79     Transition energy    7  :                  0.4521653213
+        79     Transition energy    8  :                  0.4529264238
+        79     Transition energy    9  :                  0.4595963561
+        79     Transition energy   10  :                  0.4597014764
+        79     Transition energy   11  :                  0.4704944997
+        79     Transition energy   12  :                  0.4705659405
+        79     Transition energy   13  :                  0.4796431818
+        79     Transition energy   14  :                  0.4829280665
+        79     Transition energy   15  :                  0.4830229648
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000008      0.0000006
+     Residue(Squared modulus):   14        0.0000007      0.0000016
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000001582315
+
+     total cpu time spent up to now is      273.9 secs
+
+       ==============================
+
+       Davidson iteration:       24
+       num of basis:   80   total built basis:  413
+        80     Transition energy    1  :                  0.3773966042
+        80     Transition energy    2  :                  0.4107474106
+        80     Transition energy    3  :                  0.4108607425
+        80     Transition energy    4  :                  0.4220406140
+        80     Transition energy    5  :                  0.4516926946
+        80     Transition energy    6  :                  0.4517743888
+        80     Transition energy    7  :                  0.4521653197
+        80     Transition energy    8  :                  0.4529264224
+        80     Transition energy    9  :                  0.4595963561
+        80     Transition energy   10  :                  0.4597014764
+        80     Transition energy   11  :                  0.4704944627
+        80     Transition energy   12  :                  0.4705659257
+        80     Transition energy   13  :                  0.4796430824
+        80     Transition energy   14  :                  0.4829271198
+        80     Transition energy   15  :                  0.4830229590
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000005      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000007
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000011      0.0000007
+     Residue(Squared modulus):   14        0.0000059      0.0000040
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000005869034
+
+     total cpu time spent up to now is      277.4 secs
+
+       ==============================
+
+       Davidson iteration:       25
+       num of basis:   83   total built basis:  416
+        83     Transition energy    1  :                  0.3773966038
+        83     Transition energy    2  :                  0.4107474103
+        83     Transition energy    3  :                  0.4108607420
+        83     Transition energy    4  :                  0.4220406138
+        83     Transition energy    5  :                  0.4516926943
+        83     Transition energy    6  :                  0.4517743877
+        83     Transition energy    7  :                  0.4521653167
+        83     Transition energy    8  :                  0.4529264203
+        83     Transition energy    9  :                  0.4595963559
+        83     Transition energy   10  :                  0.4597014760
+        83     Transition energy   11  :                  0.4704944303
+        83     Transition energy   12  :                  0.4705658961
+        83     Transition energy   13  :                  0.4796427807
+        83     Transition energy   14  :                  0.4829024985
+        83     Transition energy   15  :                  0.4830226516
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000007
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000004      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000006
+     Residue(Squared modulus):   12        0.0000008      0.0000009
+     Residue(Squared modulus):   13        0.0000006      0.0000010
+     Residue(Squared modulus):   14        0.0006398      0.0009489
+     Residue(Squared modulus):   15        0.0000189      0.0000283
+       Largest residue:           0.000948892639
+
+     total cpu time spent up to now is      282.1 secs
+
+       ==============================
+
+       Davidson iteration:       26
+       num of basis:   87   total built basis:  420
+        87     Transition energy    1  :                  0.3773966037
+        87     Transition energy    2  :                  0.4107474091
+        87     Transition energy    3  :                  0.4108607415
+        87     Transition energy    4  :                  0.4220406137
+        87     Transition energy    5  :                  0.4516926906
+        87     Transition energy    6  :                  0.4517743866
+        87     Transition energy    7  :                  0.4521653130
+        87     Transition energy    8  :                  0.4529264160
+        87     Transition energy    9  :                  0.4595963553
+        87     Transition energy   10  :                  0.4597014759
+        87     Transition energy   11  :                  0.4704944226
+        87     Transition energy   12  :                  0.4705658662
+        87     Transition energy   13  :                  0.4796425417
+        87     Transition energy   14  :                  0.4816909390
+        87     Transition energy   15  :                  0.4829314295
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000004      0.0000004
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000004
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000003      0.0000006
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000004      0.0000004
+     Residue(Squared modulus):   11        0.0000006      0.0000006
+     Residue(Squared modulus):   12        0.0000007      0.0000008
+     Residue(Squared modulus):   13        0.0000008      0.0000010
+     Residue(Squared modulus):   14        0.0023266      0.0021650
+     Residue(Squared modulus):   15        0.0000064      0.0000061
+       Largest residue:           0.002326561680
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   27   total built basis:  420
+        27     Transition energy    1  :                  0.3773966037
+        27     Transition energy    2  :                  0.4107474540
+        27     Transition energy    3  :                  0.4108608052
+        27     Transition energy    4  :                  0.4220406137
+        27     Transition energy    5  :                  0.4516926916
+        27     Transition energy    6  :                  0.4517743866
+        27     Transition energy    7  :                  0.4521653130
+        27     Transition energy    8  :                  0.4529270716
+        27     Transition energy    9  :                  0.4595965366
+        27     Transition energy   10  :                  0.4597017420
+        27     Transition energy   11  :                  0.4704944232
+        27     Transition energy   12  :                  0.4705658662
+        27     Transition energy   13  :                  0.4796425417
+        27     Transition energy   14  :                  0.4816909390
+        27     Transition energy   15  :                  0.4829314298
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000007      0.0000008
+     Residue(Squared modulus):    3        0.0000009      0.0000008
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000005
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000003      0.0000003
+     Residue(Squared modulus):    8        0.0000126      0.0000175
+     Residue(Squared modulus):    9        0.0000014      0.0000014
+     Residue(Squared modulus):   10        0.0000021      0.0000019
+     Residue(Squared modulus):   11        0.0000006      0.0000006
+     Residue(Squared modulus):   12        0.0000007      0.0000008
+     Residue(Squared modulus):   13        0.0000008      0.0000010
+     Residue(Squared modulus):   14        0.0023268      0.0021648
+     Residue(Squared modulus):   15        0.0000064      0.0000061
+       Largest residue:           0.002326846032
+
+     total cpu time spent up to now is      288.0 secs
+
+       ==============================
+
+       Davidson iteration:       27
+       num of basis:   37   total built basis:  430
+        37     Transition energy    1  :                  0.3773966035
+        37     Transition energy    2  :                  0.4107474074
+        37     Transition energy    3  :                  0.4108607484
+        37     Transition energy    4  :                  0.4220406133
+        37     Transition energy    5  :                  0.4516926010
+        37     Transition energy    6  :                  0.4517743711
+        37     Transition energy    7  :                  0.4521653002
+        37     Transition energy    8  :                  0.4529263321
+        37     Transition energy    9  :                  0.4595963608
+        37     Transition energy   10  :                  0.4597015105
+        37     Transition energy   11  :                  0.4704943854
+        37     Transition energy   12  :                  0.4705658464
+        37     Transition energy   13  :                  0.4796423738
+        37     Transition energy   14  :                  0.4812963157
+        37     Transition energy   15  :                  0.4829305641
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000003      0.0000003
+     Residue(Squared modulus):    6        0.0000002      0.0000002
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000004      0.0000005
+     Residue(Squared modulus):    9        0.0000006      0.0000006
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000006      0.0000006
+     Residue(Squared modulus):   12        0.0000006      0.0000006
+     Residue(Squared modulus):   13        0.0000007      0.0000010
+     Residue(Squared modulus):   14        0.0010206      0.0013033
+     Residue(Squared modulus):   15        0.0000021      0.0000026
+       Largest residue:           0.001303338319
+
+     total cpu time spent up to now is      292.1 secs
+
+       ==============================
+
+       Davidson iteration:       28
+       num of basis:   41   total built basis:  434
+        41     Transition energy    1  :                  0.3773966035
+        41     Transition energy    2  :                  0.4107474070
+        41     Transition energy    3  :                  0.4108607481
+        41     Transition energy    4  :                  0.4220406130
+        41     Transition energy    5  :                  0.4516925826
+        41     Transition energy    6  :                  0.4517743679
+        41     Transition energy    7  :                  0.4521652974
+        41     Transition energy    8  :                  0.4529263128
+        41     Transition energy    9  :                  0.4595963597
+        41     Transition energy   10  :                  0.4597015098
+        41     Transition energy   11  :                  0.4704943281
+        41     Transition energy   12  :                  0.4705658283
+        41     Transition energy   13  :                  0.4796420878
+        41     Transition energy   14  :                  0.4809594708
+        41     Transition energy   15  :                  0.4829300419
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000003
+     Residue(Squared modulus):    6        0.0000002      0.0000002
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000004      0.0000005
+     Residue(Squared modulus):    9        0.0000006      0.0000005
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000007      0.0000007
+     Residue(Squared modulus):   12        0.0000006      0.0000006
+     Residue(Squared modulus):   13        0.0000012      0.0000015
+     Residue(Squared modulus):   14        0.0008971      0.0010274
+     Residue(Squared modulus):   15        0.0000012      0.0000012
+       Largest residue:           0.001027359278
+
+     total cpu time spent up to now is      295.6 secs
+
+       ==============================
+
+       Davidson iteration:       29
+       num of basis:   47   total built basis:  440
+        47     Transition energy    1  :                  0.3773966033
+        47     Transition energy    2  :                  0.4107474062
+        47     Transition energy    3  :                  0.4108607480
+        47     Transition energy    4  :                  0.4220406124
+        47     Transition energy    5  :                  0.4516925505
+        47     Transition energy    6  :                  0.4517743632
+        47     Transition energy    7  :                  0.4521652909
+        47     Transition energy    8  :                  0.4529262823
+        47     Transition energy    9  :                  0.4595963592
+        47     Transition energy   10  :                  0.4597015093
+        47     Transition energy   11  :                  0.4704942459
+        47     Transition energy   12  :                  0.4705658091
+        47     Transition energy   13  :                  0.4796414732
+        47     Transition energy   14  :                  0.4806546000
+        47     Transition energy   15  :                  0.4829296751
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000003
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000004      0.0000004
+     Residue(Squared modulus):    9        0.0000006      0.0000005
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000007      0.0000006
+     Residue(Squared modulus):   12        0.0000006      0.0000007
+     Residue(Squared modulus):   13        0.0000020      0.0000021
+     Residue(Squared modulus):   14        0.0006690      0.0008005
+     Residue(Squared modulus):   15        0.0000008      0.0000009
+       Largest residue:           0.000800510480
+
+     total cpu time spent up to now is      299.3 secs
+
+       ==============================
+
+       Davidson iteration:       30
+       num of basis:   51   total built basis:  444
+        51     Transition energy    1  :                  0.3773966030
+        51     Transition energy    2  :                  0.4107474057
+        51     Transition energy    3  :                  0.4108607476
+        51     Transition energy    4  :                  0.4220406119
+        51     Transition energy    5  :                  0.4516925053
+        51     Transition energy    6  :                  0.4517743587
+        51     Transition energy    7  :                  0.4521652836
+        51     Transition energy    8  :                  0.4529262410
+        51     Transition energy    9  :                  0.4595963588
+        51     Transition energy   10  :                  0.4597015087
+        51     Transition energy   11  :                  0.4704941731
+        51     Transition energy   12  :                  0.4705657766
+        51     Transition energy   13  :                  0.4796402312
+        51     Transition energy   14  :                  0.4803552576
+        51     Transition energy   15  :                  0.4829294961
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000003
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000004      0.0000005
+     Residue(Squared modulus):    9        0.0000006      0.0000005
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000006      0.0000006
+     Residue(Squared modulus):   12        0.0000006      0.0000006
+     Residue(Squared modulus):   13        0.0000044      0.0000038
+     Residue(Squared modulus):   14        0.0007264      0.0006460
+     Residue(Squared modulus):   15        0.0000005      0.0000006
+       Largest residue:           0.000726445193
+
+     total cpu time spent up to now is      302.7 secs
+
+       ==============================
+
+       Davidson iteration:       31
+       num of basis:   55   total built basis:  448
+        55     Transition energy    1  :                  0.3773966029
+        55     Transition energy    2  :                  0.4107474055
+        55     Transition energy    3  :                  0.4108607476
+        55     Transition energy    4  :                  0.4220406114
+        55     Transition energy    5  :                  0.4516924599
+        55     Transition energy    6  :                  0.4517743522
+        55     Transition energy    7  :                  0.4521652791
+        55     Transition energy    8  :                  0.4529261968
+        55     Transition energy    9  :                  0.4595963583
+        55     Transition energy   10  :                  0.4597015087
+        55     Transition energy   11  :                  0.4704941288
+        55     Transition energy   12  :                  0.4705657592
+        55     Transition energy   13  :                  0.4796374053
+        55     Transition energy   14  :                  0.4800635967
+        55     Transition energy   15  :                  0.4829293434
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000004      0.0000003
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000004      0.0000004
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000006      0.0000006
+     Residue(Squared modulus):   12        0.0000006      0.0000006
+     Residue(Squared modulus):   13        0.0000125      0.0000118
+     Residue(Squared modulus):   14        0.0007694      0.0007404
+     Residue(Squared modulus):   15        0.0000006      0.0000006
+       Largest residue:           0.000769430125
+
+     total cpu time spent up to now is      306.4 secs
+
+       ==============================
+
+       Davidson iteration:       32
+       num of basis:   59   total built basis:  452
+        59     Transition energy    1  :                  0.3773966029
+        59     Transition energy    2  :                  0.4107474050
+        59     Transition energy    3  :                  0.4108607472
+        59     Transition energy    4  :                  0.4220406111
+        59     Transition energy    5  :                  0.4516924232
+        59     Transition energy    6  :                  0.4517743456
+        59     Transition energy    7  :                  0.4521652759
+        59     Transition energy    8  :                  0.4529261603
+        59     Transition energy    9  :                  0.4595963577
+        59     Transition energy   10  :                  0.4597015079
+        59     Transition energy   11  :                  0.4704941039
+        59     Transition energy   12  :                  0.4705657423
+        59     Transition energy   13  :                  0.4796290411
+        59     Transition energy   14  :                  0.4798301902
+        59     Transition energy   15  :                  0.4829292078
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000003      0.0000003
+     Residue(Squared modulus):    6        0.0000002      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000004      0.0000004
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000005      0.0000005
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000324      0.0000300
+     Residue(Squared modulus):   14        0.0004002      0.0003750
+     Residue(Squared modulus):   15        0.0000004      0.0000005
+       Largest residue:           0.000400168366
+
+     total cpu time spent up to now is      310.2 secs
+
+       ==============================
+
+       Davidson iteration:       33
+       num of basis:   63   total built basis:  456
+        63     Transition energy    1  :                  0.3773966027
+        63     Transition energy    2  :                  0.4107474043
+        63     Transition energy    3  :                  0.4108607469
+        63     Transition energy    4  :                  0.4220406107
+        63     Transition energy    5  :                  0.4516924041
+        63     Transition energy    6  :                  0.4517743419
+        63     Transition energy    7  :                  0.4521652744
+        63     Transition energy    8  :                  0.4529261404
+        63     Transition energy    9  :                  0.4595963572
+        63     Transition energy   10  :                  0.4597015072
+        63     Transition energy   11  :                  0.4704940896
+        63     Transition energy   12  :                  0.4705657355
+        63     Transition energy   13  :                  0.4796154262
+        63     Transition energy   14  :                  0.4797418229
+        63     Transition energy   15  :                  0.4829291479
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000003      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000004
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000005      0.0000005
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000343      0.0000338
+     Residue(Squared modulus):   14        0.0001165      0.0001151
+     Residue(Squared modulus):   15        0.0000003      0.0000003
+       Largest residue:           0.000116509984
+
+     total cpu time spent up to now is      314.2 secs
+
+       ==============================
+
+       Davidson iteration:       34
+       num of basis:   67   total built basis:  460
+        67     Transition energy    1  :                  0.3773966025
+        67     Transition energy    2  :                  0.4107474040
+        67     Transition energy    3  :                  0.4108607465
+        67     Transition energy    4  :                  0.4220406103
+        67     Transition energy    5  :                  0.4516923929
+        67     Transition energy    6  :                  0.4517743403
+        67     Transition energy    7  :                  0.4521652730
+        67     Transition energy    8  :                  0.4529261292
+        67     Transition energy    9  :                  0.4595963566
+        67     Transition energy   10  :                  0.4597015049
+        67     Transition energy   11  :                  0.4704940759
+        67     Transition energy   12  :                  0.4705657266
+        67     Transition energy   13  :                  0.4796047979
+        67     Transition energy   14  :                  0.4797154049
+        67     Transition energy   15  :                  0.4829291219
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000002      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000003
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000005      0.0000005
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000194      0.0000174
+     Residue(Squared modulus):   14        0.0000351      0.0000316
+     Residue(Squared modulus):   15        0.0000002      0.0000003
+       Largest residue:           0.000035109329
+
+     total cpu time spent up to now is      318.4 secs
+
+       ==============================
+
+       Davidson iteration:       35
+       num of basis:   71   total built basis:  464
+        71     Transition energy    1  :                  0.3773966024
+        71     Transition energy    2  :                  0.4107474035
+        71     Transition energy    3  :                  0.4108607456
+        71     Transition energy    4  :                  0.4220406100
+        71     Transition energy    5  :                  0.4516923880
+        71     Transition energy    6  :                  0.4517743399
+        71     Transition energy    7  :                  0.4521652706
+        71     Transition energy    8  :                  0.4529261252
+        71     Transition energy    9  :                  0.4595963561
+        71     Transition energy   10  :                  0.4597015031
+        71     Transition energy   11  :                  0.4704940611
+        71     Transition energy   12  :                  0.4705657197
+        71     Transition energy   13  :                  0.4795998556
+        71     Transition energy   14  :                  0.4797074448
+        71     Transition energy   15  :                  0.4829291080
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000002      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000003
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000007      0.0000008
+     Residue(Squared modulus):   11        0.0000005      0.0000005
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000096      0.0000079
+     Residue(Squared modulus):   14        0.0000137      0.0000114
+     Residue(Squared modulus):   15        0.0000002      0.0000002
+       Largest residue:           0.000013720194
+
+     total cpu time spent up to now is      322.8 secs
+
+       ==============================
+
+       Davidson iteration:       36
+       num of basis:   75   total built basis:  468
+        75     Transition energy    1  :                  0.3773966023
+        75     Transition energy    2  :                  0.4107474033
+        75     Transition energy    3  :                  0.4108607450
+        75     Transition energy    4  :                  0.4220406098
+        75     Transition energy    5  :                  0.4516923860
+        75     Transition energy    6  :                  0.4517743398
+        75     Transition energy    7  :                  0.4521652694
+        75     Transition energy    8  :                  0.4529261237
+        75     Transition energy    9  :                  0.4595963558
+        75     Transition energy   10  :                  0.4597015019
+        75     Transition energy   11  :                  0.4704940533
+        75     Transition energy   12  :                  0.4705657177
+        75     Transition energy   13  :                  0.4795973591
+        75     Transition energy   14  :                  0.4797040656
+        75     Transition energy   15  :                  0.4829290991
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000002      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000003
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000007      0.0000008
+     Residue(Squared modulus):   11        0.0000005      0.0000005
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000051      0.0000046
+     Residue(Squared modulus):   14        0.0000066      0.0000060
+     Residue(Squared modulus):   15        0.0000002      0.0000002
+       Largest residue:           0.000006584515
+
+     total cpu time spent up to now is      327.4 secs
+
+       ==============================
+
+       Davidson iteration:       37
+       num of basis:   79   total built basis:  472
+        79     Transition energy    1  :                  0.3773966022
+        79     Transition energy    2  :                  0.4107474025
+        79     Transition energy    3  :                  0.4108607445
+        79     Transition energy    4  :                  0.4220406095
+        79     Transition energy    5  :                  0.4516923850
+        79     Transition energy    6  :                  0.4517743395
+        79     Transition energy    7  :                  0.4521652675
+        79     Transition energy    8  :                  0.4529261231
+        79     Transition energy    9  :                  0.4595963552
+        79     Transition energy   10  :                  0.4597015007
+        79     Transition energy   11  :                  0.4704940490
+        79     Transition energy   12  :                  0.4705657166
+        79     Transition energy   13  :                  0.4795958507
+        79     Transition energy   14  :                  0.4797021878
+        79     Transition energy   15  :                  0.4829290945
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000002      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000003
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000007      0.0000007
+     Residue(Squared modulus):   11        0.0000005      0.0000005
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000032      0.0000033
+     Residue(Squared modulus):   14        0.0000038      0.0000040
+     Residue(Squared modulus):   15        0.0000002      0.0000002
+       Largest residue:           0.000003954637
+
+     total cpu time spent up to now is      332.2 secs
+
+       ==============================
+
+       Davidson iteration:       38
+       num of basis:   83   total built basis:  476
+        83     Transition energy    1  :                  0.3773966021
+        83     Transition energy    2  :                  0.4107474021
+        83     Transition energy    3  :                  0.4108607443
+        83     Transition energy    4  :                  0.4220406093
+        83     Transition energy    5  :                  0.4516923841
+        83     Transition energy    6  :                  0.4517743390
+        83     Transition energy    7  :                  0.4521652653
+        83     Transition energy    8  :                  0.4529261226
+        83     Transition energy    9  :                  0.4595963545
+        83     Transition energy   10  :                  0.4597014999
+        83     Transition energy   11  :                  0.4704940483
+        83     Transition energy   12  :                  0.4705657153
+        83     Transition energy   13  :                  0.4795947698
+        83     Transition energy   14  :                  0.4797009133
+        83     Transition energy   15  :                  0.4829290920
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000002      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000003
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000007      0.0000007
+     Residue(Squared modulus):   11        0.0000004      0.0000004
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000021      0.0000023
+     Residue(Squared modulus):   14        0.0000024      0.0000027
+     Residue(Squared modulus):   15        0.0000002      0.0000002
+       Largest residue:           0.000002651701
+
+     total cpu time spent up to now is      337.2 secs
+
+       ==============================
+
+       Davidson iteration:       39
+       num of basis:   87   total built basis:  480
+        87     Transition energy    1  :                  0.3773966018
+        87     Transition energy    2  :                  0.4107474018
+        87     Transition energy    3  :                  0.4108607434
+        87     Transition energy    4  :                  0.4220406091
+        87     Transition energy    5  :                  0.4516923832
+        87     Transition energy    6  :                  0.4517743383
+        87     Transition energy    7  :                  0.4521652640
+        87     Transition energy    8  :                  0.4529261215
+        87     Transition energy    9  :                  0.4595963538
+        87     Transition energy   10  :                  0.4597014987
+        87     Transition energy   11  :                  0.4704940467
+        87     Transition energy   12  :                  0.4705657131
+        87     Transition energy   13  :                  0.4795940808
+        87     Transition energy   14  :                  0.4797001370
+        87     Transition energy   15  :                  0.4829290902
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000004
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000002      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000003
+     Residue(Squared modulus):    9        0.0000005      0.0000005
+     Residue(Squared modulus):   10        0.0000007      0.0000007
+     Residue(Squared modulus):   11        0.0000004      0.0000004
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000013      0.0000014
+     Residue(Squared modulus):   14        0.0000015      0.0000015
+     Residue(Squared modulus):   15        0.0000002      0.0000002
+       Largest residue:           0.000001506220
+
+     !!!! The basis set is close to its maximum size, now discharge it
+     to make space for the following calculation.
+
+       -------------------
+
+       After the discharging ...
+       num of basis:   27   total built basis:  480
+        27     Transition energy    1  :                  0.3773966018
+        27     Transition energy    2  :                  0.4107474464
+        27     Transition energy    3  :                  0.4108608016
+        27     Transition energy    4  :                  0.4220406091
+        27     Transition energy    5  :                  0.4516923844
+        27     Transition energy    6  :                  0.4517743384
+        27     Transition energy    7  :                  0.4521652640
+        27     Transition energy    8  :                  0.4529267599
+        27     Transition energy    9  :                  0.4595965334
+        27     Transition energy   10  :                  0.4597017413
+        27     Transition energy   11  :                  0.4704940470
+        27     Transition energy   12  :                  0.4705657131
+        27     Transition energy   13  :                  0.4795940808
+        27     Transition energy   14  :                  0.4797001370
+        27     Transition energy   15  :                  0.4829290905
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000007      0.0000007
+     Residue(Squared modulus):    3        0.0000009      0.0000008
+     Residue(Squared modulus):    4        0.0000010      0.0000009
+     Residue(Squared modulus):    5        0.0000003      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000135      0.0000158
+     Residue(Squared modulus):    9        0.0000014      0.0000015
+     Residue(Squared modulus):   10        0.0000020      0.0000019
+     Residue(Squared modulus):   11        0.0000005      0.0000004
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000013      0.0000014
+     Residue(Squared modulus):   14        0.0000015      0.0000015
+     Residue(Squared modulus):   15        0.0000002      0.0000002
+       Largest residue:           0.000015823888
+
+     total cpu time spent up to now is      343.2 secs
+
+       ==============================
+
+       Davidson iteration:       40
+       num of basis:   37   total built basis:  490
+        37     Transition energy    1  :                  0.3773966018
+        37     Transition energy    2  :                  0.4107474023
+        37     Transition energy    3  :                  0.4108607454
+        37     Transition energy    4  :                  0.4220406088
+        37     Transition energy    5  :                  0.4516923509
+        37     Transition energy    6  :                  0.4517743276
+        37     Transition energy    7  :                  0.4521652624
+        37     Transition energy    8  :                  0.4529260993
+        37     Transition energy    9  :                  0.4595963585
+        37     Transition energy   10  :                  0.4597015101
+        37     Transition energy   11  :                  0.4704940422
+        37     Transition energy   12  :                  0.4705657103
+        37     Transition energy   13  :                  0.4795938437
+        37     Transition energy   14  :                  0.4796998751
+        37     Transition energy   15  :                  0.4829290856
+     Residue(Squared modulus):    1        0.0000008      0.0000007
+     Residue(Squared modulus):    2        0.0000005      0.0000005
+     Residue(Squared modulus):    3        0.0000005      0.0000005
+     Residue(Squared modulus):    4        0.0000009      0.0000009
+     Residue(Squared modulus):    5        0.0000002      0.0000002
+     Residue(Squared modulus):    6        0.0000001      0.0000001
+     Residue(Squared modulus):    7        0.0000002      0.0000002
+     Residue(Squared modulus):    8        0.0000003      0.0000004
+     Residue(Squared modulus):    9        0.0000006      0.0000006
+     Residue(Squared modulus):   10        0.0000008      0.0000008
+     Residue(Squared modulus):   11        0.0000004      0.0000004
+     Residue(Squared modulus):   12        0.0000005      0.0000005
+     Residue(Squared modulus):   13        0.0000007      0.0000007
+     Residue(Squared modulus):   14        0.0000007      0.0000007
+     Residue(Squared modulus):   15        0.0000002      0.0000002
+       Largest residue:           0.000000949885
+
+       ================================================================
+
+       Davidson diagonalization has finished in   40 steps.
+          the number of current basis is   37
+          the number of total basis built is  490
+
+       Now print out information of eigenstates
+
+
+     K-S Oscillator strengths
+     occ con        R-x              R-y              R-z
+       6   1    -0.75922976E-05    0.76100682E-05    0.11518390E-03
+       6   2    -0.19102346E-04    0.48390565E-05    0.37889599E-04
+       6   3    -0.35272434E-03    0.11599603E-04    0.15588797E-04
+       6   4    -0.44986472E-01   -0.21266552E+00    0.54007104E-04
+       6   5     0.97873163E-02   -0.20928548E-02    0.67691922E-05
+       7   1    -0.33012470E-05    0.49764444E-05    0.20688955E-04
+       7   2    -0.37834881E-05    0.28282572E-05    0.15269030E-04
+       7   3     0.15368157E-04    0.30447477E-04    0.14849175E-04
+       7   4     0.44992029E-04    0.10980706E-03    0.35207914E-05
+       7   5    -0.26755070E-04   -0.13285537E-02   -0.21397376E-07
+       8   1    -0.57397981E-05   -0.62451795E-05   -0.10284589E-04
+       8   2    -0.16449367E-04   -0.39180135E-05    0.70247606E-04
+       8   3     0.41902815E-04   -0.52679330E-04   -0.76043917E-06
+       8   4     0.11397615E-02    0.69569025E-04    0.23371716E-05
+       8   5     0.15253156E-03    0.47102607E-04    0.17945206E-05
+       9   1    -0.11792718E-04   -0.26390634E-05   -0.28046410E-04
+       9   2    -0.10252591E-04    0.31764585E-06    0.28687984E-04
+       9   3    -0.56080393E+00    0.65215477E-01   -0.30312204E-05
+       9   4     0.13395651E-02    0.66762876E-04   -0.35739020E-06
+       9   5     0.31493936E+00   -0.36697876E-01    0.49564624E-05
+      10   1     0.40930311E-05    0.47944630E-05    0.98571525E-05
+      10   2    -0.12521469E-05    0.17056305E-04   -0.20987732E-04
+      10   3    -0.65264157E-01   -0.56092588E+00    0.59902929E-05
+      10   4     0.11929671E-03   -0.11909310E-02    0.11008714E-04
+      10   5     0.36598073E-01    0.31550509E+00   -0.53784872E-05
+      11   1    -0.88876420E-05   -0.54421401E-04    0.79809359E-05
+      11   2    -0.72053349E-04   -0.12318225E-04    0.11277894E-04
+      11   3    -0.92768343E-05    0.21207176E-05    0.32187140E+00
+      11   4    -0.68654642E-05   -0.10190964E-04    0.33102551E-03
+      11   5     0.36149324E-05    0.38643706E-06   -0.16526683E+00
+      12   1    -0.28097763E-05   -0.13085107E-04   -0.36851617E-02
+      12   2    -0.21731053E-04    0.48008084E-05   -0.10389342E+00
+      12   3    -0.15947172E-03    0.45166052E-03    0.10071582E-04
+      12   4     0.22962074E+00    0.95086599E-01    0.38368656E-05
+      12   5     0.45358033E-02   -0.10352051E-01   -0.49086641E-05
+      13   1     0.39858511E-07    0.14773715E-04   -0.10401810E+00
+      13   2     0.25589171E-05   -0.26414952E-05    0.36496736E-02
+      13   3    -0.31596409E-03   -0.28468871E-04    0.23172559E-05
+      13   4    -0.97889263E-01    0.20822129E+00   -0.98506306E-05
+      13   5     0.98742727E-02    0.44167906E-02   -0.74850176E-06
+      14   1     0.14281938E+01    0.36619984E+00    0.81057852E-07
+      14   2     0.36623207E+00   -0.14281894E+01    0.21027070E-04
+      14   3    -0.33175614E-04   -0.73591689E-05    0.46881295E-03
+      14   4    -0.79483653E-04    0.56869857E-06    0.35624067E-01
+      14   5    -0.68269095E-05   -0.10372292E-06   -0.12401217E-01
+      15   1    -0.36624516E+00    0.14282263E+01   -0.22326710E-06
+      15   2     0.14283096E+01    0.36617423E+00    0.49680443E-05
+      15   3     0.11253101E-04    0.12495315E-04    0.84869308E-04
+      15   4     0.15220022E-04    0.69458432E-04   -0.27542114E+00
+      15   5     0.14436825E-05    0.11630965E-04   -0.17529268E-02
+
+       ! The    1 -th eigen state. The transition energy is:        0.37739660
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00069;    Y      -0.00069
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.99902;    Y      -0.00013    total       0.99889  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.95789405E-08    0.49263703E-08    0.44099772E-08    0.24259300E-09
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    1        0.70358       -0.00710
+      15    2       -0.70384        0.00716
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1     -0.45215259E-06      0.38479091E-05
+       6    2     -0.18899715E-05     -0.51371862E-06
+       6    3      0.10168569E-05     -0.26212434E-06
+       6    4     -0.76928690E-05     -0.35677353E-05
+       6    5      0.20772475E-05      0.14454730E-05
+       7    1      0.53693745E-06     -0.43914182E-06
+       7    2      0.32507267E-06      0.15677813E-05
+       7    3     -0.19367164E-05     -0.91549650E-06
+       7    4      0.36895301E-05      0.20493112E-05
+       7    5      0.15428306E-05      0.91884041E-06
+       8    1      0.23054081E-06     -0.48561264E-06
+       8    2      0.10263266E-05      0.84864757E-06
+       8    3     -0.11915314E-01     -0.40255368E-02
+       8    4     -0.75600461E-05     -0.28227560E-05
+       8    5      0.64459426E-02      0.23574833E-02
+       9    1     -0.80163294E-06      0.61683955E-06
+       9    2     -0.19567197E-07      0.63936701E-06
+       9    3     -0.14662590E-04     -0.43810772E-05
+       9    4     -0.82791041E-05     -0.26459317E-05
+       9    5     -0.54169643E-05     -0.85818905E-06
+      10    1     -0.19236241E-05     -0.75071075E-06
+      10    2      0.57332157E-06      0.58572420E-07
+      10    3      0.53019610E-05      0.43967764E-05
+      10    4     -0.59393234E-05     -0.30389057E-05
+      10    5     -0.50432993E-05     -0.23329950E-05
+      11    1     -0.71838826E-05     -0.21630491E-05
+      11    2      0.44410739E-05      0.23604115E-05
+      11    3     -0.11808805E-04     -0.27786947E-05
+      11    4      0.87327215E-05      0.24423492E-05
+      11    5      0.18403668E-05      0.88038028E-06
+      12    1      0.17258839E-05      0.75266381E-06
+      12    2      0.11761063E-05      0.17861656E-05
+      12    3     -0.13221841E-05      0.19632046E-05
+      12    4      0.55032800E-02      0.12918117E-02
+      12    5      0.28260111E-05      0.33770207E-06
+      13    1     -0.21871261E-05      0.51412712E-06
+      13    2      0.46864441E-05      0.51462254E-06
+      13    3      0.28685276E-04      0.58077582E-05
+      13    4      0.58102675E-05      0.28070532E-05
+      13    5     -0.25803444E-03     -0.61028554E-04
+      14    1      0.70357553E+00     -0.70994702E-02
+      14    2      0.64800571E-01     -0.65202888E-03
+      14    3      0.56384678E-04      0.24678709E-05
+      14    4     -0.62596629E-04     -0.55964154E-05
+      14    5     -0.11516713E-04     -0.11309513E-05
+      15    1      0.64765284E-01     -0.66113625E-03
+      15    2     -0.70383991E+00      0.71631140E-02
+      15    3      0.57458059E-05      0.18260192E-06
+      15    4      0.31766473E-04      0.31498868E-05
+      15    5     -0.46504300E-05     -0.39429897E-06
+
+       **************
+
+
+       ! The    2 -th eigen state. The transition energy is:        0.41074740
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00002;    Y      -0.00002
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.99987;    Y      -0.00000    total       0.99986  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.10052749E-06    0.15767194E-07    0.82137987E-08    0.76546501E-07
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      15    3       -0.99520       -0.00067
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1     -0.75773649E-05     -0.71255854E-05
+       6    2      0.21807163E-04      0.10086715E-04
+       6    3      0.17071053E-04      0.60858318E-05
+       6    4      0.60668761E-05      0.24759027E-05
+       6    5     -0.73004664E-05     -0.27858002E-05
+       7    1     -0.24563348E-02     -0.74008182E-03
+       7    2      0.74319381E-05      0.48124635E-05
+       7    3      0.19264098E-04      0.59575203E-05
+       7    4     -0.23249852E-04     -0.74340134E-05
+       7    5     -0.75832189E-05     -0.24660842E-05
+       8    1     -0.91155916E-05     -0.34776910E-05
+       8    2     -0.13704776E-02     -0.38268791E-03
+       8    3      0.54565715E-05      0.19248977E-05
+       8    4      0.80010805E-05      0.25052187E-05
+       8    5     -0.18089604E-05     -0.65836827E-06
+       9    1      0.84230156E-03      0.21213589E-03
+       9    2     -0.16755293E-02     -0.41087074E-03
+       9    3      0.29184329E-04      0.50091508E-05
+       9    4     -0.92306241E-05     -0.34968063E-05
+       9    5     -0.98608184E-05     -0.14063860E-05
+      10    1     -0.16579012E-02     -0.40580855E-03
+      10    2     -0.82901554E-03     -0.20718125E-03
+      10    3      0.92707368E-05      0.31401737E-05
+      10    4      0.38449839E-04      0.10448376E-04
+      10    5     -0.18839509E-05     -0.47223275E-06
+      11    1     -0.13527833E-04      0.52828122E-05
+      11    2     -0.14736676E-04     -0.64909303E-05
+      11    3      0.10060911E-03      0.22653709E-04
+      11    4      0.16766473E-02      0.37348788E-03
+      11    5     -0.32395289E-04     -0.80556277E-05
+      12    1      0.16264335E-04      0.89896771E-05
+      12    2      0.31578717E-05      0.50887522E-05
+      12    3     -0.36233122E-04     -0.24155160E-05
+      12    4     -0.27725299E-04     -0.28160678E-05
+      12    5      0.11659547E-04      0.16666740E-05
+      13    1     -0.18924384E-04      0.18802690E-05
+      13    2      0.26373246E-04     -0.41638623E-05
+      13    3     -0.10024267E-03     -0.15434110E-04
+      13    4      0.51773934E-04      0.51311363E-05
+      13    5      0.31937929E-04      0.64627179E-05
+      14    1     -0.84936459E-04      0.26198434E-05
+      14    2      0.21147238E-03     -0.11383029E-04
+      14    3      0.97077889E-01      0.77601157E-04
+      14    4      0.61424726E-04      0.31669481E-05
+      14    5     -0.25182717E-03     -0.14051386E-04
+      15    1      0.12862251E-03     -0.65177165E-05
+      15    2     -0.53902810E-04      0.82676528E-06
+      15    3     -0.99519872E+00     -0.66942606E-03
+      15    4     -0.80524048E-03     -0.41028932E-04
+      15    5      0.15646124E-02      0.87838009E-04
+
+       **************
+
+
+       ! The    3 -th eigen state. The transition energy is:        0.41086075
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00002;    Y      -0.00002
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.99987;    Y      -0.00000    total       0.99987  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.17625820E-07    0.10483518E-08    0.16386532E-07    0.19093605E-09
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    3       -0.99520       -0.00066
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.17866248E-04      0.35593697E-05
+       6    2      0.12129702E-04     -0.51663718E-05
+       6    3      0.52607108E-05      0.18011240E-05
+       6    4     -0.11967341E-04     -0.29677545E-05
+       6    5     -0.16965817E-05     -0.53890091E-06
+       7    1     -0.19329358E-04     -0.25259574E-05
+       7    2     -0.23920064E-02     -0.72897446E-03
+       7    3     -0.36432593E-04     -0.11313813E-04
+       7    4     -0.30765808E-05      0.90972251E-06
+       7    5      0.14519310E-04      0.50028206E-05
+       8    1      0.13402085E-02      0.37439687E-03
+       8    2     -0.11484048E-04     -0.27660463E-05
+       8    3     -0.43637491E-05     -0.12514731E-05
+       8    4     -0.50646911E-05     -0.18610204E-05
+       8    5      0.77208411E-06      0.24045536E-06
+       9    1     -0.16754648E-02     -0.41244503E-03
+       9    2     -0.84700955E-03     -0.20511310E-03
+       9    3     -0.21143430E-04     -0.68177861E-05
+       9    4      0.99570066E-05      0.34480908E-05
+       9    5      0.75139912E-05      0.30346617E-05
+      10    1     -0.83583790E-03     -0.20373180E-03
+      10    2      0.16867387E-02      0.41384571E-03
+      10    3     -0.26481590E-04     -0.45657990E-05
+      10    4      0.11011030E-04      0.23310217E-05
+      10    5      0.90507534E-05      0.10781281E-05
+      11    1     -0.99117035E-05      0.19513429E-06
+      11    2      0.68417999E-05     -0.40640560E-05
+      11    3     -0.16007530E-04     -0.28458304E-05
+      11    4     -0.72575102E-04     -0.21131571E-04
+      11    5      0.76671506E-04      0.16070597E-04
+      12    1     -0.16616571E-04     -0.90310559E-05
+      12    2      0.19773777E-04      0.14053683E-04
+      12    3     -0.36437539E-05      0.45302173E-09
+      12    4      0.22611924E-04      0.32787618E-05
+      12    5     -0.32201593E-05     -0.18493706E-05
+      13    1     -0.28829656E-04     -0.90464471E-05
+      13    2     -0.80325810E-05      0.21316410E-05
+      13    3     -0.11983822E-04     -0.23927369E-05
+      13    4     -0.48877014E-04     -0.11412626E-04
+      13    5      0.36276405E-05     -0.16817618E-06
+      14    1      0.74262586E-04     -0.52454188E-05
+      14    2     -0.75227795E-03      0.39661747E-04
+      14    3     -0.99520242E+00     -0.65770864E-03
+      14    4     -0.72190717E-04     -0.43736765E-05
+      14    5      0.14957029E-02      0.83746189E-04
+      15    1     -0.59235315E-03      0.30873317E-04
+      15    2     -0.13098726E-03      0.55834997E-05
+      15    3     -0.97078280E-01     -0.51924782E-04
+      15    4     -0.23226767E-04     -0.13927245E-05
+      15    5      0.42696705E-04      0.25667971E-05
+
+       **************
+
+
+       ! The    4 -th eigen state. The transition energy is:        0.42204061
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00919;    Y      -0.00919
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.98470;    Y      -0.00434    total       0.98036  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.20806457E-05    0.16281528E-07    0.20643637E-05    0.49962324E-12
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    2       -0.69702        0.04589
+      15    1       -0.69961        0.04620
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.83978332E-05      0.16962235E-05
+       6    2      0.39234317E-05      0.29303902E-05
+       6    3     -0.23081888E-05      0.79856041E-06
+       6    4     -0.15417436E-03     -0.61715280E-04
+       6    5      0.13703111E-05     -0.64267690E-07
+       7    1      0.66355481E-05      0.27746027E-05
+       7    2      0.37539270E-05     -0.11641114E-05
+       7    3     -0.18666563E-01     -0.55461143E-02
+       7    4     -0.11623095E-04     -0.23593367E-05
+       7    5      0.88243565E-02      0.28603987E-02
+       8    1     -0.53637575E-05     -0.51337191E-06
+       8    2      0.57716477E-05      0.49588067E-05
+       8    3      0.63643325E-05      0.41879063E-05
+       8    4      0.20147874E-05      0.79400256E-06
+       8    5     -0.85004298E-06      0.35958076E-07
+       9    1      0.31912174E-05      0.80404131E-07
+       9    2      0.70499852E-05      0.30633455E-05
+       9    3     -0.33391668E-04     -0.12960348E-04
+       9    4     -0.20047880E-04     -0.42493590E-05
+       9    5      0.15627171E-04      0.52180281E-05
+      10    1     -0.11337774E-04     -0.68126053E-05
+      10    2     -0.86602063E-06     -0.60934829E-06
+      10    3      0.82832553E-04      0.18289352E-04
+      10    4      0.49616544E-04      0.15463470E-04
+      10    5     -0.84983686E-04     -0.17829584E-04
+      11    1      0.80257863E-04      0.11316880E-04
+      11    2     -0.44924902E-04     -0.33331285E-05
+      11    3      0.61040633E-05     -0.71960847E-06
+      11    4     -0.92770025E-05      0.43806288E-05
+      11    5     -0.54972667E-07      0.60064419E-06
+      12    1     -0.44019525E-04     -0.17106454E-05
+      12    2      0.38544745E-05      0.14033288E-05
+      12    3      0.61129045E-04      0.11535247E-04
+      12    4      0.36142798E-04     -0.20029592E-05
+      12    5     -0.12208707E-02     -0.21882354E-03
+      13    1     -0.81498350E-05     -0.39952152E-05
+      13    2     -0.19550691E-04     -0.22647337E-05
+      13    3     -0.28474905E-04     -0.27439764E-05
+      13    4     -0.26865332E-01     -0.48609310E-02
+      13    5      0.14423924E-05     -0.95978774E-06
+      14    1      0.64053917E-01     -0.42216085E-02
+      14    2     -0.69701819E+00      0.45894093E-01
+      14    3      0.99961741E-03     -0.12880546E-04
+      14    4      0.42674395E-04      0.16715438E-05
+      14    5      0.14277452E-03      0.61490244E-05
+      15    1     -0.69960600E+00      0.46202891E-01
+      15    2     -0.64518346E-01      0.42565931E-02
+      15    3     -0.15150630E-03      0.19192379E-05
+      15    4     -0.24648394E-03     -0.87902305E-05
+      15    5     -0.22267686E-04     -0.93539178E-06
+
+       **************
+
+
+       ! The    5 -th eigen state. The transition energy is:        0.45169235
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00002;    Y      -0.00002
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.51931;    Y      -0.00000    total       0.51931  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.23081296E-03    0.25887698E-08    0.34927265E-08    0.23080688E-03
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    4       -0.63142       -0.00091
+      15    4        0.34588        0.00046
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1     -0.24103979E-04      0.21574868E-05
+       6    2      0.43236913E-04      0.12470549E-04
+       6    3     -0.10279813E-04     -0.27958160E-05
+       6    4     -0.91910044E-05     -0.24628102E-05
+       6    5      0.31807256E-05      0.55520028E-06
+       7    1      0.79011829E-04     -0.87474307E-06
+       7    2     -0.49753560E-04     -0.23286288E-05
+       7    3     -0.21021082E-05     -0.46761306E-06
+       7    4     -0.24595754E-04     -0.65132105E-05
+       7    5      0.12128888E-05      0.31680917E-06
+       8    1     -0.25646913E-05     -0.30059478E-05
+       8    2      0.65379108E-04     -0.10179144E-05
+       8    3     -0.13971837E-04     -0.41742186E-05
+       8    4     -0.14225334E-05     -0.14308468E-06
+       8    5      0.30686467E-05      0.12859109E-05
+       9    1     -0.29552788E-04     -0.54158784E-06
+       9    2     -0.70302408E-04     -0.72178432E-05
+       9    3      0.24542907E-04      0.36427119E-05
+       9    4     -0.28178631E-04     -0.81075344E-05
+       9    5     -0.64961431E-05     -0.54834207E-06
+      10    1     -0.16427970E-04     -0.22758682E-05
+      10    2     -0.13118732E-04     -0.84922330E-06
+      10    3      0.61959616E-05      0.20814990E-05
+      10    4     -0.24981654E-04     -0.71481052E-05
+      10    5      0.27533811E-05     -0.14171941E-05
+      11    1     -0.71637499E-04      0.10010093E-04
+      11    2     -0.12273721E-04      0.13779092E-06
+      11    3      0.17434066E-03      0.28052357E-04
+      11    4     -0.36520241E-04     -0.45222987E-05
+      11    5     -0.15762080E-03     -0.30194138E-04
+      12    1      0.96947405E-03      0.72819135E-04
+      12    2      0.12529052E-03      0.18416152E-04
+      12    3      0.33142696E-04      0.41883230E-05
+      12    4      0.42796909E-04      0.39364767E-05
+      12    5     -0.99583018E-05     -0.20433834E-05
+      13    1     -0.89605847E-03     -0.73403345E-04
+      13    2      0.14083214E-02      0.72089351E-04
+      13    3     -0.76940902E-04     -0.94733498E-05
+      13    4      0.21452405E-04      0.16652995E-05
+      13    5      0.23265866E-04      0.33902348E-05
+      14    1     -0.78247298E-04      0.45651681E-05
+      14    2     -0.26988113E-04      0.31374512E-05
+      14    3      0.63775931E-03     -0.13528440E-04
+      14    4     -0.63141632E+00     -0.91457104E-03
+      14    5     -0.88717144E-02     -0.82779641E-05
+      15    1     -0.15001518E-03      0.17632350E-04
+      15    2      0.75026447E-04     -0.84773391E-05
+      15    3      0.97479127E-03      0.92930769E-05
+      15    4      0.34587791E+00      0.46423421E-03
+      15    5     -0.30151113E-01     -0.43346365E-04
+
+       **************
+
+
+       ! The    6 -th eigen state. The transition energy is:        0.45177433
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00002;    Y      -0.00002
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.64415;    Y      -0.00000    total       0.64415  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.84315539E-03    0.16141702E-08    0.10145865E-08    0.84315276E-03
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    4       -0.26066       -0.00036
+      15    4       -0.75862       -0.00094
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1     -0.10047569E-03     -0.17416843E-04
+       6    2      0.55734196E-06     -0.29002616E-06
+       6    3     -0.61843761E-05     -0.23589169E-05
+       6    4      0.29282417E-04      0.88165876E-05
+       6    5      0.20796949E-05      0.84183345E-06
+       7    1      0.15407281E-04     -0.21963189E-05
+       7    2      0.24058325E-04      0.91572153E-06
+       7    3     -0.12281323E-04     -0.36138087E-05
+       7    4      0.31931314E-05      0.15170220E-05
+       7    5      0.46439112E-05      0.14706385E-05
+       8    1      0.73372745E-04      0.45050936E-05
+       8    2      0.40635797E-04     -0.17572289E-05
+       8    3      0.13187078E-04      0.31456634E-05
+       8    4     -0.62432696E-06      0.14394453E-06
+       8    5     -0.39483895E-05     -0.99064557E-06
+       9    1      0.37682981E-04     -0.24385097E-05
+       9    2      0.12121729E-04     -0.57721346E-06
+       9    3      0.56088525E-05      0.18859535E-05
+       9    4     -0.73320766E-05     -0.19658376E-05
+       9    5     -0.31536812E-05     -0.90017009E-06
+      10    1      0.16809291E-04      0.22152723E-05
+      10    2     -0.63338701E-04     -0.13814449E-05
+      10    3      0.57887539E-04      0.11678914E-04
+      10    4     -0.15821705E-04     -0.48950847E-05
+      10    5     -0.22190762E-04     -0.56933028E-05
+      11    1     -0.44957340E-04      0.22999285E-05
+      11    2      0.78579683E-04     -0.29723714E-05
+      11    3     -0.47111930E-03     -0.71297370E-04
+      11    4      0.91427825E-04      0.17193019E-04
+      11    5      0.34586634E-03      0.65534925E-04
+      12    1      0.78519272E-03      0.43876395E-04
+      12    2     -0.12863112E-02     -0.33939944E-04
+      12    3      0.34412019E-04      0.36055404E-05
+      12    4     -0.30473792E-04     -0.61782350E-05
+      12    5     -0.12458709E-04     -0.15453024E-05
+      13    1      0.20021469E-02      0.13980643E-03
+      13    2      0.11175606E-02      0.42690022E-04
+      13    3      0.33116659E-05      0.51861324E-06
+      13    4     -0.13579287E-03     -0.20167897E-04
+      13    5     -0.37987336E-05     -0.60010942E-06
+      14    1      0.14208393E-04     -0.68291001E-05
+      14    2      0.86524429E-04     -0.11811231E-04
+      14    3     -0.82698896E-03     -0.35472767E-05
+      14    4     -0.26065977E+00     -0.35585018E-03
+      14    5      0.23150083E-01      0.32838545E-04
+      15    1      0.26465948E-03     -0.24654089E-04
+      15    2      0.73188076E-04     -0.94708411E-05
+      15    3      0.10322680E-02     -0.24131150E-04
+      15    4     -0.75861770E+00     -0.94321596E-03
+      15    5     -0.12787443E-01     -0.68781395E-05
+
+       **************
+
+
+       ! The    7 -th eigen state. The transition energy is:        0.45216526
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00004;    Y      -0.00004
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.30440;    Y      -0.00000    total       0.30440  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.25293894E-01    0.37851651E-07    0.10465118E-07    0.25293845E-01
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      15    4       -0.54433       -0.00044
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1     -0.25208129E-04     -0.15617945E-04
+       6    2     -0.64456722E-05      0.91386676E-06
+       6    3      0.54259195E-05      0.28788480E-05
+       6    4      0.79860216E-05      0.52997886E-05
+       6    5     -0.52361062E-06     -0.83275529E-06
+       7    1      0.30175393E-04     -0.23194645E-06
+       7    2     -0.58421088E-04      0.28516004E-05
+       7    3     -0.28886780E-04     -0.71824398E-05
+       7    4      0.22385222E-04      0.61601075E-05
+       7    5      0.85967921E-05      0.23920862E-05
+       8    1     -0.78827585E-04     -0.57288390E-05
+       8    2     -0.17372705E-04     -0.87316888E-06
+       8    3     -0.96818402E-05     -0.27414689E-05
+       8    4      0.89920252E-05      0.22504115E-05
+       8    5      0.28362550E-05      0.95548734E-06
+       9    1     -0.92145422E-04     -0.65268511E-06
+       9    2     -0.53589520E-04     -0.10933018E-05
+       9    3     -0.13208744E-04     -0.51427230E-05
+       9    4      0.54347981E-04      0.12587545E-04
+       9    5      0.53938384E-05      0.23720174E-05
+      10    1     -0.10790581E-04     -0.26046091E-07
+      10    2      0.75392852E-04      0.16385680E-05
+      10    3      0.17501247E-04      0.61886247E-05
+      10    4      0.94866224E-05      0.28205641E-05
+      10    5     -0.88495666E-05     -0.37102653E-05
+      11    1     -0.55409796E-05      0.39067698E-05
+      11    2     -0.56919807E-04      0.92479336E-05
+      11    3     -0.28362514E-02     -0.41620806E-03
+      11    4      0.61315139E-04      0.10178472E-04
+      11    5      0.20097956E-02      0.36943711E-03
+      12    1      0.78779625E-05      0.22081063E-04
+      12    2      0.42082791E-02      0.23787908E-03
+      12    3     -0.11717012E-03     -0.11869214E-04
+      12    4     -0.42580254E-04     -0.56148149E-05
+      12    5      0.40110567E-04      0.52381529E-05
+      13    1      0.29350434E-02      0.24153714E-03
+      13    2     -0.41053760E-03     -0.61720659E-06
+      13    3      0.93851523E-04      0.96839994E-05
+      13    4     -0.11050600E-03     -0.17292954E-04
+      13    5     -0.26519898E-04     -0.38269199E-05
+      14    1      0.16220267E-03     -0.11456859E-04
+      14    2      0.13406900E-04      0.30593170E-05
+      14    3      0.14433540E-02      0.28287411E-07
+      14    4      0.81674691E-01      0.78771974E-04
+      14    5     -0.37245889E-01     -0.34104466E-04
+      15    1      0.68365378E-04     -0.71589195E-05
+      15    2      0.15854604E-03     -0.13410206E-04
+      15    3      0.82738467E-03     -0.31787466E-04
+      15    4     -0.54432770E+00     -0.44398402E-03
+      15    5     -0.30152430E-02      0.91310220E-05
+
+       **************
+
+
+       ! The    8 -th eigen state. The transition energy is:        0.45292610
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00000;    Y      -0.00000
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.53540;    Y      -0.00000    total       0.53540  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.94716045E-07    0.12702423E-12    0.38126731E-09    0.94334650E-07
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    4       -0.72553       -0.00007
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.35996057E-04     -0.62528792E-07
+       6    2     -0.43836979E-04     -0.37223121E-05
+       6    3      0.16402385E-06     -0.10762755E-06
+       6    4      0.34268784E-06     -0.55950134E-06
+       6    5     -0.71950313E-06     -0.64216093E-07
+       7    1     -0.69658457E-04      0.15532251E-05
+       7    2      0.24223471E-04      0.42873505E-05
+       7    3      0.65192822E-06      0.67640610E-06
+       7    4     -0.21882374E-05     -0.19803118E-05
+       7    5     -0.34209287E-06     -0.21231516E-06
+       8    1     -0.30262702E-04     -0.33667227E-05
+       8    2     -0.76651214E-04      0.16945572E-05
+       8    3     -0.11417192E-05      0.39865906E-07
+       8    4     -0.40941216E-06     -0.65731591E-06
+       8    5      0.42583791E-06     -0.78014894E-07
+       9    1     -0.34428352E-05      0.30237603E-05
+       9    2      0.37148112E-04      0.89192017E-06
+       9    3     -0.27954474E-05      0.17631885E-05
+       9    4     -0.16386106E-05     -0.73698065E-06
+       9    5      0.24550978E-05     -0.48871310E-06
+      10    1      0.27286527E-04      0.16421530E-05
+      10    2      0.22213351E-04     -0.38554541E-05
+      10    3     -0.47018705E-05     -0.17887183E-05
+      10    4      0.52034293E-07      0.41470816E-06
+      10    5     -0.49976902E-06     -0.36481099E-06
+      11    1      0.96704908E-04     -0.21547668E-05
+      11    2     -0.49229507E-04      0.44437627E-06
+      11    3     -0.99800491E-05     -0.11566639E-05
+      11    4     -0.22949717E-05     -0.12386897E-05
+      11    5      0.53784343E-05      0.53720030E-06
+      12    1      0.30848922E-03      0.29694380E-04
+      12    2      0.40912720E-03     -0.54371379E-05
+      12    3      0.10140269E-06      0.39579652E-06
+      12    4     -0.15630476E-04     -0.21360235E-05
+      12    5      0.52339580E-06     -0.41654050E-06
+      13    1     -0.23770007E-04      0.16846182E-05
+      13    2     -0.13803757E-02     -0.43576222E-04
+      13    3     -0.20358290E-05     -0.11189406E-05
+      13    4     -0.51566877E-05      0.15154904E-05
+      13    5     -0.49497215E-06      0.14396369E-06
+      14    1     -0.51127032E-04      0.14770755E-04
+      14    2     -0.45622262E-04      0.45310963E-05
+      14    3      0.36122183E-04      0.48117329E-05
+      14    4     -0.72552919E+00     -0.65141935E-04
+      14    5     -0.45990310E-02     -0.24398464E-05
+      15    1     -0.10708472E-04     -0.60835694E-06
+      15    2     -0.87284922E-04      0.15109924E-04
+      15    3     -0.12044396E-02      0.23827989E-05
+      15    4     -0.89752120E-01      0.11085933E-06
+      15    5      0.30382619E-01     -0.10555590E-05
+
+       **************
+
+
+       ! The    9 -th eigen state. The transition energy is:        0.45959636
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00001;    Y      -0.00001
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.99784;    Y      -0.00000    total       0.99784  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.10805395E-06    0.28147108E-07    0.20715099E-07    0.59191745E-07
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      15    5        0.99874        0.00011
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.20201958E-05     -0.34926240E-05
+       6    2     -0.25449651E-05      0.45028355E-05
+       6    3      0.99163959E-05      0.34746980E-05
+       6    4      0.45871805E-05      0.14396702E-05
+       6    5     -0.42253823E-05     -0.15086931E-05
+       7    1     -0.18647189E-02     -0.45441121E-03
+       7    2     -0.14311133E-03     -0.32933889E-04
+       7    3      0.57551476E-05      0.15765416E-05
+       7    4     -0.12131491E-04     -0.38076098E-05
+       7    5     -0.20026769E-05     -0.68003419E-06
+       8    1      0.81655422E-04      0.15660107E-04
+       8    2     -0.10876299E-02     -0.24474845E-03
+       8    3      0.35871518E-05      0.11324172E-05
+       8    4      0.31660006E-05      0.10082051E-05
+       8    5     -0.11972797E-05     -0.43330738E-06
+       9    1      0.52925636E-03      0.96440385E-04
+       9    2     -0.13029499E-02     -0.23695395E-03
+       9    3      0.13118138E-04      0.31059975E-05
+       9    4     -0.37953666E-05     -0.94844997E-06
+       9    5     -0.38797796E-05     -0.85102247E-06
+      10    1     -0.12884814E-02     -0.22952465E-03
+      10    2     -0.52121026E-03     -0.95591927E-04
+      10    3      0.19784263E-05      0.16752935E-06
+      10    4      0.23072526E-04      0.53946345E-05
+      10    5      0.51570058E-06     -0.93314043E-06
+      11    1     -0.14709670E-04      0.32700398E-06
+      11    2     -0.48339031E-05     -0.14516551E-05
+      11    3      0.62741191E-04      0.90340915E-05
+      11    4      0.61956850E-03      0.92264860E-04
+      11    5     -0.20088444E-04     -0.36460742E-05
+      12    1      0.19563809E-04      0.43640911E-05
+      12    2     -0.44869859E-04     -0.41691544E-06
+      12    3     -0.25827940E-04     -0.35980259E-05
+      12    4     -0.16532904E-04     -0.17100882E-05
+      12    5      0.73145788E-05      0.12912526E-05
+      13    1     -0.25235761E-04     -0.18554344E-05
+      13    2      0.61277491E-04     -0.20920791E-05
+      13    3     -0.65674597E-04     -0.62900225E-05
+      13    4      0.26740939E-04      0.53079957E-05
+      13    5      0.19120106E-04      0.25312946E-05
+      14    1     -0.13827574E-03      0.16334925E-04
+      14    2      0.60091583E-04     -0.79828371E-05
+      14    3     -0.13007335E-03      0.70696335E-05
+      14    4     -0.90419618E-04      0.57459131E-06
+      14    5     -0.18520469E-01     -0.43370220E-05
+      15    1     -0.95701109E-04      0.11896286E-04
+      15    2     -0.14200036E-03      0.16834171E-04
+      15    3      0.17616902E-02     -0.94024956E-04
+      15    4      0.18121565E-02     -0.14130140E-04
+      15    5      0.99874108E+00      0.11079962E-03
+
+       **************
+
+
+       ! The   10 -th eigen state. The transition energy is:        0.45970151
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00000;    Y      -0.00000
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.99782;    Y      -0.00000    total       0.99782  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.42609827E-07    0.84103807E-08    0.32049841E-07    0.21496054E-08
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    5        0.99873        0.00011
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1     -0.55954100E-05      0.30371129E-05
+       6    2     -0.27780529E-05     -0.26881454E-05
+       6    3      0.11129745E-05      0.41224881E-06
+       6    4     -0.80305076E-05     -0.25674822E-05
+       6    5     -0.23060552E-06     -0.65906718E-07
+       7    1      0.13592693E-03      0.36028163E-04
+       7    2     -0.18399876E-02     -0.44494732E-03
+       7    3     -0.67179370E-05     -0.17925349E-05
+       7    4     -0.69945370E-06      0.23846436E-06
+       7    5      0.17780272E-05      0.52387276E-06
+       8    1      0.10841319E-02      0.24213515E-03
+       8    2      0.77876668E-04      0.21844462E-04
+       8    3     -0.20347587E-05     -0.58734453E-06
+       8    4     -0.25923505E-05     -0.69264353E-06
+       8    5      0.26040052E-06      0.14270903E-06
+       9    1     -0.13087485E-02     -0.22751944E-03
+       9    2     -0.53512479E-03     -0.95998747E-04
+       9    3     -0.13240726E-04     -0.20690987E-05
+       9    4      0.46991291E-05      0.89615475E-06
+       9    5      0.51856713E-05      0.66529314E-06
+      10    1     -0.52579033E-03     -0.95701220E-04
+      10    2      0.13191394E-02      0.23188280E-03
+      10    3     -0.11261809E-04     -0.31162561E-05
+      10    4      0.31106074E-05     -0.86836955E-07
+      10    5      0.29712750E-05      0.40149351E-06
+      11    1     -0.65748203E-05     -0.20643489E-05
+      11    2     -0.85424401E-05      0.33268963E-05
+      11    3     -0.21758627E-05     -0.12709700E-05
+      11    4     -0.83755872E-04     -0.13584144E-04
+      11    5      0.26129254E-04      0.44943750E-05
+      12    1     -0.28607638E-04     -0.15513602E-05
+      12    2      0.97964818E-04     -0.54755444E-05
+      12    3      0.34217876E-05      0.16170626E-06
+      12    4      0.13387602E-04      0.17418342E-05
+      12    5     -0.15043325E-05     -0.75401504E-06
+      13    1     -0.35057824E-04     -0.20162139E-05
+      13    2     -0.57882996E-04      0.40756950E-05
+      13    3      0.48593645E-07      0.66482001E-07
+      13    4     -0.11876442E-04     -0.16381922E-06
+      13    5     -0.26972426E-06     -0.15530553E-08
+      14    1     -0.49785856E-04      0.97534167E-05
+      14    2     -0.47471541E-04      0.37390539E-05
+      14    3      0.17028315E-02     -0.90794599E-04
+      14    4      0.13122754E-03     -0.18422044E-05
+      14    5      0.99873276E+00      0.10977373E-03
+      15    1      0.25327121E-03     -0.25824848E-04
+      15    2     -0.47701245E-04      0.94278629E-05
+      15    3     -0.63890012E-04      0.36231593E-05
+      15    4     -0.20337310E-04      0.19142223E-06
+      15    5      0.18576920E-01     -0.32552586E-06
+
+       **************
+
+
+       ! The   11 -th eigen state. The transition energy is:        0.47049404
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00001;    Y      -0.00001
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.00008;    Y      -0.00000    total       0.00008  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.23149692E-06    0.33750170E-07    0.19765087E-06    0.95871260E-10
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.74924225E-05     -0.90843526E-06
+       6    2     -0.20551525E-04     -0.56804431E-05
+       6    3      0.23601321E-05      0.21086597E-05
+       6    4     -0.29586623E-04     -0.10380942E-04
+       6    5     -0.24141959E-06     -0.54500434E-06
+       7    1      0.50411454E-04      0.15189752E-04
+       7    2     -0.19737559E-02     -0.44809602E-03
+       7    3     -0.74445904E-05     -0.17642638E-05
+       7    4     -0.77807599E-05     -0.85199634E-06
+       7    5      0.13980808E-05      0.39606166E-06
+       8    1      0.14061933E-02      0.30479707E-03
+       8    2      0.49942750E-04      0.10038910E-04
+       8    3     -0.84581178E-05     -0.15317201E-05
+       8    4      0.55141033E-05      0.10689479E-05
+       8    5      0.17875728E-05      0.50817340E-06
+       9    1      0.69613005E-04     -0.12078783E-04
+       9    2     -0.42086284E-03     -0.68805367E-04
+       9    3     -0.41945112E-05     -0.22205756E-05
+       9    4      0.63456050E-05      0.20298262E-05
+       9    5      0.27588581E-05      0.42779067E-06
+      10    1     -0.35244585E-03     -0.43101596E-04
+      10    2      0.12471519E-02      0.23647572E-03
+      10    3     -0.95921379E-05     -0.34688638E-05
+      10    4      0.31832354E-05      0.74678964E-06
+      10    5      0.16228091E-06      0.21018529E-05
+      11    1      0.11586845E-03     -0.62708746E-05
+      11    2     -0.20117226E-05     -0.34798289E-07
+      11    3      0.34682158E-05      0.12187589E-06
+      11    4     -0.31769062E-04     -0.38229366E-05
+      11    5      0.36646593E-04      0.46182197E-05
+      12    1     -0.48889274E-03     -0.60746111E-05
+      12    2      0.39758427E-03     -0.14883080E-05
+      12    3     -0.31719895E-04     -0.34734278E-05
+      12    4      0.93000906E-05      0.28259860E-05
+      12    5      0.71487356E-05      0.67319519E-06
+      13    1      0.40523863E-03     -0.40012825E-05
+      13    2      0.11577446E-02      0.35000388E-05
+      13    3      0.26648822E-04      0.44172450E-06
+      13    4      0.16052588E-05      0.15174940E-05
+      13    5     -0.88926144E-05     -0.59044207E-06
+      14    1      0.37581025E-03     -0.55337802E-04
+      14    2     -0.40574301E-03      0.52145878E-04
+      14    3      0.23499746E-02     -0.18848269E-03
+      14    4      0.74934683E-02      0.85208799E-05
+      14    5      0.37246321E-03      0.14386809E-06
+      15    1      0.46428961E-03     -0.62836482E-04
+      15    2      0.38732052E-03     -0.54578316E-04
+      15    3      0.33855294E-03     -0.16268358E-04
+      15    4     -0.17685403E-02     -0.58783941E-06
+      15    5     -0.24025240E-03      0.16963831E-05
+
+       **************
+
+
+       ! The   12 -th eigen state. The transition energy is:        0.47056571
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00001;    Y      -0.00001
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.00008;    Y      -0.00000    total       0.00008  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.50572403E-07    0.23098653E-07    0.21244558E-07    0.62291925E-08
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.38401884E-05     -0.26117116E-05
+       6    2     -0.40674111E-04     -0.56706954E-05
+       6    3      0.10454832E-04      0.36501850E-05
+       6    4     -0.19740265E-04     -0.53031168E-05
+       6    5     -0.32232898E-05     -0.12407115E-05
+       7    1     -0.21117365E-02     -0.44611790E-03
+       7    2     -0.48845735E-04     -0.12088481E-04
+       7    3      0.28673114E-05      0.91392036E-06
+       7    4     -0.28461548E-04     -0.89910760E-05
+       7    5     -0.12614805E-05     -0.34223790E-06
+       8    1      0.71316508E-04      0.99935862E-05
+       8    2     -0.15167584E-02     -0.30712634E-03
+       8    3     -0.27152523E-06      0.75972135E-06
+       8    4      0.24301466E-05      0.66919478E-06
+       8    5     -0.12276201E-05     -0.31950112E-06
+       9    1      0.29720226E-03      0.43060673E-04
+       9    2     -0.12949900E-02     -0.22572008E-03
+       9    3      0.24328447E-05      0.21656181E-07
+       9    4     -0.10984154E-04     -0.24495048E-05
+       9    5      0.18367750E-05     -0.56985742E-06
+      10    1     -0.17128613E-03     -0.15437760E-04
+      10    2     -0.37783737E-03     -0.65455516E-04
+      10    3     -0.15266492E-04     -0.40316953E-05
+      10    4      0.40532512E-04      0.94336754E-05
+      10    5     -0.84284702E-05      0.34097430E-05
+      11    1     -0.11335281E-04      0.52134184E-05
+      11    2      0.91368915E-05      0.49302553E-05
+      11    3      0.32280669E-04      0.56663263E-05
+      11    4      0.70562831E-03      0.13107166E-03
+      11    5     -0.22651211E-05     -0.27264032E-05
+      12    1      0.15563642E-03      0.68195449E-05
+      12    2      0.13477317E-02     -0.10041364E-04
+      12    3     -0.32300234E-05     -0.16459949E-05
+      12    4      0.58094369E-05      0.22111127E-05
+      12    5     -0.25589205E-05     -0.15205044E-06
+      13    1      0.93948077E-04     -0.55349383E-05
+      13    2     -0.63191749E-03     -0.42713770E-05
+      13    3     -0.10295635E-03     -0.11440509E-04
+      13    4      0.26871172E-04      0.74729051E-05
+      13    5      0.31845961E-04      0.47845136E-05
+      14    1      0.19042699E-03     -0.23437224E-04
+      14    2     -0.15498248E-03      0.24173270E-04
+      14    3     -0.95784290E-04      0.13144869E-04
+      14    4     -0.15273632E-02     -0.50034107E-05
+      14    5     -0.33925298E-04     -0.61684981E-06
+      15    1      0.15101626E-03     -0.21889492E-04
+      15    2      0.21184399E-03     -0.23351371E-04
+      15    3      0.33840351E-02     -0.20009449E-03
+      15    4     -0.71036151E-02     -0.15109474E-04
+      15    5     -0.74029199E-03      0.39986420E-05
+
+       **************
+
+
+       ! The   13 -th eigen state. The transition energy is:        0.47959384
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00474;    Y      -0.00474
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.20726;    Y      -0.00347    total       0.20379  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.13582755E+00    0.59714612E-02    0.12985609E+00    0.25571415E-08
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    1       -0.14382        0.01859
+      14    2        0.28894       -0.03731
+      15    1       -0.28697        0.03711
+      15    2       -0.14348        0.01856
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1     -0.30526535E-04      0.63450489E-05
+       6    2      0.34542632E-05      0.10765862E-04
+       6    3      0.29611174E-06      0.31762515E-06
+       6    4      0.88663448E-02      0.28750836E-02
+       6    5      0.33434500E-05      0.11405186E-05
+       7    1     -0.10094642E-03      0.21719644E-04
+       7    2     -0.74841022E-04     -0.19818555E-05
+       7    3     -0.39916621E-04     -0.96364783E-05
+       7    4     -0.80813215E-04     -0.21256532E-04
+       7    5      0.43073137E-04      0.11605477E-04
+       8    1      0.10336965E-04      0.25908164E-05
+       8    2      0.34288007E-04      0.21187651E-04
+       8    3      0.37009519E-05      0.10497539E-05
+       8    4      0.19682878E-04      0.68512204E-05
+       8    5     -0.26895888E-05     -0.96459244E-06
+       9    1     -0.91021016E-04      0.32521618E-05
+       9    2     -0.81124473E-04      0.48284331E-05
+       9    3     -0.46669894E-03     -0.87880184E-04
+       9    4     -0.63578781E-05     -0.13038808E-05
+       9    5      0.35645018E-03      0.78641773E-04
+      10    1     -0.18959312E-03     -0.30330797E-05
+      10    2      0.65278384E-04      0.13995871E-05
+      10    3     -0.51239364E-02     -0.98506435E-03
+      10    4      0.34543949E-04      0.90523563E-05
+      10    5      0.36054415E-02      0.80592744E-03
+      11    1      0.55705657E-03     -0.73164033E-05
+      11    2     -0.72091729E-03      0.40130293E-04
+      11    3     -0.18753963E-03     -0.22623652E-04
+      11    4      0.80818723E-04      0.13207288E-04
+      11    5      0.54130276E-04      0.79485942E-05
+      12    1     -0.42803293E-03     -0.13721708E-05
+      12    2     -0.18126029E-02      0.75569555E-05
+      12    3     -0.85605510E-04     -0.82204763E-05
+      12    4     -0.30899029E-02     -0.36366529E-03
+      12    5      0.18460018E-03      0.22582608E-04
+      13    1      0.51654950E-03     -0.28498610E-05
+      13    2      0.11311419E-02     -0.18253917E-05
+      13    3      0.10713426E-04      0.26588981E-05
+      13    4     -0.43810001E-02     -0.51896163E-03
+      13    5     -0.14684544E-03     -0.17139145E-04
+      14    1     -0.14382087E+00      0.18590300E-01
+      14    2      0.28893793E+00     -0.37312316E-01
+      14    3     -0.19560903E-03      0.15855316E-04
+      14    4      0.67515524E-04     -0.11623584E-05
+      14    5      0.32178734E-03     -0.60348920E-05
+      15    1     -0.28696722E+00      0.37112095E-01
+      15    2     -0.14347560E+00      0.18556413E-01
+      15    3      0.23631022E-03     -0.21547871E-04
+      15    4     -0.93687678E-03      0.20998662E-04
+      15    5     -0.62286574E-03      0.88998114E-05
+
+       **************
+
+
+       ! The   14 -th eigen state. The transition energy is:        0.47969988
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00475;    Y      -0.00475
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.20744;    Y      -0.00347    total       0.20397  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.13588152E+00    0.12998696E+00    0.58945524E-02    0.71391613E-08
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+      14    1       -0.28831        0.03728
+      14    2       -0.14363        0.01857
+      15    1        0.14304       -0.01852
+      15    2       -0.28835        0.03730
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.38633842E-04     -0.49456421E-05
+       6    2     -0.42819568E-06     -0.10439411E-04
+       6    3      0.11599111E-04      0.36124191E-05
+       6    4     -0.90661854E-05     -0.36390076E-05
+       6    5     -0.40361772E-03     -0.13114443E-03
+       7    1      0.16794680E-03     -0.95973403E-05
+       7    2      0.18517508E-03      0.24286812E-04
+       7    3      0.14873804E-04      0.36840157E-05
+       7    4      0.39138772E-04      0.99208929E-05
+       7    5     -0.92665320E-05     -0.25320649E-05
+       8    1     -0.79345187E-04     -0.16406450E-04
+       8    2      0.16094457E-04     -0.11684872E-04
+       8    3      0.20981808E-04      0.45256648E-05
+       8    4      0.24736258E-04      0.46224912E-05
+       8    5     -0.33930501E-04     -0.84624922E-05
+       9    1      0.85474114E-04     -0.45663571E-05
+       9    2      0.98456641E-04     -0.26693844E-05
+       9    3     -0.51704161E-02     -0.99802259E-03
+       9    4      0.11142351E-04      0.24964345E-05
+       9    5      0.37011626E-02      0.83118690E-03
+      10    1      0.17152967E-03      0.37447587E-06
+      10    2     -0.46093176E-04      0.15600628E-05
+      10    3      0.49829679E-03      0.94011783E-04
+      10    4     -0.79732293E-05     -0.31261579E-05
+      10    5     -0.34074735E-03     -0.73855288E-04
+      11    1     -0.56544806E-03      0.91870774E-05
+      11    2      0.83887844E-03     -0.35520837E-04
+      11    3     -0.12040335E-03     -0.13995245E-04
+      11    4      0.54394210E-04      0.71829285E-05
+      11    5      0.44307703E-04      0.74543291E-05
+      12    1      0.44800562E-03      0.21048877E-05
+      12    2      0.18906700E-02     -0.88187601E-05
+      12    3      0.19268749E-04      0.21452654E-05
+      12    4     -0.42285624E-02     -0.49781835E-03
+      12    5     -0.13899788E-03     -0.17325099E-04
+      13    1     -0.60592051E-03     -0.65755171E-06
+      13    2     -0.11835231E-02      0.25302860E-05
+      13    3      0.34341057E-04      0.16110564E-05
+      13    4      0.32260112E-02      0.38237211E-03
+      13    5     -0.21604250E-03     -0.25170541E-04
+      14    1     -0.28831302E+00      0.37284430E-01
+      14    2     -0.14363485E+00      0.18565830E-01
+      14    3      0.38310491E-03     -0.28881423E-04
+      14    4      0.25623391E-03     -0.16380163E-05
+      14    5     -0.43596142E-03      0.12499652E-04
+      15    1      0.14304380E+00     -0.18517305E-01
+      15    2     -0.28835212E+00      0.37298826E-01
+      15    3      0.20036659E-03     -0.15239692E-04
+      15    4      0.54860637E-04     -0.90121267E-06
+      15    5     -0.28617464E-03      0.63583030E-05
+
+       **************
+
+
+       ! The   15 -th eigen state. The transition energy is:        0.48292909
+
+     The two digitals below indicate the importance of doing beyong TDA: 
+
+     Components: X       1.00005;    Y      -0.00005
+
+     In the occ-virt project subspace the total Fxy is:
+
+     X       0.00026;    Y      -0.00001    total       0.00025  /      1.00000
+
+     The Chi_i_i is     Total          1               2               3
+
+                     0.59082015E-05    0.71795546E-06    0.51706922E-05    0.19553789E-07
+
+     Now is the components analysis of this transition.
+
+     First we print out only the principle components.
+
+     occ     virt       FX              FY
+
+
+     Now for all the calculated particle and hole pairs : 
+
+     occ     virt       FX              FY
+
+       6    1      0.35413921E-04      0.23854676E-06
+       6    2     -0.90904996E-06     -0.74802822E-05
+       6    3      0.37189738E-05      0.11693808E-07
+       6    4     -0.66965849E-04     -0.22067765E-04
+       6    5     -0.25930969E-05     -0.52977406E-09
+       7    1      0.94619437E-02      0.19718009E-02
+       7    2      0.11228385E-02      0.22933476E-03
+       7    3     -0.15676563E-05     -0.41367053E-06
+       7    4      0.13757802E-04      0.39193050E-05
+       7    5      0.58276718E-06      0.28239754E-06
+       8    1     -0.83403859E-03     -0.15542269E-03
+       8    2      0.69065337E-02      0.13192676E-02
+       8    3      0.11109321E-05      0.33308041E-06
+       8    4      0.27772288E-05      0.55665879E-06
+       8    5     -0.75549935E-06     -0.42633021E-07
+       9    1      0.33196787E-03      0.46094792E-04
+       9    2     -0.81249676E-03     -0.12309342E-03
+       9    3      0.33812048E-04     -0.51085894E-06
+       9    4     -0.32201050E-05     -0.96351517E-06
+       9    5     -0.19292495E-04     -0.74508098E-06
+      10    1     -0.91026775E-03     -0.12779343E-03
+      10    2     -0.31176283E-03     -0.45152423E-04
+      10    3      0.40658488E-04      0.48576250E-05
+      10    4     -0.31297633E-04     -0.64233384E-05
+      10    5     -0.39366384E-04     -0.35434069E-05
+      11    1     -0.24201885E-04     -0.34177596E-05
+      11    2     -0.27166778E-04      0.24711377E-05
+      11    3      0.11085312E-03      0.10368529E-04
+      11    4      0.83514952E-03      0.12734628E-03
+      11    5     -0.32022198E-04     -0.30833406E-05
+      12    1      0.37693298E-03     -0.14217057E-05
+      12    2      0.10906623E-03     -0.15377683E-05
+      12    3      0.10588596E-04      0.16443243E-05
+      12    4      0.85448906E-04      0.55872994E-05
+      12    5     -0.52377935E-05     -0.17873691E-05
+      13    1     -0.17017461E-03     -0.44943052E-06
+      13    2      0.26608534E-03     -0.19303253E-06
+      13    3      0.40156932E-04      0.27976093E-05
+      13    4      0.10326099E-04     -0.46848708E-06
+      13    5     -0.10653584E-04     -0.13570338E-05
+      14    1      0.12401577E-02     -0.16494195E-03
+      14    2     -0.18451582E-02      0.24616069E-03
+      14    3      0.10193072E-03     -0.12532398E-04
+      14    4     -0.11530581E-03      0.37051786E-05
+      14    5     -0.24139993E-03      0.39929635E-05
+      15    1      0.18882106E-02     -0.25335195E-03
+      15    2      0.12227036E-02     -0.16355351E-03
+      15    3      0.42511350E-02     -0.52916230E-03
+      15    4      0.24098458E-03     -0.13347806E-04
+      15    5     -0.95466062E-02      0.15555345E-03
+
+       **************
+
+     Now generate the eigenvalues list...
+     Now generate the spectrum plot file...
+     Finished linear response calculation...
+ 
+     lr_dav_main  :   1876.71s CPU    346.76s WALL (       1 calls)
+     read_wf      :      1.79s CPU      0.71s WALL (       1 calls)
+     lr_solve_e   :     10.86s CPU      1.95s WALL (       1 calls)
+     calc_residue :    194.16s CPU     35.34s WALL (      48 calls)
+     expan_basis  :    889.31s CPU    153.92s WALL (      39 calls)
+     matrix       :      0.48s CPU      0.09s WALL (      48 calls)
+     mGS_orth     :    855.88s CPU    148.17s WALL (     117 calls)
+     mGS_orth_pp  :     11.49s CPU      1.98s WALL (     117 calls)
+     one_step     :    755.56s CPU    147.50s WALL (      40 calls)
+ 
+     lr_apply     :    517.72s CPU     89.98s WALL (     980 calls)
+     lr_apply_int :    418.29s CPU     72.69s WALL (     490 calls)
+     lr_apply_no  :     99.42s CPU     17.29s WALL (     490 calls)
+ 
+     h_psi        :    189.46s CPU     32.94s WALL (    1033 calls)
+     lr_calc_dens :     71.54s CPU     12.37s WALL (     490 calls)
+     lr_dvpsi_e   :      9.93s CPU      1.75s WALL (       3 calls)
+     lr_dv_setup  :      1.85s CPU      0.58s WALL (       1 calls)
+     dv_of_drho   :    186.32s CPU     32.48s WALL (     490 calls)
+     interaction  :     54.94s CPU      9.54s WALL (     490 calls)
+     lr_dot       :    237.70s CPU     40.61s WALL (  213891 calls)
+     ortho        :      5.77s CPU      0.99s WALL (     986 calls)
+     lr_ortho     :      8.08s CPU      1.37s WALL (    1630 calls)
+ 
+ 
+     US routines
+     lr_dot_us    :    696.52s CPU    120.24s WALL (  213891 calls)
+     lr_sm1_psi   :      0.75s CPU      0.13s WALL (     980 calls)
+ 
+     General routines
+     calbec       :      2.48s CPU      0.42s WALL (    1092 calls)
+     fft          :     91.18s CPU     17.35s WALL (    4910 calls)
+     fftw         :    181.69s CPU     31.83s WALL (   24210 calls)
+     interpolate  :      1.42s CPU      0.24s WALL (     490 calls)
+     davcio       :      0.50s CPU      0.34s WALL (       5 calls)
+ 
+     Parallel routines
+ 
+ 
+     turboTDDFT   :  31m16.72s CPU   5m46.88s WALL
+
+ 
+   This run was terminated on:  11:10: 8  30Aug2019            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

@@ -1,0 +1,26 @@
+CONTROL {
+    !pseudo_dir = 'directory where pp-files are kept'
+}
+
+SYSTEM {
+    ecutwfc = 25.0 
+    ecutrho = 200.0 
+
+    occupations = 'smearing' 
+    smearing = 'methfessel-paxton' 
+    degauss = 0.03 
+}
+
+ELECTRONS {
+    mixing_beta = 0.3
+    ! to speed-up
+    tqr = .true.
+}
+
+ATOMIC_SPECIES {
+    C     1.0  C.pbe-rrkjus.UPF
+    O     1.0  O.pbe-rrkjus.UPF
+    Al    1.0  Al.pbe-n-kjpaw_psl.1.0.0.UPF
+    Rh    1.0  Rh.pbe-nd-rrkjus.UPF
+}
+

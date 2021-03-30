@@ -1,0 +1,49 @@
+# ========================================================================
+#
+# This script calculates ILDOSes of CO-Rh(100)
+#
+# ========================================================================
+
+
+# just in case if we run directly ?
+if { [::pwtk::pwi::getNAtoms] == 0 } {
+    import common-data.pwtk
+    if { [file exists pw.$name.relax.out] } {
+        CELL_PARAMETERS_fromXSF CO-Rh100-c2x2-2L.xsf
+        ATOMIC_POSITIONS_fromPWO pw.$name.relax.out
+    } else {
+        import relax.pwtk        
+    }
+}
+
+
+# REMARK: we use "input_pushpop { ... }, because we don't want that
+# modifications of input data herein affect other subsequent calculations
+
+input_pushpop {
+
+    printTitle ILDOS "Calculating ILDOS of $name"
+    
+    # request ILDOS 
+    INPUTPP {
+	plot_num = 10,
+    }
+
+    foreach {Emin Emax} {
+	-6.00 -5.50
+	-3.40 -3.30
+	-3.05 -2.95
+	-2.90 -2.70
+  	 0.80  3.00
+	 4.00  6.50
+    } {
+	set head ildos_${Emin}_${Emax}
+
+	INPUTPP " emin = $Emin, emax = $Emax "
+	PLOT " fileout = '$head.xsf' "
+
+	runPP pp.$head.in
+
+	print "ILDOS was written to XSF file :  $head.xsf\n"
+    }
+}

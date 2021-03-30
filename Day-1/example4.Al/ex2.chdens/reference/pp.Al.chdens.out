@@ -1,0 +1,46 @@
+### Running on host: assam
+
+     Program POST-PROC v.6.4.1 starts on 14Sep2019 at 14:28:33 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     2 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       2
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation      = PZ ( 1  1  0  0 0 0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min          45      45     18                  304      304      83
+     Max          46      46     19                  305      305      86
+     Sum          91      91     37                  609      609     169
+
+
+     Calling punch_plot, plot_num =   0
+     Writing data to file  al.pp
+     Reading data from file  al.pp
+
+     Writing data to be plotted to file chdens.xsf
+     Plot Type: 3D                     Output format: XCrySDen     
+
+     POST-PROC    :      0.19s CPU      0.21s WALL
+
+
+   This run was terminated on:  14:28:34  14Sep2019            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

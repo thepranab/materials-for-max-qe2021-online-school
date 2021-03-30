@@ -1,0 +1,65 @@
+
+     Program epsilon v.6.4.1 starts on 30Aug2019 at 10:46:53 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on      48 processor cores
+     Number of MPI processes:                 8
+     Threads/MPI process:                     6
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+
+
+     Reading input file...
+     Broadcasting variables...
+     Reading PW restart file...
+
+     Reading data from directory:
+     ./out/Benzene.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= BLYP
+                           (   1   3   1   3   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        2033    2033    505               162358   162358   20270
+     Max        2036    2036    508               162364   162364   20280
+     Sum       16281   16281   4053              1298895  1298895  162175
+ 
+
+
+     Fermi energy [eV] is:  0.00000
+     The system is a dielectric...
+     metalling system: redefining wmin =     0.000000
+
+     Performing eps calculation...
+
+     xx,yy,zz plasmon frequences [eV] are:     0.615960787    0.625834486    0.907930849
+
+     Writing output on file...
+
+
+     eps          :      0.10s CPU      0.07s WALL (       1 calls)
+     dipole_calc  :      0.08s CPU      0.04s WALL (       1 calls)
+ 
+ 
+     epsilon      :      2.59s CPU      0.99s WALL
+
+ 
+   This run was terminated on:  10:46:54  30Aug2019            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

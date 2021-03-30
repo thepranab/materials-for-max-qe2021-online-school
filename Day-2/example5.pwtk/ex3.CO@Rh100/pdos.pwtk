@@ -1,0 +1,157 @@
+# ========================================================================
+#
+# This script calculates PDOS and MOPDOS of CO-Rh(100) system and also
+# molecular-orbitals of CO molecule
+#
+# ========================================================================
+
+
+# just in case if we run directly ?
+if { [::pwtk::pwi::getNAtoms] == 0 } {
+    import common-data.pwtk
+    if { [file exists pw.$name.relax.out] } {
+        CELL_PARAMETERS_fromXSF CO-Rh100-c2x2-2L.xsf
+        ATOMIC_POSITIONS_fromPWO pw.$name.relax.out
+    } else {
+        import relax.pwtk        
+    }
+}
+
+
+# auxiliary procedure
+proc runPROJWFC_and_copy_xml {name} {
+    # ARGUMENT
+    #   name -- name to be used in I/O files
+    #
+    # PURPOSE
+    #   Perform projwfc.x calculation and copy the atomic_proj.xml to
+    #   current directory and rename it to proj.$name.xml.
+    #
+    # RETURN VALUE
+    #   The name of the copied atomic_proj.xml file
+    
+    runPROJWFC projwfc.$name.in
+    
+    set prefix [::pwtk::input::namelistGetVarValue CONTROL prefix trim]
+    file copy -force [outdir]/$prefix.save/atomic_proj.xml proj.$name.xml
+    return proj.$name.xml
+}
+
+    
+# REMARK: we use "input_pushpop { ... }, because we don't want that
+# modifications of input data herein affect other subsequent calculations
+
+input_pushpop {
+
+    # denser k-mesh for a better DOS
+    K_POINTS automatic {
+	8 8 1   1 1 1
+    }
+
+    # default projwfc.x input
+    PROJWFC {
+        ngauss  = 0
+        degauss = 0.01
+        DeltaE  = 0.05
+    }
+
+    input_pushpop {
+	# ------------------------------------------------------------------
+	# NSCF pw.x calculation
+	printTitle NSCF "NSCF calculation with denser K-points"
+	CONTROL { calculation = 'nscf' }
+        input_clear IONS
+	runPW pw.$name.nscf.in
+	
+	# --------------------------------------------------------------
+	# calculate PDOS of full system CO-Rh100 (projwfc.x calculation)
+	printTitle PDOS "PDOS calculation of $name"
+	set full_xml [runPROJWFC_and_copy_xml $name]
+    }
+
+    #--------------------------------------------------------------
+    # now we need to calculate CO molecule, because we need it's
+    # molecular orbitals as to be able to project DOS to its states
+
+    input_pushpop {
+	printTitle Fragment "Calculating CO molecule"
+	
+	# retain only CO; delete the Rh(100) slab    
+	deleteAtomsRange 3 end
+
+	# SCF PW.X calculaton of CO
+	CONTROL { calculation = 'scf' , prefix = 'CO' }
+	runPW pw.CO.scf.in
+
+	printTitle PDOS "PDOS calculation of CO fragment"
+	
+	# PDOS projwfc.x calculation of CO
+	set part_xml [runPROJWFC_and_copy_xml CO]
+
+	
+	# plot all molecular-orbitals of CO (valence and LUMO) 
+	
+	input_pushpop {
+	    printTitle MOs "Calculating all MOs of CO fragment"
+	    
+	    # pw.x calc with gamma K-point (required for signed psi^2)
+	    outdir_postfix CO.gamma
+	    K_POINTS gamma
+	    runPW pw.CO.scf.gamma.in; 
+
+            # CO has 10 valence electrons; HOMO = 5, LUMO = 6; but LUMO
+            # is doubly-degenerate, hence we plot psi2 for states 1 to 7
+	    INPUTPP {
+		plot_num = 7
+		lsign = .true. ,
+		filplot = 'psi2.CO'
+		kband = 1 7 
+		kpoint = 1
+	    }
+	    PLOT {
+		fileout = '.xsf'
+	    }
+	    runPP pp.CO.psi2.in
+	    print "\nMOs (psi^2) written to files:  psi2.CO_K*_B*.xsf\n"
+	}
+    }
+
+    # now let's make a MOPDOS of CO-Rh(100) system projected to
+    # molecular-orbitals of CO via molecularpdos.x calcuation
+
+    printTitle MOPDOS "Calculating MOPDOS of $name projected to MOs of CO"
+    
+    # specify molecularpdos.x input data
+    
+    MOPDOS "
+       ! full system: CO-Rh(100)
+       xmlfile_full = '$full_xml'
+       
+       ! here we need to specify atomic-orbitals of CO in CO-Rh(111) system (see file: projwfc.CO-Rh100.out)
+       i_atmwfc_beg_full=1
+       i_atmwfc_end_full=8, 
+       
+       ! consider all the bands
+       i_bnd_beg_full=1,
+       i_bnd_end_full=0, ! 0 means the last band
+       
+       ! CO fragment
+       xmlfile_part='$part_xml'
+       
+       i_atmwfc_beg_part=1
+       i_atmwfc_end_part=0, ! 0 means the last AO
+       
+       ! projection to HOMO-3, HOMO-2, HOMO-1, HOMO, LUMO, LUMO+1 
+       ! CO has 10 valence electrons; HOMO = 5, LUMO = 6
+       i_bnd_beg_part=2,
+       i_bnd_end_part=7,
+       
+       fileout ='$name.proj_to_CO'       
+       ngauss  = 0,
+       degauss = 0.01
+       DeltaE  = 0.05,
+    "
+
+    runMOLECULARPDOS molecularpdos.$name.in
+}
+

@@ -1,0 +1,55 @@
+load_fromPWI ../pw.al.scf.in
+
+# load PAW potential for Al
+ATOMIC_SPECIES {
+    Al 1.0  Al.pbe-n-kjpaw_psl.1.0.0.UPF
+}
+# all-electon charge density plotting requires larger cut-offs
+SYSTEM { ecutwfc = 30.0, ecutrho = 500.0 }
+
+set name Al-w-paw
+
+# ------------------------------------------------------------------------
+# run SCF pw.x calculation with PAW potential 
+
+runPW pw.$name.scf.in
+
+
+# ----------------------------------------------------------------------------
+# perform pp.x calculation, i.e. calculate all-electron VALENCE charge density
+
+printTitle "calculating all-electron VALENCE density (plot_num = 17)"
+
+INPUTPP {
+    plot_num = 17
+}
+PLOT {
+    nfile = 1 
+    iflag  = 3 
+    weight(1) = 1.0
+    output_format = 5 
+    fileout = 'all-electron-VALENCE-chdens.xsf' 
+}
+runPP pp.$name.all-electron-VALENCE-chdens.in
+
+
+# ----------------------------------------------------------------------------
+# perform pp.x calculation, i.e. calculate all-electron charge density
+
+printTitle "calculating all-electron total density (plot_num = 21)"
+
+INPUTPP { plot_num = 21 }
+PLOT { fileout = 'all-electron-total-chdens.xsf' }
+runPP pp.$name.all-electron-total-chdens.in
+
+
+print "--------------------------------------------------
+
+* to plot the all-electron VALENCE density execute:
+
+    exec xcrysden --xsf all-electron-VALENCE-chdens.xsf
+
+* to plot the all-electron total density execute:
+
+    exec xcrysden --xsf all-electron-total-chdens.xsf 
+"

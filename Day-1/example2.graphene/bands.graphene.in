@@ -1,0 +1,6 @@
+ &BANDS
+    prefix  = 'Graphene_1x1_PBE'
+    ! otudir  = '/tmp/'
+    filband = 'graphene.bands.dat'
+    lsym = .true.,
+ /

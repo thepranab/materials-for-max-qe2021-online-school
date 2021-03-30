@@ -1,0 +1,27 @@
+# ========================================================================
+#
+# This script runs relaxation of CO-Rh(100)
+#
+# ========================================================================
+
+# just in case if we run directly ?
+if { ! [info exists name] } {
+    import common-data.pwtk
+}
+
+
+# load cell-parameter and atomic-positions from XSF file (look into
+# the XSF file to undestand the structure)
+# N.B.: this routine needs to be updated before the school (TK)
+
+CELL_PARAMETERS_and_ATOMIC_POSITIONS_fromXSF CO-Rh100-c2x2-2L.xsf
+
+# fix the bottom layer of Rh atoms
+fixAtomsLast 2
+
+printTitle RELAX "Relax $name"
+runPW pw.$name.relax.in
+
+# load the optimized coordinates from the above pw.x run into PWTK,
+# because we need optimized coordinates for a few examples below
+ATOMIC_POSITIONS_fromPWO pw.$name.relax.out

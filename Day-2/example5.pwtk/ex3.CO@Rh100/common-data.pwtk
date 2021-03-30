@@ -1,0 +1,31 @@
+# load the common data
+import ../common.pwtk
+
+# add only what is needed
+
+CONTROL {
+    calculation = 'relax' 
+    prefix = 'CO-Rh100'
+    ! to speed-up
+    forc_conv_thr = 5e-3
+    etot_conv_thr = 1e-3
+}
+SYSTEM  { ibrav = 0 }
+ELECTRONS { conv_thr = 1d-8 }
+IONS { upscale = 10.0 }
+
+K_POINTS automatic {
+    4 4 1   1 1 1 
+}
+
+# for pp.x we request a fast 3D datagrid calculation of the whole
+# unit-cell in XSF format
+
+PLOT {
+    iflag = 3 ,
+    output_format = 5 ,
+}
+
+# the name of the structure (used for I/O filenames)
+set name CO-Rh100
+

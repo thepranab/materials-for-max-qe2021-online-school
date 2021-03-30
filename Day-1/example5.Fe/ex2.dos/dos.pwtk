@@ -1,0 +1,57 @@
+load_fromPWI ../pw.fe_fm.scf.in
+
+# please insert ecutwfc & ecutrho values as determined in the "ecut"
+# excercise
+
+#SYSTEM " ecutwfc = ...insert...
+#         ecutrho = ...insert... "
+
+
+set name Fe
+
+# ------------------------------------------------------------------------
+# run SCF pw.x calculation
+#
+runPW pw.$name.scf.in
+
+# ------------------------------------------------------------------------
+# run "calculation = 'nscf'" pw.x calculation (with a denser k-mesh
+# for a better DOS)
+CONTROL { calculation = 'nscf' }
+SYSTEM  { occupations = 'tetrahedra' ,
+          degauss = ,  ! this is how variable is unset in PWTK
+}
+K_POINTS automatic {
+    12 12 12   1 1 1
+}
+runPW pw.$name.nscf.in
+
+
+# ------------------------------------------------------------------------
+# run dos.x calculation
+
+DOS "
+    fildos = '$name.dos'
+    Emin = 5.0
+    Emax = 20.0,
+    DeltaE = 0.1
+"
+runDOS dos.$name.in
+
+
+# ------------------------------------------------------------------------
+# run projwfc.x calculation
+
+PROJWFC "
+    filpdos = '$name.pdos'
+    Emin = 5.0
+    Emax = 20.0,
+    DeltaE = 0.1
+"
+runPROJWFC projwfc.$name.in
+
+
+# plot the result with gnuplot
+
+exec gnuplot plot.gp
+

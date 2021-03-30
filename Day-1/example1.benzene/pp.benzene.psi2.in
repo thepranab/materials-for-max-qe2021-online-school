@@ -1,0 +1,22 @@
+ &INPUTPP
+    prefix    =  'benzene',
+    ! outdir    =  '/tmp',
+    filplot   =  'psi2.benzene',
+
+    plot_num  =  7,
+    kpoint    =  1, 
+    kband(1)  =  1,
+    kband(2)  =  16,    
+    lsign     =  .true.,
+ /
+
+
+ &PLOT
+    fileout       =  '.xsf',
+    iflag         =  3,
+    nfile         =  1,
+    output_format =  5,
+    weight(1)     =  1.0,
+ /
+
+

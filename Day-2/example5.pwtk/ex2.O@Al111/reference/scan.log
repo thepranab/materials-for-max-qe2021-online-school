@@ -1,0 +1,274 @@
+      ========================================================================
+      *** PWTK-1.0.0    (PWscf ToolKit: a Tcl scripting environment)
+      ========================================================================
+
+      Running on host: nsc-gsv001.ijs.si
+      PWTK: /home/qe0001/bin/pwtk-1.0.0
+      Date: Sun 15 Sep 2019 08:48:56 AM CEST
+      PID:  34142
+
+
+      Calculating point (ia,ib) = (0.0,0.0) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.0.ib0.0.in > pw.O-Al111.relax.ia0.0.ib0.0.out
+
+
+      Calculating point (ia,ib) = (0.0,0.2) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.0.ib0.2.in > pw.O-Al111.relax.ia0.0.ib0.2.out
+
+
+      Calculating point (ia,ib) = (0.0,0.4) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.0.ib0.4.in > pw.O-Al111.relax.ia0.0.ib0.4.out
+
+
+      Calculating point (ia,ib) = (0.0,0.6) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.0.ib0.6.in > pw.O-Al111.relax.ia0.0.ib0.6.out
+
+
+      Calculating point (ia,ib) = (0.0,0.8) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.0.ib0.8.in > pw.O-Al111.relax.ia0.0.ib0.8.out
+
+
+      Calculating point (ia,ib) = (0.0,1.0) ...
+
+
+      Calculating point (ia,ib) = (0.2,0.0) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.2.ib0.0.in > pw.O-Al111.relax.ia0.2.ib0.0.out
+
+
+      Calculating point (ia,ib) = (0.2,0.2) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.2.ib0.2.in > pw.O-Al111.relax.ia0.2.ib0.2.out
+
+
+      Calculating point (ia,ib) = (0.2,0.4) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.2.ib0.4.in > pw.O-Al111.relax.ia0.2.ib0.4.out
+
+
+      Calculating point (ia,ib) = (0.2,0.6) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.2.ib0.6.in > pw.O-Al111.relax.ia0.2.ib0.6.out
+
+
+      Calculating point (ia,ib) = (0.2,0.8) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.2.ib0.8.in > pw.O-Al111.relax.ia0.2.ib0.8.out
+
+
+      Calculating point (ia,ib) = (0.2,1.0) ...
+
+
+      Calculating point (ia,ib) = (0.4,0.0) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.4.ib0.0.in > pw.O-Al111.relax.ia0.4.ib0.0.out
+
+
+      Calculating point (ia,ib) = (0.4,0.2) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.4.ib0.2.in > pw.O-Al111.relax.ia0.4.ib0.2.out
+
+
+      Calculating point (ia,ib) = (0.4,0.4) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.4.ib0.4.in > pw.O-Al111.relax.ia0.4.ib0.4.out
+
+
+      Calculating point (ia,ib) = (0.4,0.6) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.4.ib0.6.in > pw.O-Al111.relax.ia0.4.ib0.6.out
+
+
+      Calculating point (ia,ib) = (0.4,0.8) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.4.ib0.8.in > pw.O-Al111.relax.ia0.4.ib0.8.out
+
+
+      Calculating point (ia,ib) = (0.4,1.0) ...
+
+
+      Calculating point (ia,ib) = (0.6,0.0) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.6.ib0.0.in > pw.O-Al111.relax.ia0.6.ib0.0.out
+
+
+      Calculating point (ia,ib) = (0.6,0.2) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.6.ib0.2.in > pw.O-Al111.relax.ia0.6.ib0.2.out
+
+
+      Calculating point (ia,ib) = (0.6,0.4) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.6.ib0.4.in > pw.O-Al111.relax.ia0.6.ib0.4.out
+
+
+      Calculating point (ia,ib) = (0.6,0.6) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.6.ib0.6.in > pw.O-Al111.relax.ia0.6.ib0.6.out
+
+
+      Calculating point (ia,ib) = (0.6,0.8) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.6.ib0.8.in > pw.O-Al111.relax.ia0.6.ib0.8.out
+
+
+      Calculating point (ia,ib) = (0.6,1.0) ...
+
+
+      Calculating point (ia,ib) = (0.8,0.0) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.8.ib0.0.in > pw.O-Al111.relax.ia0.8.ib0.0.out
+
+
+      Calculating point (ia,ib) = (0.8,0.2) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.8.ib0.2.in > pw.O-Al111.relax.ia0.8.ib0.2.out
+
+
+      Calculating point (ia,ib) = (0.8,0.4) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.8.ib0.4.in > pw.O-Al111.relax.ia0.8.ib0.4.out
+
+
+      Calculating point (ia,ib) = (0.8,0.6) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.8.ib0.6.in > pw.O-Al111.relax.ia0.8.ib0.6.out
+
+
+      Calculating point (ia,ib) = (0.8,0.8) ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: pw.x
+      Running: mpirun -np 8 pw.x -in pw.O-Al111.relax.ia0.8.ib0.8.in > pw.O-Al111.relax.ia0.8.ib0.8.out
+
+
+      Calculating point (ia,ib) = (0.8,1.0) ...
+
+
+      Calculating point (ia,ib) = (1.0,0.0) ...
+
+
+      Calculating point (ia,ib) = (1.0,0.2) ...
+
+
+      Calculating point (ia,ib) = (1.0,0.4) ...
+
+
+      Calculating point (ia,ib) = (1.0,0.6) ...
+
+
+      Calculating point (ia,ib) = (1.0,0.8) ...
+
+
+      Calculating point (ia,ib) = (1.0,1.0) ...
+
+couldn't execute "gnuplot": no such file or directory
+    while executing
+"exec gnuplot plot2D.gp"
+    (file "submit.scan.slurm.1.pwtk" line 63)
+    invoked from within
+"source $_scriptFile"
+    (file "/home/qe0001/bin/pwtk-1.0.0/pwtk" line 85)

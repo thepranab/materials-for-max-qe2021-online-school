@@ -1,0 +1,13 @@
+Phonons on a uniform q-grid
+ &inputph
+  prefix='',           ! Specify a prefix
+  tr2_ph = 1.0d-14,
+  amass(1) =            ! Specify atomic mass of Al
+  amass(2) =            ! Specify atomic mass of As
+  ldisp = .true.,
+  nq1 =                 ! Specify a uniform q-grid
+  nq2 =  
+  nq3 =  
+  outdir='./out'
+  fildyn='AlAs.dyn',
+ /

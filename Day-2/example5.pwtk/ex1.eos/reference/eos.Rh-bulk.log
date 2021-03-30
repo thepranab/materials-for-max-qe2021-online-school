@@ -1,0 +1,429 @@
+      ========================================================================
+      *** PWTK-1.0.0    (PWscf ToolKit: a Tcl scripting environment)
+      ========================================================================
+
+      Running on host: assam
+      PWTK: /home/matic/src/pwtk-1.0.0
+      Date: Sun 15 Sep 2019 09:38:45 PM CEST
+      PID:  18998
+
+
+ EOS> ======================================================================
+ EOS> *** Search for an optimum A-lattice parameter (for cubic and hcp systems)
+ EOS> ======================================================================
+
+ EOS>   ibrav                =  2 (lattice-type: fcc)
+ EOS>   mode                 =  auto
+ EOS>   number of points     =  15
+ EOS>   use estimator points =  false
+ EOS>   initial a0           =  7.292 bohr
+ EOS>   initial B0           =  550 kbar
+ EOS>   scale_min            =  0.96
+ EOS>   scale_max            =  1.04
+ EOS>   pw.x input/output files will be stored in eos.Rh-bulk.d/ subdirectory
+
+      Guessing the position of minimum: performing two point calculation.
+
+      * calculating estimator point #.1 :  a =   7.292 bohr
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.estimator-1.in > eos.Rh-bulk.d/eos.Rh-bulk.estimator-1.out
+
+
+      * E(tot) = -52.03634945 ryd
+      * P      = -13.81 kbar
+
+
+      * calculating estimator point #.2 :  a =   6.563 bohr
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.estimator-2.in > eos.Rh-bulk.d/eos.Rh-bulk.estimator-2.out
+
+
+      * E(tot) = -51.91580420 ryd
+      * P      = 1841.51 kbar
+
+      Two-point estimate:
+         two-point estimation of lattice-parameter :  a  =    7.28 bohr
+         two-point estimation of bulk-modulus      :  B0 = 13032.24 kbar
+
+      Performing 15-points calculation ...
+         lattice-parameter range     :  [  6.990,   7.573] bohr
+         lattice-parameter increment :    0.042 bohr
+
+      Calculating 1. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.1.in > eos.Rh-bulk.d/eos.Rh-bulk.1.out
+
+
+      * a      =   6.990 bohr
+      * E(tot) = -52.02053270 ryd
+
+      Calculating 2. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.2.in > eos.Rh-bulk.d/eos.Rh-bulk.2.out
+
+
+      * a      =   7.032 bohr
+      * E(tot) = -52.02488780 ryd
+
+      Calculating 3. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.3.in > eos.Rh-bulk.d/eos.Rh-bulk.3.out
+
+
+      * a      =   7.074 bohr
+      * E(tot) = -52.02841212 ryd
+
+      Calculating 4. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.4.in > eos.Rh-bulk.d/eos.Rh-bulk.4.out
+
+
+      * a      =   7.115 bohr
+      * E(tot) = -52.03128208 ryd
+
+      Calculating 5. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.5.in > eos.Rh-bulk.d/eos.Rh-bulk.5.out
+
+
+      * a      =   7.157 bohr
+      * E(tot) = -52.03345952 ryd
+
+      Calculating 6. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.6.in > eos.Rh-bulk.d/eos.Rh-bulk.6.out
+
+
+      * a      =   7.198 bohr
+      * E(tot) = -52.03499596 ryd
+
+      Calculating 7. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.7.in > eos.Rh-bulk.d/eos.Rh-bulk.7.out
+
+
+      * a      =   7.240 bohr
+      * E(tot) = -52.03594757 ryd
+
+      Calculating 8. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.8.in > eos.Rh-bulk.d/eos.Rh-bulk.8.out
+
+
+      * a      =   7.282 bohr
+      * E(tot) = -52.03635967 ryd
+
+      Calculating 9. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.9.in > eos.Rh-bulk.d/eos.Rh-bulk.9.out
+
+
+      * a      =   7.323 bohr
+      * E(tot) = -52.03624105 ryd
+
+      Calculating 10. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.10.in > eos.Rh-bulk.d/eos.Rh-bulk.10.out
+
+
+      * a      =   7.365 bohr
+      * E(tot) = -52.03566357 ryd
+
+      Calculating 11. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.11.in > eos.Rh-bulk.d/eos.Rh-bulk.11.out
+
+
+      * a      =   7.406 bohr
+      * E(tot) = -52.03462095 ryd
+
+      Calculating 12. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.12.in > eos.Rh-bulk.d/eos.Rh-bulk.12.out
+
+
+      * a      =   7.448 bohr
+      * E(tot) = -52.03319864 ryd
+
+      Calculating 13. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.13.in > eos.Rh-bulk.d/eos.Rh-bulk.13.out
+
+
+      * a      =   7.490 bohr
+      * E(tot) = -52.03143547 ryd
+
+      Calculating 14. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.14.in > eos.Rh-bulk.d/eos.Rh-bulk.14.out
+
+
+      * a      =   7.531 bohr
+      * E(tot) = -52.02930131 ryd
+
+      Calculating 15. point ...
+
+      INFO: ntyp and number of atomic species specified in ATOMIC_SPECIES card
+            are not equal; filtering out unused atomic species
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/pw.x
+      Running: mpirun -np 2 pw.x -in eos.Rh-bulk.d/eos.Rh-bulk.15.in > eos.Rh-bulk.d/eos.Rh-bulk.15.out
+
+
+      * a      =   7.573 bohr
+      * E(tot) = -52.02683827 ryd
+
+      Summary of the calculated lattice-parameter data points:
+
+      #   a/bohr       V/bohr          E(tot)/ryd
+          6.99036       341.58519       -52.020533
+          7.03197       347.72131       -52.024888
+          7.07358       353.93047       -52.028412
+          7.11519       360.21312       -52.031282
+          7.15680       366.56967       -52.033460
+          7.19841       373.00057       -52.034996
+          7.24002       379.50625       -52.035948
+          7.28163       386.08714       -52.036360
+          7.32324       392.74367       -52.036241
+          7.36485       399.47627       -52.035664
+          7.40646       406.28538       -52.034621
+          7.44806       413.17143       -52.033199
+          7.48967       420.13485       -52.031435
+          7.53128       427.17607       -52.029301
+          7.57289       434.29552       -52.026838
+
+      Data-points written to file:  eos.Rh-bulk.d/eos.Rh-bulk.dat
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.1-15.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.1-15.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.1-15.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.1-15.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.1-15.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.1-15.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.1-15.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.1-15.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.1-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.1-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.1-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.1-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.1-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.1-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.1-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.1-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.2-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.2-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.2-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.2-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.2-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.2-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.2-14.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.2-14.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.2-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.2-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.2-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.2-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.2-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.2-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.2-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.2-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.3-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.3-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.3-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.3-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.3-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.3-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.3-13.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.3-13.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.3-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.3-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.3-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.3-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.3-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.3-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.3-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.3-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.4-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.4-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.4-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.4-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.4-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.4-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.4-12.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.4-12.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.4-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.4-11.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.4-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.4-11.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.4-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.4-11.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.4-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.4-11.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch1.5-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch1.5-11.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.birch2.5-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.birch2.5-11.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.keane.5-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.keane.5-11.ev.out
+
+      Executable: /home/matic/src/qe-6.4.1/q-e-qe-6.4.1/bin/ev.x
+      Running: ev.x < eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.5-11.ev.in > eos.Rh-bulk.d/eos.Rh-bulk.murnaghan.5-11.ev.out
+
+
+      FINAL RESULTS::
+      ---------------
+
+        Lattice type:  fcc
+
+        OPTIMISED LATTICE PARAMETER, a0 (in Bohr units)::
+
+        ------------+------------+------------+------------+-----------
+         # points   | MURNAGHAN  | BIRCH O(1) | BIRCH O(2) |    KEANE  
+        ------------+------------+------------+------------+-----------
+         15:  1--15 |     7.294  |     7.293  |     7.293  |     7.294 
+         14:  1--14 |     7.294  |     7.293  |     7.293  |     7.294 
+         13:  2--14 |     7.293  |     7.293  |     7.293  |     7.294 
+         12:  2--13 |     7.294  |     7.293  |     7.293  |     7.294 
+         11:  3--13 |     7.293  |     7.293  |     7.293  |     7.293 
+         10:  3--12 |     7.293  |     7.293  |     7.293  |     7.293 
+          9:  4--12 |     7.293  |     7.293  |     7.293  |     7.297 
+          8:  4--11 |     7.293  |     7.293  |     7.293  |     7.296 
+          7:  5--11 |     7.293  |     7.293  |     7.293  |     7.296 
+        ------------+------------+------------+------------+-----------
+
+        OPTIMISED Total Energy, E0 (in Ryd units)::
+
+        ------------+------------+------------+------------+-----------
+         # points   | MURNAGHAN  | BIRCH O(1) | BIRCH O(2) |    KEANE  
+        ------------+------------+------------+------------+-----------
+         15:  1--15 |   -52.0363 |   -52.0364 |   -52.0364 |   -52.0363 
+         14:  1--14 |   -52.0363 |   -52.0364 |   -52.0364 |   -52.0363 
+         13:  2--14 |   -52.0364 |   -52.0364 |   -52.0364 |   -52.0363 
+         12:  2--13 |   -52.0364 |   -52.0364 |   -52.0364 |   -52.0364 
+         11:  3--13 |   -52.0364 |   -52.0364 |   -52.0364 |   -52.0364 
+         10:  3--12 |   -52.0364 |   -52.0364 |   -52.0364 |   -52.0364 
+          9:  4--12 |   -52.0364 |   -52.0364 |   -52.0364 |   -52.0364 
+          8:  4--11 |   -52.0364 |   -52.0364 |   -52.0364 |   -52.0364 
+          7:  5--11 |   -52.0364 |   -52.0364 |   -52.0364 |   -52.0364 
+        ------------+------------+------------+------------+-----------
+
+        OPTIMISED Bulk Modules, B0 (in kbar units)::
+
+        ------------+------------+------------+------------+-----------
+         # points   | MURNAGHAN  | BIRCH O(1) | BIRCH O(2) |    KEANE  
+        ------------+------------+------------+------------+-----------
+         15:  1--15 |    2550    |    2570    |    2591    |    1097 
+         14:  1--14 |    2557    |    2571    |    2597    |    1178 
+         13:  2--14 |    2557    |    2572    |    2609    |    1207 
+         12:  2--13 |    2568    |    2578    |    2616    |    1176 
+         11:  3--13 |    2569    |    2581    |    2604    |    1244 
+         10:  3--12 |    2587    |    2594    |    2593    |    1170 
+          9:  4--12 |    2587    |    2594    |    2606    |     829 
+          8:  4--11 |    2602    |    2606    |    2602    |     703 
+          7:  5--11 |    2603    |    2606    |    2620    |     638 
+        ------------+------------+------------+------------+-----------
+
+
+
+      Result written to file eos.Rh-bulk.d/eos.Rh-bulk.RESULTS
+
+
+      Job done.
+      --

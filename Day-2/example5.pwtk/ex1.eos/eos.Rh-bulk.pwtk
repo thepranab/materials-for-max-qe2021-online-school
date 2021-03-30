@@ -1,0 +1,29 @@
+# load the common data
+import ../common.pwtk
+
+# add only what is needed (i.e. what is not specified in ../common.pwtk)
+
+CONTROL {
+    calculation = 'scf'
+    prefix = 'Rh'
+}
+SYSTEM {
+    ibrav = 2
+    celldm(1) = 7.292
+    nat = 1
+}
+ELECTRONS {
+    conv_thr = 1d-10
+}
+ATOMIC_POSITIONS alat {
+    Rh   0.0 0.0 0.0
+}
+K_POINTS automatic {
+    6 6 6   1 1 1 
+}
+
+
+# request an EOS (equation-of-state) calculation;
+# EOS can be fine-tuned, but defaults are OK
+
+eos_run eos.Rh-bulk 

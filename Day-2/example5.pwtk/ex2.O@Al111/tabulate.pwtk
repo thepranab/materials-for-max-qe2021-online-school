@@ -1,0 +1,27 @@
+# make a sorted list of pw.x output files by increasing energy
+# (i.e. lowest energy first)
+
+set pwo_files [::pwtk::pwo::sortFiles pw.*.out]
+
+
+# get the lowest energy from the sorted $pwo_list
+
+set E0 [::pwtk::pwo::totene [lindex $pwo_files 0]]
+
+
+# list of *.xcrysden "Save Current State" files; tabulateStructs makes
+# a picture with each provided *.xcrysden file
+
+set xc_files topview.xcrysden; # to speed-up only one *.xcrysden file is used
+
+# if you want also sideview, uncomment below lines:
+#set xc_files {
+#    topview.xcrysden
+#    sideview.xcrysden
+#}    
+
+
+# tabulate all the pw.x output files
+
+::pwtk::pwo::tabulateStructs -xcd 1 -lc -ncol 5 \
+    -E0 $E0 -Elabel {\Delta E} tabulate.tex $pwo_files $xc_files
