@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 #
-# a script to install the required packages for QE-2019 school (user
+# a small script to install the required packages for QE-2021 school (user
 # requires elevated privilages, i.e., sudo)
 #
 
@@ -11,26 +11,30 @@ APT=${APT:-apt-get}
 dir=`dirname $0`
 cd $dir
 installdir=$(pwd)
+# update sources list and preferences 
 
+# autologin
 $SUDO $APT update
 $SUDO $APT install \
-      ssh rsync make gfortran gcc quantum-espresso \
-      libblas-dev libfftw3-dev liblapack-dev openmpi-common \
-      tcllib tk libtogl2 itk3 iwidgets4 bwidget libgl2ps1.4 \
-      vim emacs gnuplot grace octave imagemagick mencoder bc\
-      openbabel bkchem gperiodic caja-open-terminal texlive python3-setuptools git graphviz \
-      git python2.7-dev python3-dev python-pip virtualenv postgresql postgresql-server-dev-all postgresql-client rabbitmq-server 
+      virtualbox-guest-utils virtualbox-guest-x11 \
+      ssh rsync make gfortran gcc quantum-espresso xcrysden \
+      libblas-dev libfftw3-dev liblapack-dev openmpi-common\
+      tcllib tk iwidgets4 bwidget \
+      vim emacs gnuplot imagemagick mencoder bc\
+      gperiodic caja-open-terminal python3-setuptools git graphviz \
+      python3-dev python3-pip virtualenv postgresql postgresql-server-dev-all postgresql-client rabbitmq-server 
 
-xc=xcrysden-1.6.0-bin-shared
-pwgui=PWgui-6.4.1
-pwtk=pwtk-1.0.0
-qemodes=QE-modes-6.4.1
+$SUDO $APT purge libreoffice* gimp* 
+
+pwgui=PWgui-6.7
+pwtk=pwtk-1.0.3
+qemodes=QE-modes-6.7
 
 # input link to exercises gitlab here
-exercises="https://gitlab.com/QEF/material-for-ljubljana-qe-summer-school.git"
+exercises="https://gitlab.com/QEF/materials-for-max-qe2021-online-school.git"
 
 tmp_pkgs=$qemodes.tar.gz
-opt_pkgs="$pwgui.tgz $pwtk.tar.gz $xc.tar.gz" 
+opt_pkgs="$pwgui.tgz $pwtk.tar.gz" 
 # DO NOT TOUCH
 
 $SUDO mkdir -p /opt/bin
@@ -94,12 +98,6 @@ EOF
 (
     cd /opt/bin/
     
-    $SUDO ln -s /opt/$xc/xcrysden .
-    $SUDO ln -s /opt/$xc/util/ptable .
-    $SUDO ln -s /opt/$xc/util/unitconv .
-    $SUDO ln -s /opt/$xc/scripting/pwi2xsf.sh pwi2xsf
-    $SUDO ln -s /opt/$xc/scripting/pwo2xsf.sh pwo2xsf
-
     $SUDO ln -s /opt/$pwgui/pwgui .
     $SUDO ln -s /opt/$pwtk/pwtk   .
 )
@@ -155,7 +153,7 @@ fi
 #
 # clone exercises git repository 
 #
-git clone $exercises $HOME/QE-2019
+git clone $exercises $HOME/QE-2021
 
 for i in {1..5}; do
     ln -s  $HOME/QE-2019/Day-$i  $HOME/Desktop/Day-$i
