@@ -5,7 +5,7 @@
 
 To untar the QE tarball, execute:
 
-    tar zxvf q-e-qe-6.4.1.tar.gz
+    tar zxvf qe-6.7-ReleasePack.tgz
 
 Then follow the instructions of tutors. See file `README2.md` for more 
 detailed instructions.
