@@ -1,19 +1,23 @@
-# Day-5 :
+# Day-9 :
+---------
 
-Disclaimer: while the concepts underlying these exercises are general, the
-            specific outputs and results will be unavoidably linked to the
-            HPC system used to perform them.
-            As a reference, here you will find the outcomes obtained on the 
-            hardware provided by Institut "Jožef Stefan".
+## Topic of the Day: Quantum ESPRESSO on HPC and GPU systems
+
+**Disclaimer:** while the concepts underlying these exercises are
+                general, the specific outputs and results will be
+                unavoidably linked to the HPC system used to perform
+                them.  As a reference, here you will find the outcomes
+                obtained on the hardware provided by Institut "Jožef
+                Stefan".
 
 
-### Morning
+### HPC
 
 - Introduction to HPC environment
 - Optimized QE configuration and compilation
 - Run-time options: description and usage
 
-### Afternoon
+### GPU
 
 - Concise introduction to accelerated hardware details
 - Optimized QE-GPU: configuration and compilation

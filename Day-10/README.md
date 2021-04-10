@@ -1,11 +1,14 @@
-### Material for day 4 
+# Day-10 :
+----------
+
+## Topic of the Day: High-throughput computing with the AiiDA platform
 
 
-This directory contains materials used during day 4 of the school, plus possible addictional exercises. 
+This directory contains materials for the AiiDA hands-on, plus possible addictional exercises. 
 
 Have fun !!!
 
-#### Tutorial material and instructions
+### Tutorial material and instructions
 
 The tutorial instructions will be available on the official AiiDA tutorials website:
 https://aiida-tutorials.readthedocs.io/en/latest/
