@@ -1,28 +1,22 @@
-PURPOSE OF THE EXERCISE 
-How to calculate the phonon dispersion of 2D hexagonal Boron Nitride.
+# Example 3: 
+## Calculation of the absorption spectrum of benzene molecule (C6H6) using the turbo_lanczos.x code
+------------------------------------------------------------------------
 
-Steps to perform:
+ 1. Run the SCF ground-state calculation
 
-#1) Run the SCF ground-state calculation
+        mpirun -np 8 pw.x < pw.benzene.in > pw.benzene.out
 
-mpirun -np 2 pw.x < pw.bn.in > pw.bn.out
+ 2. Perform Lanczos recursions 
 
-#2) Run the phonon calculation on a uniform grid of q-points
+        mpirun -np 8 turbo_lanczos.x < turbo_lanczos.benzene.in > turbo_lanczos.benzene.out
 
-mpirun -np 2 ph.x < ph.bn.in > ph.bn.out
+ 3. Run the spectrum calculation
 
-#3) Fourrier transform the Interatomic Force Constants from a uniform grid of q-points to real space: C(q) => C(R)
+        mpirun -np 8 turbo_spectrum.x < turbo_spectrum.benzene.in > turbo_spectrum.benzene.out
 
-mpirun -np 2 q2r.x < q2r.bn.in > q2r.bn.out
+ 4. Plot the spectrum using `gnuplot` and the script `plot_spectrum.gp`. 
+    This script will make a comparison of the spectra
+    calculated using `turbo_lanczos.x` and `turbo_davidson.x`
 
-#4) Calculate frequencies omega(q') at generic q' points using Interatomic Force Constants C(R)
-
-mpirun -np 2 matdyn.x < matdyn.bn.in > matdyn.bn.out
-
-#5) Plot the phonon dispersion of silicon 
-
-plotband.x < plotband.bn.in > plotband.bn.out
-
-gnuplot plot_dispersion.gp
-
-atril phonon_dispersion.eps 
+        gnuplot plot_spectrum.gp
+        evince Benzene_spectrum.eps
