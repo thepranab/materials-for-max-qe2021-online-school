@@ -5,8 +5,8 @@
 Exercise consists of two examples:
 
 * `ex1.degauss/` -- this example explores various smearing schemes,
-                    i.e., how-to-smear (variables `occupations` and
-                    `smearing`) and how-much-to-smear (variable
+                    i.e., *how-to-smear* (variables `occupations` and
+                    `smearing`) and *how-much-to-smear* (variable
                     `degauss`).
 
 * `ex2.chdens/` -- this example shows how to plot the electron charge density

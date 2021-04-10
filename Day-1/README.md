@@ -5,8 +5,7 @@
 
 - Installation/compilation of Quantum ESPRESSO (QE)
 - SCF + basic post-processing
-- XCrySDen, PWgui, QE-emacs-modes, PWTK (basics)
-- Exercises
+- XCrySDen, PWgui, QE-emacs-modes
 
 -----------
 
@@ -26,14 +25,3 @@
 
     cd example2.graphene/
     
-**Exercise 3:** Sillicon bulk: convergence tests, EOS, DOS and spaghetti plots
-
-    cd example3.Si/
-
-**Exercise 4:** A metallic example (Aluminum)
-
-    cd example4.Al/
-
-**Exercise 5:** A magnetic example (Iron)
-
-    cd example5.Fe/

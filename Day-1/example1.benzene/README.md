@@ -1,5 +1,5 @@
 # PURPOSE OF THE EXERCISE: 
-## How to calculate and plot molecular orbitals of benzene (actually sign(psi(r))*|psi(r)|^2)
+## How to calculate and plot molecular orbitals of benzene (actually sign(psi(r))|psi(r)|^2)
 -------------------------------------------------------
 
 **Steps to perform:**
@@ -10,11 +10,11 @@
 
 
 2. `pp.x` (post-processing) calculation of all valence and LUMO
-   molecular orbitals ( actually sign(psi(r)) * |psi(r)|^2 )
+   molecular orbitals ( actually sign(psi(r))|psi(r)|^2 )
 
        pp.x < pp.benzene.psi2.in > pp.benzene.psi2.out
 
-   the resulting sign(psi(r)) * |psi(r)|^2 are written to files
+   the resulting sign(psi(r))|psi(r)|^2 are written to files
    `psi2.benzene_K001_B0*.xsf`
 
 
