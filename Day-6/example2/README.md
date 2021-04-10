@@ -18,7 +18,7 @@
     as the one obtained using the `epsilon.x` code in the `example1`.
 
         gnuplot plot_spectrum.gp
-        evince Benzene_spectrum.eps
+        atril Benzene_spectrum.eps
 
 
  5. Switch on the electronic interaction (Hartree and Exchange-Correlation) 

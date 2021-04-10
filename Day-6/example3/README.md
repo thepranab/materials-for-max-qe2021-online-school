@@ -19,4 +19,4 @@
     calculated using `turbo_lanczos.x` and `turbo_davidson.x`
 
         gnuplot plot_spectrum.gp
-        evince Benzene_spectrum.eps
+        atril Benzene_spectrum.eps

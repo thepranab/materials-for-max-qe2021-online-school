@@ -18,7 +18,7 @@
     You should obtain the no-hybrid spectrum.
 
         gnuplot plot_spectrum_nohyb.gp
-        evince Methane_spectrum.eps
+        atril Methane_spectrum.eps
 
 
  5. Switch on the hybrid pseudo-potential (B3LYP) 

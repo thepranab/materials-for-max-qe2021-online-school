@@ -13,4 +13,4 @@
  3. Plot the spectrum using "gnuplot" and the script "plot_spectrum.gp":
 
         gnuplot plot_spectrum.gp
-        evince Benzene_spectrum.eps
+        atril Benzene_spectrum.eps
