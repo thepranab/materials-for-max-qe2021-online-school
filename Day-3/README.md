@@ -1,11 +1,10 @@
-# Day-2 :
+# Day-3 :
 ---------
 
-### Topics of Day-2 hands-on session
+### Topics of Day-3 hands-on session
 
 - Structure optimizations
 - NEB: transition states of elementary chemical reactions
-- Functionals
 - Automating the workflow with PWTK
 
 ---
@@ -27,14 +26,9 @@
     cd example3.neb/
 
 
-**Exercise 4:** (advanced) functionals
+**Exercise 4:** automating the workflow with PWTK
 
-    cd example4.functionals/
-
-
-**Exercise 5:** automating the workflow with PWTK
-
-    cd example5.pwtk/
+    cd example4.pwtk/
 
 ### How to run calculations remotely on the HPC cluster
 
