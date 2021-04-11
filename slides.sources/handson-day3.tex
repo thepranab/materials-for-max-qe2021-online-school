@@ -1,37 +1,33 @@
 \documentclass[landscape]{foils}
 \usepackage[pdftex]{color}
 \usepackage[pdftex]{graphicx}
-\usepackage{listings}
+\usepackage{eso-pic}
+\usepackage[top=2cm, bottom=2cm, outer=0cm, inner=0cm]{geometry}\usepackage{listings}
 \usepackage{amsmath}
 \usepackage{hyperref}
 
 \input{aliases}
 
 \begin{document}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{figs/QE-1.pdf}}
+
 \blue
-\includegraphics[width=1.0\textwidth]{figs/QE2019-logo.pdf}
-
-\vspace{2cm}
-\centerline{\red\LARGE QE-2019: Hands-on session -- Day-2}
-
-\vspace{1em}
+~\\
+\vspace*{4cm}
+\MyLogo{~}
+\vspace{5em}
 \begin{center}
-  \large Anton Kokalj, Iurii Timrov, Paolo Giannozzi, Yusuf Shaidu,\\
-  Matic Poberžnik, Matej Huš, Srdjan Stavrić\\[2em]
-
-  \includegraphics[height=0.05\textwidth]{figs/ijs-black.png}~~~~
-  \includegraphics[height=0.04\textwidth]{figs/epfl.png}~~~~
-  \includegraphics[height=0.06\textwidth]{figs/sissa.png}~~~~
-  \includegraphics[height=0.07\textwidth]{figs/udine.png}~~~~
-  \includegraphics[height=0.05\textwidth]{figs/nic.png}~~
-  \includegraphics[height=0.07\textwidth]{figs/vinca.png}
-
+  \centerline{\red\LARGE\bf QE-2021: Hands-on session -- Day-3}
+  ~\\[1.5em]
+    \large Ari Paavo Seitsonen, Anton Kokalj, Pietro Delugas,\\
+  Matic Poberžnik, Mandana Safari, Unmesh Mondal, Tao Jiang
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\Head{QE-2019: Hands-on session -- Day-2}
+\Head{QE-2021: Hands-on session -- Day-3}
+\MyLogo{\darkred {\bf QE-2021}: MaX School on Advanced Materials and Molecular Modelling}
 \rightheader{\hspace{-0.8cm}\includegraphics[width=4.5cm]{figs/QE.png}}
-Topics of Day-2 hands-on session:
+Topics of Day-3 hands-on session:
 \begin{itemize}
 \item Structural optimizations:
   \begin{itemize}
@@ -40,15 +36,12 @@ Topics of Day-2 hands-on session:
   \end{itemize}
 \item NEB method: saddle points of elementary chemical
   reactions (\file{example3.neb/})
-\item Advanced functionals (\file{example4.functionals/})\\
-  (slides for advanced-functionals are provided by \file{handson-day2-functionals.pdf})
 \item Automating the workflow with PWTK
-  (\file{example5.pwtk})\\
+  (\file{example4.pwtk})\\
 \end{itemize}
 
-\vspace{-0.5em}
-To get the
-latest version of the exercises, move to \file{Day-2/} directory and execute:\\[0.5em]
+%\vspace{-0.5em}
+To get the latest version of the exercises, move to \file{Day-3/} directory and execute:\\[0.5em]
 \exec{git pull}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,7 +49,7 @@ latest version of the exercises, move to \file{Day-2/} directory and execute:\\[
 \rightheader{}
 
 Several utility commands have been implemented specially for the
-QE-2019 school to aid at submitting jobs to HPC cluster (login node:
+QE-2021 school to aid at submitting jobs to HPC cluster (login node:
 percolator.ijs.si). These are: {\small
 \begin{itemize}
 \item \cmd{\bf remote\_mpirun} -- this is like \cmd{mpirun}, but it
@@ -104,11 +97,11 @@ percolator.ijs.si). These are: {\small
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{1. How to perform structural optimization: graphane}
 \rightheader{}
-\rightfooter{Example: \file{Day-2/example1.relax}}
+\rightfooter{Example: \file{Day-3/example1.relax}}
 
 \parbox{17cm}{
   \begin{itemize}
-  \item Move to \file{Day-2/example1.relax/} directory.\\[0.5em]
+  \item Move to \file{Day-3/example1.relax/} directory.\\[0.5em]
     Graphane is like graphene, with an H atom bound to each C atom in
     {\em trans} configuration. You need to optimize atomic positions,
     i.e., find the minimum-energy structure (zero forces).
@@ -221,7 +214,7 @@ structure and run a relaxation calculation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{2. How to perform variable-cell relaxation: hcp-Zinc}
-\rightfooter{Example: \file{Day-2/example2.vc-relax}}
+\rightfooter{Example: \file{Day-3/example2.vc-relax}}
 %
 Zinc displays a hcp (hexagonal-closed-packed) crystal structure, hence
 it has two lattice parameters $a$ and $c$. The unit-cell lattice
@@ -302,7 +295,7 @@ calculation remotely.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{3. NEB method: saddle points of elementary chemical reactions}
-\rightfooter{Example: \file{Day-2/example3.neb}}
+\rightfooter{Example: \file{Day-3/example3.neb}}
 %
 Saddle points on the {\em Potential Energy Surface (PES)}, which
 correspond to {\em Transition States (TS)} of chemical reactions, can
@@ -440,16 +433,9 @@ The resulting PES along the reaction coordinate should look like this.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{4. Advanced functionals}
-\rightfooter{Example: \file{Day-2/example4.functionals}}
-
-Slides for this exercise are provided by file \file{\href{handson-day2-functionals.pdf}{handson-day2-functionals.pdf}}.
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5. PWTK: a short tutorial}
+\head{4. PWTK: a short tutorial}
 \rightheader{\includegraphics[width=2.5cm]{figs/pwtk.png}}
-\rightfooter{Example: \file{Day-2/example5.pwtk}}
+\rightfooter{Example: \file{Day-3/example4.pwtk}}
 
 PWTK is a Tcl-based scripting interface for Quantum ESPRESSO. It aims
 at providing a flexible and productive framework.
@@ -463,7 +449,7 @@ at providing a flexible and productive framework.
 \end{itemize}
 
 \begin{itemize}
-\item  Move to \file{Day-2/example5.pwtk} directory. Therein are three
+\item  Move to \file{Day-3/example4.pwtk} directory. Therein are three
   examples:
   \begin{itemize}
   \item \file{ex1.eos/} -- how to use EOS (equation-of-state) utility
@@ -491,9 +477,9 @@ at providing a flexible and productive framework.
   \end{itemize}
 \item Project-based configuration (via \cmd{import}), e.g,:  
   \begin{itemize}
-  \item \file{Day-2/example5.pwtk/common.pwtk}\\[0.3em]
+  \item \file{Day-3/example4.pwtk/common.pwtk}\\[0.3em]
     Specification of default input data that are common to all examples in
-    \file{example5.pwtk/}, e.g., cutoff energies, list of
+    \file{example4.pwtk/}, e.g., cutoff energies, list of
     pseudopotentials, etc.
     \vspace{0.5em}
     {\small
@@ -532,9 +518,9 @@ at providing a flexible and productive framework.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{5.1 PWTK: EOS utility}
-\rightfooter{Example: \file{Day-2/example5.pwtk/ex1.eos}}
+\rightfooter{Example: \file{Day-3/example4.pwtk/ex1.eos}}
 
-Move to \file{Day-2/example5.pwtk/ex1.eos} directory.
+Move to \file{Day-3/example4.pwtk/ex1.eos} directory.
 
 In this example the
 {\em equation-of-state (EOS)} will be calculated using
@@ -569,7 +555,7 @@ data points, can you tell why?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{5.2 PWTK: gluing together many calculations}
-\rightfooter{Example: \file{Day-2/example5.pwtk/ex2.O@Al111}}
+\rightfooter{Example: \file{Day-3/example4.pwtk/ex2.O@Al111}}
 
 The subject of this example is the calculation of a 2D potential
 energy scan of lateral positions of O @ Al(111). It introduces the
@@ -617,7 +603,7 @@ this.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{5.3 PWTK: analysis of electronic structure of CO@Rh(100)}
-\rightfooter{Example: \file{Day-2/example5.pwtk/ex3.CO@Rh100}}
+\rightfooter{Example: \file{Day-3/example4.pwtk/ex3.CO@Rh100}}
 
 This is a bit more elaborate PWTK example that shows how to glue
 together various calculations. In particular, it analyzes the bonding
