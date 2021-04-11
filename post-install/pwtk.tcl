@@ -23,7 +23,7 @@ wfcdir_prefix /tmp
 
 # directory with pseudo-potentials
 
-pseudo_dir $env(HOME)/QE-2019/pseudo
+pseudo_dir $env(HOME)/QE-2021/pseudo
 
 #
 # some xcrysden and XSF relates stuff

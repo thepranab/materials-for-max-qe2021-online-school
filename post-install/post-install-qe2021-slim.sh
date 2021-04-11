@@ -126,7 +126,7 @@ else
 fi
 
 if test "x$(cat $HOME/.bashrc | grep ESPRESSO_PSEUDO)" == "x"; then
-    echo 'export ESPRESSO_PSEUDO=$HOME/QE-2019/pseudo' >> $HOME/.bashrc
+    echo 'export ESPRESSO_PSEUDO=$HOME/QE-2021/pseudo' >> $HOME/.bashrc
 else
     echo "ESPRESSO_PSEUDO already defined; skipping" 
 fi
@@ -155,6 +155,6 @@ fi
 #
 git clone $exercises $HOME/QE-2021
 
-for i in {1..5}; do
-    ln -s  $HOME/QE-2019/Day-$i  $HOME/Desktop/Day-$i
+for i in {1..10}; do
+    ln -s  $HOME/QE-2021/Day-$i  $HOME/Desktop/Day-$i
 done
