@@ -8,8 +8,8 @@ May 2021.
 
 For each day, the respective hands-on exercises are located in
 `Day-X/` folder, where `X` is the day number. Each `Day-X/` folder
-contains a `README.md` file, which is a very short description of
-exercises, and a `handson-dayX.pdf` file that contains slides, which
+contains the `README.md` file, which is a very short description of
+exercises, and the `handson-dayX.pdf` file that contains slides, which
 describe the hands-on exercises in more detail.
 
 For each day, the exercises are located within the `Day-X/` directory
