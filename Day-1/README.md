@@ -25,3 +25,7 @@
 
     cd example2.graphene/
     
+------------------------------------------------------------------------
+
+**N.B.** For the logic/convention of the names of files used in the hands-on,
+see file [README-filenames.md](./README-filenames.md)
