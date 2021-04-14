@@ -31,33 +31,33 @@ Generating ssh-key in $pathtokey
 (BEWARE: leave the passphrase empty)
 "
 
-# let's make the ssh-key that will be used to connect to HCP
+# let's make the ssh-key that will be used to connect to HPC
 mkdir -p $pathtokey
-hcpkey="$pathtokey/id_rsa_hcp"
-ssh-keygen -t rsa -f $hcpkey
+hpckey="$pathtokey/id_rsa_hpc"
+ssh-keygen -t rsa -f $hpckey
 
 #
-# 1. let's make a ssh alias that will link the "hcp" with the actual HCP computer
+# 1. let's make a ssh alias that will link the "hpc" with the actual HPC computer
 #
-# 2. this way all the users will only use "hcp" alias, irrespectively of the actual supercomputer used.
+# 2. this way all the users will only use "hpc" alias, irrespectively of the actual supercomputer used.
 # 
 cat <<EOF >> $HOME/.ssh/config
-Host hcp
+Host hpc
  HostName $host 
  User $user
- IdentityFile $hcpkey
+ IdentityFile $hpckey
 EOF
 
 echo "
 BEWARE: you will have to input your password twice
 " 
 
-scp $hcpkey.pub hcp:~/
-ssh -t hcp 'cat $HOME/id_rsa_hcp.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hcp.pub'
+scp $hpckey.pub hpc:~/
+ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
 
 
 echo "
-Please access the HCP cluster by typing: 
+Please access the HPC cluster by typing: 
 
-ssh hcp
+ssh hpc
 "
