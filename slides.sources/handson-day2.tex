@@ -9,7 +9,7 @@
 \input{aliases}
 
 \begin{document}
-\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{figs/QE-1.pdf}}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{figs/qe2021-background-4x3.png}}
 
 \blue
 %\includegraphics[width=1.0\textwidth]{figs/QE2019-logo.pdf}
@@ -18,7 +18,7 @@
 \MyLogo{~}
 \vspace{5em}
 \begin{center}
-  \centerline{\red\LARGE\bf QE-2021: Hands-on session -- Day-2}
+  \centerline{\burgundy\LARGE\bf QE-2021: Hands-on session -- Day-2}
   ~\\[1.5em]
   %\large Anton Kokalj, Pietro Delugas,\\
   %Matic Pober\v{z}nik, Cristiano Malica, Subrahmanyam Sappati, Lei Qiao
@@ -26,7 +26,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \Head{QE-2021: Hands-on session -- Day-2}
-\MyLogo{\darkred {\bf QE-2021}: MaX School on Advanced Materials and Molecular Modelling}
+\MyLogo{\burgundy {\bf QE-2021}: MaX School on Advanced Materials and Molecular Modelling}
 \rightheader{\hspace{-0.8cm}\includegraphics[width=4.5cm]{figs/QE.png}}
 Topics of Day-2 hands-on session:
 \begin{enumerate}
@@ -74,7 +74,7 @@ variables, hence we don't need to set \var{outdir} and
 \var{pseudo\_dir} variables)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{\red Providing atomic structure in input}
+\head{\burgundy Providing atomic structure in input}
 \begin{itemize}
 \item[]
 \parbox{15cm}{How is the crystal structure defined? This is a very
@@ -140,7 +140,7 @@ further processing and an XML file with general information on the run.
 The name of the various files is determined by the value of the 
 \var{prefix} variable and by their content.
 
-{\red\em Do not run two instances of \prog{pw.x} that access the same
+{\burgundy\em Do not run two instances of \prog{pw.x} that access the same
   \texttt{outdir} with the same \texttt{prefix}!} Unpredictable
 behavior may follow (the directory is used for temporary files as
 well).  In case of trouble, clean \var{outdir}.
@@ -196,7 +196,7 @@ following tasks\\({\bf BEWARE: we will not do it manually})
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{\red Convergence w.r.t. kinetic energy cutoff (II)}
+\head{\burgundy Convergence w.r.t. kinetic energy cutoff (II)}
 %
 To make convergence tests easier and faster, scripts are commonly
 used. To this end, Unix shell-scripts have been traditionally used,
@@ -214,16 +214,16 @@ scripts.\vspace{-1em}
 \centerline{\includegraphics[width=1.0\textwidth]{figs/sh-vs-pwtk.pdf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\head{\red 101 of PWTK scripting}
-\head{\red PWTK scripting: basics}
+%\head{\burgundy 101 of PWTK scripting}
+\head{\burgundy PWTK scripting: basics}
 \rightheader{\includegraphics[width=2.5cm]{figs/pwtk.png}}
 \rightfooter{}
 The basic philosophy is to {\bf keep the syntax close to original input syntax}!\\[1.5em]
 \centerline{\includegraphics[width=1.0\textwidth]{figs/pwtk-syntax.pdf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%\head{\red 101 of PWTK scripting}
-\head{\red PWTK scripting: basics}
+%\head{\burgundy 101 of PWTK scripting}
+\head{\burgundy PWTK scripting: basics}
 \vspace{-1em}
 \begin{itemize}
 \item PWTK scripts are basically Tcl-scripts, hence they use Tcl-syntax
@@ -340,7 +340,7 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
 \includegraphics[width=10cm]{figs/ecut.png}
 \end{center}
 \vspace{-2cm}
-{\red Reminder:}
+{\burgundy Reminder:}
 \begin{itemize}
 \item Convergence w.r.t the cutoff is a property of the {\em pseudopotential(s) used}.
 \item 
@@ -782,7 +782,7 @@ Run \prog{pw.x} in the usual way (\code{pw.x -in
 \begin{itemize}
   \item in order to reach antiferromagnetic states, you need to:
   \begin{itemize}
-  \item introduce a {\red supercell} with two sublattices of 
+  \item introduce a {\burgundy supercell} with two sublattices of 
     different species of atoms (even if they are the same,
     it is important that they are labeled as different)
   \item start with opposite initial magnetization for the two 
