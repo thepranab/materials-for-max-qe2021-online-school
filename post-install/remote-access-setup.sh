@@ -15,13 +15,11 @@ Please input your $1:"
     fi
 } 
 
+# query for username & hostname/login-node
 userinput username
 user=$reply
-# either:
-#userinput hostname 
-#host=$reply
-# or:
-host=percolator.ijs.si
+userinput hostname 
+host=$reply
 
 
 # define where key is stored here (default $HOME/.ssh/)
@@ -33,27 +31,33 @@ Generating ssh-key in $pathtokey
 (BEWARE: leave the passphrase empty)
 "
 
+# let's make the ssh-key that will be used to connect to HCP
 mkdir -p $pathtokey
-nsckey="$pathtokey/id_rsa_nsc"
-ssh-keygen -t rsa -b 4096 -m PEM -f $nsckey
+hcpkey="$pathtokey/id_rsa_hcp"
+ssh-keygen -t rsa -f $hcpkey
 
-cat <<EOF > $HOME/.ssh/config
-Host nsc
+#
+# 1. let's make a ssh alias that will link the "hcp" with the actual HCP computer
+#
+# 2. this way all the users will only use "hcp" alias, irrespectively of the actual supercomputer used.
+# 
+cat <<EOF >> $HOME/.ssh/config
+Host hcp
  HostName $host 
  User $user
- IdentityFile $nsckey
+ IdentityFile $hcpkey
 EOF
 
 echo "
 BEWARE: you will have to input your password twice
 " 
 
-scp $nsckey.pub nsc:~/
-ssh -t nsc 'cat $HOME/id_rsa_nsc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_nsc.pub'
+scp $hcpkey.pub hcp:~/
+ssh -t hcp 'cat $HOME/id_rsa_hcp.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hcp.pub'
 
 
 echo "
-Please access the NSC cluster by typing: 
+Please access the HCP cluster by typing: 
 
-ssh nsc
+ssh hcp
 "
