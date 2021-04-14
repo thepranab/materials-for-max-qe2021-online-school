@@ -12,7 +12,7 @@
 
    Perform a calculation of PDOS using projwfc.x : `projwfc.x < projwfc.FeO.in > projwfc.FeO.out` 
 
-   Plot PDOS using the script for gnuplot:         `gnuplot plot_pdos.gnu`
+   Plot PDOS using the script for gnuplot:         `gnuplot plot_pdos.gp`
 
 2. **DFT+U case**
 
