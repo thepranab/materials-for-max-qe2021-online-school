@@ -6,7 +6,7 @@ implemented specially for the QE-2021 school to aid at submitting jobs
 to HPC cluster. These are:
 
 * `remote_mpirun` -- this is like `mpirun`, but it automatically
-  submits the calculation to a queuing system on the "nsc" HPC
+  submits the calculation to a queuing system on the "hpc" HPC
   system. 
   
   For example, a `pw.x` calculation can be submitted as:
@@ -21,7 +21,7 @@ to HPC cluster. These are:
 
 
 * `remote_pwtk` -- this automatically submits the PWTK
-  script to queuing system on the "nsc" HPC system. Example:
+  script to queuing system on the "hpc" HPC system. Example:
   
         remote_pwtk script.pwtk
 	
@@ -29,7 +29,7 @@ to HPC cluster. These are:
 
 
 * `remote_sbatch` -- automatically submits the Unix-shell
-  script to queuing system on the "nsc"  HPC system. Example:
+  script to queuing system on the "hpc"  HPC system. Example:
 
         remote_sbatch script.sh
 		
@@ -37,25 +37,24 @@ to HPC cluster. These are:
   
 #### Few other utility commands for "remote" usage
 
-* `nsc` -- this makes `ssh` to "nsc" HPC login node
-  (percolator.ijs.si), such that the user will be located in the same
-  directory as used locally
+* `hpc` -- this makes `ssh` to "hpc" HPC login node, such that the
+  user will be located in the same directory as used locally
 
-* `rsync_to_nsc` -- copies specified files to the "nsc"
-  cluster (percolator.ijs.si) to the same directory as is currently
+* `rsync_to_hpc` -- copies specified files to the "hpc"
+  cluster to the same directory as is currently
   used locally. Example:
 
-        rsync_to_nsc '*.in'
+        rsync_to_hpc '*.in'
 
   This will copy all `*.in` files from local directory to the
-  same directory on the "nsc" cluster.
+  same directory on the "hpc" cluster.
 
-* `rsync_from_nsc` -- download the specified file from the
-  "nsc" cluster (percolator.ijs.si) from the same directory as is
+* `rsync_from_hpc` -- download the specified file from the
+  "hpc" cluster from the same directory as is
   currently used locally. Example:
 
-        rsync_from_nsc '*.out'
+        rsync_from_hpc '*.out'
 		
-  This will copy all `*.out` files from the "nsc" cluster.
+  This will copy all `*.out` files from the "hpc" cluster.
 
 

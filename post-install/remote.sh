@@ -1,4 +1,4 @@
-NSC_HOST=nsc
+HPC_HOST=hpc
 sbatch_options="--nodes=1 --ntasks=8 --ntasks-per-node=8 --mem-per-cpu=2048M --output slurm-%j.log --reservation=qe2021"
 
 lastarg() {
@@ -24,7 +24,7 @@ where:
 Example:   remote_mpirun pw.x -nk 2 -inp pw.si.scf.in
 
 This is equivalent to:   pw.x -nk 2 -inp pw.si.scf.in > pw.si.scf.out
-but it runs on the NSC cluster (in parallel mode).
+but it runs on the HPC cluster (in parallel mode).
 "
         return 1
     fi
@@ -51,17 +51,17 @@ Did you use \"<\" stdin redirection operator? Use -inp instead.
 #!/bin/sh
 mpirun -np 8 $@ > $output 2>&1
 EOF
-    nsc_mkcwd
-    rsync_to_nsc $input $script.sh
+    hpc_mkcwd
+    rsync_to_hpc $input $script.sh
 
     echo "
 ------------------------------------------------------------------------
-Submitting to NSC cluster via sbatch:  
+Submitting to HPC cluster via sbatch:  
 
    mpirun -np 8 $@ > $output 2>&1
 ------------------------------------------------------------------------
 "   
-    ssh -x -n -f $NSC_HOST "cd $HERE; sbatch $sbatch_options $script.sh > $script.log 2>&1"
+    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $sbatch_options $script.sh > $script.log 2>&1"
 }
 
 
@@ -81,13 +81,13 @@ where:
    file.sh ... name of shell-script 
 
 BEWARE: before running this command you need to transfer all needed
-input files to NSC cluster, say, via \"rsync_to_nsc\"
+input files to HPC cluster, say, via \"rsync_to_hpc\"
 
 
 Example:   remote_sbatch job.sh
 
 This is equivalent to:   sbatch job.sh
-but it is submitted to the NSC cluster.
+but it is submitted to the HPC cluster.
 "   
         return 1
     fi
@@ -104,17 +104,17 @@ error while executing: remote_sbatch $@
     log=${script%.sh}.log
     HERE="~${PWD#$HOME}"
 
-    nsc_mkcwd
-    rsync_to_nsc $script
+    hpc_mkcwd
+    rsync_to_hpc $script
 
     echo "
 ------------------------------------------------------------------------
-Submitting to NSC cluster:  
+Submitting to HPC cluster:  
 
    sbatch $sbatch_options $script > $log
 ------------------------------------------------------------------------
 "
-    ssh -x -n -f $NSC_HOST "cd $HERE; sbatch $sbatch_options $script > $log 2>&1"
+    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $sbatch_options $script > $log 2>&1"
 }
 
 
@@ -134,7 +134,7 @@ where:
 Example:   remote_pwtk run.pwk
 
 This is equivalent to:   pwtk run.pwtk
-but it runs on the NSC cluster.
+but it runs on the HPC cluster.
 "   
         return 1
     fi
@@ -156,57 +156,57 @@ error while executing: remote_pwtk $@
 $(cat $input)
 }" > $script
 
-    nsc_mkcwd
-    rsync_to_nsc $input $script
+    hpc_mkcwd
+    rsync_to_hpc $input $script
 
     echo "
 ------------------------------------------------------------------------
-Submitting to NSC cluster:  
+Submitting to HPC cluster:  
 
    pwtk $input > $log
 ------------------------------------------------------------------------
 "
-    ssh -x -n -f $NSC_HOST "cd $HERE; pwtk $script > $log 2>&1"
+    ssh -x -n -f $HPC_HOST "cd $HERE; pwtk $script > $log 2>&1"
     rm -f $script
 }
 
-nsc() {
+hpc() {
     HERE="~${PWD#$HOME}"
-    ssh -t $NSC_HOST "cd $HERE; bash";
+    ssh -t $HPC_HOST "cd $HERE; bash";
 }
 
-nsc_mkcwd() {
-    # Usage: nsc_mkcwd
+hpc_mkcwd() {
+    # Usage: hpc_mkcwd
     HERE="~${PWD#$HOME}"
     if test x$HERE != x; then
-        ssh $NSC_HOST "mkdir -p $HERE"
+        ssh $HPC_HOST "mkdir -p $HERE"
     fi
 }
 
-scp_to_nsc() {
-    # Usage: scp_to_nsc files
+scp_to_hpc() {
+    # Usage: scp_to_hpc files
     # Purpose: will copy file to crysden:$(pwd)/file
-    nsc_mkcwd
+    hpc_mkcwd
     HERE="~${PWD#$HOME}"
-    scp $@ $NSC_HOST:$HERE
+    scp $@ $HPC_HOST:$HERE
 }
-rsync_to_nsc() {
-    # Usage: rsync_to_nsc files	
+rsync_to_hpc() {
+    # Usage: rsync_to_hpc files	
     # Purpose: will rsync files to crysden:$(pwd)/file
-    nsc_mkcwd   
+    hpc_mkcwd   
     HERE="~${PWD#$HOME}"
-    rsync -avu $@ $NSC_HOST:$HERE
+    rsync -avu $@ $HPC_HOST:$HERE
 }
 
-scp_from_nsc() {
-    # Usage: scp_from_nsc file
+scp_from_hpc() {
+    # Usage: scp_from_hpc file
     # Purpose: will copy file from crysden:$(pwd)/file to here
     HERE="~${PWD#$HOME}"    
-    scp $NSC_HOST:$HERE/$1 .
+    scp $HPC_HOST:$HERE/$1 .
 }
-rsync_from_nsc() {
-    # Usage: rsync_from_nsc file
+rsync_from_hpc() {
+    # Usage: rsync_from_hpc file
     # Purpose: will rsync file from crysden:$(pwd)/file to here
     HERE="~${PWD#$HOME}"
-    rsync -avu $NSC_HOST:$HERE/$1 .
+    rsync -avu $HPC_HOST:$HERE/$1 .
 }
