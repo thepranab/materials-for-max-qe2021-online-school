@@ -21,8 +21,8 @@ $SUDO $APT install \
       libblas-dev libfftw3-dev liblapack-dev openmpi-common libopenmpi-dev \
       tcllib tk iwidgets4 bwidget \
       vim emacs gnuplot imagemagick mencoder bc\
-      gperiodic caja-open-terminal python3-setuptools git graphviz \
-      python3-dev python3-pip virtualenv postgresql postgresql-server-dev-all postgresql-client rabbitmq-server 
+      gperiodic caja-open-terminal python3-setuptools git \
+      python3-dev python3-pip
 
 $SUDO $APT purge libreoffice* gimp* 
 $SUDO $APT autoremove
