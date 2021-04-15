@@ -18,13 +18,15 @@ $SUDO $APT update
 $SUDO $APT install \
       virtualbox-guest-utils virtualbox-guest-x11 \
       ssh rsync make gfortran gcc quantum-espresso xcrysden \
-      libblas-dev libfftw3-dev liblapack-dev openmpi-common\
+      libblas-dev libfftw3-dev liblapack-dev openmpi-common libopenmpi-dev \
       tcllib tk iwidgets4 bwidget \
       vim emacs gnuplot imagemagick mencoder bc\
       gperiodic caja-open-terminal python3-setuptools git graphviz \
       python3-dev python3-pip virtualenv postgresql postgresql-server-dev-all postgresql-client rabbitmq-server 
 
 $SUDO $APT purge libreoffice* gimp* 
+$SUDO $APT autoremove
+$SUDO $APT clean
 
 pwgui=PWgui-6.7
 pwtk=pwtk-1.0.3
