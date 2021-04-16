@@ -29,7 +29,7 @@ $SUDO $APT autoremove
 $SUDO $APT clean
 
 pwgui=PWgui-6.7
-pwtk=pwtk-1.0.3
+pwtk=pwtk-1.0.4
 qemodes=QE-modes-6.7
 
 # input link to exercises gitlab here
