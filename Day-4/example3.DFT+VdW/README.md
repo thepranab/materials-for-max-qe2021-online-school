@@ -4,19 +4,17 @@
 
 **Steps to perform:**
 
-1. Perform a SCF calculation using pw.x : `pw.x < pw.graphite.scf.in > pw.graphite.scf.out`
- 
-   Check forces and stress. Which conclusions can you make?
-
-2. Perform a variable-cell optimization : `pw.x < pw.graphite.vc-relax.in > pw.graphite.vc-relax.out`
+   Perform a variable-cell optimization : `pw.x < pw.graphite.vc-relax.in > pw.graphite.vc-relax.out`
 
    Study different cases:
-   - `input_dft = 'vdw-DF'`    @PBE pseudo
-   - `input_dft = 'vdw-DF2'`   @PBE pseudo
-   - `input_dft = 'LDA'`       @PBE pseudo
-   - Normal PBE calculation  @PBE pseudo
-   - `vdw_corr  = 'Grimme-D2'` @PBE pseudo
-   - Normal LDA calculation  @LDA pseudo
+   1. `input_dft = 'vdw-DF'`    @PBE pseudo (non-local)
+   2. `input_dft = 'vdw-DF2'`   @PBE pseudo (non-local)
+   3. `input_dft = 'rVV10'`     @PBE pseudo (non-local)
+   4. `vdw_corr  = 'DFT-D'`     @PBE pseudo (semi-empirical) 
+   5. `vdw_corr  = 'DFT-D3'`    @PBE pseudo (semi-empirical)
+   6.  Normal PBE calculation   @PBE pseudo
+   7.  Normal LDA calculation   @LDA pseudo
 
-   Compare the inter-layer distances and total energies. Which conclusions can you make?
+   Compare the optimized inter-layer distances with the experimental value of 3.336 A. 
+
 

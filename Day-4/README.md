@@ -10,7 +10,7 @@ for materials modelling.
 ### Description of examples:
 
 **Exercise 1:** Calculation of the projected density of states (PDOS)
-of FeO using DFT and DFT+U
+of FeO using DFT and DFT+U, and calculation of U 
 
     cd example1.DFT+U/
 
@@ -21,4 +21,4 @@ PBE0 hybrid functional
 
 **Exercise 3:** DFT study of graphite using Van der Waals functionals
 
-    cd example3.DFT+VdW
+    cd example3.DFT+VdW/

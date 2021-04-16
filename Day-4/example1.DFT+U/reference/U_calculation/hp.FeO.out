@@ -1,0 +1,348 @@
+
+     Program HP v.6.7MaX starts on 16Apr2021 at 14:41: 5 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+
+     =--------------------------------------------------------------------------=
+
+       Calculation of Hubbard parameters from DFPT; please cite this program as
+
+       I. Timrov, N. Marzari, and M. Cococcioni, Phys. Rev. B 98, 085127 (2018)
+
+     =--------------------------------------------------------------------------=
+
+     Reading xml data from directory:
+
+     ./tmp/FeO.save/
+     Message from routine volume:
+     axis vectors are left-handed
+     file Fe.pbesol-spn-kjpaw_psl.0.2.1.UPF: wavefunction(s)  3D renormalized
+     file Fe.pbesol-spn-kjpaw_psl.0.2.1.UPF: wavefunction(s)  3D renormalized
+     file O.pbesol-n-kjpaw_psl.0.1.UPF: wavefunction(s)  2P renormalized
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBESOL
+                           (   1   4  10   8   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum        1061     539    171                17255     6111    1141
+ 
+
+     Check: negative core charge=   -0.000246
+
+     negative rho (up, down):  2.638E-04 2.638E-04
+     Reading collected, re-writing distributed wavefunctions
+ 
+
+     bravais-lattice index     =             0
+     lattice parameter (alat)  =        8.1900 (a.u.)
+     unit-cell volume          =      274.6766 (a.u.)^3
+     number of atoms/cell      =             4
+     number of atomic types    =             3
+     kinetic-energy cut-off    =         30.00 (Ry)
+     charge density cut-off    =        240.00 (Ry)
+     conv. thresh. for NSCF    =       1.0E-11
+     conv. thresh. for chi     =       1.0E-05
+     Input Hubbard parameters (in eV):
+       U ( 1)                     =   1.00000E-08
+       U ( 2)                     =   1.00000E-08
+
+     celldm(1) =  8.19000  celldm(2) =  0.00000  celldm(3) =  0.00000
+     celldm(4) =  0.00000  celldm(5) =  0.00000  celldm(6) =  0.00000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (  0.5000  0.5000  1.0000 )  
+               a(2) = (  0.5000  1.0000  0.5000 )  
+               a(3) = (  1.0000  0.5000  0.5000 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = ( -0.5000 -0.5000  1.5000 )  
+               b(2) = ( -0.5000  1.5000 -0.5000 )  
+               b(3) = (  1.5000 -0.5000 -0.5000 )  
+
+     Atoms inside the unit cell (Cartesian axes):
+     site n.  atom      mass           positions (alat units)
+        1      Fe1    55.8450   tau(  1) = (  0.00000  0.00000  0.00000  )
+        2      Fe2    55.8450   tau(  2) = (  1.00000  1.00000  1.00000  )
+        3      O      16.0000   tau(  3) = (  0.50000  0.50000  0.50000  )
+        4      O      16.0000   tau(  4) = (  1.50000  1.50000  1.50000  )
+
+     Atom which will be perturbed:
+
+        1      Fe1    55.8450   tau( 1) = (  0.00000  0.00000  0.00000  )
+ 
+     =====================================================================
+
+                          PERTURBED ATOM #    1
+
+     site n.  atom      mass           positions (alat units)
+        1      Fe1    55.8450   tau( 1) = (  0.00000  0.00000  0.00000  )
+ 
+     =====================================================================
+
+     The perturbed atom has a type which is unique!
+
+
+     The grid of q-points ( 1, 1, 1)  (  1 q-points ) :
+       N       xq(1)         xq(2)         xq(3)       wq
+       1   0.000000000   0.000000000   0.000000000   1.000000000
+
+
+     =-------------------------------------------------------------=
+
+     Calculation for q #   1 = (   0.0000000   0.0000000   0.0000000 )
+
+     =-------------------------------------------------------------=
+
+                   WRITING LINEAR-RESPONSE SUMMARY:
+
+
+     Number of symmetries in the small group of q, nsymq = 12
+      + the symmetry q -> -q+G 
+
+     G cutoff =  407.7738  (  17255 G-vectors)     FFT grid: ( 50, 50, 50)
+     G cutoff =  203.8869  (   6111 G-vectors)  smooth grid: ( 36, 36, 36)
+
+     Number of k (and k+q if q/=0) points =    12  Marzari-Vanderbilt smearing, width (Ry) =  0.0200
+
+                       cart. coord. (in units 2pi/alat)
+        k (    1) = (   0.0000000   0.0000000   0.0000000), wk = 0.0370370
+        k (    2) = (   0.5000000  -0.1666667  -0.1666667), wk = 0.2222222
+        k (    3) = (   0.3333333   0.3333333  -0.3333333), wk = 0.2222222
+        k (    4) = (  -0.6666667   0.6666667   0.0000000), wk = 0.2222222
+        k (    5) = (   0.1666667   0.1666667   0.1666667), wk = 0.0740741
+        k (    6) = (  -0.8333333   0.5000000   0.5000000), wk = 0.2222222
+        k (    7) = (   0.0000000   0.0000000   0.0000000), wk = 0.0370370
+        k (    8) = (   0.5000000  -0.1666667  -0.1666667), wk = 0.2222222
+        k (    9) = (   0.3333333   0.3333333  -0.3333333), wk = 0.2222222
+        k (   10) = (  -0.6666667   0.6666667   0.0000000), wk = 0.2222222
+        k (   11) = (   0.1666667   0.1666667   0.1666667), wk = 0.0740741
+        k (   12) = (  -0.8333333   0.5000000   0.5000000), wk = 0.2222222
+
+                       cryst. coord.
+        k (    1) = (   0.0000000   0.0000000   0.0000000), wk = 0.0370370
+        k (    2) = (  -0.0000000  -0.0000000   0.3333333), wk = 0.2222222
+        k (    3) = (   0.0000000   0.3333333   0.3333333), wk = 0.2222222
+        k (    4) = (   0.0000000   0.3333333  -0.3333333), wk = 0.2222222
+        k (    5) = (   0.3333333   0.3333333   0.3333333), wk = 0.0740741
+        k (    6) = (   0.3333333   0.3333333  -0.3333333), wk = 0.2222222
+        k (    7) = (   0.0000000   0.0000000   0.0000000), wk = 0.0370370
+        k (    8) = (  -0.0000000  -0.0000000   0.3333333), wk = 0.2222222
+        k (    9) = (   0.0000000   0.3333333   0.3333333), wk = 0.2222222
+        k (   10) = (   0.0000000   0.3333333  -0.3333333), wk = 0.2222222
+        k (   11) = (   0.3333333   0.3333333   0.3333333), wk = 0.0740741
+        k (   12) = (   0.3333333   0.3333333  -0.3333333), wk = 0.2222222
+
+     Atomic wfc used for the projector on the Hubbard manifold are NOT orthogonalized
+
+     Total time spent up to now is:
+     HP           :      2.17s CPU      2.32s WALL
+
+      =--------------------------------------------=
+             START SOLVING THE LINEAR SYSTEM
+      =--------------------------------------------=
+
+      atom #  1   q point #   1   iter #   1
+      Fermi energy shift (Ry) =  0.4414E+00 -0.1101E-10
+      chi:   1  -0.5024986700
+      chi:   2   0.3088716966
+      Average number of iter. to solve lin. system:   42.6
+      Total CPU time :    19.6 s
+
+      atom #  1   q point #   1   iter #   2
+      Fermi energy shift (Ry) =  0.2425E+00  0.1691E-06
+      chi:   1   1.2128287564   residue:    1.7153274264
+      chi:   2  -1.2793837182   residue:    1.5882554147
+      Average number of iter. to solve lin. system:   17.8
+      Total CPU time :    30.9 s
+
+      atom #  1   q point #   1   iter #   3
+      Fermi energy shift (Ry) =  0.2625E+00 -0.6632E-08
+      chi:   1  -0.1268556559   residue:    1.3396844123
+      chi:   2   0.0467749703   residue:    1.3261586885
+      Average number of iter. to solve lin. system:   15.2
+      Total CPU time :    41.6 s
+
+      atom #  1   q point #   1   iter #   4
+      Fermi energy shift (Ry) =  0.3128E+00 -0.4117E-08
+      chi:   1  -0.1367143001   residue:    0.0098586442
+      chi:   2   0.0222602499   residue:    0.0245147204
+      Average number of iter. to solve lin. system:   18.2
+      Total CPU time :    53.1 s
+
+      atom #  1   q point #   1   iter #   5
+      Fermi energy shift (Ry) =  0.3078E+00 -0.1474E-08
+      chi:   1  -0.1330484061   residue:    0.0036658941
+      chi:   2   0.0211496870   residue:    0.0011105629
+      Average number of iter. to solve lin. system:   15.2
+      Total CPU time :    64.0 s
+
+      atom #  1   q point #   1   iter #   6
+      Fermi energy shift (Ry) =  0.3084E+00  0.3370E-08
+      chi:   1  -0.1286034703   residue:    0.0044449358
+      chi:   2   0.0151845796   residue:    0.0059651074
+      Average number of iter. to solve lin. system:   17.2
+      Total CPU time :    75.3 s
+
+      atom #  1   q point #   1   iter #   7
+      Fermi energy shift (Ry) =  0.3095E+00 -0.1984E-09
+      chi:   1  -0.1302303164   residue:    0.0016268461
+      chi:   2   0.0164093614   residue:    0.0012247818
+      Average number of iter. to solve lin. system:   17.9
+      Total CPU time :    86.7 s
+
+      atom #  1   q point #   1   iter #   8
+      Fermi energy shift (Ry) =  0.3093E+00  0.1807E-09
+      chi:   1  -0.1302868029   residue:    0.0000564865
+      chi:   2   0.0163356245   residue:    0.0000737369
+      Average number of iter. to solve lin. system:   18.0
+      Total CPU time :    98.2 s
+
+      atom #  1   q point #   1   iter #   9
+      Fermi energy shift (Ry) =  0.3091E+00 -0.3430E-10
+      chi:   1  -0.1302561764   residue:    0.0000306265
+      chi:   2   0.0162888235   residue:    0.0000468011
+      Average number of iter. to solve lin. system:   17.3
+      Total CPU time :   109.5 s
+
+      atom #  1   q point #   1   iter #  10
+      Fermi energy shift (Ry) =  0.3090E+00 -0.3307E-10
+      chi:   1  -0.1301239099   residue:    0.0001322664
+      chi:   2   0.0162035900   residue:    0.0000852334
+      Average number of iter. to solve lin. system:   18.8
+      Total CPU time :   121.0 s
+
+      atom #  1   q point #   1   iter #  11
+      Fermi energy shift (Ry) =  0.3090E+00 -0.8335E-11
+      chi:   1  -0.1301705636   residue:    0.0000466537
+      chi:   2   0.0162408825   residue:    0.0000372925
+      Average number of iter. to solve lin. system:   16.3
+      Total CPU time :   132.1 s
+
+      atom #  1   q point #   1   iter #  12
+      Fermi energy shift (Ry) =  0.3090E+00 -0.1302E-10
+      chi:   1  -0.1301631464   residue:    0.0000074173
+      chi:   2   0.0162387161   residue:    0.0000021664
+      Average number of iter. to solve lin. system:   17.8
+      Total CPU time :   143.5 s
+      
+      =--------------------------------------------=
+             CONVERGENCE HAS BEEN REACHED
+      =--------------------------------------------=
+
+     Computing the sum over q of the response occupation matrices...
+
+     q #   1 =  0.000000000   0.000000000   0.000000000
+
+     Post-processing calculation of Hubbard parameters ...
+
+ 
+     PRINTING TIMING FROM PWSCF ROUTINES: 
+ 
+
+     Called by init_run:
+
+     Called by electrons:
+     v_of_rho     :      0.10s CPU      0.11s WALL (       1 calls)
+     v_h          :      0.00s CPU      0.00s WALL (       1 calls)
+     v_xc         :      0.10s CPU      0.11s WALL (       1 calls)
+     newd         :      0.05s CPU      0.08s WALL (       1 calls)
+     PAW_pot      :      0.64s CPU      0.65s WALL (       1 calls)
+
+     Called by c_bands:
+     init_us_2    :      0.06s CPU      0.06s WALL (     180 calls)
+
+     Called by sum_band:
+
+     Called by *egterg:
+     h_psi        :     53.35s CPU     53.62s WALL (    5223 calls)
+     s_psi        :      1.41s CPU      1.42s WALL (   10602 calls)
+
+     Called by h_psi:
+     h_psi:calbec :      0.68s CPU      0.68s WALL (    5223 calls)
+     vloc_psi     :     51.44s CPU     51.70s WALL (    5223 calls)
+     add_vuspsi   :      0.69s CPU      0.69s WALL (    5223 calls)
+     vhpsi        :      0.45s CPU      0.46s WALL (    5223 calls)
+
+     General routines
+     calbec       :      1.56s CPU      1.57s WALL (   15993 calls)
+     fft          :      0.38s CPU      0.42s WALL (     429 calls)
+     ffts         :      0.11s CPU      0.11s WALL (     340 calls)
+     fftw         :     50.28s CPU     50.55s WALL (  150506 calls)
+     interpolate  :      0.08s CPU      0.09s WALL (      52 calls)
+     davcio       :      0.17s CPU      0.32s WALL (    6401 calls)
+ 
+     Parallel routines
+
+     Hubbard U routines
+     vhpsi        :      0.45s CPU      0.46s WALL (    5223 calls)
+
+     PAW routines
+     PAW_pot      :      0.64s CPU      0.65s WALL (       1 calls)
+ 
+     init_vloc    :      0.00s CPU      0.00s WALL (       1 calls)
+     init_us_1    :      0.53s CPU      0.53s WALL (       1 calls)
+     newd         :      0.05s CPU      0.08s WALL (       1 calls)
+     add_vuspsi   :      0.69s CPU      0.69s WALL (    5223 calls)
+ 
+     PRINTING TIMING FROM HP ROUTINES: 
+ 
+     hp_setup_q   :      0.49s CPU      0.56s WALL (       1 calls)
+     hp_init_q    :      0.02s CPU      0.02s WALL (       1 calls)
+     hp_solve_lin :    140.46s CPU    141.19s WALL (       1 calls)
+     hp_dvpsi_per :      0.01s CPU      0.01s WALL (     144 calls)
+     hp_dnsq      :      0.08s CPU      0.10s WALL (      12 calls)
+     hp_symdnsq   :      0.00s CPU      0.00s WALL (      12 calls)
+     hp_dnstot_su :      0.00s CPU      0.00s WALL (       1 calls)
+     hp_calc_chi  :      0.00s CPU      0.00s WALL (       1 calls)
+     hp_postproc  :      0.00s CPU      0.00s WALL (       1 calls)
+     hp_vpsifft   :      2.49s CPU      2.49s WALL (     132 calls)
+     hp_ef_shift  :      0.05s CPU      0.05s WALL (      12 calls)
+     hp_postproc  :      0.00s CPU      0.00s WALL (       1 calls)
+     hp_psymdvscf :      0.93s CPU      0.93s WALL (      12 calls)
+ 
+     PRINTING TIMING FROM LR MODULE: 
+ 
+     ortho        :      0.11s CPU      0.11s WALL (     144 calls)
+     cgsolve      :     57.00s CPU     57.31s WALL (     144 calls)
+     ch_psi       :     56.59s CPU     56.89s WALL (    5223 calls)
+     incdrhoscf   :      2.81s CPU      2.84s WALL (     144 calls)
+     localdos     :      0.24s CPU      0.24s WALL (       1 calls)
+     dv_of_drho   :      0.62s CPU      0.74s WALL (      12 calls)
+     mix_pot      :      0.10s CPU      0.28s WALL (      12 calls)
+     setup_dgc    :      0.39s CPU      0.45s WALL (       1 calls)
+     setup_dmuxc  :      0.09s CPU      0.10s WALL (       1 calls)
+     setup_nbnd_o :      0.00s CPU      0.00s WALL (       1 calls)
+     lr_orthoUwfc :      0.01s CPU      0.02s WALL (       1 calls)
+     cft_wave     :      2.25s CPU      2.26s WALL (    6336 calls)
+ 
+     USPP ROUTINES: 
+ 
+     newdq        :      0.97s CPU      0.97s WALL (      12 calls)
+     adddvscf     :      0.07s CPU      0.07s WALL (     132 calls)
+     addusdbec    :      0.04s CPU      0.04s WALL (     144 calls)
+     addusldos    :      0.08s CPU      0.09s WALL (       1 calls)
+ 
+     HP           :   2m22.63s CPU   2m23.51s WALL
+
+ 
+   This run was terminated on:  14:43:28  16Apr2021            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

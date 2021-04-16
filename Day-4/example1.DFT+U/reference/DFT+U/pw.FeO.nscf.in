@@ -2,7 +2,7 @@
     calculation='nscf'
     restart_mode='from_scratch',
     prefix='FeO'
-    pseudo_dir = '../../../pseudo'
+    pseudo_dir = '../../pseudo'
     outdir='./tmp/'
     verbosity='high'
  /
@@ -22,8 +22,8 @@
     lda_plus_u = .true.,
     lda_plus_u_kind = 0,
     U_projection_type = 'atomic',
-    Hubbard_U(1) = 5.2
-    Hubbard_U(2) = 5.2
+    Hubbard_U(1) = 4.6
+    Hubbard_U(2) = 4.6
     nbnd = 35
  /
  &electrons

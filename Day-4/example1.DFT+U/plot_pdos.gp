@@ -7,6 +7,6 @@ set xtics -10, 2, 8
 set ytics   0, 1, 5
 set xlabel "E - E_F (eV)" 
 set ylabel "PDOS (states/eV/atom)" 
-plot "FeO.pdos_atm#1(Fe1)_wfc#5(d)" u ($1-13.7042):($2) w l lw 2 title 'Fe-3d (majority spin)', \
-     "FeO.pdos_atm#2(Fe2)_wfc#5(d)" u ($1-13.7042):($2) w l lw 2 title 'Fe-3d (minority spin)', \
-     "FeO.pdos_atm#3(O)_wfc#2(p)"   u ($1-13.7042):($2) w l lw 2 title ' O-2p'
+plot "FeO.pdos_atm#1(Fe1)_wfc#5(d)" u ($1-13.6464):($2) w l lw 2 lt rgb "red"   title 'Fe-3d (majority spin)', \
+     "FeO.pdos_atm#2(Fe2)_wfc#5(d)" u ($1-13.6464):($2) w l lw 2 lt rgb "green" title 'Fe-3d (minority spin)', \
+     "FeO.pdos_atm#3(O)_wfc#2(p)"   u ($1-13.6464):($2) w l lw 2 lt rgb "blue"  title ' O-2p'
