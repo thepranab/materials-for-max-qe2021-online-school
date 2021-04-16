@@ -133,15 +133,15 @@ else
     echo "ESPRESSO_PSEUDO already defined; skipping" 
 fi
 
-# define remote NSC aliases environmental variables
-cp $installdir/remote.sh $HOME/.bash_nsc
-if test "x$(grep bash_nsc $HOME/.bashrc)" == "x"; then
+# define remote HPC aliases environmental variables
+cp $installdir/remote.sh $HOME/.bash_hpc
+if test "x$(grep bash_hpc $HOME/.bashrc)" == "x"; then
     echo '
-# source NSC functions and aliases
-. $HOME/.bash_nsc
+# source HPC functions and aliases
+. $HOME/.bash_hpc
 ' >> $HOME/.bashrc
 else
-    echo "~/.bash_nsc already sources from ~/.bashrc"
+    echo "~/.bash_hpc already sources from ~/.bashrc"
 fi
 
 # fix for firefox add-on so it can open *md files
