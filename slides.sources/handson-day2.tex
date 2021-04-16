@@ -649,17 +649,17 @@ vary the number of k-points and values of \var{degauss} and
   \item \var{smearing} variable, possible values:
     \flag{'gauss'} (or \flag{'g'}), \flag{'marzari-vanderbilt'} (or
     \flag{'m-v'}), \flag{'methfessel-paxton'} (or \flag{'m-p'})
-  \item \var{degauss} variable, in range from 0.01 to 0.15
-  \item k-points using the {\em automatic} grids of \card{6 6 6},
-    ~\card{12 12 12}, and \card{16 16 16}    
+  \item \var{degauss} variable, in range from 0.001 to 0.1
+  \item k-points using the {\em automatic} grids of \card{4 4 4},
+    ~\card{8 8 8}, ~\card{12 12 12}, and \card{16 16 16}    
   \end{itemize}
 \end{enumerate}
 With PWTK this can be achieved with the following snippet:
 {\codecolor\small
 \begin{verbatim}
-    foreach nk {6 12 16} {
+    foreach nk {4 8 12 16} {
         foreach smear {'gauss'  'm-p'  'm-v'} {
-            foreach degauss [seq 0.01 0.02 0.15] {
+            foreach degauss {0.001 0.003 0.01 0.03 0.1} {
                 SYSTEM " smearing = $smear  
                          degauss  = $degauss "
                 K_POINTS automatic "$nk $nk $nk   1 1 1"
