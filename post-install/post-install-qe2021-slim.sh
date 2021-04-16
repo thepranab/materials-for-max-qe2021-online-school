@@ -151,7 +151,20 @@ if test "x$(cat $HOME/.mime.types | grep markdown)" == "x"; then
 else
     echo ".mime.types already created and modified" 
 fi
+#
+if test "x$(cat $HOME/.config/mimeapps.list | grep markdown)" == "x"; then
+    cat <<EOF > $HOME/.config/mimeapps.list
+[Default Applications]
+text/markdown=firefox-esr.desktop
+text/plain=emacs.desktop
 
+[Added Associations]
+text/markdown=firefox-esr.desktop;
+text/plain=emacs.desktop;
+EOF
+else
+    echo "default apps already set in mimeapps.list, skipping ... " 
+fi
 #
 # clone exercises git repository 
 #
