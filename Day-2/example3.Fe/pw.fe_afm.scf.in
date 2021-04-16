@@ -14,11 +14,11 @@
     ecutwfc = 25.0,
     ecutrho = 200.0,
 
-    occupations='smearing',
-    smearing='mv',
-    degauss=0.01,
+    occupations = 'smearing',
+    smearing    = 'mv',
+    degauss     = 0.01,
 
-    nspin=2, 
+    nspin = 2, 
     starting_magnetization(1) =  0.6
     starting_magnetization(2) = -0.6
  /
