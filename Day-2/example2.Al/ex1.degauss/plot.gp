@@ -12,7 +12,7 @@ plot \
      'gauss.k4.dat'  w l lt 1 lw 2, \
      'gauss.k8.dat'  w l lt 2 lw 2, \
      'gauss.k12.dat' w l lt 3 lw 2, \
-     'gauss.k16.dat' w l lt 3 lw 2
+     'gauss.k16.dat' w l lt 4 lw 2
 pause -1
 
 set yrange [-4.186:]
