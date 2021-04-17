@@ -4,7 +4,7 @@
 
 **Steps to perform:**
 
-1. Read the `ecutwfc.pwtk` script and try to understand it
+1. Read the `ecutwfc.pwtk` script and try to understand it.
 
 2. To run the example, execute:
 

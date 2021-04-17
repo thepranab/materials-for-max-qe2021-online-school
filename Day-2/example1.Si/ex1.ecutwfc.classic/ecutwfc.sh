@@ -6,7 +6,7 @@
 rm -f si.etot_vs_ecut
 
 # loop over ecutwfc value
-for ecut in 12 16 20 24 28 32
+for ecut in 12 16 20 24 28 32 36
 do
     echo "Running for ecutwfc = $ecut ..."
 

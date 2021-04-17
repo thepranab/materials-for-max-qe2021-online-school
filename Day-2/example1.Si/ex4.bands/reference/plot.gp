@@ -1,5 +1,5 @@
-# insert here the correct Fermi energy (value of highest occupied level)
-Efermi=6.3026
+# insert here the correct Fermi energy (value of the highest occupied level)
+Efermi=6.3074
 # .. and uncomment the next line:
 set xzeroaxis lt -1
 

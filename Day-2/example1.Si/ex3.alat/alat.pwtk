@@ -25,3 +25,10 @@ close $fid
 
 # plot the result with gnuplot
 exec gnuplot plot.gp
+
+# let's run ev.x to get precise lattice parameter
+exec ev.x < ev.murnaghan.in 
+
+print [readFile ev.murnaghan.out]
+print "Results of ev.x (Murnaghan equation-of-state) written to:  ev.murnaghan.out"
+

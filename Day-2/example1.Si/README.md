@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------
 
 Exercise consists of several examples, the first two being the
-convergence tests for the cutoff energy (ecutwfc) and k-points.
+convergence tests for the cutoff energy (`ecutwfc`) and k-points.
 
 Convergence tests are typically performed by making a series of
 calculations with aid of shell-scripts, e.g., see
@@ -15,14 +15,14 @@ ToolKit*. It is a Tcl-scripting interface for PWscf set of programs
 contained in the Quantum-ESPRESSO.
 
 To see the difference between traditional Unix shell-scripts and PWTK
-scripts, compare, e.g.,
+scripts, compare
 `ex1.ecutwfc.classic/ecutwfc.sh`  vs  `ex1.ecutwfc/ecutwfc.pwtk`
 
 
 **Description of examples:**
 
 * `ex1.ecutwfc.classic/` -- convergence tests for cutoff energy
-                            (ecutwfc) via traditional Unix shell
+                            (`ecutwfc`) via traditional Unix shell
                             script
 
 * `ex1.ecutwfc/` -- similar as above but using the PWTK script instead
