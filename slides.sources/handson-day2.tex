@@ -128,6 +128,7 @@ For serial (single processor) execution you can use\\[0.5em]
 {\small (note: input redirection \code{pw.x < pw.si.scf.in} works but it
   is not recommended on parallel machines)}
 
+\vspace{-1em}
 Look at the directory specified by \var{outdir} (in our case
 \var{\$ESPRESSO\_TMPDIR}) and its content:\\[0.5em] 
 \exec{ls \$ESPRESSO\_TMPDIR}\\
@@ -135,10 +136,11 @@ Look at the directory specified by \var{outdir} (in our case
 {\small\gray (to see only these files, you may need to use
 \code{ls \$ESPRESSO\_TMPDIR/silicon.*})}\\
 
-The directory contains a data directory with binary data files for
-further processing and an XML file with general information on the run.
-The name of the various files is determined by the value of the 
-\var{prefix} variable and by their content.
+The directory contains a data directory (\file{silicon.save}) with
+binary data files for further processing and an XML file
+(\file{silicon.xml}) with general information on the run.  The name of
+the various files is determined by the value of the \var{prefix}
+variable and by their content.
 
 {\burgundy\em Do not run two instances of \prog{pw.x} that access the same
   \texttt{outdir} with the same \texttt{prefix}!} Unpredictable
@@ -150,7 +152,7 @@ well).  In case of trouble, clean \var{outdir}.
 Examine output file \file{pw.si.scf.out}, look how self-consistency proceeds:
 {\codecolor
 \begin{verbatim}
-$ grep -e 'total energy' -e estimated pw.si.scf.out}
+$ grep -e "total energy" -e estimated pw.si.scf.out
      total energy              =     -15.79103344 Ry
      estimated scf accuracy    <       0.06376674 Ry
      total energy              =     -15.79409289 Ry
@@ -166,20 +168,20 @@ $ grep -e 'total energy' -e estimated pw.si.scf.out}
 }
 Notice that there are 8 electrons in the cell: 2 (pseudo-)atoms/cell
 with 4 electrons. The system is a non-magnetic insulator, so just the 
-lowest 4=8/2 valence bands (Kohn-Sham states) are computed.
+lowest 4 (= 8/2) valence bands (Kohn-Sham states) are computed.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{Convergence w.r.t. the kinetic energy cutoff}
 %
-The kinetic energy cutoff \var{ecutwfc} (in Ry) determines the size
-of the Plane-Wave (PW) basis set used to expand wave-functions (i.e. 
+The kinetic energy cutoff \var{ecutwfc} (in Ry) determines the size of
+the Plane-Wave (PW) basis set used to expand wave-functions (i.e.
 Kohn-Sham orbitals) \\
-{\small (for Norm-Conserving PP, the PW set for charge density
-  \var{ecutrho=4*ecutwfc}, do not specify it)}
+{\small\gray (the default for the charge density is
+  \var{ecutrho=4*ecutwfc}, which is OK for norm-conserving PPs)}
 
 \begin{itemize}
 \item A manual test of convergence w.r.t. kinetic energy cutoff entails the
-following tasks\\({\bf BEWARE: we will not do it manually})
+following tasks\\({\bf BEWARE: we will {\burgundy not} do it manually})
 \begin{enumerate}
 \item change value of \var{ecutwfc} in \file{pw.si.scf.in} 
   input to, e.g., 16, 20, 24, 28, 32 Ry
@@ -272,7 +274,7 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
   how to construct proper input files
 
   \vspace{-0.5em}
-\item namelist and cards can be called many times, but there is a big
+\item namelists and cards can be called many times, but there is a big
   difference how multiple calls are handled for namelists and cards:
   {\bf cards} are handled in {\bf overwrite mode}, whereas {\bf
     namelists} are handled in a {\it kind of} {\bf
@@ -304,7 +306,7 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
     \vspace{0.2em}
   \item \code{runPROJWFC} -- ... for the \var{projwfc.x} program
   \end{itemize}
-\item the PWTK web-site is:\\
+\item PWTK web-site:\\
   \file{http://pwtk.ijs.si/} ~or~ \file{http://pwtk.quantum-espresso.org/}
   \item PWTK documentation is available at:\\
     \file{http://pwtk.ijs.si/toc\_index.html}
@@ -340,7 +342,7 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
 \includegraphics[width=10cm]{figs/ecut.png}
 \end{center}
 \vspace{-2cm}
-{\burgundy Reminder:}
+{\burgundy Notes:}
 \begin{itemize}
 \item Convergence w.r.t the cutoff is a property of the {\em pseudopotential(s) used}.
 \item 
@@ -370,7 +372,7 @@ grids:
 \end{verbatim}
 }
 then step-wise increase \card{nk1=nk2=nk3} to, e.g., \card{2, 4, 6, 8}
-(keep \card{k1=k2=k3=1}) and a run \prog{pw.x} calculation for each
+(keep \card{k1=k2=k3=1}) and run \prog{pw.x} calculation for each
 value of \card{nk1=nk2=nk3}.
 
 For example, with PWTK this can be achieved with the following snippet:
@@ -563,7 +565,7 @@ The snippet for running all three calculations manually is:\\[0.5em]
 \head{Band Structure of Silicon (III)}
 %
 To execute the PWTK script that will perform all the needed
-calculations to plot the bands, proceed as follows:\\
+calculations for plotting the bands, proceed as follows:\\
 \parbox{0.65\textwidth}{
   \begin{itemize}
   \item move to directory
@@ -617,8 +619,8 @@ $M$ labels irreducible representations.
 
 %
 Aluminum is even simpler than Silicon: one atom per unit cell
-in a fcc lattice.\\
-{\bf BUT:} it is a metal, only valence bands and a few k-points will
+in an fcc lattice.\\
+{\bf\burgundy BUT:} it is a metal, only valence bands and a few k-points will
 not suffice.
 \begin{itemize}
 \item move to the \file{Day-2/example2.Al} directory
@@ -686,16 +688,16 @@ broadening. For Al and \flag{m-v} or \flag{m-p} smearing, good
 convergence is achieved for a \card{12 12 12} k-point grid and
 \var{degauss} $\sim 0.01$ to $0.05$ Ry.\\[1em]
 \centerline{\includegraphics[width=1.0\textwidth]{figs/smearing.pdf}}
-{\small Notice that you cannot reduce the broadening too much: the energy levels
+{\small\gray Beware that you cannot reduce the broadening too much: the energy levels
 must have some overlap, or else the advantage of broadening is lost!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{How to plot charge-density}
 \rightfooter{Example: \file{Day-2/example2.Al/ex2.chdens}}
 %
-Example \file{Day-2/example2.Al/ex2.chdens} shows how to calculate
-the valence and the all electron charge density (the latter requires PAW
-a potential and a very large cutoff energy)
+Example \file{Day-2/example2.Al/ex2.chdens} shows how to calculate the
+valence and the all electron charge density (the latter requires a PAW
+potential and a very large cutoff energy)
 \begin{itemize}
 \item move to \file{Day-2/example2.Al/ex2.chdens} directory ({\it
     chdens} is an acronym for charge-density)
@@ -790,19 +792,20 @@ Run \prog{pw.x} in the usual way (\code{pw.x -in
   \end{itemize} 
 
 \item Can you write input data for an AFM structure?\\
-  (hint: split bcc into two simple cubic sublattices, \var{ibrav=1},
-  with two atoms at (0,0,0) and
-  $(\frac{1}{2},\frac{1}{2},\frac{1}{2})$).  
+  {\gray\small {\bf hint:} split bcc into two simple cubic sublattices,
+    \var{ibrav=1}, with two atoms at (0,0,0) and
+    $(\frac{1}{2},\frac{1}{2},\frac{1}{2})$}.
 \end{itemize}
 
 \vfill
-{\gray As a convenience, an antiferromagnetic file is
-  provided (\file{pw.fe\_afm.scf.in})
+
+As a convenience, an antiferromagnetic file is provided
+(\file{pw.fe\_afm.scf.in})
 
 You can compare the ferromagnetic and antiferromagnetic files
 by:\\[1em]
 \exec{diff pw.fe\_fm.scf.in pw.fe\_afm.scf.in}
-}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -811,7 +814,7 @@ by:\\[1em]
 %
 For computational efficiency, it is convenient to keep \var{ecutwfc}
 as low as possible, while \var{ecutrho} is less critical
-{\small (look at 
+{\gray\small (look at 
 the CPU time report at the end of an output: there are very many
 \texttt{fft{\bf w}}, depending upon \var{ecutwfc}, while a much smaller
 number of \texttt{fft} depends upon \var{ecutrho})}
