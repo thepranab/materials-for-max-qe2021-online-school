@@ -892,17 +892,17 @@ The scheme to calculate DOS and PDOS consists of:\vspace{-0.8em}
   \item in this example the {\em linear tetrahedron method} is used\\
     (variable \var{occupations='tetrahedra'})
   \end{itemize}\vspace{-0.8em}
-\item a \prog{dos.x} calculation to calculate DOS {\small (DOS is written to a file as
-    specified by the \var{fildos} variable in the \prog{dos.x} input;
-    also here the values \var{prefix} and \var{outdir} are the same
-    as for SCF \prog{pw.x}
+\item a \prog{dos.x} calculation to calculate DOS {\small\gray (DOS is
+    written to a file as specified by the \var{fildos} variable in the
+    \prog{dos.x} input; also here the values of \var{prefix} and
+    \var{outdir} are the same as for SCF \prog{pw.x}
     calculation)}\vspace{-0.8em}
 \item a \prog{projwfc.x} calculation to calculate PDOS projected to
-  atomic states {\small (this calculation is analogous to \prog{dos.x}
-    one,
+  atomic states {\small\gray (this calculation is analogous to
+    \prog{dos.x} one,
     inputs are also very similar; you can compare them as:}\\[0.5em]
   \exec{diff dos.Fe.in projwfc.Fe.in}\\[0.5em]
-  {\small the difference is that \prog{dos.x} uses the \var{fildos}
+  {\small\gray the difference is that \prog{dos.x} uses the \var{fildos}
     whereas \prog{projwfc.x} uses the \var{filpdos} variable)}
 \end{enumerate}
 Explore the content of \var{fildos} and \var{filpdos} files!  
