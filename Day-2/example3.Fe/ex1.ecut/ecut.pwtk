@@ -6,7 +6,7 @@ foreach dual { 4 8 12 } {
 
     set fid [open Etot-vs-ecutwfc.dual$dual.dat w]
 
-    foreach ecutwfc { 25 30 35 40 45 50 } {
+    foreach ecutwfc [seq 25 5 50] {
         
         set name pw.Fe.scf.ecutwfc-$ecutwfc.dual-$dual
         
