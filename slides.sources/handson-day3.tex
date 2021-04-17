@@ -17,7 +17,8 @@
 \MyLogo{~}
 \vspace{5em}
 \begin{center}
-  \centerline{\burgundy\LARGE\bf QE-2021: Hands-on session -- Day-3}
+  {\burgundy\LARGE\bf QE-2021: Hands-on session -- Day-3}\\[2em]
+  {\burgundy\LARGE (Structural relaxations + NEB; PWTK)}
   ~\\[1.5em]
     %\large Ari Paavo Seitsonen, Anton Kokalj, Pietro Delugas,\\
   %Matic Poberžnik, Mandana Safari, Unmesh Mondal, Tao Jiang
@@ -45,16 +46,16 @@ To get the latest version of the exercises, move to \file{Day-3/} directory and 
 \exec{git pull}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{How to run calculations remotely on the ``nsc'' HPC cluster}
+\head{How to run calculations remotely on the ``hpc'' HPC cluster}
 \rightheader{}
 
 Several utility commands have been implemented specially for the
-QE-2021 school to aid at submitting jobs to HPC cluster (login node:
-percolator.ijs.si). These are: {\small
+QE-2021 school to aid at submitting jobs to HPC cluster(s). These are:
+{\small
 \begin{itemize}
 \item \cmd{\bf remote\_mpirun} -- this is like \cmd{mpirun}, but it
   automatically submits the calculation to a queuing system on the
-  ``nsc'' HPC system. For example, a \prog{pw.x} calculation can be
+  ``hpc'' HPC system. For example, a \prog{pw.x} calculation can be
   submitted
   as:\\[0.5em]
   \exec{remote\_mpirun pw.x -inp pw.file.in}\\[0.5em]
@@ -66,32 +67,30 @@ percolator.ijs.si). These are: {\small
   \flag{-np~8}.
   \vspace{0.5em}
 \item \cmd{\bf remote\_pwtk} -- this automatically submits the PWTK
-  script to queuing system on the ``nsc'' HPC system. Example:\\[0.5em]
+  script to queuing system on the ``hpc'' HPC system. Example:\\[0.5em]
   \exec{remote\_pwtk script.pwtk}\\[0.5em]
   where \file{script.pwtk} is the name of the PWTK script.
 \vspace{0.5em}
 \item \cmd{\bf remote\_sbatch} -- automatically submits the Unix-shell
-  script to queuing system on the ``nsc''  HPC system. Example:\\[0.5em]
+  script to queuing system on the ``hpc''  HPC system. Example:\\[0.5em]
   \exec{remote\_sbatch script.sh}\\[0.5em]
   where \file{script.sh} is the name of the Unix-shell script.
 
 \clearpage
-\item \cmd{\bf nsc} -- this makes \cmd{ssh} to ``nsc'' HPC login node
-  (percolator.ijs.si), such that the user will be located in the same
-  directory as used locally
-\vspace{0.5em}
-\item \cmd{\bf rsync\_to\_nsc} -- copies specified files to the ``nsc''
-  cluster (percolator.ijs.si) to the same directory as is currently
+\item \cmd{\bf hpc} -- this makes \cmd{ssh} to ``hpc'' HPC login node,
+  such that the user will be located in the same directory as used
+  locally \vspace{0.5em}
+\item \cmd{\bf rsync\_to\_hpc} -- copies specified files to the
+  ``hpc'' cluster to the same directory as is currently
   used locally. Example:\\[0.5em]
-  \exec{rsync\_to\_nsc *.in}\\[0.5em]
+  \exec{rsync\_to\_hpc *.in}\\[0.5em]
   This will copy all \file{*.in} files from local directory to the
-  same directory on the ``nsc'' cluster.
-\vspace{0.5em}  
-\item \cmd{\bf rsync\_from\_nsc} -- download the specified file from the
-  ``nsc'' cluster (percolator.ijs.si) from the same directory as is
+  same directory on the ``hpc'' cluster.  \vspace{0.5em}
+\item \cmd{\bf rsync\_from\_hpc} -- download the specified file from
+  the ``hpc'' cluster from the same directory as is
   currently used locally. Example:\\[0.5em]
-  \exec{rsync\_from\_nsc *.out}\\[0.5em]
-  This will copy all \file{*.out} files from the ``nsc'' cluster.
+  \exec{rsync\_from\_hpc *.out}\\[0.5em]
+  This will copy all \file{*.out} files from the ``hpc'' cluster.
 \end{itemize}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -407,10 +406,10 @@ PWTK script to manage these two calculations.
     the HPC cluster, i.e.:\\
     \exec{remote\_pwtk neb.pwtk}}
 \item To download the calculated output files, use:\\
-  \exec{rsync\_from\_nsc *.out}\\[0.5em]  
+  \exec{rsync\_from\_hpc *.out}\\[0.5em]  
   Give the remote computer some time to make the calculation. To
   download other data files that were produced by \prog{neb.x}, use:\\[0.5em]
-  \exec{rsync\_from\_nsc .}
+  \exec{rsync\_from\_hpc .}
 \item{Once the calculation converges analyze \file{neb.noCI.out} and
     \file{neb.auto.out} and check the number of steps and the reaction
     energy barrier.
@@ -592,7 +591,7 @@ to understand it.
 submit it to HPC cluster. This can be achieved by:\\[0.5em]
 \exec{remote\_pwtk scan.pwtk}\\[0.5em]
 After calculation finishes, download the output and data files as:\\[0.5em]
-\exec{rsync\_from\_nsc .}\\[0.5em]
+\exec{rsync\_from\_hpc .}\\[0.5em]
 The resulting potential-energy-surface can be visualized as:\\[0.5em]
 \exec{gnuplot plot2D.gp}\\[0.5em]
 Then plot the result with gnuplot. You should obtain something like
