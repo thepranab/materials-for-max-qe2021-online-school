@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------
 
 Exercise consists of several examples, the first two being the
-convergence tests for cutoff energy (ecutwfc) and k-points.
+convergence tests for the cutoff energy (ecutwfc) and k-points.
 
 Convergence tests are typically performed by making a series of
 calculations with aid of shell-scripts, e.g., see
