@@ -47,9 +47,9 @@ print "--------------------------------------------------
 
 * to plot the all-electron VALENCE density execute:
 
-    exec xcrysden --xsf all-electron-VALENCE-chdens.xsf
+    xcrysden --xsf all-electron-VALENCE-chdens.xsf -s state2.xcrysden
 
 * to plot the all-electron total density execute:
 
-    exec xcrysden --xsf all-electron-total-chdens.xsf 
+    xcrysden --xsf all-electron-total-chdens.xsf  -s state2.xcrysden
 "

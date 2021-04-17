@@ -1,6 +1,6 @@
-### Running on host: assam
+### Running on host: cl
 
-     Program POST-PROC v.6.4.1 starts on 14Sep2019 at 14:34:31 
+     Program POST-PROC v.6.7MaX starts on 17Apr2021 at 16: 1: 1 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -15,12 +15,17 @@
      MPI processes distributed on     1 nodes
      R & G space division:  proc/nbgrp/npool/nimage =       2
 
+     Reading xml data from directory:
+
+     /tmp/QE/al.save/
+     file Al.pbe-n-kjpaw_psl.1.0.0.UPF: wavefunction(s)  3S 3P renormalized
+
      IMPORTANT: XC functional enforced from input :
-     Exchange-correlation      = PBE ( 1  4  3  4 0 0)
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
      Any further DFT definition will be discarded
      Please, verify this is what you really want
 
-               file Al.pbe-n-kjpaw_psl.1.0.0.UPF: wavefunction(s)  3S 3P renormalized
 
      Parallelization info
      --------------------
@@ -38,10 +43,10 @@
      Writing data to be plotted to file all-electron-VALENCE-chdens.xsf
      Plot Type: 3D                     Output format: XCrySDen     
 
-     POST-PROC    :      1.56s CPU      1.57s WALL
+     POST-PROC    :      0.82s CPU      0.72s WALL
 
 
-   This run was terminated on:  14:34:32  14Sep2019            
+   This run was terminated on:  16: 1: 2  17Apr2021            
 
 =------------------------------------------------------------------------------=
    JOB DONE.

@@ -2,13 +2,13 @@
 ## How to calculate and plot the electron charge density
 ------------------------------------------------------
 
-chdens = CHarge DENSity
+**chdens** = **CH**arge **DENS**ity
 
 
 * **Example 1:**  `1-chdens.pwtk`
 
   This example shows how to calculated valence charge density. Please
-  **edit the file** and **set the requested variables** before running it. To
+  **edit the `chdens.pwtk` file** and **set the requested variables** before running it. To
   run the example, execute:
 
        pwtk 1-chdens.pwtk
@@ -20,7 +20,7 @@ chdens = CHarge DENSity
 
 * **Example 2:**  `2-chdens-paw.pwtk`
 
-  This examples shows how to calculate all electron VALENCE and total
+  This examples shows how to calculate all electron *VALENCE* and *TOTAL*
   charge density by using the PAW potential. Notice now the electron
   charge around nuclei. To run the example, execute:
 

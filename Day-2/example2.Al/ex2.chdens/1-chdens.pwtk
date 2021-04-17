@@ -36,4 +36,4 @@ PLOT {
 runPP pp.$name.chdens.in
 
 # plot the calculated charge density
-catch { exec xcrysden --xsf chdens.xsf }
+catch { exec xcrysden --xsf chdens.xsf -s state.xcrysden }

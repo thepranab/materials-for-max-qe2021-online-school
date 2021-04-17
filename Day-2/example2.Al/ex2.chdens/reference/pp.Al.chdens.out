@@ -1,6 +1,6 @@
-### Running on host: assam
+### Running on host: cl
 
-     Program POST-PROC v.6.4.1 starts on 14Sep2019 at 14:28:33 
+     Program POST-PROC v.6.7MaX starts on 17Apr2021 at 14:26:20 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -15,8 +15,13 @@
      MPI processes distributed on     1 nodes
      R & G space division:  proc/nbgrp/npool/nimage =       2
 
+     Reading xml data from directory:
+
+     /tmp/QE/al.save/
+
      IMPORTANT: XC functional enforced from input :
-     Exchange-correlation      = PZ ( 1  1  0  0 0 0)
+     Exchange-correlation= PZ
+                           (   1   1   0   0   0   0   0)
      Any further DFT definition will be discarded
      Please, verify this is what you really want
 
@@ -36,10 +41,10 @@
      Writing data to be plotted to file chdens.xsf
      Plot Type: 3D                     Output format: XCrySDen     
 
-     POST-PROC    :      0.19s CPU      0.21s WALL
+     POST-PROC    :      0.12s CPU      0.12s WALL
 
 
-   This run was terminated on:  14:28:34  14Sep2019            
+   This run was terminated on:  14:26:21  17Apr2021            
 
 =------------------------------------------------------------------------------=
    JOB DONE.
