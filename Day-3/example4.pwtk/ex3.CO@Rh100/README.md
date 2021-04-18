@@ -45,7 +45,7 @@ within the PWTK scripts. To run the whole example, execute:
         gnuplot moproj.gp
 
    Prior to plotting PDOS & MOPDOS, you may set the Fermi energy in
-   the `moproj.gp` file to correct value (i.e. `Ef=...`) . Fermi
+   the `moproj.gp` file to the correct value (i.e. `Ef=...`). Fermi
    energy can be obtained as:
    
         grep Fermi pw.CO-Rh100.nscf.out

@@ -30,7 +30,7 @@ PLOT {
 set name CO-Rh100
 
 
-# auxiliary procedure used by {difden,ildos,pdos}.pwtk script if they
+# auxiliary procedure used by {difden,ildos,pdos}.pwtk scripts if they
 # are run directly
 proc ensure_optimized_structure {name} {
     if { [file exists pw.$name.relax.out] } {
