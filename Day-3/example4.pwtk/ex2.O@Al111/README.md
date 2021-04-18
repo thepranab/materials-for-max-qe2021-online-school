@@ -16,7 +16,7 @@ remotely, i.e.:
         
 To download the calculated output files, use:
 	
-	    rsync_from_nsc .
+	    rsync_from_hpc .
 		
 But wait some time before doing that; give the remote computer
 some time to make the calculation.
@@ -28,27 +28,31 @@ The resulting potential-energy-surface can be visualized as:
        
 ### "Tabulation" of all pw.x output files
 
-The above PWTK run (i.e., `pwtk scan.pwtk`) produced 25 different pw.x
-output files. One can automatically "tabulate" the structures from all
-those `pw.x` output files with PWTK. In particular, PWTK has a
+The above PWTK run (i.e., `pwtk scan.pwtk`) produces 25 different pw.x
+output files. The structures from all these `pw.x` outputs can be
+automatically "tabulated" with PWTK. In particular, PWTK has a
 `::pwtk::pwo::tabulateStructs` command, which automatically plots
-(that is, prints to PNG file) structures from the supplied pw.x output
+(i.e., prints to PNG file) structures from the supplied `pw.x` output
 files and arranges them into a table as a LaTeX document. An example
-of how to achieve this is provided by the `tabulate.pwtk` script. 
+of how to achieve this is provided by the `tabulate.pwtk` script.
 
 Read the `tabulate.pwtk` script and try to understand it. To run the
 tabulate example, execute:
      
        pwtk tabulate.pwtk
        
-This will generate the `tabulate.tex` LaTeX file. To compile it into a
-PDF file, execute:
+This will generate the `tabulate.tex` file. This LaTeX file can be
+compiled into PDF file with LaTeX, i.e.:
 
        pdflatex tabulate.tex
        
-The produced PDF file can be visualized as:
+**But beware** that current Virtual Machine does not have LaTeX
+installed. If you want to install LaTeX, you can execute in the
+terminal `sudo apt install texlive`. Instead the corresponding
+pre-compiled PDF file is provided in `reference/tabulate.pdf`.
+This file can be visualized as:
 
-       atril tabulate.pdf
+       atril reference/tabulate.pdf
 
 
 

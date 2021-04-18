@@ -9,12 +9,7 @@
 # just in case if we run directly ?
 if { [::pwtk::pwi::getNAtoms] == 0 } {
     import common-data.pwtk
-    if { [file exists pw.$name.relax.out] } {
-        CELL_PARAMETERS_fromXSF CO-Rh100-c2x2-2L.xsf
-        ATOMIC_POSITIONS_fromPWO pw.$name.relax.out
-    } else {
-        import relax.pwtk        
-    }
+    ensure_optimized_structure $name
 }
 
 
@@ -122,35 +117,38 @@ input_pushpop {
     printTitle MOPDOS "Calculating MOPDOS of $name projected to MOs of CO"
     
     # specify molecularpdos.x input data
-    
+
     MOPDOS "
        ! full system: CO-Rh(100)
        xmlfile_full = '$full_xml'
-       
+
+       ! CO fragment
+       xmlfile_part = '$part_xml'
+
+       ! where to plot the result
+       fileout ='$name.proj_to_CO'              
+    "      
+    MOPDOS {       
        ! here we need to specify atomic-orbitals of CO in CO-Rh(111) system (see file: projwfc.CO-Rh100.out)
-       i_atmwfc_beg_full=1
-       i_atmwfc_end_full=8, 
+       i_atmwfc_beg_full = 1
+       i_atmwfc_end_full = 8, 
        
        ! consider all the bands
-       i_bnd_beg_full=1,
-       i_bnd_end_full=0, ! 0 means the last band
+       i_bnd_beg_full = 1,
+       i_bnd_end_full = 0, ! 0 means the last band
        
-       ! CO fragment
-       xmlfile_part='$part_xml'
-       
-       i_atmwfc_beg_part=1
-       i_atmwfc_end_part=0, ! 0 means the last AO
+       i_atmwfc_beg_part = 1
+       i_atmwfc_end_part = 0, ! 0 means the last AO
        
        ! projection to HOMO-3, HOMO-2, HOMO-1, HOMO, LUMO, LUMO+1 
        ! CO has 10 valence electrons; HOMO = 5, LUMO = 6
-       i_bnd_beg_part=2,
-       i_bnd_end_part=7,
+       i_bnd_beg_part = 2,
+       i_bnd_end_part = 7,
        
-       fileout ='$name.proj_to_CO'       
        ngauss  = 0,
        degauss = 0.01
        DeltaE  = 0.05,
-    "
+   }
 
     runMOLECULARPDOS molecularpdos.$name.in
 }

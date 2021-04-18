@@ -4,7 +4,7 @@
 
 This exercise consists from three examples, in particular:
 
-* `ex1.eos/` -- how to use EOS utility of PWTK to calculate EOS of Rh bulk
+* `ex1.eos/` -- how to use EOS utility of PWTK to calculate EOS of Rh bulk.
 
 * `ex2.O@Al111/` -- how to run many calculations with a relatively
                     simple PWTK script; it calculates a 2D potential

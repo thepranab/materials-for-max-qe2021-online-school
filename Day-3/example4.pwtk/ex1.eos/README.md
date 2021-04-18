@@ -11,7 +11,7 @@ Read the resulting `eos.Rh-bulk.log` file, it is instructive. In
 addition to this log file the EOS final results are also written to
 file `eos.Rh-bulk.RESULTS`.
 
-Notice from the results, how much more sensitive is the bulk-modulus
+Notice from the results, how much more sensitive the bulk-modulus is
 to the sampling of data-points than the lattice-parameter and
 equilibrium total energy. Do you know why?
 

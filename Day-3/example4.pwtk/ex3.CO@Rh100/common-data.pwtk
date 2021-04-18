@@ -29,3 +29,14 @@ PLOT {
 # the name of the structure (used for I/O filenames)
 set name CO-Rh100
 
+
+# auxiliary procedure used by {difden,ildos,pdos}.pwtk script if they
+# are run directly
+proc ensure_optimized_structure {name} {
+    if { [file exists pw.$name.relax.out] } {
+        CELL_PARAMETERS_fromXSF CO-Rh100-c2x2-2L.xsf
+        ATOMIC_POSITIONS_fromPWO pw.$name.relax.out
+    } else {
+        import relax.pwtk        
+    }
+}
