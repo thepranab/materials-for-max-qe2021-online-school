@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+rm code_cpu.x
+rm code_gpu.x
+rm code_mix.x
+
+module purge 
+
+module load autoload hpc-sdk
+
+nvfortran -o code_cpu.x code_cpu.f90   -lblas 
+
+module load autoload cuda
+
+nvfortran -o code_gpu.x code_gpu.f90    -Mcuda -Mcudalib=cublas  
+nvfortran -o code_mix.x code_mix.f90    -Mcuda -Mcudalib=cublas  
+
+SIZE=${1}
+
+./code_cpu.x ${SIZE}   
+./code_gpu.x ${SIZE}   
+./code_mix.x ${SIZE}   
+
