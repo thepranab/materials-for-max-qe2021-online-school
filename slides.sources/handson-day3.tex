@@ -215,7 +215,7 @@ structure and run a relaxation calculation.
 \head{2. How to perform variable-cell relaxation: hcp-Zinc}
 \rightfooter{Example: \file{Day-3/example2.vc-relax}}
 %
-Zinc displays a hcp (hexagonal-closed-packed) crystal structure, hence
+Zinc displays an hcp (hexagonal-closed-packed) crystal structure, hence
 it has two lattice parameters $a$ and $c$. The unit-cell lattice
 vectors are:\\
 %
@@ -255,7 +255,8 @@ foreach A [seq 2.4 0.1 2.8] {
   provided by the input file \file{pw.Zn.vc-relax.in}. Notice:
   \begin{itemize}
   \item \var{calculation = 'vc-relax'}
-  \item \nml{\&IONS} and \nml{\&CELL} namelists after the \nml{\&ELECTRONS}
+  \item \nml{\&IONS} and \nml{\&CELL} namelists are specified after
+    the \nml{\&ELECTRONS}
   \end{itemize}
 \end{enumerate}
 To run the calculation, execute:\\[0.5em]
@@ -307,8 +308,8 @@ In the first example we will analyze a simple H transfer reaction:
 {\bf Example 1a: No intermediate image}
 
 In the NEB method one needs to supply a minimum of two images, the
-so-called {\bf first-} and {\bf last-image}, corresponding to
-reactants and products.
+so-called {\bf first-image} and {\bf last-image}, corresponding to
+reactants and products, respectively.
 
 In \file{neb.H2+H.in}, you will see that near the end of the file
 \card{FIRST\_IMAGE} and \card{LAST\_IMAGE} are specified. Seven
@@ -348,8 +349,8 @@ or
 
 {\bf Example 1b: NEB with intermediate image}
 
-This example is similar as the previous example, however now chemical
-intuition is used to construct a better initial reaction path. This is
+This example is similar as the previous example, however, chemical
+intuition is used now to construct a better initial reaction path. This is
 achieved by using the \card{INTERMEDIATE\_IMAGE} card, in which a
 rough guess for the transition state is provided. You can visualize
 the path by using \prog{xcrysden}:
@@ -361,7 +362,7 @@ without the intermediate image, the three atoms are evenly spaced in
 the middle of the initial interpolated reaction path, which is not a
 good guess of the transition-state. If we use
 \card{INTERMEDIATE\_IMAGE} then the three H atoms can be placed closer
-together, which is a lot closer to the actual transition state and the
+together, which is much more similar to the actual transition state and the
 NEB calculation does not require as many steps to converge. This is
 shown schematically below:
 
@@ -390,7 +391,7 @@ highest energy), because its ID can change from iteration to
 iteration, depending on how far from convergence we are.
 
 Thus we will first perform a plain NEB (\var{CI\_scheme = 'no-CI'}) in
-order to stabilize the pathway and only once it is stabilized we will
+order to stabilize the pathway and only once the pathway is stabilized we will
 switch on the CI-NEB with \var{CI\_scheme~=~'auto'}. We will use a
 PWTK script to manage these two calculations.
 
