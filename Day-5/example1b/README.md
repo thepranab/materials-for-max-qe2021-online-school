@@ -12,7 +12,7 @@
 
         mpirun -np 2 ph.x < ph.Si.in > ph.Si.out
 
-3. Fourrier transform the Interatomic Force Constants from a uniform grid of q-points to real space: C(q) => C(R)
+3. Fourier transform the Interatomic Force Constants from a uniform grid of q-points to real space: C(q) => C(R)
 
         mpirun -np 2 q2r.x < q2r.Si.in > q2r.Si.out
 
