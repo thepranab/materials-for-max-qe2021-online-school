@@ -48,8 +48,9 @@ Host hpc
  IdentityFile $hpckey
 EOF
 
-arnes=$(echo $hostname | grep arnes.si)
-if test "x$arnes" = ""; then
+arnes=$(echo $host | grep arnes.si)
+
+if test "x$arnes" = "x"; then
     #
     # default
     #

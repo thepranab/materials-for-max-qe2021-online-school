@@ -1,5 +1,5 @@
 HPC_HOST=hpc
-sbatch_options="--nodes=1 --ntasks=8 --ntasks-per-node=8 --mem-per-cpu=2048M --output slurm-%j.log --reservation=qe2021"
+sbatch_options="--nodes=1 --ntasks=8 --ntasks-per-node=8 --reservation=qe2021"; # --mem-per-cpu=2048M
 
 lastarg() {
     # get the last argument
