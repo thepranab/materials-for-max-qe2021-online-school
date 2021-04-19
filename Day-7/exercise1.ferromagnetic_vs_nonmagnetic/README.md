@@ -1,8 +1,8 @@
 # Exercise 1
 
-## Compare the ferromagnetic and  paramagnetic ground states for Fe(bcc)
+## Compare the ferromagnetic and  non-magnetic ground states for Fe(bcc)
 
-_In this part of the exercise you will  compare the total energies for  non-magnetic and ferromagnetic (collinear) Fe  bcc ground states at different lattice constants._  
+_In this part of the exercise you will  compare the total energies for  non-magnetic and ferromagnetic (collinear) Fe(bcc) ground states at different lattice constants._  
 
 * Task 1: perform a scan of the lattice constant for the magnetic solution:
   * go to magnetic directory and run `job.sh` script.
@@ -27,7 +27,7 @@ _In this part of the exercise you will  compare the total energies for  non-magn
 
 
 
-* The paramagnetic solution has higher energy with respect to the spin-polarized
+* The non-magnetic solution has higher energy with respect to the spin-polarized
   solution. Furthermore, the equilibrium lattice constant for the ferromagnetic solution
   is larger than the non-magnetic solution.
 
