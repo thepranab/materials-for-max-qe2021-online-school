@@ -1,33 +1,34 @@
 # Example 2: 
-## Calculation of the absorption spectrum of benzene molecule (C6H6) using the turbo_davidson.x code
+## Calculation of the absorption spectrum of benzene molecule (C6H6) using the turbo_lanczos.x code
+------------------------------------------------------------------------
 
  1. Run the SCF ground-state calculation
+    Note: no nbnd in the input, i.e. only occupied states will be computed.
 
-        mpirun -np 8 pw.x < pw.benzene.in > pw.benzene.out
+        pw.x < pw.benzene.scf.in > pw.benzene.scf.out
 
- 2. Run the turboDavidson calculation
+ 2. Perform Lanczos recursions 
 
-        mpirun -np 8 turbo_davidson.x < turbo_davidson.benzene.in > turbo_davidson.benzene.out
+        turbo_lanczos.x < turbo_lanczos.benzene.in > turbo_lanczos.benzene.out
 
  3. Run the spectrum calculation
 
-        mpirun -np 8 turbo_spectrum.x < turbo_spectrum.benzene.in > turbo_spectrum.benzene.out
+        turbo_spectrum.x < turbo_spectrum.benzene.in > turbo_spectrum.benzene.out
 
  4. Plot the spectrum using `gnuplot` and the script `plot_spectrum.gp`. 
-    Since the interaction was switched off, you should obtain the same spectrum 
-    as the one obtained using the `epsilon.x` code in the `example1`.
+    This script will make a comparison of the spectra
+    calculated using `turbo_lanczos.x` and `turbo_davidson.x`
 
         gnuplot plot_spectrum.gp
         atril Benzene_spectrum.eps
 
+ 5. Perform a converge test of the absorption spectrum with respect to the number of 
+    Lanczos iterations in two ways (fir ipol=1):
+    - without extrapolation (extrapolation = 'no')  for 500, 1000,  and 1500 iterations;
+    - with    extrapolation (extrapolation = 'osc') for 500, 1000,  and 1500 iterations.
+    What conclusion can you make by comparing the results?
 
- 5. Switch on the electronic interaction (Hartree and Exchange-Correlation) 
-    and see how changes the absorption spectrum of benzene.
-
-    Make the following modifications in the input files:
-    
-    * In the file _turbo_davidson.benzene.in_  set  `if_dft_spectrum = .false.`
-    * In the file _turbo_spectrum.benzene.in_ set  `eign_file = 'Benzene.eigen'`
-    * In the script _plot_spectrum.gp_ change the title to _turbo-davidson.x (interacting electrons)_
-
-    Once these modifications are done, repeat steps 2, 3, and 4.
+    TurboLanczos and turboDavidson give exactly the same spectrum when both methods are converged
+    with respect to the kinetic-energy cutoff, cell size, number of iterations (for Lanczos) or
+    number of eignevalues (for Davidson). You can check this for benzene or check this paper: 
+    Comput. Phys. Commun. 185, 2080 (2014).

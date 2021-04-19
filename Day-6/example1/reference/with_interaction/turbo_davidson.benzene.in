@@ -1,0 +1,14 @@
+&lr_input
+  prefix = 'Benzene',
+  outdir = './tmp'
+/
+&lr_dav
+  if_dft_spectrum = .false.
+  start           = 0.0                
+  finish          = 1.0              
+  step            = 0.001              
+  broadening      = 0.004      
+  num_init        = 30
+  num_eign        = 15 
+  num_basis_max   = 90
+/

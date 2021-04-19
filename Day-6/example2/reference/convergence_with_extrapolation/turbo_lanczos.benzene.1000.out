@@ -1,0 +1,3603 @@
+
+     Program turboTDDFT v.6.7MaX starts on 19Apr2021 at 16: 6:44 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     8 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       8
+
+     Reading xml data from directory:
+
+     ./tmp/Benzene.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= BLYP
+                           (   1   3   1   3   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        1219    1219    305                75504    75504    9446
+     Max        1222    1222    308                75510    75510    9450
+     Sum        9769    9769   2449               604053   604053   75591
+ 
+     Reading collected, re-writing distributed wavefunctions
+ Symmetries are disabled for the gamma_only case
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+
+     =-----------------------------------------------------------------=
+
+     Please cite the TDDFPT project as:
+       O. B. Malcioglu, R. Gebauer, D. Rocca, and S. Baroni,
+       Comput. Phys. Commun. 182, 1744 (2011)
+     and
+       X. Ge, S. J. Binnie, D. Rocca, R. Gebauer, and S. Baroni,
+       Comput. Phys. Commun. 185, 2080 (2014)
+     in publications and presentations arising from this work.
+
+     =-----------------------------------------------------------------=
+
+     Normal read
+
+     Gamma point algorithm
+
+     LANCZOS LINEAR-RESPONSE SPECTRUM CALCULATION
+      
+     Number of Lanczos iterations =   1000
+
+     Restarting Lanczos loop        1
+
+     Lanczos iteration:    501   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000501)=  0.000000
+     beta (00000501)= 15.542656
+     gamma(00000501)= 15.542656
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    502   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000502)=  0.000000
+     beta (00000502)= 15.966411
+     gamma(00000502)= 15.966411
+     z1=       1  0.460450289445108E-03  0.000000000000000E+00
+
+     Lanczos iteration:    503   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000503)=  0.000000
+     beta (00000503)= 15.635023
+     gamma(00000503)= 15.635023
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    504   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000504)=  0.000000
+     beta (00000504)= 15.937807
+     gamma(00000504)= 15.937807
+     z1=       1 -0.451702738879879E-03  0.000000000000000E+00
+
+     Lanczos iteration:    505   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000505)=  0.000000
+     beta (00000505)= 15.589403
+     gamma(00000505)= 15.589403
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    506   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000506)=  0.000000
+     beta (00000506)= 15.963436
+     gamma(00000506)= 15.963436
+     z1=       1  0.441119073514174E-03  0.000000000000000E+00
+
+     Lanczos iteration:    507   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000507)=  0.000000
+     beta (00000507)= 15.522843
+     gamma(00000507)= 15.522843
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    508   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000508)=  0.000000
+     beta (00000508)= 16.055152
+     gamma(00000508)= 16.055152
+     z1=       1 -0.426493770729525E-03  0.000000000000000E+00
+
+     Lanczos iteration:    509   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000509)=  0.000000
+     beta (00000509)= 15.619768
+     gamma(00000509)= 15.619768
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    510   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000510)=  0.000000
+     beta (00000510)= 16.003951
+     gamma(00000510)= 16.003951
+     z1=       1  0.416255564790084E-03  0.000000000000000E+00
+
+     Lanczos iteration:    511   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000511)=  0.000000
+     beta (00000511)= 15.482573
+     gamma(00000511)= 15.482573
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    512   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000512)=  0.000000
+     beta (00000512)= 16.061620
+     gamma(00000512)= 16.061620
+     z1=       1 -0.401248878888087E-03  0.000000000000000E+00
+
+     Lanczos iteration:    513   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000513)=  0.000000
+     beta (00000513)= 15.481455
+     gamma(00000513)= 15.481455
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    514   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000514)=  0.000000
+     beta (00000514)= 15.974111
+     gamma(00000514)= 15.974111
+     z1=       1  0.388873998029959E-03  0.000000000000000E+00
+
+     Lanczos iteration:    515   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000515)=  0.000000
+     beta (00000515)= 15.554670
+     gamma(00000515)= 15.554670
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    516   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000516)=  0.000000
+     beta (00000516)= 15.973986
+     gamma(00000516)= 15.973986
+     z1=       1 -0.378666092063211E-03  0.000000000000000E+00
+
+     Lanczos iteration:    517   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000517)=  0.000000
+     beta (00000517)= 15.587532
+     gamma(00000517)= 15.587532
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    518   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000518)=  0.000000
+     beta (00000518)= 16.025437
+     gamma(00000518)= 16.025437
+     z1=       1  0.368318821326426E-03  0.000000000000000E+00
+
+     Lanczos iteration:    519   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000519)=  0.000000
+     beta (00000519)= 15.598591
+     gamma(00000519)= 15.598591
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    520   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000520)=  0.000000
+     beta (00000520)= 15.944919
+     gamma(00000520)= 15.944919
+     z1=       1 -0.360318833676859E-03  0.000000000000000E+00
+
+     Lanczos iteration:    521   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000521)=  0.000000
+     beta (00000521)= 15.567348
+     gamma(00000521)= 15.567348
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    522   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000522)=  0.000000
+     beta (00000522)= 15.948906
+     gamma(00000522)= 15.948906
+     z1=       1  0.351698650926192E-03  0.000000000000000E+00
+
+     Lanczos iteration:    523   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000523)=  0.000000
+     beta (00000523)= 15.484367
+     gamma(00000523)= 15.484367
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    524   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000524)=  0.000000
+     beta (00000524)= 15.998358
+     gamma(00000524)= 15.998358
+     z1=       1 -0.340399356607082E-03  0.000000000000000E+00
+
+     Lanczos iteration:    525   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000525)=  0.000000
+     beta (00000525)= 15.583296
+     gamma(00000525)= 15.583296
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    526   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000526)=  0.000000
+     beta (00000526)= 15.892201
+     gamma(00000526)= 15.892201
+     z1=       1  0.333782836284293E-03  0.000000000000000E+00
+
+     Lanczos iteration:    527   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000527)=  0.000000
+     beta (00000527)= 15.600565
+     gamma(00000527)= 15.600565
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    528   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000528)=  0.000000
+     beta (00000528)= 15.998659
+     gamma(00000528)= 15.998659
+     z1=       1 -0.325477315985777E-03  0.000000000000000E+00
+
+     Lanczos iteration:    529   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000529)=  0.000000
+     beta (00000529)= 15.489659
+     gamma(00000529)= 15.489659
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    530   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000530)=  0.000000
+     beta (00000530)= 15.962946
+     gamma(00000530)= 15.962946
+     z1=       1  0.315827199935871E-03  0.000000000000000E+00
+
+     Lanczos iteration:    531   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000531)=  0.000000
+     beta (00000531)= 15.582266
+     gamma(00000531)= 15.582266
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    532   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000532)=  0.000000
+     beta (00000532)= 15.940033
+     gamma(00000532)= 15.940033
+     z1=       1 -0.308738604259142E-03  0.000000000000000E+00
+
+     Lanczos iteration:    533   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000533)=  0.000000
+     beta (00000533)= 15.569883
+     gamma(00000533)= 15.569883
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    534   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000534)=  0.000000
+     beta (00000534)= 15.948071
+     gamma(00000534)= 15.948071
+     z1=       1  0.301417258879558E-03  0.000000000000000E+00
+
+     Lanczos iteration:    535   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000535)=  0.000000
+     beta (00000535)= 15.577001
+     gamma(00000535)= 15.577001
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    536   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000536)=  0.000000
+     beta (00000536)= 16.112000
+     gamma(00000536)= 16.112000
+     z1=       1 -0.291408705678734E-03  0.000000000000000E+00
+
+     Lanczos iteration:    537   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000537)=  0.000000
+     beta (00000537)= 15.511643
+     gamma(00000537)= 15.511643
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    538   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000538)=  0.000000
+     beta (00000538)= 15.953072
+     gamma(00000538)= 15.953072
+     z1=       1  0.283345293174182E-03  0.000000000000000E+00
+
+     Lanczos iteration:    539   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000539)=  0.000000
+     beta (00000539)= 15.640531
+     gamma(00000539)= 15.640531
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    540   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000540)=  0.000000
+     beta (00000540)= 15.991301
+     gamma(00000540)= 15.991301
+     z1=       1 -0.277130099837430E-03  0.000000000000000E+00
+
+     Lanczos iteration:    541   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000541)=  0.000000
+     beta (00000541)= 15.583957
+     gamma(00000541)= 15.583957
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    542   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000542)=  0.000000
+     beta (00000542)= 16.030198
+     gamma(00000542)= 16.030198
+     z1=       1  0.269415478433916E-03  0.000000000000000E+00
+
+     Lanczos iteration:    543   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000543)=  0.000000
+     beta (00000543)= 15.476266
+     gamma(00000543)= 15.476266
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    544   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000544)=  0.000000
+     beta (00000544)= 16.009378
+     gamma(00000544)= 16.009378
+     z1=       1 -0.260443954561505E-03  0.000000000000000E+00
+
+     Lanczos iteration:    545   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000545)=  0.000000
+     beta (00000545)= 15.540418
+     gamma(00000545)= 15.540418
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    546   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000546)=  0.000000
+     beta (00000546)= 15.907204
+     gamma(00000546)= 15.907204
+     z1=       1  0.254438687537578E-03  0.000000000000000E+00
+
+     Lanczos iteration:    547   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000547)=  0.000000
+     beta (00000547)= 15.541728
+     gamma(00000547)= 15.541728
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    548   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000548)=  0.000000
+     beta (00000548)= 15.967501
+     gamma(00000548)= 15.967501
+     z1=       1 -0.247654097978722E-03  0.000000000000000E+00
+
+     Lanczos iteration:    549   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000549)=  0.000000
+     beta (00000549)= 15.543298
+     gamma(00000549)= 15.543298
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    550   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000550)=  0.000000
+     beta (00000550)= 16.028990
+     gamma(00000550)= 16.028990
+     z1=       1  0.240149959477607E-03  0.000000000000000E+00
+
+     Lanczos iteration:    551   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000551)=  0.000000
+     beta (00000551)= 15.528046
+     gamma(00000551)= 15.528046
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    552   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000552)=  0.000000
+     beta (00000552)= 16.055087
+     gamma(00000552)= 16.055087
+     z1=       1 -0.232266543954415E-03  0.000000000000000E+00
+
+     Lanczos iteration:    553   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000553)=  0.000000
+     beta (00000553)= 15.582725
+     gamma(00000553)= 15.582725
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    554   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000554)=  0.000000
+     beta (00000554)= 16.029135
+     gamma(00000554)= 16.029135
+     z1=       1  0.225797942643321E-03  0.000000000000000E+00
+
+     Lanczos iteration:    555   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000555)=  0.000000
+     beta (00000555)= 15.466006
+     gamma(00000555)= 15.466006
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    556   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000556)=  0.000000
+     beta (00000556)= 16.119341
+     gamma(00000556)= 16.119341
+     z1=       1 -0.216646104234587E-03  0.000000000000000E+00
+
+     Lanczos iteration:    557   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000557)=  0.000000
+     beta (00000557)= 15.527554
+     gamma(00000557)= 15.527554
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    558   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000558)=  0.000000
+     beta (00000558)= 15.997764
+     gamma(00000558)= 15.997764
+     z1=       1  0.210278401072846E-03  0.000000000000000E+00
+
+     Lanczos iteration:    559   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000559)=  0.000000
+     beta (00000559)= 15.581589
+     gamma(00000559)= 15.581589
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    560   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000560)=  0.000000
+     beta (00000560)= 16.027023
+     gamma(00000560)= 16.027023
+     z1=       1 -0.204434193586827E-03  0.000000000000000E+00
+
+     Lanczos iteration:    561   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000561)=  0.000000
+     beta (00000561)= 15.517519
+     gamma(00000561)= 15.517519
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    562   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000562)=  0.000000
+     beta (00000562)= 15.999658
+     gamma(00000562)= 15.999658
+     z1=       1  0.198273695965558E-03  0.000000000000000E+00
+
+     Lanczos iteration:    563   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000563)=  0.000000
+     beta (00000563)= 15.566488
+     gamma(00000563)= 15.566488
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    564   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000564)=  0.000000
+     beta (00000564)= 15.950682
+     gamma(00000564)= 15.950682
+     z1=       1 -0.193498011643065E-03  0.000000000000000E+00
+
+     Lanczos iteration:    565   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000565)=  0.000000
+     beta (00000565)= 15.554512
+     gamma(00000565)= 15.554512
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    566   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000566)=  0.000000
+     beta (00000566)= 16.015301
+     gamma(00000566)= 16.015301
+     z1=       1  0.187930729852744E-03  0.000000000000000E+00
+
+     Lanczos iteration:    567   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000567)=  0.000000
+     beta (00000567)= 15.440993
+     gamma(00000567)= 15.440993
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    568   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000568)=  0.000000
+     beta (00000568)= 15.887533
+     gamma(00000568)= 15.887533
+     z1=       1 -0.182648690223206E-03  0.000000000000000E+00
+
+     Lanczos iteration:    569   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000569)=  0.000000
+     beta (00000569)= 15.577601
+     gamma(00000569)= 15.577601
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    570   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000570)=  0.000000
+     beta (00000570)= 15.957569
+     gamma(00000570)= 15.957569
+     z1=       1  0.178299623983675E-03  0.000000000000000E+00
+
+     Lanczos iteration:    571   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000571)=  0.000000
+     beta (00000571)= 15.529761
+     gamma(00000571)= 15.529761
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    572   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000572)=  0.000000
+     beta (00000572)= 15.952685
+     gamma(00000572)= 15.952685
+     z1=       1 -0.173572694268759E-03  0.000000000000000E+00
+
+     Lanczos iteration:    573   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000573)=  0.000000
+     beta (00000573)= 15.505803
+     gamma(00000573)= 15.505803
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    574   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000574)=  0.000000
+     beta (00000574)= 16.087899
+     gamma(00000574)= 16.087899
+     z1=       1  0.167292448671873E-03  0.000000000000000E+00
+
+     Lanczos iteration:    575   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000575)=  0.000000
+     beta (00000575)= 15.583607
+     gamma(00000575)= 15.583607
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    576   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000576)=  0.000000
+     beta (00000576)= 15.908041
+     gamma(00000576)= 15.908041
+     z1=       1 -0.163880630592663E-03  0.000000000000000E+00
+
+     Lanczos iteration:    577   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000577)=  0.000000
+     beta (00000577)= 15.500246
+     gamma(00000577)= 15.500246
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    578   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000578)=  0.000000
+     beta (00000578)= 16.011951
+     gamma(00000578)= 16.011951
+     z1=       1  0.158643382610084E-03  0.000000000000000E+00
+
+     Lanczos iteration:    579   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000579)=  0.000000
+     beta (00000579)= 15.532575
+     gamma(00000579)= 15.532575
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    580   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000580)=  0.000000
+     beta (00000580)= 15.969411
+     gamma(00000580)= 15.969411
+     z1=       1 -0.154303764551909E-03  0.000000000000000E+00
+
+     Lanczos iteration:    581   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000581)=  0.000000
+     beta (00000581)= 15.506153
+     gamma(00000581)= 15.506153
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    582   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000582)=  0.000000
+     beta (00000582)= 15.982452
+     gamma(00000582)= 15.982452
+     z1=       1  0.149705299595872E-03  0.000000000000000E+00
+
+     Lanczos iteration:    583   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000583)=  0.000000
+     beta (00000583)= 15.569902
+     gamma(00000583)= 15.569902
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    584   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000584)=  0.000000
+     beta (00000584)= 15.980517
+     gamma(00000584)= 15.980517
+     z1=       1 -0.145858660147165E-03  0.000000000000000E+00
+
+     Lanczos iteration:    585   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000585)=  0.000000
+     beta (00000585)= 15.554038
+     gamma(00000585)= 15.554038
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    586   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000586)=  0.000000
+     beta (00000586)= 16.017841
+     gamma(00000586)= 16.017841
+     z1=       1  0.141635258226974E-03  0.000000000000000E+00
+
+     Lanczos iteration:    587   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000587)=  0.000000
+     beta (00000587)= 15.581461
+     gamma(00000587)= 15.581461
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    588   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000588)=  0.000000
+     beta (00000588)= 15.994171
+     gamma(00000588)= 15.994171
+     z1=       1 -0.137980530574624E-03  0.000000000000000E+00
+
+     Lanczos iteration:    589   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000589)=  0.000000
+     beta (00000589)= 15.565157
+     gamma(00000589)= 15.565157
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    590   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000590)=  0.000000
+     beta (00000590)= 16.013326
+     gamma(00000590)= 16.013326
+     z1=       1  0.134118831243889E-03  0.000000000000000E+00
+
+     Lanczos iteration:    591   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000591)=  0.000000
+     beta (00000591)= 15.512056
+     gamma(00000591)= 15.512056
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    592   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000592)=  0.000000
+     beta (00000592)= 16.007442
+     gamma(00000592)= 16.007442
+     z1=       1 -0.129968224854381E-03  0.000000000000000E+00
+
+     Lanczos iteration:    593   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000593)=  0.000000
+     beta (00000593)= 15.593053
+     gamma(00000593)= 15.593053
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    594   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000594)=  0.000000
+     beta (00000594)= 16.070996
+     gamma(00000594)= 16.070996
+     z1=       1  0.126103042385731E-03  0.000000000000000E+00
+
+     Lanczos iteration:    595   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000595)=  0.000000
+     beta (00000595)= 15.544605
+     gamma(00000595)= 15.544605
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    596   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000596)=  0.000000
+     beta (00000596)= 16.165898
+     gamma(00000596)= 16.165898
+     z1=       1 -0.121256604812244E-03  0.000000000000000E+00
+
+     Lanczos iteration:    597   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000597)=  0.000000
+     beta (00000597)= 15.393832
+     gamma(00000597)= 15.393832
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    598   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000598)=  0.000000
+     beta (00000598)= 16.018467
+     gamma(00000598)= 16.018467
+     z1=       1  0.116528242310078E-03  0.000000000000000E+00
+
+     Lanczos iteration:    599   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000599)=  0.000000
+     beta (00000599)= 15.533799
+     gamma(00000599)= 15.533799
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    600   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000600)=  0.000000
+     beta (00000600)= 15.939410
+     gamma(00000600)= 15.939410
+     z1=       1 -0.113562944288676E-03  0.000000000000000E+00
+
+     Lanczos iteration:    601   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000601)=  0.000000
+     beta (00000601)= 15.546133
+     gamma(00000601)= 15.546133
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    602   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000602)=  0.000000
+     beta (00000602)= 16.001558
+     gamma(00000602)= 16.001558
+     z1=       1  0.110330801515627E-03  0.000000000000000E+00
+
+     Lanczos iteration:    603   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000603)=  0.000000
+     beta (00000603)= 15.531481
+     gamma(00000603)= 15.531481
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    604   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000604)=  0.000000
+     beta (00000604)= 16.047362
+     gamma(00000604)= 16.047362
+     z1=       1 -0.106783955783197E-03  0.000000000000000E+00
+
+     Lanczos iteration:    605   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000605)=  0.000000
+     beta (00000605)= 15.525835
+     gamma(00000605)= 15.525835
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    606   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000606)=  0.000000
+     beta (00000606)= 15.979263
+     gamma(00000606)= 15.979263
+     z1=       1  0.103753854007323E-03  0.000000000000000E+00
+
+     Lanczos iteration:    607   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000607)=  0.000000
+     beta (00000607)= 15.444061
+     gamma(00000607)= 15.444061
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    608   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000608)=  0.000000
+     beta (00000608)= 15.914878
+     gamma(00000608)= 15.914878
+     z1=       1 -0.100684457658028E-03  0.000000000000000E+00
+
+     Lanczos iteration:    609   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000609)=  0.000000
+     beta (00000609)= 15.580801
+     gamma(00000609)= 15.580801
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    610   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000610)=  0.000000
+     beta (00000610)= 15.983240
+     gamma(00000610)= 15.983240
+     z1=       1  0.981493420672448E-04  0.000000000000000E+00
+
+     Lanczos iteration:    611   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000611)=  0.000000
+     beta (00000611)= 15.608650
+     gamma(00000611)= 15.608650
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    612   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000612)=  0.000000
+     beta (00000612)= 16.074722
+     gamma(00000612)= 16.074722
+     z1=       1 -0.953035882363812E-04  0.000000000000000E+00
+
+     Lanczos iteration:    613   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000613)=  0.000000
+     beta (00000613)= 15.540815
+     gamma(00000613)= 15.540815
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    614   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000614)=  0.000000
+     beta (00000614)= 16.089644
+     gamma(00000614)= 16.089644
+     z1=       1  0.920527137136130E-04  0.000000000000000E+00
+
+     Lanczos iteration:    615   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000615)=  0.000000
+     beta (00000615)= 15.507555
+     gamma(00000615)= 15.507555
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    616   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000616)=  0.000000
+     beta (00000616)= 16.005569
+     gamma(00000616)= 16.005569
+     z1=       1 -0.891884844111592E-04  0.000000000000000E+00
+
+     Lanczos iteration:    617   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000617)=  0.000000
+     beta (00000617)= 15.434289
+     gamma(00000617)= 15.434289
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    618   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000618)=  0.000000
+     beta (00000618)= 16.061397
+     gamma(00000618)= 16.061397
+     z1=       1  0.857061727697356E-04  0.000000000000000E+00
+
+     Lanczos iteration:    619   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000619)=  0.000000
+     beta (00000619)= 15.545897
+     gamma(00000619)= 15.545897
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    620   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000620)=  0.000000
+     beta (00000620)= 16.007633
+     gamma(00000620)= 16.007633
+     z1=       1 -0.832339989085759E-04  0.000000000000000E+00
+
+     Lanczos iteration:    621   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000621)=  0.000000
+     beta (00000621)= 15.519209
+     gamma(00000621)= 15.519209
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    622   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000622)=  0.000000
+     beta (00000622)= 15.968775
+     gamma(00000622)= 15.968775
+     z1=       1  0.808907280225191E-04  0.000000000000000E+00
+
+     Lanczos iteration:    623   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000623)=  0.000000
+     beta (00000623)= 15.578149
+     gamma(00000623)= 15.578149
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    624   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000624)=  0.000000
+     beta (00000624)= 16.168810
+     gamma(00000624)= 16.168810
+     z1=       1 -0.779357184368615E-04  0.000000000000000E+00
+
+     Lanczos iteration:    625   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000625)=  0.000000
+     beta (00000625)= 15.414715
+     gamma(00000625)= 15.414715
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    626   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000626)=  0.000000
+     beta (00000626)= 16.052743
+     gamma(00000626)= 16.052743
+     z1=       1  0.748381076729043E-04  0.000000000000000E+00
+
+     Lanczos iteration:    627   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000627)=  0.000000
+     beta (00000627)= 15.420787
+     gamma(00000627)= 15.420787
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    628   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000628)=  0.000000
+     beta (00000628)= 16.137516
+     gamma(00000628)= 16.137516
+     z1=       1 -0.715142631121067E-04  0.000000000000000E+00
+
+     Lanczos iteration:    629   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000629)=  0.000000
+     beta (00000629)= 15.538833
+     gamma(00000629)= 15.538833
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    630   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000630)=  0.000000
+     beta (00000630)= 16.022785
+     gamma(00000630)= 16.022785
+     z1=       1  0.693542471156602E-04  0.000000000000000E+00
+
+     Lanczos iteration:    631   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000631)=  0.000000
+     beta (00000631)= 15.434268
+     gamma(00000631)= 15.434268
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    632   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000632)=  0.000000
+     beta (00000632)= 16.049111
+     gamma(00000632)= 16.049111
+     z1=       1 -0.666972767033626E-04  0.000000000000000E+00
+
+     Lanczos iteration:    633   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000633)=  0.000000
+     beta (00000633)= 15.545803
+     gamma(00000633)= 15.545803
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    634   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000634)=  0.000000
+     beta (00000634)= 15.975873
+     gamma(00000634)= 15.975873
+     z1=       1  0.649017860671324E-04  0.000000000000000E+00
+
+     Lanczos iteration:    635   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000635)=  0.000000
+     beta (00000635)= 15.546296
+     gamma(00000635)= 15.546296
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    636   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000636)=  0.000000
+     beta (00000636)= 15.882071
+     gamma(00000636)= 15.882071
+     z1=       1 -0.635296487356031E-04  0.000000000000000E+00
+
+     Lanczos iteration:    637   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000637)=  0.000000
+     beta (00000637)= 15.516656
+     gamma(00000637)= 15.516656
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    638   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000638)=  0.000000
+     beta (00000638)= 16.044943
+     gamma(00000638)= 16.044943
+     z1=       1  0.614379055813713E-04  0.000000000000000E+00
+
+     Lanczos iteration:    639   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000639)=  0.000000
+     beta (00000639)= 15.600399
+     gamma(00000639)= 15.600399
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    640   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000640)=  0.000000
+     beta (00000640)= 15.929063
+     gamma(00000640)= 15.929063
+     z1=       1 -0.601702577446121E-04  0.000000000000000E+00
+
+     Lanczos iteration:    641   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000641)=  0.000000
+     beta (00000641)= 15.456003
+     gamma(00000641)= 15.456003
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    642   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000642)=  0.000000
+     beta (00000642)= 16.103847
+     gamma(00000642)= 16.103847
+     z1=       1  0.577496590050842E-04  0.000000000000000E+00
+
+     Lanczos iteration:    643   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000643)=  0.000000
+     beta (00000643)= 15.566229
+     gamma(00000643)= 15.566229
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    644   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000644)=  0.000000
+     beta (00000644)= 16.082376
+     gamma(00000644)= 16.082376
+     z1=       1 -0.558962472075111E-04  0.000000000000000E+00
+
+     Lanczos iteration:    645   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000645)=  0.000000
+     beta (00000645)= 15.432154
+     gamma(00000645)= 15.432154
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    646   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000646)=  0.000000
+     beta (00000646)= 15.920951
+     gamma(00000646)= 15.920951
+     z1=       1  0.541801489862548E-04  0.000000000000000E+00
+
+     Lanczos iteration:    647   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000647)=  0.000000
+     beta (00000647)= 15.557110
+     gamma(00000647)= 15.557110
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    648   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000648)=  0.000000
+     beta (00000648)= 16.083315
+     gamma(00000648)= 16.083315
+     z1=       1 -0.524075129895059E-04  0.000000000000000E+00
+
+     Lanczos iteration:    649   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000649)=  0.000000
+     beta (00000649)= 15.488088
+     gamma(00000649)= 15.488088
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    650   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000650)=  0.000000
+     beta (00000650)= 16.056685
+     gamma(00000650)= 16.056685
+     z1=       1  0.505516655875601E-04  0.000000000000000E+00
+
+     Lanczos iteration:    651   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000651)=  0.000000
+     beta (00000651)= 15.554565
+     gamma(00000651)= 15.554565
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    652   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000652)=  0.000000
+     beta (00000652)= 16.040041
+     gamma(00000652)= 16.040041
+     z1=       1 -0.490216414686141E-04  0.000000000000000E+00
+
+     Lanczos iteration:    653   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000653)=  0.000000
+     beta (00000653)= 15.509711
+     gamma(00000653)= 15.509711
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    654   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000654)=  0.000000
+     beta (00000654)= 16.004781
+     gamma(00000654)= 16.004781
+     z1=       1  0.475052725223465E-04  0.000000000000000E+00
+
+     Lanczos iteration:    655   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000655)=  0.000000
+     beta (00000655)= 15.486227
+     gamma(00000655)= 15.486227
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    656   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000656)=  0.000000
+     beta (00000656)= 16.060429
+     gamma(00000656)= 16.060429
+     z1=       1 -0.458068340670609E-04  0.000000000000000E+00
+
+     Lanczos iteration:    657   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000657)=  0.000000
+     beta (00000657)= 15.518927
+     gamma(00000657)= 15.518927
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    658   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000658)=  0.000000
+     beta (00000658)= 16.054976
+     gamma(00000658)= 16.054976
+     z1=       1  0.442774179854298E-04  0.000000000000000E+00
+
+     Lanczos iteration:    659   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000659)=  0.000000
+     beta (00000659)= 15.653335
+     gamma(00000659)= 15.653335
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    660   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000660)=  0.000000
+     beta (00000660)= 15.957768
+     gamma(00000660)= 15.957768
+     z1=       1 -0.434327196141265E-04  0.000000000000000E+00
+
+     Lanczos iteration:    661   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000661)=  0.000000
+     beta (00000661)= 15.451304
+     gamma(00000661)= 15.451304
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    662   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000662)=  0.000000
+     beta (00000662)= 16.040552
+     gamma(00000662)= 16.040552
+     z1=       1  0.418372220891729E-04  0.000000000000000E+00
+
+     Lanczos iteration:    663   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000663)=  0.000000
+     beta (00000663)= 15.560447
+     gamma(00000663)= 15.560447
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    664   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000664)=  0.000000
+     beta (00000664)= 16.040756
+     gamma(00000664)= 16.040756
+     z1=       1 -0.405844879607965E-04  0.000000000000000E+00
+
+     Lanczos iteration:    665   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000665)=  0.000000
+     beta (00000665)= 15.521799
+     gamma(00000665)= 15.521799
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    666   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000666)=  0.000000
+     beta (00000666)= 16.097318
+     gamma(00000666)= 16.097318
+     z1=       1  0.391334908154493E-04  0.000000000000000E+00
+
+     Lanczos iteration:    667   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000667)=  0.000000
+     beta (00000667)= 15.465757
+     gamma(00000667)= 15.465757
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    668   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000668)=  0.000000
+     beta (00000668)= 15.999461
+     gamma(00000668)= 15.999461
+     z1=       1 -0.378280885814132E-04  0.000000000000000E+00
+
+     Lanczos iteration:    669   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000669)=  0.000000
+     beta (00000669)= 15.472330
+     gamma(00000669)= 15.472330
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    670   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000670)=  0.000000
+     beta (00000670)= 16.036527
+     gamma(00000670)= 16.036527
+     z1=       1  0.364972206782083E-04  0.000000000000000E+00
+
+     Lanczos iteration:    671   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000671)=  0.000000
+     beta (00000671)= 15.545050
+     gamma(00000671)= 15.545050
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    672   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000672)=  0.000000
+     beta (00000672)= 15.998294
+     gamma(00000672)= 15.998294
+     z1=       1 -0.354632262802267E-04  0.000000000000000E+00
+
+     Lanczos iteration:    673   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000673)=  0.000000
+     beta (00000673)= 15.438385
+     gamma(00000673)= 15.438385
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    674   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000674)=  0.000000
+     beta (00000674)= 16.014949
+     gamma(00000674)= 16.014949
+     z1=       1  0.341864929861956E-04  0.000000000000000E+00
+
+     Lanczos iteration:    675   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000675)=  0.000000
+     beta (00000675)= 15.423876
+     gamma(00000675)= 15.423876
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    676   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000676)=  0.000000
+     beta (00000676)= 16.043545
+     gamma(00000676)= 16.043545
+     z1=       1 -0.328660667915023E-04  0.000000000000000E+00
+
+     Lanczos iteration:    677   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000677)=  0.000000
+     beta (00000677)= 15.564416
+     gamma(00000677)= 15.564416
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    678   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000678)=  0.000000
+     beta (00000678)= 16.006001
+     gamma(00000678)= 16.006001
+     z1=       1  0.319593333571455E-04  0.000000000000000E+00
+
+     Lanczos iteration:    679   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000679)=  0.000000
+     beta (00000679)= 15.554140
+     gamma(00000679)= 15.554140
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    680   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000680)=  0.000000
+     beta (00000680)= 16.161409
+     gamma(00000680)= 16.161409
+     z1=       1 -0.307584542175599E-04  0.000000000000000E+00
+
+     Lanczos iteration:    681   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000681)=  0.000000
+     beta (00000681)= 15.439029
+     gamma(00000681)= 15.439029
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    682   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000682)=  0.000000
+     beta (00000682)= 16.015663
+     gamma(00000682)= 16.015663
+     z1=       1  0.296510154539527E-04  0.000000000000000E+00
+
+     Lanczos iteration:    683   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000683)=  0.000000
+     beta (00000683)= 15.553972
+     gamma(00000683)= 15.553972
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    684   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000684)=  0.000000
+     beta (00000684)= 16.098175
+     gamma(00000684)= 16.098175
+     z1=       1 -0.286486558093019E-04  0.000000000000000E+00
+
+     Lanczos iteration:    685   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000685)=  0.000000
+     beta (00000685)= 15.483777
+     gamma(00000685)= 15.483777
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    686   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000686)=  0.000000
+     beta (00000686)= 16.003278
+     gamma(00000686)= 16.003278
+     z1=       1  0.277186594228873E-04  0.000000000000000E+00
+
+     Lanczos iteration:    687   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000687)=  0.000000
+     beta (00000687)= 15.422971
+     gamma(00000687)= 15.422971
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    688   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000688)=  0.000000
+     beta (00000688)= 16.050858
+     gamma(00000688)= 16.050858
+     z1=       1 -0.266343432286844E-04  0.000000000000000E+00
+
+     Lanczos iteration:    689   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000689)=  0.000000
+     beta (00000689)= 15.501944
+     gamma(00000689)= 15.501944
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    690   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000690)=  0.000000
+     beta (00000690)= 16.050446
+     gamma(00000690)= 16.050446
+     z1=       1  0.257241515931352E-04  0.000000000000000E+00
+
+     Lanczos iteration:    691   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000691)=  0.000000
+     beta (00000691)= 15.534367
+     gamma(00000691)= 15.534367
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    692   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000692)=  0.000000
+     beta (00000692)= 16.040146
+     gamma(00000692)= 16.040146
+     z1=       1 -0.249130154773985E-04  0.000000000000000E+00
+
+     Lanczos iteration:    693   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000693)=  0.000000
+     beta (00000693)= 15.480038
+     gamma(00000693)= 15.480038
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    694   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000694)=  0.000000
+     beta (00000694)= 16.039750
+     gamma(00000694)= 16.039750
+     z1=       1  0.240436690807158E-04  0.000000000000000E+00
+
+     Lanczos iteration:    695   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000695)=  0.000000
+     beta (00000695)= 15.601407
+     gamma(00000695)= 15.601407
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    696   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000696)=  0.000000
+     beta (00000696)= 16.046586
+     gamma(00000696)= 16.046586
+     z1=       1 -0.233766269932449E-04  0.000000000000000E+00
+
+     Lanczos iteration:    697   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000697)=  0.000000
+     beta (00000697)= 15.506543
+     gamma(00000697)= 15.506543
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    698   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000698)=  0.000000
+     beta (00000698)= 16.065178
+     gamma(00000698)= 16.065178
+     z1=       1  0.225637499847884E-04  0.000000000000000E+00
+
+     Lanczos iteration:    699   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000699)=  0.000000
+     beta (00000699)= 15.508697
+     gamma(00000699)= 15.508697
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    700   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000700)=  0.000000
+     beta (00000700)= 15.925912
+     gamma(00000700)= 15.925912
+     z1=       1 -0.219726413846055E-04  0.000000000000000E+00
+
+     Lanczos iteration:    701   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000701)=  0.000000
+     beta (00000701)= 15.380677
+     gamma(00000701)= 15.380677
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    702   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000702)=  0.000000
+     beta (00000702)= 15.955084
+     gamma(00000702)= 15.955084
+     z1=       1  0.211815932578486E-04  0.000000000000000E+00
+
+     Lanczos iteration:    703   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000703)=  0.000000
+     beta (00000703)= 15.532947
+     gamma(00000703)= 15.532947
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    704   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000704)=  0.000000
+     beta (00000704)= 15.926984
+     gamma(00000704)= 15.926984
+     z1=       1 -0.206575549881703E-04  0.000000000000000E+00
+
+     Lanczos iteration:    705   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000705)=  0.000000
+     beta (00000705)= 15.541694
+     gamma(00000705)= 15.541694
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    706   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000706)=  0.000000
+     beta (00000706)= 16.053487
+     gamma(00000706)= 16.053487
+     z1=       1  0.199989817893454E-04  0.000000000000000E+00
+
+     Lanczos iteration:    707   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000707)=  0.000000
+     beta (00000707)= 15.489849
+     gamma(00000707)= 15.489849
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    708   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000708)=  0.000000
+     beta (00000708)= 15.986984
+     gamma(00000708)= 15.986984
+     z1=       1 -0.193770883732828E-04  0.000000000000000E+00
+
+     Lanczos iteration:    709   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000709)=  0.000000
+     beta (00000709)= 15.632962
+     gamma(00000709)= 15.632962
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    710   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000710)=  0.000000
+     beta (00000710)= 16.035133
+     gamma(00000710)= 16.035133
+     z1=       1  0.188910994153293E-04  0.000000000000000E+00
+
+     Lanczos iteration:    711   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000711)=  0.000000
+     beta (00000711)= 15.493947
+     gamma(00000711)= 15.493947
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    712   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000712)=  0.000000
+     beta (00000712)= 15.953373
+     gamma(00000712)= 15.953373
+     z1=       1 -0.183470734389708E-04  0.000000000000000E+00
+
+     Lanczos iteration:    713   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000713)=  0.000000
+     beta (00000713)= 15.529966
+     gamma(00000713)= 15.529966
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    714   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000714)=  0.000000
+     beta (00000714)= 16.022021
+     gamma(00000714)= 16.022021
+     z1=       1  0.177836130499363E-04  0.000000000000000E+00
+
+     Lanczos iteration:    715   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000715)=  0.000000
+     beta (00000715)= 15.515279
+     gamma(00000715)= 15.515279
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    716   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000716)=  0.000000
+     beta (00000716)= 16.046776
+     gamma(00000716)= 16.046776
+     z1=       1 -0.171945895783665E-04  0.000000000000000E+00
+
+     Lanczos iteration:    717   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000717)=  0.000000
+     beta (00000717)= 15.580507
+     gamma(00000717)= 15.580507
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    718   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000718)=  0.000000
+     beta (00000718)= 16.093049
+     gamma(00000718)= 16.093049
+     z1=       1  0.166469655579790E-04  0.000000000000000E+00
+
+     Lanczos iteration:    719   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000719)=  0.000000
+     beta (00000719)= 15.553998
+     gamma(00000719)= 15.553998
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    720   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000720)=  0.000000
+     beta (00000720)= 16.022561
+     gamma(00000720)= 16.022561
+     z1=       1 -0.161601428863389E-04  0.000000000000000E+00
+
+     Lanczos iteration:    721   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000721)=  0.000000
+     beta (00000721)= 15.461212
+     gamma(00000721)= 15.461212
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    722   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000722)=  0.000000
+     beta (00000722)= 16.023817
+     gamma(00000722)= 16.023817
+     z1=       1  0.155927517337799E-04  0.000000000000000E+00
+
+     Lanczos iteration:    723   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000723)=  0.000000
+     beta (00000723)= 15.518964
+     gamma(00000723)= 15.518964
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    724   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000724)=  0.000000
+     beta (00000724)= 15.957177
+     gamma(00000724)= 15.957177
+     z1=       1 -0.151645468193873E-04  0.000000000000000E+00
+
+     Lanczos iteration:    725   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000725)=  0.000000
+     beta (00000725)= 15.583855
+     gamma(00000725)= 15.583855
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    726   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000726)=  0.000000
+     beta (00000726)= 15.985875
+     gamma(00000726)= 15.985875
+     z1=       1  0.147831814387468E-04  0.000000000000000E+00
+
+     Lanczos iteration:    727   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000727)=  0.000000
+     beta (00000727)= 15.530938
+     gamma(00000727)= 15.530938
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    728   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000728)=  0.000000
+     beta (00000728)= 15.954064
+     gamma(00000728)= 15.954064
+     z1=       1 -0.143911086807162E-04  0.000000000000000E+00
+
+     Lanczos iteration:    729   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000729)=  0.000000
+     beta (00000729)= 15.615864
+     gamma(00000729)= 15.615864
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    730   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000730)=  0.000000
+     beta (00000730)= 16.037342
+     gamma(00000730)= 16.037342
+     z1=       1  0.140128951865827E-04  0.000000000000000E+00
+
+     Lanczos iteration:    731   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000731)=  0.000000
+     beta (00000731)= 15.532953
+     gamma(00000731)= 15.532953
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    732   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000732)=  0.000000
+     beta (00000732)= 16.011448
+     gamma(00000732)= 16.011448
+     z1=       1 -0.135941253547696E-04  0.000000000000000E+00
+
+     Lanczos iteration:    733   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000733)=  0.000000
+     beta (00000733)= 15.552189
+     gamma(00000733)= 15.552189
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    734   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000734)=  0.000000
+     beta (00000734)= 15.992545
+     gamma(00000734)= 15.992545
+     z1=       1  0.132198095089348E-04  0.000000000000000E+00
+
+     Lanczos iteration:    735   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000735)=  0.000000
+     beta (00000735)= 15.539213
+     gamma(00000735)= 15.539213
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    736   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000736)=  0.000000
+     beta (00000736)= 15.945468
+     gamma(00000736)= 15.945468
+     z1=       1 -0.128829982637482E-04  0.000000000000000E+00
+
+     Lanczos iteration:    737   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000737)=  0.000000
+     beta (00000737)= 15.612552
+     gamma(00000737)= 15.612552
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    738   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000738)=  0.000000
+     beta (00000738)= 16.069576
+     gamma(00000738)= 16.069576
+     z1=       1  0.125166009740749E-04  0.000000000000000E+00
+
+     Lanczos iteration:    739   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000739)=  0.000000
+     beta (00000739)= 15.603220
+     gamma(00000739)= 15.603220
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    740   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000740)=  0.000000
+     beta (00000740)= 15.948889
+     gamma(00000740)= 15.948889
+     z1=       1 -0.122453217537722E-04  0.000000000000000E+00
+
+     Lanczos iteration:    741   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000741)=  0.000000
+     beta (00000741)= 15.488915
+     gamma(00000741)= 15.488915
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    742   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000742)=  0.000000
+     beta (00000742)= 15.984726
+     gamma(00000742)= 15.984726
+     z1=       1  0.118654991419593E-04  0.000000000000000E+00
+
+     Lanczos iteration:    743   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000743)=  0.000000
+     beta (00000743)= 15.478934
+     gamma(00000743)= 15.478934
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    744   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000744)=  0.000000
+     beta (00000744)= 16.054781
+     gamma(00000744)= 16.054781
+     z1=       1 -0.114399115799663E-04  0.000000000000000E+00
+
+     Lanczos iteration:    745   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000745)=  0.000000
+     beta (00000745)= 15.521798
+     gamma(00000745)= 15.521798
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    746   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000746)=  0.000000
+     beta (00000746)= 15.859470
+     gamma(00000746)= 15.859470
+     z1=       1  0.111963388104959E-04  0.000000000000000E+00
+
+     Lanczos iteration:    747   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000747)=  0.000000
+     beta (00000747)= 15.593407
+     gamma(00000747)= 15.593407
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    748   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000748)=  0.000000
+     beta (00000748)= 15.969852
+     gamma(00000748)= 15.969852
+     z1=       1 -0.109324163140544E-04  0.000000000000000E+00
+
+     Lanczos iteration:    749   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000749)=  0.000000
+     beta (00000749)= 15.567470
+     gamma(00000749)= 15.567470
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    750   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000750)=  0.000000
+     beta (00000750)= 15.895412
+     gamma(00000750)= 15.895412
+     z1=       1  0.107068669613838E-04  0.000000000000000E+00
+
+     Lanczos iteration:    751   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000751)=  0.000000
+     beta (00000751)= 15.528957
+     gamma(00000751)= 15.528957
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    752   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000752)=  0.000000
+     beta (00000752)= 16.006958
+     gamma(00000752)= 16.006958
+     z1=       1 -0.103871378144540E-04  0.000000000000000E+00
+
+     Lanczos iteration:    753   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000753)=  0.000000
+     beta (00000753)= 15.506726
+     gamma(00000753)= 15.506726
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    754   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000754)=  0.000000
+     beta (00000754)= 15.901386
+     gamma(00000754)= 15.901386
+     z1=       1  0.101293370755066E-04  0.000000000000000E+00
+
+     Lanczos iteration:    755   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000755)=  0.000000
+     beta (00000755)= 15.613635
+     gamma(00000755)= 15.613635
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    756   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000756)=  0.000000
+     beta (00000756)= 16.091776
+     gamma(00000756)= 16.091776
+     z1=       1 -0.982836028714726E-05  0.000000000000000E+00
+
+     Lanczos iteration:    757   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000757)=  0.000000
+     beta (00000757)= 15.570477
+     gamma(00000757)= 15.570477
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    758   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000758)=  0.000000
+     beta (00000758)= 15.915388
+     gamma(00000758)= 15.915388
+     z1=       1  0.961536474362347E-05  0.000000000000000E+00
+
+     Lanczos iteration:    759   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000759)=  0.000000
+     beta (00000759)= 15.584550
+     gamma(00000759)= 15.584550
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    760   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000760)=  0.000000
+     beta (00000760)= 16.006428
+     gamma(00000760)= 16.006428
+     z1=       1 -0.936193475821901E-05  0.000000000000000E+00
+
+     Lanczos iteration:    761   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000761)=  0.000000
+     beta (00000761)= 15.480135
+     gamma(00000761)= 15.480135
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    762   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000762)=  0.000000
+     beta (00000762)= 16.071896
+     gamma(00000762)= 16.071896
+     z1=       1  0.901723234018968E-05  0.000000000000000E+00
+
+     Lanczos iteration:    763   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000763)=  0.000000
+     beta (00000763)= 15.546815
+     gamma(00000763)= 15.546815
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    764   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000764)=  0.000000
+     beta (00000764)= 16.033746
+     gamma(00000764)= 16.033746
+     z1=       1 -0.874338674829601E-05  0.000000000000000E+00
+
+     Lanczos iteration:    765   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000765)=  0.000000
+     beta (00000765)= 15.507859
+     gamma(00000765)= 15.507859
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    766   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000766)=  0.000000
+     beta (00000766)= 15.968726
+     gamma(00000766)= 15.968726
+     z1=       1  0.849104754064613E-05  0.000000000000000E+00
+
+     Lanczos iteration:    767   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000767)=  0.000000
+     beta (00000767)= 15.554465
+     gamma(00000767)= 15.554465
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    768   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000768)=  0.000000
+     beta (00000768)= 16.021112
+     gamma(00000768)= 16.021112
+     z1=       1 -0.824372880172536E-05  0.000000000000000E+00
+
+     Lanczos iteration:    769   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000769)=  0.000000
+     beta (00000769)= 15.548103
+     gamma(00000769)= 15.548103
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    770   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000770)=  0.000000
+     beta (00000770)= 15.852903
+     gamma(00000770)= 15.852903
+     z1=       1  0.808522857762440E-05  0.000000000000000E+00
+
+     Lanczos iteration:    771   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000771)=  0.000000
+     beta (00000771)= 15.527293
+     gamma(00000771)= 15.527293
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    772   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000772)=  0.000000
+     beta (00000772)= 15.944222
+     gamma(00000772)= 15.944222
+     z1=       1 -0.787380640057678E-05  0.000000000000000E+00
+
+     Lanczos iteration:    773   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000773)=  0.000000
+     beta (00000773)= 15.520338
+     gamma(00000773)= 15.520338
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    774   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000774)=  0.000000
+     beta (00000774)= 15.933544
+     gamma(00000774)= 15.933544
+     z1=       1  0.766961468199462E-05  0.000000000000000E+00
+
+     Lanczos iteration:    775   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000775)=  0.000000
+     beta (00000775)= 15.493637
+     gamma(00000775)= 15.493637
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    776   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000776)=  0.000000
+     beta (00000776)= 15.950872
+     gamma(00000776)= 15.950872
+     z1=       1 -0.744976348746127E-05  0.000000000000000E+00
+
+     Lanczos iteration:    777   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000777)=  0.000000
+     beta (00000777)= 15.524864
+     gamma(00000777)= 15.524864
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    778   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000778)=  0.000000
+     beta (00000778)= 15.946999
+     gamma(00000778)= 15.946999
+     z1=       1  0.725255980984964E-05  0.000000000000000E+00
+
+     Lanczos iteration:    779   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000779)=  0.000000
+     beta (00000779)= 15.537974
+     gamma(00000779)= 15.537974
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    780   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000780)=  0.000000
+     beta (00000780)= 16.062894
+     gamma(00000780)= 16.062894
+     z1=       1 -0.701555309107985E-05  0.000000000000000E+00
+
+     Lanczos iteration:    781   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000781)=  0.000000
+     beta (00000781)= 15.577384
+     gamma(00000781)= 15.577384
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    782   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000782)=  0.000000
+     beta (00000782)= 16.086318
+     gamma(00000782)= 16.086318
+     z1=       1  0.679359738511767E-05  0.000000000000000E+00
+
+     Lanczos iteration:    783   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000783)=  0.000000
+     beta (00000783)= 15.600410
+     gamma(00000783)= 15.600410
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    784   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000784)=  0.000000
+     beta (00000784)= 15.930498
+     gamma(00000784)= 15.930498
+     z1=       1 -0.665283029371248E-05  0.000000000000000E+00
+
+     Lanczos iteration:    785   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000785)=  0.000000
+     beta (00000785)= 15.543667
+     gamma(00000785)= 15.543667
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    786   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000786)=  0.000000
+     beta (00000786)= 15.879168
+     gamma(00000786)= 15.879168
+     z1=       1  0.651226651817230E-05  0.000000000000000E+00
+
+     Lanczos iteration:    787   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000787)=  0.000000
+     beta (00000787)= 15.622791
+     gamma(00000787)= 15.622791
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    788   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000788)=  0.000000
+     beta (00000788)= 15.994521
+     gamma(00000788)= 15.994521
+     z1=       1 -0.636091410983596E-05  0.000000000000000E+00
+
+     Lanczos iteration:    789   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000789)=  0.000000
+     beta (00000789)= 15.614042
+     gamma(00000789)= 15.614042
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    790   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000790)=  0.000000
+     beta (00000790)= 15.970850
+     gamma(00000790)= 15.970850
+     z1=       1  0.621880351946678E-05  0.000000000000000E+00
+
+     Lanczos iteration:    791   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000791)=  0.000000
+     beta (00000791)= 15.573886
+     gamma(00000791)= 15.573886
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    792   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000792)=  0.000000
+     beta (00000792)= 16.013409
+     gamma(00000792)= 16.013409
+     z1=       1 -0.604811495012215E-05  0.000000000000000E+00
+
+     Lanczos iteration:    793   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000793)=  0.000000
+     beta (00000793)= 15.532431
+     gamma(00000793)= 15.532431
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    794   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000794)=  0.000000
+     beta (00000794)= 15.959593
+     gamma(00000794)= 15.959593
+     z1=       1  0.588623593810855E-05  0.000000000000000E+00
+
+     Lanczos iteration:    795   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000795)=  0.000000
+     beta (00000795)= 15.472399
+     gamma(00000795)= 15.472399
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    796   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000796)=  0.000000
+     beta (00000796)= 16.042788
+     gamma(00000796)= 16.042788
+     z1=       1 -0.567695553831994E-05  0.000000000000000E+00
+
+     Lanczos iteration:    797   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000797)=  0.000000
+     beta (00000797)= 15.597632
+     gamma(00000797)= 15.597632
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    798   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000798)=  0.000000
+     beta (00000798)= 15.978500
+     gamma(00000798)= 15.978500
+     z1=       1  0.554163781416820E-05  0.000000000000000E+00
+
+     Lanczos iteration:    799   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000799)=  0.000000
+     beta (00000799)= 15.583499
+     gamma(00000799)= 15.583499
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    800   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000800)=  0.000000
+     beta (00000800)= 16.014395
+     gamma(00000800)= 16.014395
+     z1=       1 -0.539253012273120E-05  0.000000000000000E+00
+
+     Lanczos iteration:    801   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000801)=  0.000000
+     beta (00000801)= 15.555198
+     gamma(00000801)= 15.555198
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    802   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000802)=  0.000000
+     beta (00000802)= 15.884288
+     gamma(00000802)= 15.884288
+     z1=       1  0.528080813657576E-05  0.000000000000000E+00
+
+     Lanczos iteration:    803   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000803)=  0.000000
+     beta (00000803)= 15.532429
+     gamma(00000803)= 15.532429
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    804   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000804)=  0.000000
+     beta (00000804)= 16.043116
+     gamma(00000804)= 16.043116
+     z1=       1 -0.511270849835963E-05  0.000000000000000E+00
+
+     Lanczos iteration:    805   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000805)=  0.000000
+     beta (00000805)= 15.642514
+     gamma(00000805)= 15.642514
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    806   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000806)=  0.000000
+     beta (00000806)= 15.903493
+     gamma(00000806)= 15.903493
+     z1=       1  0.502880799154760E-05  0.000000000000000E+00
+
+     Lanczos iteration:    807   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000807)=  0.000000
+     beta (00000807)= 15.504266
+     gamma(00000807)= 15.504266
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    808   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000808)=  0.000000
+     beta (00000808)= 15.995074
+     gamma(00000808)= 15.995074
+     z1=       1 -0.487449916725634E-05  0.000000000000000E+00
+
+     Lanczos iteration:    809   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000809)=  0.000000
+     beta (00000809)= 15.516383
+     gamma(00000809)= 15.516383
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    810   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000810)=  0.000000
+     beta (00000810)= 15.994928
+     gamma(00000810)= 15.994928
+     z1=       1  0.472866140814078E-05  0.000000000000000E+00
+
+     Lanczos iteration:    811   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000811)=  0.000000
+     beta (00000811)= 15.553361
+     gamma(00000811)= 15.553361
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    812   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000812)=  0.000000
+     beta (00000812)= 15.951698
+     gamma(00000812)= 15.951698
+     z1=       1 -0.461057996862732E-05  0.000000000000000E+00
+
+     Lanczos iteration:    813   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000813)=  0.000000
+     beta (00000813)= 15.600520
+     gamma(00000813)= 15.600520
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    814   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000814)=  0.000000
+     beta (00000814)= 16.079690
+     gamma(00000814)= 16.079690
+     z1=       1  0.447318608815059E-05  0.000000000000000E+00
+
+     Lanczos iteration:    815   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000815)=  0.000000
+     beta (00000815)= 15.577663
+     gamma(00000815)= 15.577663
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    816   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000816)=  0.000000
+     beta (00000816)= 15.885048
+     gamma(00000816)= 15.885048
+     z1=       1 -0.438662745833995E-05  0.000000000000000E+00
+
+     Lanczos iteration:    817   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000817)=  0.000000
+     beta (00000817)= 15.605125
+     gamma(00000817)= 15.605125
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    818   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000818)=  0.000000
+     beta (00000818)= 16.032561
+     gamma(00000818)= 16.032561
+     z1=       1  0.426967793831605E-05  0.000000000000000E+00
+
+     Lanczos iteration:    819   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000819)=  0.000000
+     beta (00000819)= 15.501000
+     gamma(00000819)= 15.501000
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    820   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000820)=  0.000000
+     beta (00000820)= 15.911908
+     gamma(00000820)= 15.911908
+     z1=       1 -0.415941805072435E-05  0.000000000000000E+00
+
+     Lanczos iteration:    821   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000821)=  0.000000
+     beta (00000821)= 15.628731
+     gamma(00000821)= 15.628731
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    822   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000822)=  0.000000
+     beta (00000822)= 15.971050
+     gamma(00000822)= 15.971050
+     z1=       1  0.407026643289322E-05  0.000000000000000E+00
+
+     Lanczos iteration:    823   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000823)=  0.000000
+     beta (00000823)= 15.594774
+     gamma(00000823)= 15.594774
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    824   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000824)=  0.000000
+     beta (00000824)= 16.080605
+     gamma(00000824)= 16.080605
+     z1=       1 -0.394729455618480E-05  0.000000000000000E+00
+
+     Lanczos iteration:    825   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000825)=  0.000000
+     beta (00000825)= 15.601803
+     gamma(00000825)= 15.601803
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    826   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000826)=  0.000000
+     beta (00000826)= 15.885790
+     gamma(00000826)= 15.885790
+     z1=       1  0.387672948085234E-05  0.000000000000000E+00
+
+     Lanczos iteration:    827   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000827)=  0.000000
+     beta (00000827)= 15.601333
+     gamma(00000827)= 15.601333
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    828   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000828)=  0.000000
+     beta (00000828)= 15.947402
+     gamma(00000828)= 15.947402
+     z1=       1 -0.379260196725802E-05  0.000000000000000E+00
+
+     Lanczos iteration:    829   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000829)=  0.000000
+     beta (00000829)= 15.505847
+     gamma(00000829)= 15.505847
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    830   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000830)=  0.000000
+     beta (00000830)= 15.949707
+     gamma(00000830)= 15.949707
+     z1=       1  0.368705859885715E-05  0.000000000000000E+00
+
+     Lanczos iteration:    831   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000831)=  0.000000
+     beta (00000831)= 15.562192
+     gamma(00000831)= 15.562192
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    832   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000832)=  0.000000
+     beta (00000832)= 15.954683
+     gamma(00000832)= 15.954683
+     z1=       1 -0.359635562169076E-05  0.000000000000000E+00
+
+     Lanczos iteration:    833   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000833)=  0.000000
+     beta (00000833)= 15.554724
+     gamma(00000833)= 15.554724
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    834   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000834)=  0.000000
+     beta (00000834)= 15.999944
+     gamma(00000834)= 15.999944
+     z1=       1  0.349628228827996E-05  0.000000000000000E+00
+
+     Lanczos iteration:    835   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000835)=  0.000000
+     beta (00000835)= 15.661230
+     gamma(00000835)= 15.661230
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    836   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000836)=  0.000000
+     beta (00000836)= 15.909552
+     gamma(00000836)= 15.909552
+     z1=       1 -0.344171104058218E-05  0.000000000000000E+00
+
+     Lanczos iteration:    837   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000837)=  0.000000
+     beta (00000837)= 15.570818
+     gamma(00000837)= 15.570818
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    838   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000838)=  0.000000
+     beta (00000838)= 15.990719
+     gamma(00000838)= 15.990719
+     z1=       1  0.335133489566888E-05  0.000000000000000E+00
+
+     Lanczos iteration:    839   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000839)=  0.000000
+     beta (00000839)= 15.531169
+     gamma(00000839)= 15.531169
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    840   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000840)=  0.000000
+     beta (00000840)= 15.996901
+     gamma(00000840)= 15.996901
+     z1=       1 -0.325376449812793E-05  0.000000000000000E+00
+
+     Lanczos iteration:    841   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000841)=  0.000000
+     beta (00000841)= 15.574198
+     gamma(00000841)= 15.574198
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    842   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000842)=  0.000000
+     beta (00000842)= 16.001388
+     gamma(00000842)= 16.001388
+     z1=       1  0.316689842097366E-05  0.000000000000000E+00
+
+     Lanczos iteration:    843   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000843)=  0.000000
+     beta (00000843)= 15.493641
+     gamma(00000843)= 15.493641
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    844   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000844)=  0.000000
+     beta (00000844)= 16.045973
+     gamma(00000844)= 16.045973
+     z1=       1 -0.305788803826867E-05  0.000000000000000E+00
+
+     Lanczos iteration:    845   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000845)=  0.000000
+     beta (00000845)= 15.529233
+     gamma(00000845)= 15.529233
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    846   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000846)=  0.000000
+     beta (00000846)= 15.905156
+     gamma(00000846)= 15.905156
+     z1=       1  0.298561396921103E-05  0.000000000000000E+00
+
+     Lanczos iteration:    847   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000847)=  0.000000
+     beta (00000847)= 15.583124
+     gamma(00000847)= 15.583124
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    848   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000848)=  0.000000
+     beta (00000848)= 16.035627
+     gamma(00000848)= 16.035627
+     z1=       1 -0.290136402537888E-05  0.000000000000000E+00
+
+     Lanczos iteration:    849   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000849)=  0.000000
+     beta (00000849)= 15.539520
+     gamma(00000849)= 15.539520
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    850   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000850)=  0.000000
+     beta (00000850)= 15.989393
+     gamma(00000850)= 15.989393
+     z1=       1  0.281973202894380E-05  0.000000000000000E+00
+
+     Lanczos iteration:    851   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000851)=  0.000000
+     beta (00000851)= 15.509088
+     gamma(00000851)= 15.509088
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    852   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000852)=  0.000000
+     beta (00000852)= 15.915109
+     gamma(00000852)= 15.915109
+     z1=       1 -0.274779592041724E-05  0.000000000000000E+00
+
+     Lanczos iteration:    853   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000853)=  0.000000
+     beta (00000853)= 15.513971
+     gamma(00000853)= 15.513971
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    854   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000854)=  0.000000
+     beta (00000854)= 15.984477
+     gamma(00000854)= 15.984477
+     z1=       1  0.266691410435657E-05  0.000000000000000E+00
+
+     Lanczos iteration:    855   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000855)=  0.000000
+     beta (00000855)= 15.649952
+     gamma(00000855)= 15.649952
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    856   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000856)=  0.000000
+     beta (00000856)= 15.966059
+     gamma(00000856)= 15.966059
+     z1=       1 -0.261411273950497E-05  0.000000000000000E+00
+
+     Lanczos iteration:    857   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000857)=  0.000000
+     beta (00000857)= 15.670409
+     gamma(00000857)= 15.670409
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    858   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000858)=  0.000000
+     beta (00000858)= 15.931225
+     gamma(00000858)= 15.931225
+     z1=       1  0.257131609607969E-05  0.000000000000000E+00
+
+     Lanczos iteration:    859   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000859)=  0.000000
+     beta (00000859)= 15.589987
+     gamma(00000859)= 15.589987
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    860   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000860)=  0.000000
+     beta (00000860)= 15.914396
+     gamma(00000860)= 15.914396
+     z1=       1 -0.251890072642223E-05  0.000000000000000E+00
+
+     Lanczos iteration:    861   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000861)=  0.000000
+     beta (00000861)= 15.553356
+     gamma(00000861)= 15.553356
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    862   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000862)=  0.000000
+     beta (00000862)= 16.002318
+     gamma(00000862)= 16.002318
+     z1=       1  0.244823036310050E-05  0.000000000000000E+00
+
+     Lanczos iteration:    863   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000863)=  0.000000
+     beta (00000863)= 15.578924
+     gamma(00000863)= 15.578924
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    864   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000864)=  0.000000
+     beta (00000864)= 15.962459
+     gamma(00000864)= 15.962459
+     z1=       1 -0.238940609013742E-05  0.000000000000000E+00
+
+     Lanczos iteration:    865   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000865)=  0.000000
+     beta (00000865)= 15.593695
+     gamma(00000865)= 15.593695
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    866   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000866)=  0.000000
+     beta (00000866)= 16.023330
+     gamma(00000866)= 16.023330
+     z1=       1  0.232533876246173E-05  0.000000000000000E+00
+
+     Lanczos iteration:    867   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000867)=  0.000000
+     beta (00000867)= 15.583823
+     gamma(00000867)= 15.583823
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    868   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000868)=  0.000000
+     beta (00000868)= 16.012954
+     gamma(00000868)= 16.012954
+     z1=       1 -0.226302196957261E-05  0.000000000000000E+00
+
+     Lanczos iteration:    869   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000869)=  0.000000
+     beta (00000869)= 15.533054
+     gamma(00000869)= 15.533054
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    870   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000870)=  0.000000
+     beta (00000870)= 16.017995
+     gamma(00000870)= 16.017995
+     z1=       1  0.219450953642918E-05  0.000000000000000E+00
+
+     Lanczos iteration:    871   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000871)=  0.000000
+     beta (00000871)= 15.631788
+     gamma(00000871)= 15.631788
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    872   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000872)=  0.000000
+     beta (00000872)= 15.911115
+     gamma(00000872)= 15.911115
+     z1=       1 -0.215598381073275E-05  0.000000000000000E+00
+
+     Lanczos iteration:    873   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000873)=  0.000000
+     beta (00000873)= 15.555473
+     gamma(00000873)= 15.555473
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    874   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000874)=  0.000000
+     beta (00000874)= 15.898626
+     gamma(00000874)= 15.898626
+     z1=       1  0.210944938272041E-05  0.000000000000000E+00
+
+     Lanczos iteration:    875   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000875)=  0.000000
+     beta (00000875)= 15.592424
+     gamma(00000875)= 15.592424
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    876   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000876)=  0.000000
+     beta (00000876)= 15.920696
+     gamma(00000876)= 15.920696
+     z1=       1 -0.206595416693892E-05  0.000000000000000E+00
+
+     Lanczos iteration:    877   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000877)=  0.000000
+     beta (00000877)= 15.569006
+     gamma(00000877)= 15.569006
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    878   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000878)=  0.000000
+     beta (00000878)= 15.976400
+     gamma(00000878)= 15.976400
+     z1=       1  0.201327292099693E-05  0.000000000000000E+00
+
+     Lanczos iteration:    879   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000879)=  0.000000
+     beta (00000879)= 15.573296
+     gamma(00000879)= 15.573296
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    880   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000880)=  0.000000
+     beta (00000880)= 15.877014
+     gamma(00000880)= 15.877014
+     z1=       1 -0.197476020736935E-05  0.000000000000000E+00
+
+     Lanczos iteration:    881   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000881)=  0.000000
+     beta (00000881)= 15.572561
+     gamma(00000881)= 15.572561
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    882   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000882)=  0.000000
+     beta (00000882)= 15.982376
+     gamma(00000882)= 15.982376
+     z1=       1  0.192412397731490E-05  0.000000000000000E+00
+
+     Lanczos iteration:    883   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000883)=  0.000000
+     beta (00000883)= 15.601189
+     gamma(00000883)= 15.601189
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    884   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000884)=  0.000000
+     beta (00000884)= 15.935528
+     gamma(00000884)= 15.935528
+     z1=       1 -0.188375451168864E-05  0.000000000000000E+00
+
+     Lanczos iteration:    885   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000885)=  0.000000
+     beta (00000885)= 15.545909
+     gamma(00000885)= 15.545909
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    886   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000886)=  0.000000
+     beta (00000886)= 16.010004
+     gamma(00000886)= 16.010004
+     z1=       1  0.182914858841594E-05  0.000000000000000E+00
+
+     Lanczos iteration:    887   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000887)=  0.000000
+     beta (00000887)= 15.626848
+     gamma(00000887)= 15.626848
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    888   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000888)=  0.000000
+     beta (00000888)= 16.004993
+     gamma(00000888)= 16.004993
+     z1=       1 -0.178593189337738E-05  0.000000000000000E+00
+
+     Lanczos iteration:    889   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000889)=  0.000000
+     beta (00000889)= 15.554804
+     gamma(00000889)= 15.554804
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    890   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000890)=  0.000000
+     beta (00000890)= 15.957387
+     gamma(00000890)= 15.957387
+     z1=       1  0.174087528105257E-05  0.000000000000000E+00
+
+     Lanczos iteration:    891   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000891)=  0.000000
+     beta (00000891)= 15.706648
+     gamma(00000891)= 15.706648
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    892   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000892)=  0.000000
+     beta (00000892)= 15.882744
+     gamma(00000892)= 15.882744
+     z1=       1 -0.172157373233735E-05  0.000000000000000E+00
+
+     Lanczos iteration:    893   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000893)=  0.000000
+     beta (00000893)= 15.657124
+     gamma(00000893)= 15.657124
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    894   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000894)=  0.000000
+     beta (00000894)= 15.952107
+     gamma(00000894)= 15.952107
+     z1=       1  0.168973875196848E-05  0.000000000000000E+00
+
+     Lanczos iteration:    895   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000895)=  0.000000
+     beta (00000895)= 15.590853
+     gamma(00000895)= 15.590853
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    896   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000896)=  0.000000
+     beta (00000896)= 15.853281
+     gamma(00000896)= 15.853281
+     z1=       1 -0.166176759804765E-05  0.000000000000000E+00
+
+     Lanczos iteration:    897   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000897)=  0.000000
+     beta (00000897)= 15.638050
+     gamma(00000897)= 15.638050
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    898   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000898)=  0.000000
+     beta (00000898)= 15.926460
+     gamma(00000898)= 15.926460
+     z1=       1  0.163167483903381E-05  0.000000000000000E+00
+
+     Lanczos iteration:    899   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000899)=  0.000000
+     beta (00000899)= 15.623212
+     gamma(00000899)= 15.623212
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    900   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000900)=  0.000000
+     beta (00000900)= 15.851624
+     gamma(00000900)= 15.851624
+     z1=       1 -0.160816349493303E-05  0.000000000000000E+00
+
+     Lanczos iteration:    901   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000901)=  0.000000
+     beta (00000901)= 15.635867
+     gamma(00000901)= 15.635867
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    902   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000902)=  0.000000
+     beta (00000902)= 15.889019
+     gamma(00000902)= 15.889019
+     z1=       1  0.158254132584870E-05  0.000000000000000E+00
+
+     Lanczos iteration:    903   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000903)=  0.000000
+     beta (00000903)= 15.631855
+     gamma(00000903)= 15.631855
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    904   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000904)=  0.000000
+     beta (00000904)= 15.939183
+     gamma(00000904)= 15.939183
+     z1=       1 -0.155202789322087E-05  0.000000000000000E+00
+
+     Lanczos iteration:    905   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000905)=  0.000000
+     beta (00000905)= 15.597377
+     gamma(00000905)= 15.597377
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    906   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000906)=  0.000000
+     beta (00000906)= 15.884001
+     gamma(00000906)= 15.884001
+     z1=       1  0.152402183956069E-05  0.000000000000000E+00
+
+     Lanczos iteration:    907   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000907)=  0.000000
+     beta (00000907)= 15.646753
+     gamma(00000907)= 15.646753
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    908   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000908)=  0.000000
+     beta (00000908)= 15.918050
+     gamma(00000908)= 15.918050
+     z1=       1 -0.149804738231937E-05  0.000000000000000E+00
+
+     Lanczos iteration:    909   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000909)=  0.000000
+     beta (00000909)= 15.536617
+     gamma(00000909)= 15.536617
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    910   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000910)=  0.000000
+     beta (00000910)= 15.942747
+     gamma(00000910)= 15.942747
+     z1=       1  0.145988575467326E-05  0.000000000000000E+00
+
+     Lanczos iteration:    911   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000911)=  0.000000
+     beta (00000911)= 15.626755
+     gamma(00000911)= 15.626755
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    912   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000912)=  0.000000
+     beta (00000912)= 15.929747
+     gamma(00000912)= 15.929747
+     z1=       1 -0.143211802264634E-05  0.000000000000000E+00
+
+     Lanczos iteration:    913   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000913)=  0.000000
+     beta (00000913)= 15.618724
+     gamma(00000913)= 15.618724
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    914   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000914)=  0.000000
+     beta (00000914)= 15.974387
+     gamma(00000914)= 15.974387
+     z1=       1  0.140023251917615E-05  0.000000000000000E+00
+
+     Lanczos iteration:    915   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000915)=  0.000000
+     beta (00000915)= 15.691764
+     gamma(00000915)= 15.691764
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    916   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000916)=  0.000000
+     beta (00000916)= 15.891480
+     gamma(00000916)= 15.891480
+     z1=       1 -0.138263516012704E-05  0.000000000000000E+00
+
+     Lanczos iteration:    917   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000917)=  0.000000
+     beta (00000917)= 15.654367
+     gamma(00000917)= 15.654367
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    918   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000918)=  0.000000
+     beta (00000918)= 15.907662
+     gamma(00000918)= 15.907662
+     z1=       1  0.136061969149143E-05  0.000000000000000E+00
+
+     Lanczos iteration:    919   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000919)=  0.000000
+     beta (00000919)= 15.611157
+     gamma(00000919)= 15.611157
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    920   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000920)=  0.000000
+     beta (00000920)= 15.937711
+     gamma(00000920)= 15.937711
+     z1=       1 -0.133274145349208E-05  0.000000000000000E+00
+
+     Lanczos iteration:    921   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000921)=  0.000000
+     beta (00000921)= 15.644344
+     gamma(00000921)= 15.644344
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    922   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000922)=  0.000000
+     beta (00000922)= 15.881042
+     gamma(00000922)= 15.881042
+     z1=       1  0.131287770263958E-05  0.000000000000000E+00
+
+     Lanczos iteration:    923   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000923)=  0.000000
+     beta (00000923)= 15.702930
+     gamma(00000923)= 15.702930
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    924   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000924)=  0.000000
+     beta (00000924)= 15.899299
+     gamma(00000924)= 15.899299
+     z1=       1 -0.129666261846836E-05  0.000000000000000E+00
+
+     Lanczos iteration:    925   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000925)=  0.000000
+     beta (00000925)= 15.636885
+     gamma(00000925)= 15.636885
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    926   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000926)=  0.000000
+     beta (00000926)= 15.911329
+     gamma(00000926)= 15.911329
+     z1=       1  0.127429736414622E-05  0.000000000000000E+00
+
+     Lanczos iteration:    927   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000927)=  0.000000
+     beta (00000927)= 15.690367
+     gamma(00000927)= 15.690367
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    928   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000928)=  0.000000
+     beta (00000928)= 15.935344
+     gamma(00000928)= 15.935344
+     z1=       1 -0.125470731271102E-05  0.000000000000000E+00
+
+     Lanczos iteration:    929   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000929)=  0.000000
+     beta (00000929)= 15.591274
+     gamma(00000929)= 15.591274
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    930   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000930)=  0.000000
+     beta (00000930)= 15.912496
+     gamma(00000930)= 15.912496
+     z1=       1  0.122937882882437E-05  0.000000000000000E+00
+
+     Lanczos iteration:    931   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000931)=  0.000000
+     beta (00000931)= 15.669978
+     gamma(00000931)= 15.669978
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    932   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000932)=  0.000000
+     beta (00000932)= 15.805429
+     gamma(00000932)= 15.805429
+     z1=       1 -0.121884316982637E-05  0.000000000000000E+00
+
+     Lanczos iteration:    933   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000933)=  0.000000
+     beta (00000933)= 15.664520
+     gamma(00000933)= 15.664520
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    934   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000934)=  0.000000
+     beta (00000934)= 15.883854
+     gamma(00000934)= 15.883854
+     z1=       1  0.120201258902233E-05  0.000000000000000E+00
+
+     Lanczos iteration:    935   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000935)=  0.000000
+     beta (00000935)= 15.616354
+     gamma(00000935)= 15.616354
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    936   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000936)=  0.000000
+     beta (00000936)= 15.879806
+     gamma(00000936)= 15.879806
+     z1=       1 -0.118207071520340E-05  0.000000000000000E+00
+
+     Lanczos iteration:    937   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000937)=  0.000000
+     beta (00000937)= 15.684647
+     gamma(00000937)= 15.684647
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    938   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000938)=  0.000000
+     beta (00000938)= 15.766775
+     gamma(00000938)= 15.766775
+     z1=       1  0.117591338286496E-05  0.000000000000000E+00
+
+     Lanczos iteration:    939   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000939)=  0.000000
+     beta (00000939)= 15.700546
+     gamma(00000939)= 15.700546
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    940   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000940)=  0.000000
+     beta (00000940)= 15.909272
+     gamma(00000940)= 15.909272
+     z1=       1 -0.116048560349497E-05  0.000000000000000E+00
+
+     Lanczos iteration:    941   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000941)=  0.000000
+     beta (00000941)= 15.656749
+     gamma(00000941)= 15.656749
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    942   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000942)=  0.000000
+     beta (00000942)= 15.858392
+     gamma(00000942)= 15.858392
+     z1=       1  0.114572977703842E-05  0.000000000000000E+00
+
+     Lanczos iteration:    943   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000943)=  0.000000
+     beta (00000943)= 15.673822
+     gamma(00000943)= 15.673822
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    944   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000944)=  0.000000
+     beta (00000944)= 15.812579
+     gamma(00000944)= 15.812579
+     z1=       1 -0.113567592949920E-05  0.000000000000000E+00
+
+     Lanczos iteration:    945   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000945)=  0.000000
+     beta (00000945)= 15.623237
+     gamma(00000945)= 15.623237
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    946   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000946)=  0.000000
+     beta (00000946)= 15.887886
+     gamma(00000946)= 15.887886
+     z1=       1  0.111675864742158E-05  0.000000000000000E+00
+
+     Lanczos iteration:    947   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000947)=  0.000000
+     beta (00000947)= 15.620114
+     gamma(00000947)= 15.620114
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    948   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000948)=  0.000000
+     beta (00000948)= 15.882428
+     gamma(00000948)= 15.882428
+     z1=       1 -0.109831429632307E-05  0.000000000000000E+00
+
+     Lanczos iteration:    949   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000949)=  0.000000
+     beta (00000949)= 15.724081
+     gamma(00000949)= 15.724081
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    950   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000950)=  0.000000
+     beta (00000950)= 15.920408
+     gamma(00000950)= 15.920408
+     z1=       1  0.108477013488137E-05  0.000000000000000E+00
+
+     Lanczos iteration:    951   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000951)=  0.000000
+     beta (00000951)= 15.582849
+     gamma(00000951)= 15.582849
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    952   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000952)=  0.000000
+     beta (00000952)= 15.957467
+     gamma(00000952)= 15.957467
+     z1=       1 -0.105930404421806E-05  0.000000000000000E+00
+
+     Lanczos iteration:    953   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000953)=  0.000000
+     beta (00000953)= 15.623637
+     gamma(00000953)= 15.623637
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    954   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000954)=  0.000000
+     beta (00000954)= 15.903264
+     gamma(00000954)= 15.903264
+     z1=       1  0.104067831278518E-05  0.000000000000000E+00
+
+     Lanczos iteration:    955   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000955)=  0.000000
+     beta (00000955)= 15.584983
+     gamma(00000955)= 15.584983
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    956   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000956)=  0.000000
+     beta (00000956)= 15.896476
+     gamma(00000956)= 15.896476
+     z1=       1 -0.102028609901342E-05  0.000000000000000E+00
+
+     Lanczos iteration:    957   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000957)=  0.000000
+     beta (00000957)= 15.633440
+     gamma(00000957)= 15.633440
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    958   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000958)=  0.000000
+     beta (00000958)= 15.920599
+     gamma(00000958)= 15.920599
+     z1=       1  0.100188322140968E-05  0.000000000000000E+00
+
+     Lanczos iteration:    959   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000959)=  0.000000
+     beta (00000959)= 15.695119
+     gamma(00000959)= 15.695119
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    960   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000960)=  0.000000
+     beta (00000960)= 15.889492
+     gamma(00000960)= 15.889492
+     z1=       1 -0.989627378152752E-06  0.000000000000000E+00
+
+     Lanczos iteration:    961   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000961)=  0.000000
+     beta (00000961)= 15.623002
+     gamma(00000961)= 15.623002
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    962   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000962)=  0.000000
+     beta (00000962)= 15.861369
+     gamma(00000962)= 15.861369
+     z1=       1  0.974755092846696E-06  0.000000000000000E+00
+
+     Lanczos iteration:    963   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000963)=  0.000000
+     beta (00000963)= 15.629522
+     gamma(00000963)= 15.629522
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    964   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000964)=  0.000000
+     beta (00000964)= 15.945316
+     gamma(00000964)= 15.945316
+     z1=       1 -0.955450199433688E-06  0.000000000000000E+00
+
+     Lanczos iteration:    965   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000965)=  0.000000
+     beta (00000965)= 15.644747
+     gamma(00000965)= 15.644747
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    966   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000966)=  0.000000
+     beta (00000966)= 15.893804
+     gamma(00000966)= 15.893804
+     z1=       1  0.940478183462934E-06  0.000000000000000E+00
+
+     Lanczos iteration:    967   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000967)=  0.000000
+     beta (00000967)= 15.622115
+     gamma(00000967)= 15.622115
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    968   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000968)=  0.000000
+     beta (00000968)= 16.033628
+     gamma(00000968)= 16.033628
+     z1=       1 -0.916340191361303E-06  0.000000000000000E+00
+
+     Lanczos iteration:    969   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000969)=  0.000000
+     beta (00000969)= 15.594531
+     gamma(00000969)= 15.594531
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    970   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000970)=  0.000000
+     beta (00000970)= 15.858266
+     gamma(00000970)= 15.858266
+     z1=       1  0.901100753656486E-06  0.000000000000000E+00
+
+     Lanczos iteration:    971   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000971)=  0.000000
+     beta (00000971)= 15.676833
+     gamma(00000971)= 15.676833
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    972   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000972)=  0.000000
+     beta (00000972)= 15.926555
+     gamma(00000972)= 15.926555
+     z1=       1 -0.886971872844644E-06  0.000000000000000E+00
+
+     Lanczos iteration:    973   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000973)=  0.000000
+     beta (00000973)= 15.594252
+     gamma(00000973)= 15.594252
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    974   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000974)=  0.000000
+     beta (00000974)= 15.969779
+     gamma(00000974)= 15.969779
+     z1=       1  0.866114811631097E-06  0.000000000000000E+00
+
+     Lanczos iteration:    975   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000975)=  0.000000
+     beta (00000975)= 15.594231
+     gamma(00000975)= 15.594231
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    976   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000976)=  0.000000
+     beta (00000976)= 15.922415
+     gamma(00000976)= 15.922415
+     z1=       1 -0.848262902891639E-06  0.000000000000000E+00
+
+     Lanczos iteration:    977   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000977)=  0.000000
+     beta (00000977)= 15.529121
+     gamma(00000977)= 15.529121
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    978   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000978)=  0.000000
+     beta (00000978)= 15.941891
+     gamma(00000978)= 15.941891
+     z1=       1  0.826299570159256E-06  0.000000000000000E+00
+
+     Lanczos iteration:    979   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000979)=  0.000000
+     beta (00000979)= 15.620758
+     gamma(00000979)= 15.620758
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    980   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000980)=  0.000000
+     beta (00000980)= 15.885776
+     gamma(00000980)= 15.885776
+     z1=       1 -0.812514625529032E-06  0.000000000000000E+00
+
+     Lanczos iteration:    981   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000981)=  0.000000
+     beta (00000981)= 15.615170
+     gamma(00000981)= 15.615170
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    982   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000982)=  0.000000
+     beta (00000982)= 15.902776
+     gamma(00000982)= 15.902776
+     z1=       1  0.797820123708826E-06  0.000000000000000E+00
+
+     Lanczos iteration:    983   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000983)=  0.000000
+     beta (00000983)= 15.633854
+     gamma(00000983)= 15.633854
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    984   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000984)=  0.000000
+     beta (00000984)= 15.792349
+     gamma(00000984)= 15.792349
+     z1=       1 -0.789813044830417E-06  0.000000000000000E+00
+
+     Lanczos iteration:    985   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000985)=  0.000000
+     beta (00000985)= 15.644448
+     gamma(00000985)= 15.644448
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    986   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000986)=  0.000000
+     beta (00000986)= 15.905350
+     gamma(00000986)= 15.905350
+     z1=       1  0.776857418248456E-06  0.000000000000000E+00
+
+     Lanczos iteration:    987   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000987)=  0.000000
+     beta (00000987)= 15.620048
+     gamma(00000987)= 15.620048
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    988   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000988)=  0.000000
+     beta (00000988)= 15.867845
+     gamma(00000988)= 15.867845
+     z1=       1 -0.764725791489729E-06  0.000000000000000E+00
+
+     Lanczos iteration:    989   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000989)=  0.000000
+     beta (00000989)= 15.533771
+     gamma(00000989)= 15.533771
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    990   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000990)=  0.000000
+     beta (00000990)= 16.084351
+     gamma(00000990)= 16.084351
+     z1=       1  0.738548643297587E-06  0.000000000000000E+00
+
+     Lanczos iteration:    991   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000991)=  0.000000
+     beta (00000991)= 15.540433
+     gamma(00000991)= 15.540433
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    992   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000992)=  0.000000
+     beta (00000992)= 15.897155
+     gamma(00000992)= 15.897155
+     z1=       1 -0.721976089766707E-06  0.000000000000000E+00
+
+     Lanczos iteration:    993   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000993)=  0.000000
+     beta (00000993)= 15.556481
+     gamma(00000993)= 15.556481
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    994   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000994)=  0.000000
+     beta (00000994)= 16.008056
+     gamma(00000994)= 16.008056
+     z1=       1  0.701609723721686E-06  0.000000000000000E+00
+
+     Lanczos iteration:    995   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000995)=  0.000000
+     beta (00000995)= 15.477662
+     gamma(00000995)= 15.477662
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    996   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000996)=  0.000000
+     beta (00000996)= 15.942116
+     gamma(00000996)= 15.942116
+     z1=       1 -0.681169207789045E-06  0.000000000000000E+00
+
+     Lanczos iteration:    997   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000997)=  0.000000
+     beta (00000997)= 15.611669
+     gamma(00000997)= 15.611669
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:    998   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00000998)=  0.000000
+     beta (00000998)= 15.941275
+     gamma(00000998)= 15.941275
+     z1=       1  0.667085172417065E-06  0.000000000000000E+00
+
+     Lanczos iteration:    999   Pol:1
+     lr_apply_liouvillian: not applying interaction
+     alpha(00000999)=  0.000000
+     beta (00000999)= 15.641891
+     gamma(00000999)= 15.641891
+     z1=       1  0.000000000000000E+00  0.000000000000000E+00
+
+     Lanczos iteration:   1000   Pol:1
+     lr_apply_liouvillian:  applying interaction: normal
+     alpha(00001000)=  0.000000
+     beta (00001000)= 16.028788
+     gamma(00001000)= 16.028788
+     z1=       1 -0.650983334099520E-06  0.000000000000000E+00
+     End of Lanczos iterations
+     Finished linear response calculation...
+ 
+     lr_main      :     83.33s CPU     88.08s WALL (       1 calls)
+     read_wf      :      0.05s CPU      0.06s WALL (       1 calls)
+     one_step     :     82.89s CPU     87.51s WALL (     500 calls)
+ 
+     lr_apply     :     81.26s CPU     85.87s WALL (     500 calls)
+     lr_apply_int :     64.61s CPU     68.80s WALL (     250 calls)
+     lr_apply_no  :     16.66s CPU     17.06s WALL (     250 calls)
+ 
+     h_psi        :     31.70s CPU     32.19s WALL (     500 calls)
+     lr_calc_dens :     11.28s CPU     11.49s WALL (     250 calls)
+     lr_dv_setup  :      0.07s CPU      0.10s WALL (       1 calls)
+     dv_of_drho   :     27.95s CPU     30.83s WALL (     250 calls)
+     interaction  :      8.13s CPU      8.72s WALL (     250 calls)
+     lr_dot       :      0.35s CPU      0.36s WALL (     750 calls)
+     ortho        :      0.45s CPU      0.45s WALL (     500 calls)
+ 
+ 
+     US routines
+     lr_sm1_psi   :      0.08s CPU      0.08s WALL (     500 calls)
+ 
+     General routines
+     calbec       :      0.26s CPU      0.26s WALL (     500 calls)
+     fft          :     19.68s CPU     20.22s WALL (    2510 calls)
+     fftw         :     36.53s CPU     37.42s WALL (   12008 calls)
+     interpolate  :      0.06s CPU      0.12s WALL (     250 calls)
+     davcio       :      0.01s CPU      0.01s WALL (      28 calls)
+ 
+     Parallel routines
+ 
+ 
+     turboTDDFT   :   1m23.34s CPU   1m28.09s WALL
+
+ 
+   This run was terminated on:  16: 8:12  19Apr2021            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

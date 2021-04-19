@@ -1,0 +1,10 @@
+&lr_input
+  prefix = 'Benzene',
+  outdir='./tmp',
+  restart_step = 100,
+  restart = .true.
+/
+&lr_control
+  itermax = 1500,            
+  ipol = 1
+/

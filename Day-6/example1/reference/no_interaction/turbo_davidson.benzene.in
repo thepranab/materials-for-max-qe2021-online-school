@@ -1,0 +1,8 @@
+&lr_input
+  prefix = 'Benzene',
+  outdir = './tmp'
+/
+&lr_dav
+  if_dft_spectrum = .true.
+  num_init        = 30 
+/
