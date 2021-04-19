@@ -76,7 +76,7 @@ and perform  a Density of states calculation in both cases.
 
 `#  E (eV)   dosup(E)     dosdw(E)   Int dos(E) EFermi = 21.345 eV`
 
-* The DOS being produced with `nspin=2` is distinguished in two spin channels. We may verify that, in this case,  the solution is symmetric and DOS of the 2 channels are equal.  We can plot the 2 DOS to verify.  
+* The DOS being produced with `nspin=2` is distinguished in two spin channels. We may verify that, in this case,  the solution is symmetric and DOS of the 2 channels are equal.  We can plot the spin-up and spin-down DOS.  
   * Start  `gnuplot` and type the commands:
   1. `gnuplot> set parametric`
   1. `gnuplot> Ef=21.345`
