@@ -1,5 +1,7 @@
+NPROC=${NPROC:-8}
+
 HPC_HOST=hpc
-sbatch_options="--nodes=1 --ntasks=8 --ntasks-per-node=8 --reservation=qe2021"; # --mem-per-cpu=2048M
+sbatch_options="--nodes=1 --ntasks=\$NPROC --ntasks-per-node=\$NPROC --reservation=qe2021"; # --mem-per-cpu=2048M
 
 lastarg() {
     # get the last argument
@@ -30,7 +32,6 @@ but it runs on the HPC cluster (in parallel mode).
     fi
 
     input=`lastarg $@`
-    #prog_opts=${@%$input}
 
     if test ! -f $input; then
         echo "
@@ -49,7 +50,7 @@ Did you use \"<\" stdin redirection operator? Use -inp instead.
     
     cat > $script.sh <<EOF
 #!/bin/sh
-mpirun -np 8 $@ > $output 2>&1
+mpirun -np $NPROC $@ > $output 2>&1
 EOF
     hpc_mkcwd
     rsync_to_hpc $input $script.sh
@@ -58,10 +59,11 @@ EOF
 ------------------------------------------------------------------------
 Submitting to HPC cluster via sbatch:  
 
-   mpirun -np 8 $@ > $output 2>&1
+   mpirun -np $NPROC $@ > $output 2>&1
 ------------------------------------------------------------------------
-"   
-    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $sbatch_options $script.sh > $script.log 2>&1"
+"
+    opts=$(eval echo $sbatch_options)
+    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $opts $script.sh > $script.log 2>&1"
 }
 
 
@@ -107,14 +109,15 @@ error while executing: remote_sbatch $@
     hpc_mkcwd
     rsync_to_hpc $script
 
+    opts=$(eval echo $sbatch_options)
     echo "
 ------------------------------------------------------------------------
 Submitting to HPC cluster:  
 
-   sbatch $sbatch_options $script > $log
+   sbatch $opts $script > $log
 ------------------------------------------------------------------------
 "
-    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $sbatch_options $script > $log 2>&1"
+    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $opts $script > $log 2>&1"
 }
 
 

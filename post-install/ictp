@@ -1,0 +1,4 @@
+# SLURM options for argo HPC cluster at ICTP
+source $HOME/QE-2021/post-install/remote.sh
+export NPROC=20
+export sbatch_options="sbatch --nodes=1 --ntasks=\$NPROC --ntasks-per-node=\$NPROC --account=cmsp --partition cmsp --hint=nomultithread --reservation igirotto_30"
