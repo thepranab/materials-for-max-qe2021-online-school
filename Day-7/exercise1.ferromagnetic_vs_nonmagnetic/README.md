@@ -21,7 +21,7 @@ _In this part of the exercise you will  compare the total energies for  non-magn
 * Task 2: perform a scan of the lattice constant for the non magnetic solution:
   * go to non-magnetic directory and run job.sh and repeat the same steps as above.
 * Now you can collect in a plot the results of these calculation. _E.g._ using gnuplot.
-  * working in `Day-7/exercise1.magnetic_vs_paramagnetic/` open `gnuplot` program and type the command:
+  * working in `Day-7/exercise1.magnetic_vs_nonmagnetic/` open `gnuplot` program and type the command:
 
   `p "magnetic/ev.out" u 1:2 w lp lw 2 pt 7 ps 2 t "Magnetic", "non_magnetic/ev.out" u 1:2 w lp lw 2 pt 7 ps 2 t "ParaMag"`
 
@@ -58,7 +58,7 @@ and perform  a Density of states calculation in both cases.
 
   * `fe.scf.in` the input file for the self consistent calculation at the optimized constant.
     * The file is set for   alat=5.2127 a.u.
-    * We have set  `nspin=2` with `starting_magnetization=0.0`. This make the program start a spin polarized calculation with a spin-symmetric starting configuration that ends up to paramagnetic ground state.
+    * We have set  `nspin=2` with `starting_magnetization=0.0`. This make the program start a spin polarized calculation with a spin-symmetric starting configuration that ends up to non-magnetic ground state.
     * The k-point mesh has been made denser (14 14 14) for more accurate properties at equilibrium volume:
   * run the calculation:
 
@@ -66,7 +66,7 @@ and perform  a Density of states calculation in both cases.
 
   * Then we perform  a non-self consistent run using the `fe.nscf.in` input file.  
     * We have set `occupations=tetrahedra_opt` this is costless because we are doing an scf calculation and is useful to pass this option to `dos.x` and `projwfc.x` programs later.
-    * We have increase the k-point mesh to 20 20 20. This is feasible for nscf calculations and produce a better quality DOS and pDOS.
+    * We increase the k-point mesh to 20 20 20. This is feasible for nscf calculations and produce a better quality DOS and pDOS.
   `pw.x < fe.nscf.in >> fe.nscf.out`
 
 * Now we can evaluate the total dos by using the `dos.x` application. The input `fe.dos.in` selects the energy region between 5 and 25 eV in order to consider only the d bands of Fe.  Type the command:
