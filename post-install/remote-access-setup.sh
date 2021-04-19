@@ -67,7 +67,7 @@ ssh hpc
 "
 else
     #
-    # speciality for the ***.arnes.si HPC cluster
+    # peculiarity for the ***.arnes.si HPC cluster
     #
     clear
     echo "
