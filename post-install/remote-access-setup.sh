@@ -48,16 +48,54 @@ Host hpc
  IdentityFile $hpckey
 EOF
 
-echo "
+arnes=$(echo $hostname | grep arnes.si)
+if test "x$arnes" = ""; then
+    #
+    # default
+    #
+    echo "
 BEWARE: you will have to input your password twice
 " 
 
-scp $hpckey.pub hpc:~/
-ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
+    scp $hpckey.pub hpc:~/
+    ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
 
-
-echo "
+    echo "
 Please access the HPC cluster by typing: 
 
 ssh hpc
 "
+else
+    #
+    # speciality for the ***.arnes.si HPC cluster
+    #
+    clear
+    echo "
+*** IMPORTANT ***
+
+To complete the remote-access setup for $host, the just generated key:
+
+   $hpckey.pub
+
+needs to be input into the online-form that will open in the firefox
+automatically.
+
+To login to the on-line form use the \"username\" and \"password\"
+that you received. Do not forget to click the \"Save\" button on the
+online-form.
+
+BEWARE: it takes a while before the ssh-key propagates to the HPC cluster!
+
+
+Press <enter> to continue with the firefox"
+    read ans
+
+    firefox https://fido.sling.si
+
+    echo "
+After the ssh-key was successfully entered to https://fido.sling.si, wait
+for a while and then try to access the HPC cluster by typing: 
+
+ssh hpc
+"
+fi
