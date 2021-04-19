@@ -3,17 +3,12 @@
 
 ## Topic of the Day: High-throughput computing with the AiiDA platform
 
-
-This directory contains materials for the AiiDA hands-on, plus possible addictional exercises. 
-
-Have fun !!!
-
 ### Tutorial material and instructions
 
-The tutorial instructions will be available on the official AiiDA tutorials website:
-https://aiida-tutorials.readthedocs.io/en/latest/
-where a specific section for this tutorial will be available.
+All tutorial material and instructions will be available on the official AiiDA tutorials website:
 
-For a preview, you can check section 2: "A first taste" of the 2019 Xiamen tutorial, that you
-can find on the website above (or you can reach it directly via
-[this URL](https://aiida-tutorials.readthedocs.io/en/latest/pages/2019_Xiamen/sections/first_taste.html)).
+https://aiida-tutorials.readthedocs.io/en/tutorial-qe-short/
+
+For the Quantum ESPRESSO school, an AiiDAlab kubernetes cluster will be deployed the day before the AiiDA tutorial. Details on how to connect will be on the landing page of the above link one week before the event. However, if you're eager to get started, you can do so with the instructions on the page using either the [Quantum Mobile](https://quantum-mobile.readthedocs.io/en/latest/releases/both/21.03.18-qe.html) or the [AiiDAlab demo cluster](https://aiidalab-demo.materialscloud.org/).
+
+Have fun!
