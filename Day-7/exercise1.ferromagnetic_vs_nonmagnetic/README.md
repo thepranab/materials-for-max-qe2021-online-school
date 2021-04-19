@@ -48,8 +48,8 @@ You can retreave the values from your the headers of the `ev.out`  files, _e.g.:
 
 You should have found:
 
-* non_magnetic alatt= 2.713  A       i.e. 5.1267 a.u
-* magnetic alatt=     2.702  A       i.e. 5.1070 a.u.  
+* non_magnetic alatt= 2.702  A       i.e. 5.107 a.u
+* magnetic alatt=     2.75  A       i.e.  5.197 a.u.  
 
 and perform  a Density of states calculation in both cases.
 
@@ -62,7 +62,7 @@ and perform  a Density of states calculation in both cases.
     * The k-point mesh has been made denser (14 14 14) for more accurate properties at equilibrium volume:
   * run the calculation:
 
-  `pw.x < fe.scf.in > fe.scf.out`
+                             `pw.x < fe.scf.in > fe.scf.out`
 
   * Then we perform  a non-self consistent run using the `fe.nscf.in` input file.  
     * We have set `occupations=tetrahedra_opt` this is costless because we are doing an scf calculation and is useful to pass this option to `dos.x` and `projwfc.x` programs later.
