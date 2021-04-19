@@ -1,0 +1,6 @@
+&BANDS
+    outdir='./tempdir/',
+    prefix='ni',
+    filband='ni.spindown.band_data',
+    spin_component = 2,
+/

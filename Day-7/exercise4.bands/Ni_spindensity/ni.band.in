@@ -1,0 +1,30 @@
+ &control
+    calculation='bands',
+    pseudo_dir = './pseudo/',
+    outdir='./tempdir/',
+    prefix='ni',
+ /
+ &system
+    ibrav=2, celldm(1) = 6.648 , nat=1, ntyp=1,
+    nspin = 2,  starting_magnetization(1)=0.7,
+    nbnd = 10,
+    ecutwfc = 45 ,  ecutrho = 360.0,
+    occupations='smearing', smearing='marzari-vanderbilt', degauss=0.02,
+ /
+ &electrons
+    diagonalization='david'
+    conv_thr = 1.0e-8
+    mixing_beta = 0.7
+ /
+ATOMIC_SPECIES
+ Ni 58.693 ni_pbe_v1.4.uspp.F.UPF 
+ATOMIC_POSITIONS alat
+ Ni 0.0 0.0 0.0
+K_POINTS crystal_b
+6
+  0.000  0.000  0.000  20  !gamma
+  0.500  0.500  0.500  10  !L
+  0.500  0.250  0.750  10  !W
+  0.500  0.000  0.500  10  !X
+  0.000  0.000  0.000  20  !gamma
+  0.375  0.375  0.750  1   !K
