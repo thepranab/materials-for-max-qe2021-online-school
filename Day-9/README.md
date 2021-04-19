@@ -1,11 +1,14 @@
 # Topics of Day-9 hands-on session
 
-Parallel execution on CPUs and GPUs.
-How to optimize CPU only runs and how to efficiently run on accelerated systems.
+Parallel execution on CPUs and GPUs. Covered topics are:
+
+* basic description of GPU acceleration,
+* optimise CPU only runs,
+* efficiently run on accelerated systems.
 
 ------------------------------------------------------------------------
 
-**Exercise 0:** Basic info about GPU acceleration.
+**Exercise 0:** Basic information about GPU acceleration.
 
     cd example0.intro/
 

@@ -1,6 +1,6 @@
 # Optimize CPU execution
 
-In this section we only make use of CPUs.
+In this section we only make use of CPUs and try to optimize the time to solution keeping the amount of compute power fixed.
 
 ## 1. Pool parallelism
 
@@ -10,7 +10,7 @@ The jobscript file to be used on Marconi100 is already available in this folder 
 ```
 #!/bin/bash
 #SBATCH --nodes=1              # number of nodes
-#SBATCH --ntasks-per-node=16   # number of tasks per node
+#SBATCH --ntasks-per-node=16   # number of MPI per node
 #SBATCH --cpus-per-task=4      # number of HW threads per task (equal to OMP_NUM_THREADS*4)
 #SBATCH --mem=230000MB
 #SBATCH --time 00:30:00         # format: HH:MM:SS
@@ -23,15 +23,16 @@ export QE_ROOT=../example1.setup/qe-cpu/
 
 export PW=$QE_ROOT/bin/pw.x
 
-export OMP_NUM_THREADS=1 # Pure MPI 
+# This sets OpenMP parallelism, in this case we do a pure MPI 
+export OMP_NUM_THREADS=1 
 
+# Run pw.x with default options for npool and ndiag
 mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee no_options
 ```
 
-First, submit the job as is, with npool set to 1.
-Then **open the job-script file** (`job.sh`) and **change the number of pools to be used `-npool X`**.
-Don't forget to rename the output file as well.
-**Collect the time** taken by the code as a function of the number of k point pools.
+1. First, **submit the job as is**, with npool set to 1. 
+2. Second, **open the job-script file** (`job.sh`) and **change the number of pools to be used `-npool X`**, with X={2,4,8}. Don't forget to rename the output file as well.
+3. **Collect the time** taken by the code as a function of the number of k point pools.
 
 The execution time can be obtained by looking at one of the last lines of the output, that reads for example
 
@@ -56,20 +57,18 @@ is good enough, especially because all our MPI processes reside on a single node
 
 In this second part we want to speedup the code by solving the dense eigenvalue problem using more than one core. 
 
-**Set `-npool` to 4 and try using `-ndiag 4`** to improve the performance.
+1. **Set `-npool` to 4 and activate parallel diagonalization by changing `-ndiag 4`** to improve the performance.
 
-You should inspect the beginning of the output file and look for this message
+2. Inspect the beginning of the output file and look for this message
 
 
      Subspace diagonalization in iterative solution of the eigenvalue problem:
      one sub-group per band group will be used
      custom distributed-memory algorithm (size of sub-group:  2*  2 procs)
 
+3. Check the time to solution. Did you manage to reduce the WALL time?
 
-
-Do you manage to reduce the WALL time?
-
-Unfortunately you'll notice that the simulation is actually taking longer.
+Unfortunately you'll notice that the simulation is actually **taking longer**.
 
 There are two reasons for this:
 
