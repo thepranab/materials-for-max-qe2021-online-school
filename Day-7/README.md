@@ -5,7 +5,7 @@
 
 * Compare nonmagnetic  and ferromagnetic solutions for Fe(bcc).
 * Influence of pressure on magnetism in metals. Fe(bcc) example
-* See how different magnetic moments in transition metals are reflect the  different occupations of their 3d bands.
+* See how different magnetic moments in transition metals are related to the occupations of their 3d bands.
 * Plotting bands in spin polarized and noncollinear magnetic Ni fcc
 
 ----------

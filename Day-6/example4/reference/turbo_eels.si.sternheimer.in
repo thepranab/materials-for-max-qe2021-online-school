@@ -1,0 +1,15 @@
+&lr_input
+  prefix = 'silicon',
+  outdir='./tmp'
+/
+&lr_control
+  calculator = 'sternheimer',
+  q1 = 0.866,
+  q2 = 0.000,
+  q3 = 0.000,
+  epsil = 0.035,
+  units = 1,
+  start = 0.0d0,
+  end   = 30.0d0,
+  increment = 1.0d0
+/

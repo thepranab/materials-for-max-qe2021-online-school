@@ -1,0 +1,13 @@
+&lr_input
+  prefix = 'silicon',
+  outdir = './tmp',
+  eels = .true.
+  itermax0 = 1000,
+  itermax  = 20000,
+  extrapolation = 'osc',
+  epsil = 0.035,
+  units = 1,
+  start = 0.0d0,
+  end   = 50.0d0,
+  increment = 0.01d0
+/
