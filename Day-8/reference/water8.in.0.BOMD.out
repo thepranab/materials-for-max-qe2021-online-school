@@ -1,0 +1,638 @@
+
+     Program CP v.6.7MaX starts on 20Apr2021 at 21:52:21 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on    12 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =      12
+     Reading input from ../water8.in.0.BOMD
+Warning: card  &CELL ignored
+Warning: card     CELL_DYNAMICS = 'NONE', ignored
+Warning: card  / ignored
+ ADD_RULE: POWER STEERING
+   Reading rule:  DT                 20.D0               
+ ADD_RULE: POWER STEERING
+   Reading rule:  DT                 5.D0                
+
+   Job Title: Water 8 molecules
+
+
+   Atomic Pseudopotentials Parameters
+   ----------------------------------
+
+   Reading pseudopotential for specie #  1 from file :
+   ./O_ONCV_PBE-1.2.upf
+     Message from routine read_pp_mesh:
+     mesh size missing, using the one in header
+   file type is xml
+
+   Reading pseudopotential for specie #  2 from file :
+   ./H_ONCV_PBE-1.2.upf
+     Message from routine read_pp_mesh:
+     mesh size missing, using the one in header
+   file type is xml
+
+
+   Main Simulation Parameters (from input)
+   ---------------------------------------
+   Restart Mode       =      -1   from_scratch   
+   Number of MD Steps =     100
+   Print out every           10 MD Steps
+   Reads from unit    =      50
+   Writes to unit     =      50
+   MD Simulation time step            =       5.00
+   Electronic fictitious mass (emass) =      50.00
+   emass cut-off                      =       2.50
+
+   Simulation Cell Parameters (from input)
+   external pressure       =            0.00 [KBar]
+   wmass (calculated)      =        19964.81 [AU]
+   ibrav =    1
+   alat  =    13.00000000
+   a1    =    13.00000000    0.00000000    0.00000000
+   a2    =     0.00000000   13.00000000    0.00000000
+   a3    =     0.00000000    0.00000000   13.00000000
+
+   b1    =     0.07692308    0.00000000    0.00000000
+   b2    =     0.00000000    0.07692308    0.00000000
+   b3    =     0.00000000    0.00000000    0.07692308
+   omega =    2197.00000000
+
+    ========================================
+    |  CONJUGATE GRADIENT                  |
+    ========================================
+    | iterations   =           100         |
+    | conv_thr     = 0.00000100000 a.u.    |
+    | passop       =       0.30000 a.u.    |
+    | niter_cg_restart =  20      |
+    ========================================
+
+   Energy Cut-offs
+   ---------------
+   Ecutwfc =   50.0 Ry,      Ecutrho =  200.0 Ry,      Ecuts =  200.0 Ry
+   Gcutwfc =   14.6     ,    Gcutrho =   29.3          Gcuts =   29.3
+   NOTA BENE: refg, mmx =   0.050000  4800
+   Orthog. with Gram-Schmidt
+   Electron dynamics with conjugate gradient
+   Electron dynamics : the temperature is not controlled
+   initial random displacement of el. coordinates with  amplitude=  0.020000
+
+   Electronic states
+   -----------------
+   Number of Electrons=    64, of States =    32
+   Occupation numbers :
+   2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00
+   2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00
+   2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00
+   2.00 2.00
+
+
+   Exchange and correlations functionals
+   -------------------------------------
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+
+
+   Ions Simulation Parameters
+   --------------------------
+   Ions are allowed to move
+   Ions dynamics with newton equations
+   the temperature is computed for    72 degrees of freedom
+   ion dynamics with fricp =  0.0000 and greasp =  1.0000
+   Ionic position (from input)
+   sorted by specie, and converted to real a.u. coordinates
+   Species   1 atoms =    8 mass =     29166.22 (a.u.),        16.00 (amu) rcmax =   0.50 (a.u.)
+        4.842510     3.796199     3.732738
+        3.735657    -4.474700     2.924274
+       -4.546686    -3.542262     3.060744
+       -3.436506     4.804268     3.377234
+        3.614420    -4.282746    -3.989998
+       -4.437095    -4.025366    -4.085110
+       -3.558789     3.877301    -3.819233
+        3.837783     3.820409    -4.507997
+   Species   2 atoms =   16 mass =      1837.29 (a.u.),         1.01 (amu) rcmax =   0.50 (a.u.)
+        4.004590     5.986780     3.533013
+        4.365118     3.872322     5.879773
+        6.059148    -3.795031     3.153403
+        2.874962    -3.958672     4.675187
+       -3.748838    -5.811626     3.320758
+       -4.053948    -2.574364     4.768354
+       -5.904151     4.217430     3.801415
+       -2.303077     4.672005     5.082136
+        3.119866    -4.561070    -2.002200
+        5.914480    -3.952983    -3.866628
+       -3.950822    -3.684809    -2.102720
+       -3.940399    -6.190475    -4.165351
+       -3.233219     3.435242    -1.818055
+       -5.690475     3.479664    -3.789435
+        2.013136     3.092241    -3.913112
+        3.659354     6.200317    -4.387039
+   Ionic position read from input file
+
+   All atoms are allowed to move
+   Ionic temperature is not controlled
+
+
+   Cell Dynamics Parameters (from STDIN)
+   -------------------------------------
+   Starting cell generated from CELLDM
+   Constant VOLUME Molecular dynamics
+   cell parameters are not allowed to move
+
+   Verbosity: iverbosity =  0
+
+
+
+   Simulation dimensions initialization
+   ------------------------------------
+
+   unit vectors of full simulation cell
+   in real space:                         in reciprocal space (units 2pi/alat):
+   1    13.0000    0.0000    0.0000              1.0000    0.0000    0.0000
+   2     0.0000   13.0000    0.0000              0.0000    1.0000    0.0000
+   3     0.0000    0.0000   13.0000              0.0000    0.0000    1.0000
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         224     224     55                 8748     8748    1096
+     Max         226     226     58                 8754     8754    1104
+     Sum        2701    2701    673               105015   105015   13205
+
+
+   Real Mesh
+   ---------
+   Global Dimensions   Local  Dimensions   Processor Grid
+   .X.   .Y.   .Z.     .X.   .Y.   .Z.     .X.   .Y.   .Z.
+    60    60    60      60    60     5       1     1    12
+   Array leading dimensions ( nr1x, nr2x, nr3x )   =     60    60    60
+   Local number of cell to store the grid ( nrxx ) =      18000
+   Number of x-y planes for each processors: 
+  |  60,   5  |  60,   5  |  60,   5  |  60,   5  |  60,   5
+  |  60,   5  |  60,   5  |  60,   5  |  60,   5  |  60,   5
+  |  60,   5  |  60,   5  |
+
+   Smooth Real Mesh
+   ----------------
+   Global Dimensions   Local  Dimensions   Processor Grid
+   .X.   .Y.   .Z.     .X.   .Y.   .Z.     .X.   .Y.   .Z.
+    60    60    60      60    60     5       1     1    12
+   Array leading dimensions ( nr1x, nr2x, nr3x )   =     60    60    60
+   Local number of cell to store the grid ( nrxx ) =      18000
+   Number of x-y planes for each processors: 
+  |  60,   5  |  60,   5  |  60,   5  |  60,   5  |  60,   5
+  |  60,   5  |  60,   5  |  60,   5  |  60,   5  |  60,   5
+  |  60,   5  |  60,   5  |
+
+   Reciprocal Space Mesh
+   ---------------------
+   Large Mesh
+     Global(ngm_g)    MinLocal       MaxLocal      Average
+          52508           4374           4377        4375.67
+   Smooth Mesh
+     Global(ngms_g)   MinLocal       MaxLocal      Average
+          52508           4374           4377        4375.67
+   Wave function Mesh
+     Global(ngw_g)    MinLocal       MaxLocal      Average
+           6603            548            552         550.25
+
+
+   System geometry initialization
+   ------------------------------
+   ibrav =    1       cell parameters read from input file
+
+   Matrix Multiplication Performances
+   ortho mmul, time for parallel driver      =   0.00006 with    1 procs
+
+   Constraints matrixes will be distributed block like on
+   ortho sub-group =    1*   1 procs
+
+
+
+   Pseudopotentials initialization
+   -------------------------------
+
+
+   Common initialization
+
+   Specie:     1
+   1  indv=  1   ang. mom=  0
+   2  indv=  2   ang. mom=  0
+   3  indv=  3   ang. mom=  1
+   4  indv=  3   ang. mom=  1
+   5  indv=  3   ang. mom=  1
+   6  indv=  4   ang. mom=  1
+   7  indv=  4   ang. mom=  1
+   8  indv=  4   ang. mom=  1
+
+                        dion 
+   9.7572   0.0000   0.0000   0.0000
+   0.0000   1.3761   0.0000   0.0000
+   0.0000   0.0000  -4.8069   0.0000
+   0.0000   0.0000   0.0000  -1.6162
+
+   Specie:     2
+   1  indv=  1   ang. mom=  0
+   2  indv=  2   ang. mom=  0
+
+                        dion 
+ -12.0082   0.0000
+   0.0000  -0.5168
+
+   Cell parameters from input file are used in electron mass preconditioning
+   init_tpiba2=    0.23360010
+
+   Short Legend and Physical Units in the Output
+   ---------------------------------------------
+   NFI    [int]          - step index
+   EKINC  [HARTREE A.U.] - kinetic energy of the fictitious electronic dynamics
+   TEMPH  [K]            - Temperature of the fictitious cell dynamics
+   TEMP   [K]            - Ionic temperature
+   ETOT   [HARTREE A.U.] - Scf total energy (Kohn-Sham hamiltonian)
+   ENTHAL [HARTREE A.U.] - Enthalpy ( ETOT + P * V )
+   ECONS  [HARTREE A.U.] - Enthalpy + kinetic energy of ions and cell
+   ECONT  [HARTREE A.U.] - Constant of motion for the CP lagrangian
+
+
+
+   Wave Initialization: random initial wave-functions
+   Occupation number from init
+   nbnd =    32
+    2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00
+    2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00
+    2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00 2.00
+    2.00 2.00
+ Randomizing ions velocities according to tempw (INPUT VELOCITIES DISCARDED) 
+
+   formf: eself=   242.55691
+   formf:     vps(g=0)=  -0.0005593     rhops(g=0)=  -0.0026914
+   formf:     vps(g=0)=  -0.0005508     rhops(g=0)=  -0.0026524
+   formf:     vps(g=0)=  -0.0005508     rhops(g=0)=  -0.0026524
+   formf:     vps(g=0)=  -0.0005265     rhops(g=0)=  -0.0025387
+   formf:     vps(g=0)=  -0.0005265     rhops(g=0)=  -0.0025387
+   formf: sum_g vps(g)=  -0.8825069 sum_g rhops(g)=  -4.3113902
+   formf:     vps(g=0)=  -0.0002744     rhops(g=0)=  -0.0004486
+   formf:     vps(g=0)=  -0.0002718     rhops(g=0)=  -0.0004421
+   formf:     vps(g=0)=  -0.0002718     rhops(g=0)=  -0.0004421
+   formf:     vps(g=0)=  -0.0002644     rhops(g=0)=  -0.0004231
+   formf:     vps(g=0)=  -0.0002644     rhops(g=0)=  -0.0004231
+   formf: sum_g vps(g)=  -1.1488875 sum_g rhops(g)=  -0.7185650
+   Delta V(G=0):   0.022861Ry,    0.622068eV
+ PERFORMING CONJUGATE GRADIENT MINIMIZATION OF EL. STATES
+ cg_sub: missed minimum, case 1, iteration           1
+
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step     1     441   -136.879923   -136.879923   -136.829100    48
+Step     2     440   -136.879724   -136.879724   -136.829555    10
+Step     3     443   -136.880137   -136.880137   -136.829556     7
+Step     4     452   -136.881156   -136.881156   -136.829557     7
+Step     5     466   -136.882768   -136.882768   -136.829558     7
+Step     6     485   -136.884951   -136.884951   -136.829560     7
+Step     7     509   -136.887676   -136.887676   -136.829562     7
+Step     8     538   -136.890907   -136.890907   -136.829565     7
+Step     9     570   -136.894599   -136.894599   -136.829569     7
+
+ ****************************************************
+   Autopilot employ rules: 
+    Rule event: dt                     20.0000
+ Rescaling ionic velocities with new dt
+ ****************************************************
+
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    10     668   -136.898700   -136.898700   -136.822489     7
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.02s CPU      0.03s WALL (       1 calls)
+Step    11     860   -136.921001   -136.921001   -136.822905     6
+Step    12    1038   -136.941797   -136.941797   -136.823448    11
+Step    13    1136   -136.953524   -136.953524   -136.823917    10
+Step    14    1110   -136.950497   -136.950497   -136.823941    10
+Step    15     972   -136.934175   -136.934175   -136.823320    11
+Step    16     814   -136.915293   -136.915293   -136.822486    11
+Step    17     744   -136.907107   -136.907107   -136.822194    11
+Step    18     806   -136.914576   -136.914576   -136.822625    11
+Step    19     948   -136.931468   -136.931468   -136.823312    11
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    20    1080   -136.946923   -136.946923   -136.823738    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.03s CPU      0.10s WALL (       2 calls)
+Step    21    1136   -136.953260   -136.953260   -136.823749     6
+Step    22    1099   -136.948850   -136.948850   -136.823499    11
+Step    23     992   -136.936364   -136.936364   -136.823158    11
+Step    24     855   -136.920346   -136.920346   -136.822820    11
+Step    25     728   -136.905636   -136.905636   -136.822557    11
+Step    26     646   -136.896165   -136.896165   -136.822411    11
+Step    27     630   -136.894262   -136.894262   -136.822370    11
+Step    28     686   -136.900708   -136.900708   -136.822401    11
+Step    29     811   -136.915078   -136.915078   -136.822529    11
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    30     986   -136.935337   -136.935337   -136.822855    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.05s CPU      0.16s WALL (       3 calls)
+Step    31    1167   -136.956563   -136.956563   -136.823411     6
+Step    32    1288   -136.970867   -136.970867   -136.823976    11
+Step    33    1287   -136.970894   -136.970894   -136.824151    11
+Step    34    1156   -136.955536   -136.955536   -136.823704    11
+Step    35     966   -136.932985   -136.932985   -136.822840    11
+Step    36     834   -136.917218   -136.917218   -136.822134    11
+Step    37     850   -136.919149   -136.919149   -136.822156    12
+Step    38    1009   -136.938128   -136.938128   -136.823012    11
+Step    39    1200   -136.960866   -136.960866   -136.824018    11
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    40    1291   -136.971518   -136.971518   -136.824330    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.07s CPU      0.24s WALL (       4 calls)
+Step    41    1229   -136.963958   -136.963958   -136.823845     6
+Step    42    1060   -136.943960   -136.943960   -136.823062    11
+Step    43     875   -136.922350   -136.922350   -136.822503    11
+Step    44     745   -136.907289   -136.907289   -136.822340    11
+Step    45     692   -136.901387   -136.901387   -136.822415    11
+Step    46     711   -136.903606   -136.903606   -136.822542    11
+Step    47     782   -136.911910   -136.911910   -136.822681    11
+Step    48     887   -136.924035   -136.924035   -136.822877    11
+Step    49     999   -136.937067   -136.937067   -136.823134    11
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    50    1089   -136.947529   -136.947529   -136.823364    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.09s CPU      0.30s WALL (       5 calls)
+Step    51    1133   -136.952673   -136.952673   -136.823465     6
+Step    52    1127   -136.951959   -136.951959   -136.823409    11
+Step    53    1089   -136.947433   -136.947433   -136.823235    11
+Step    54    1051   -136.942938   -136.942938   -136.823074    11
+Step    55    1040   -136.941802   -136.941802   -136.823147    11
+Step    56    1055   -136.943699   -136.943699   -136.823407    11
+Step    57    1069   -136.945365   -136.945365   -136.823459    11
+Step    58    1075   -136.945844   -136.945844   -136.823202    11
+Step    59    1092   -136.947644   -136.947644   -136.823138    11
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    60    1113   -136.950423   -136.950423   -136.823452    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.11s CPU      0.37s WALL (       6 calls)
+Step    61    1097   -136.948828   -136.948828   -136.823666     6
+Step    62    1012   -136.938883   -136.938883   -136.823473    11
+Step    63     874   -136.922644   -136.922644   -136.822956    11
+Step    64     745   -136.907334   -136.907334   -136.822351    11
+Step    65     697   -136.901550   -136.901550   -136.822028    11
+Step    66     766   -136.909668   -136.909668   -136.822252    11
+Step    67     923   -136.928141   -136.928141   -136.822839    11
+Step    68    1092   -136.947988   -136.947988   -136.823425    11
+Step    69    1196   -136.960174   -136.960174   -136.823802    11
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    70    1187   -136.959195   -136.959195   -136.823844    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.12s CPU      0.43s WALL (       7 calls)
+Step    71    1068   -136.945208   -136.945208   -136.823451     6
+Step    72     898   -136.925211   -136.925211   -136.822724    11
+Step    73     778   -136.910905   -136.910905   -136.822103    11
+Step    74     787   -136.911861   -136.911861   -136.822087    11
+Step    75     925   -136.928209   -136.928209   -136.822719    11
+Step    76    1110   -136.950129   -136.950129   -136.823496    11
+Step    77    1239   -136.965194   -136.965194   -136.823887    11
+Step    78    1250   -136.966398   -136.966398   -136.823785    11
+Step    79    1148   -136.954320   -136.954320   -136.823385    11
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    80     980   -136.934648   -136.934648   -136.822870    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.14s CPU      0.50s WALL (       8 calls)
+Step    81     814   -136.915287   -136.915287   -136.822385     6
+Step    82     715   -136.903697   -136.903697   -136.822154    11
+Step    83     712   -136.903543   -136.903543   -136.822303    11
+Step    84     791   -136.912940   -136.912940   -136.822677    11
+Step    85     908   -136.926570   -136.926570   -136.823036    11
+Step    86    1017   -136.939230   -136.939230   -136.823259    11
+Step    87    1092   -136.947836   -136.947836   -136.823332    11
+Step    88    1126   -136.951736   -136.951736   -136.823303    11
+Step    89    1129   -136.952013   -136.952013   -136.823230    11
+
+ ****************************************************
+   Autopilot employ rules: 
+    Rule event: dt                      5.0000
+ Rescaling ionic velocities with new dt
+ ****************************************************
+
+NOTE: eigenvalues are not computed without ortho
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step    90    1132   -136.950544   -136.950544   -136.821422    11
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.16s CPU      0.54s WALL (       9 calls)
+Step    91    1116   -136.948660   -136.948660   -136.821416     6
+Step    92    1100   -136.946885   -136.946885   -136.821410     7
+Step    93    1086   -136.945323   -136.945323   -136.821404     7
+Step    94    1076   -136.944074   -136.944074   -136.821398     7
+Step    95    1068   -136.943227   -136.943227   -136.821394     7
+Step    96    1065   -136.942857   -136.942857   -136.821390     7
+Step    97    1066   -136.943016   -136.943016   -136.821388     8
+Step    98    1073   -136.943734   -136.943734   -136.821388     8
+Step    99    1084   -136.945014   -136.945014   -136.821389     8
+
+ * Physical Quantities at step:   100
+NOTE: eigenvalues are not computed without ortho
+
+
+                total energy =     -136.94683514641 Hartree a.u.
+              kinetic energy =       99.01158 Hartree a.u.
+        electrostatic energy =     -185.85309 Hartree a.u.
+                         esr =        0.02310 Hartree a.u.
+                       eself =      242.55691 Hartree a.u.
+      pseudopotential energy =       -9.55591 Hartree a.u.
+  n-l pseudopotential energy =       -6.53758 Hartree a.u.
+ exchange-correlation energy =      -34.01184 Hartree a.u.
+           average potential =        0.00000 Hartree a.u.
+
+
+
+   Eigenvalues (eV), kp =   1 , spin =  1
+
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
+    0.00    0.00
+
+
+   CELL_PARAMETERS
+   13.00000000    0.00000000    0.00000000
+    0.00000000   13.00000000    0.00000000
+    0.00000000    0.00000000   13.00000000
+
+   System Density [g/cm^3] :              0.7351364820
+
+
+   System Volume [A.U.^3] :           2197.0000000000
+
+
+   Center of mass square displacement (a.u.):   0.000000
+
+   ATOMIC_POSITIONS
+   O       0.54489660787924E+01     0.38428904128707E+01     0.36958820697123E+01
+   H       0.40994846787155E+01     0.52130832517118E+01     0.34517990291255E+01
+   H       0.50026215291412E+01     0.33041389543410E+01     0.55159446819397E+01
+   O       0.36376071783728E+01    -0.47934865182388E+01     0.24728015457886E+01
+   H       0.61250089468476E+01    -0.37782074120069E+01     0.26212473257324E+01
+   H       0.26278309910472E+01    -0.40514088988742E+01     0.35864530735939E+01
+   O      -0.47128508149047E+01    -0.33419054129767E+01     0.30363489940354E+01
+   H      -0.40187478729272E+01    -0.54007062882757E+01     0.32604101265604E+01
+   H      -0.46140243822289E+01    -0.28169145183007E+01     0.46586251759164E+01
+   O      -0.29865963683343E+01     0.51451322904786E+01     0.32752595720714E+01
+   H      -0.46023493564266E+01     0.42058497363705E+01     0.34209196294386E+01
+   H      -0.19452050212841E+01     0.49315501813740E+01     0.45247212577316E+01
+   O       0.31970145797137E+01    -0.44691683161890E+01    -0.36471461884096E+01
+   H       0.31082674874132E+01    -0.41952396087767E+01    -0.18847931704936E+01
+   H       0.47318208228925E+01    -0.38534762838785E+01    -0.40802639198513E+01
+   O      -0.47212116521752E+01    -0.40047931774613E+01    -0.42708168725043E+01
+   H      -0.39898472352530E+01    -0.31441859858630E+01    -0.30205168256083E+01
+   H      -0.40211268236871E+01    -0.55829767463387E+01    -0.37400239999319E+01
+   O      -0.39038712614198E+01     0.38229238290460E+01    -0.34101060711344E+01
+   H      -0.38524950016435E+01     0.36906341907331E+01    -0.17264317588890E+01
+   H      -0.60295007737462E+01     0.36876140845393E+01    -0.39285066648484E+01
+   O       0.40749513774768E+01     0.37524413713675E+01    -0.42984229786959E+01
+   H       0.32166405879787E+01     0.29120835669979E+01    -0.31364287194009E+01
+   H       0.36217406013046E+01     0.56078456115987E+01    -0.39118232188597E+01
+
+   ATOMIC_VELOCITIES
+   O       0.20930181201034E-03    -0.11419564919197E-03    -0.15344417983982E-03
+   H       0.23303095721173E-02    -0.11544629609655E-02    -0.47823438086733E-03
+   H      -0.45982057973211E-03     0.26426709799077E-03     0.59023110805030E-03
+   O       0.32603538410997E-04     0.35203880274426E-04    -0.55375771211593E-03
+   H      -0.28460432078730E-02    -0.12046679747593E-02    -0.38073457889022E-03
+   H      -0.39584583450987E-03    -0.13403192839437E-02     0.72255546226914E-03
+   O       0.10228244059876E-03     0.41461524658054E-04    -0.18200378700934E-03
+   H      -0.12283838775959E-02     0.15397320780814E-02     0.60488939603852E-03
+   H      -0.10535381619078E-02    -0.12155071590005E-03     0.22984720906197E-02
+   O       0.37001503808930E-03     0.15029233900437E-03    -0.22278392022657E-03
+   H       0.51932252952528E-03     0.92292709927917E-03    -0.42981836246853E-04
+   H       0.77246695048278E-03     0.21618077070058E-02     0.16946402008269E-03
+   O      -0.15870166614013E-03     0.26698548470144E-03     0.48959036905435E-03
+   H      -0.11001622107538E-02    -0.42999757357972E-02    -0.16145638232069E-02
+   H      -0.25485346956017E-02    -0.64892773253316E-03     0.39320671607900E-03
+   O      -0.94989812752888E-04     0.19821928240322E-03    -0.56976557546745E-04
+   H      -0.86345258865591E-03     0.57794371495242E-03    -0.17947458480816E-02
+   H       0.10195043481638E-02    -0.35732108796258E-02     0.42029543481212E-03
+   O      -0.75524335637639E-04     0.14104355065376E-03     0.13697586622449E-03
+   H      -0.30385254443286E-02     0.49832662054461E-04     0.17453319371283E-02
+   H      -0.55577154501337E-03    -0.86467421498367E-03     0.32688298921920E-03
+   O       0.30528655750833E-03    -0.42123463297123E-03     0.31786242142667E-03
+   H      -0.11326161136054E-02    -0.38927559451890E-03     0.14409987839202E-02
+   H      -0.37671959154812E-03     0.33534861033310E-02    -0.83662655363888E-03
+
+
+
+   Partial temperatures (for each ionic specie) 
+   Species  Temp (K)   Mean Square Displacement (a.u.)
+        1   5.55E+02     2.4002E-01
+        2   1.37E+03     7.8662E-01
+
+  nfi     ekinc              temph  tempp     etot                 enthal               econs                econt              vnhh    xnhh0   vnhp    xnhp0
+
+       nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
+Step   100    1100   -136.946835   -136.946835   -136.821391     8
+
+   writing restart file (with schema): ./h2o_50.save/
+     restart      :      0.18s CPU      0.62s WALL (      10 calls)
+
+
+   Averaged Physical Quantities
+                      accumulated      this run
+   ekinc         :        0.00000       0.00000 (AU)
+   ekin          :       97.68407      97.68407 (AU)
+   epot          :     -228.41729    -228.41729 (AU)
+   total energy  :     -136.93079    -136.93079 (AU)
+   temperature   :      941.40833     941.40833 (K )
+   enthalpy      :        0.00000       0.00000 (AU)
+   econs         :     -136.82346    -136.82346 (AU)
+   pressure      :        0.00000       0.00000 (Gpa)
+   volume        :     2197.00000    2197.00000 (AU)
+
+
+
+     Called by MAIN_LOOP:
+     initialize   :      1.06s CPU      1.06s WALL (       1 calls)
+     main_loop    :    160.80s CPU    168.85s WALL (     100 calls)
+     cpr_total    :    160.98s CPU    169.47s WALL (       1 calls)
+
+     Called by INIT_RUN:
+
+     Called by CPR:
+     cpr_md       :    160.98s CPU    169.47s WALL (     100 calls)
+     move_electro :    160.64s CPU    168.66s WALL (     110 calls)
+
+     Called by move_electrons:
+     rhoofr       :     21.10s CPU     23.34s WALL (    2165 calls)
+     vofrho       :     56.91s CPU     60.28s WALL (    2165 calls)
+     dforce       :     20.81s CPU     22.65s WALL (   18352 calls)
+     calphi       :      0.15s CPU      0.16s WALL (    1137 calls)
+     nlfl         :      0.00s CPU      0.00s WALL (     110 calls)
+     gram         :      5.65s CPU      5.68s WALL (    2176 calls)
+
+     Small boxes:
+
+     Low-level routines:
+     prefor       :      0.75s CPU      0.78s WALL (    1348 calls)
+     nlfq         :      1.63s CPU      1.66s WALL (     110 calls)
+     nlsm1        :     37.66s CPU     37.98s WALL (    7442 calls)
+     nlsm2        :      1.62s CPU      1.65s WALL (     110 calls)
+     fft          :     14.64s CPU     16.47s WALL (   17330 calls)
+     ffts         :      3.47s CPU      3.84s WALL (    4330 calls)
+     fftw         :     29.80s CPU     32.79s WALL (   71344 calls)
+     fft_scatt_xy :      4.19s CPU      4.64s WALL (   93004 calls)
+     fft_scatt_yz :     20.23s CPU     22.77s WALL (   93004 calls)
+     fft_scatt_tg :      0.47s CPU      0.50s WALL (   71344 calls)
+     betagx       :      0.62s CPU      0.62s WALL (       1 calls)
+     qradx        :      0.00s CPU      0.00s WALL (       1 calls)
+     gram         :      5.65s CPU      5.68s WALL (    2176 calls)
+     nlinit       :      0.92s CPU      0.92s WALL (       1 calls)
+     init_dim     :      0.02s CPU      0.03s WALL (       1 calls)
+     newnlinit    :      0.00s CPU      0.00s WALL (       1 calls)
+     from_scratch :      0.12s CPU      0.12s WALL (       1 calls)
+     strucf       :      0.08s CPU      0.09s WALL (     111 calls)
+     calbec       :     37.69s CPU     38.00s WALL (    7442 calls)
+     runcg_uspp   :    160.63s CPU    168.65s WALL (     110 calls)
+     calcmt       :      0.01s CPU      0.01s WALL (     110 calls)
+     pc2          :     10.77s CPU     10.81s WALL (    3081 calls)
+     pcdaga2      :      2.92s CPU      2.96s WALL (    1027 calls)
+     xminus1      :      0.07s CPU      0.07s WALL (    2054 calls)
+     emass_p_tpa  :      0.00s CPU      0.00s WALL (     110 calls)
+
+
+     CP           :   2m42.07s CPU   2m50.56s WALL
+
+
+   This run was terminated on:  21:55:11  20Apr2021            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=
