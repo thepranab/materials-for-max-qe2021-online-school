@@ -11,7 +11,7 @@
 
         turbo_lanczos.x < turbo_lanczos.benzene.in > turbo_lanczos.benzene.out
 
- 3. Run the spectrum calculation
+ 3. Run the post-processing spectrum calculation
 
         turbo_spectrum.x < turbo_spectrum.benzene.in > turbo_spectrum.benzene.out
 
@@ -23,12 +23,13 @@
         atril Benzene_spectrum.eps
 
  5. Perform a converge test of the absorption spectrum with respect to the number of 
-    Lanczos iterations in two ways (fir ipol=1):
+    Lanczos iterations in two ways (for ipol=1):
     - without extrapolation (extrapolation = 'no')  for 500, 1000,  and 1500 iterations;
     - with    extrapolation (extrapolation = 'osc') for 500, 1000,  and 1500 iterations.
+    Use the "restart" keyword to do this.
     What conclusion can you make by comparing the results?
 
-    TurboLanczos and turboDavidson give exactly the same spectrum when both methods are converged
-    with respect to the kinetic-energy cutoff, cell size, number of iterations (for Lanczos) or
-    number of eignevalues (for Davidson). You can check this for benzene or check this paper: 
-    Comput. Phys. Commun. 185, 2080 (2014).
+    TurboLanczos (ipol=4) and turboDavidson give exactly the same spectrum when both methods 
+    are converged with respect to the kinetic-energy cutoff, cell size, number of iterations 
+    (for Lanczos) or number of eignevalues (for Davidson). You can check this for benzene or 
+    check this paper: Comput. Phys. Commun. 185, 2080 (2014).

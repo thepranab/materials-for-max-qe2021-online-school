@@ -1,0 +1,13 @@
+&lr_input
+  prefix = 'silicon',
+  outdir='./tmp',
+  restart_step = 50,
+  restart = .true.
+/
+&lr_control
+  calculator = 'lanczos'
+  itermax = 750, 
+  q1 = 0.866
+  q2 = 0.000
+  q3 = 0.000
+/
