@@ -9,7 +9,7 @@ load_fromPWI ../pw.si.scf.in
 
 set fid [open Etot-vs-alat.dat w]
 
-foreach alat { 9.7 9.8 9.9 10.0 10.1 10.2 10.3 10.4 10.5 10.6 10.7 } {
+foreach alat [seq 9.7 0.1 10.7] {
 
     set name pw.Si.scf.alat-$alat
 
@@ -26,9 +26,10 @@ close $fid
 # plot the result with gnuplot
 exec gnuplot plot.gp
 
-# let's run ev.x to get precise lattice parameter
+# let's run ev.x to get the precise lattice parameter
 exec ev.x < ev.murnaghan.in 
 
+# printout the results
 print [readFile ev.murnaghan.out]
 print "Results of ev.x (Murnaghan equation-of-state) written to:  ev.murnaghan.out"
 
