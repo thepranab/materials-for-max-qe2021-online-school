@@ -15,12 +15,13 @@ lastarg() {
 remote_mpirun() {
     if test $# -lt 2; then
         echo "
-USAGE:  remote_mpirun program [options] inputfile
+USAGE:  remote_mpirun program [options] -inp inputfile
 
 where: 
-   program  ... name of QE program (pw.x, ph.x, pp.x, ...)
-   options  ... various program's options (aka PARA_POSTFIX), including the -inp option 
-   inputfile .. name of inputfile
+   program   ... name of QE program (pw.x, ph.x, pp.x, ...)
+   options   ... various program's options (aka PARA_POSTFIX)
+   -inp      ... mandatory option (its specifies that the input file follows)
+   inputfile ... name of inputfile
 
 
 Example:   remote_mpirun pw.x -nk 2 -inp pw.si.scf.in
