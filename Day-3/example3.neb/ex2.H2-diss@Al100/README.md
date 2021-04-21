@@ -40,13 +40,13 @@ PWTK script.
 		
 	To download the calculated output files, use:
 	
-	    rsync_from_nsc '*.out'
+	    rsync_from_hpc '*.out'
 		
     But wait some time before doing that; give the remote computer
 	some time to make the calculation. To download other data files
 	that were produced by `neb.x`, use:
 	
-	    rsync_from_nsc .
+	    rsync_from_hpc .
 
 4. When calculation finishes you can analyze the outputs
    (`neb.noCI.out` and `neb.auto.out`); check how many steps was
