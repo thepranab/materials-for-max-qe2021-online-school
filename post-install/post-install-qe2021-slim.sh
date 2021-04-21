@@ -7,7 +7,7 @@
 
 SUDO=${SUDO:-sudo}
 APT=${APT:-apt-get}
-
+DPKG=${DPKG:-dpkg}
 dir=`dirname $0`
 cd $dir
 installdir=$(pwd)
@@ -22,7 +22,7 @@ $SUDO $APT install \
       tcllib tk iwidgets4 bwidget \
       vim emacs gnuplot imagemagick mencoder bc\
       gperiodic caja-open-terminal python3-setuptools git \
-      python3-dev python3-pip
+      python3-dev python3-pip python3-numpy
 
 $SUDO $APT purge libreoffice* gimp* 
 $SUDO $APT autoremove
@@ -31,9 +31,17 @@ $SUDO $APT clean
 pwgui=PWgui-6.7
 pwtk=pwtk-1.0.4
 qemodes=QE-modes-6.7
-
+analisi=analisi_0.2.1-1
 # input link to exercises gitlab here
 exercises="https://gitlab.com/QEF/materials-for-max-qe2021-online-school.git"
+
+# debian package for AIMD exercise 
+
+if [ ! -f $analisi ]; then
+    echo "analisi package is missing ... "
+else 
+    $SUDO $DPKG -i $analisi.deb
+fi
 
 tmp_pkgs=$qemodes.tar.gz
 opt_pkgs="$pwgui.tgz $pwtk.tar.gz" 
