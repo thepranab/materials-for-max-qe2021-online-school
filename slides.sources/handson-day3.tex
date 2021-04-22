@@ -32,13 +32,13 @@ Topics of Day-3 hands-on session:
 \begin{itemize}
 \item Structural optimizations:
   \begin{itemize}
-  \item relaxations -- atomic positions only (\file{example1.relax})
-  \item variable-cell relaxations (\file{example2.vc-relax})
+  \item relaxations -- atomic positions only (\file{example1.relax/})
+  \item variable-cell relaxations (\file{example2.vc-relax/})
   \end{itemize}
 \item NEB method: saddle points of elementary chemical
   reactions (\file{example3.neb/})
 \item Automating the workflow with PWTK
-  (\file{example4.pwtk})\\
+  (\file{example4.pwtk/})\\
 \end{itemize}
 
 %\vspace{-0.5em}
@@ -58,14 +58,13 @@ QE-2021 school to aid at submitting jobs to HPC cluster(s). These are:
   ``hpc'' HPC system. For example, a \prog{pw.x} calculation can be
   submitted
   as:\\[0.5em]
-  \exec{remote\_mpirun pw.x -inp pw.file.in}\\[0.5em]
+  \exec{remote\_mpirun pw.x -in pw.file.in}\\[0.5em]
   where \file{pw.file.in} is the name of the \prog{pw.x} input
   file. {\bf BEWARE:} stdin/stdout redirection does not work for
-  \cmd{remote\_mpirun}, hence you must use \flag{-inp} option (i.e.,
-  do note use ``\cmd{<}'' redirection operator). You do not need to
-  specify the number of processors, because the default is set to
-  \flag{-np~8}.
-  \vspace{0.5em}
+  \cmd{remote\_mpirun}, hence you must use \flag{-in} (or \flag{-inp})
+  option (i.e., do note use ``\cmd{<}'' redirection operator). You do
+  not need to specify the number of processors, because the default is
+  set to \flag{-np~8}.  \vspace{0.5em}
 \item \cmd{\bf remote\_pwtk} -- this automatically submits the PWTK
   script to queuing system on the ``hpc'' HPC system. Example:\\[0.5em]
   \exec{remote\_pwtk script.pwtk}\\[0.5em]
@@ -96,7 +95,7 @@ QE-2021 school to aid at submitting jobs to HPC cluster(s). These are:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{1. How to perform structural optimization: graphane}
 \rightheader{}
-\rightfooter{Example: \file{Day-3/example1.relax}}
+\rightfooter{Example: \file{Day-3/example1.relax/}}
 
 \parbox{17cm}{
   \begin{itemize}
@@ -127,7 +126,7 @@ QE-2021 school to aid at submitting jobs to HPC cluster(s). These are:
 \head{1. How to perform structural optimization: graphane (II)}
 \begin{itemize}
 \item Run the structural optimization, i.e.:\\[0.5em]
-  \exec{pw.x < pw.graphane.relax.in > pw.graphane.relax.out \&}
+  \exec{pw.x -in pw.graphane.relax.in > pw.graphane.relax.out \&}
 \item When calculation finishes, analyze the output: it consists of
    several SCF steps, followed by calculation of forces and generation
    of new atomic positions.
@@ -213,7 +212,7 @@ structure and run a relaxation calculation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{2. How to perform variable-cell relaxation: hcp-Zinc}
-\rightfooter{Example: \file{Day-3/example2.vc-relax}}
+\rightfooter{Example: \file{Day-3/example2.vc-relax/}}
 %
 Zinc displays an hcp (hexagonal-closed-packed) crystal structure, hence
 it has two lattice parameters $a$ and $c$. The unit-cell lattice
@@ -295,7 +294,7 @@ calculation remotely.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{3. NEB method: saddle points of elementary chemical reactions}
-\rightfooter{Example: \file{Day-3/example3.neb}}
+\rightfooter{Example: \file{Day-3/example3.neb/}}
 %
 Saddle points on the {\em Potential Energy Surface (PES)}, which
 correspond to {\em Transition States (TS)} of chemical reactions, can
@@ -435,7 +434,7 @@ The resulting PES along the reaction coordinate should look like this.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{4. PWTK: a short tutorial}
 \rightheader{\includegraphics[width=2.5cm]{figs/pwtk.png}}
-\rightfooter{Example: \file{Day-3/example4.pwtk}}
+\rightfooter{Example: \file{Day-3/example4.pwtk/}}
 
 PWTK is a Tcl-based scripting interface for Quantum ESPRESSO. It aims
 at providing a flexible and productive framework.
@@ -449,7 +448,7 @@ at providing a flexible and productive framework.
 \end{itemize}
 
 \begin{itemize}
-\item  Move to \file{Day-3/example4.pwtk} directory. Therein are three
+\item  Move to \file{Day-3/example4.pwtk/} directory. Therein are three
   examples:
   \begin{itemize}
   \item \file{ex1.eos/} -- how to use EOS (equation-of-state) utility
@@ -465,7 +464,7 @@ at providing a flexible and productive framework.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5. PWTK: hierarchical configuration}
+\head{4. PWTK: hierarchical configuration}
 \rightheader{}
 
 \begin{itemize}
@@ -500,7 +499,7 @@ at providing a flexible and productive framework.
   \end{itemize}
 \end{itemize}
 
-\head{5. PWTK: concept of input data stacking}
+\head{4. PWTK: concept of input data stacking}
 \rightheader{}
 
 {\small Input data stacking is a useful concept when performing
@@ -517,10 +516,10 @@ at providing a flexible and productive framework.
 \centerline{\includegraphics[width=0.8\textwidth]{figs/i-data-stacking.png}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5.1 PWTK: EOS utility}
-\rightfooter{Example: \file{Day-3/example4.pwtk/ex1.eos}}
+\head{4.1 PWTK: EOS utility}
+\rightfooter{Example: \file{Day-3/example4.pwtk/ex1.eos/}}
 
-Move to \file{Day-3/example4.pwtk/ex1.eos} directory.
+Move to \file{Day-3/example4.pwtk/ex1.eos/} directory.
 
 In this example the
 {\em equation-of-state (EOS)} will be calculated using
@@ -554,8 +553,8 @@ data points, can you tell why?
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5.2 PWTK: gluing together many calculations}
-\rightfooter{Example: \file{Day-3/example4.pwtk/ex2.O@Al111}}
+\head{4.2 PWTK: gluing together many calculations}
+\rightfooter{Example: \file{Day-3/example4.pwtk/ex2.O@Al111/}}
 
 The subject of this example is the calculation of a 2D potential
 energy scan of lateral positions of O @ Al(111). It introduces the
@@ -602,8 +601,8 @@ this.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5.3 PWTK: analysis of electronic structure of CO@Rh(100)}
-\rightfooter{Example: \file{Day-3/example4.pwtk/ex3.CO@Rh100}}
+\head{4.3 PWTK: analysis of electronic structure of CO@Rh(100)}
+\rightfooter{Example: \file{Day-3/example4.pwtk/ex3.CO@Rh100/}}
 
 This is a bit more elaborate PWTK example that shows how to glue
 together various calculations. In particular, it analyzes the bonding
@@ -630,13 +629,13 @@ specific task(s), in particular:
 \item \file{ildos.pwtk} -- script for calculation of ILDOSes
 \vspace{-0.5em}
 \item \file{pdos.pwtk} -- script for calculating PDOS to atomic
-  orbitals, MOPDOS to molecular-orbitals of CO, and plots of
-  molecular-orbitals ($\psi^2$) of CO (BEWARE: this is a more
-  elaborate script)
+  orbitals, MOPDOS to molecular-orbitals of CO, and plots of signed
+  molecular-orbital densities ($\sign(\psi_i(\vr))|\psi_i(\vr)|^2$) of
+  CO (BEWARE: this is a more elaborate script)
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5.3.1 DIFDEN utility}
+\head{4.3.1 DIFDEN utility}
 
 PWTK has a {\em DIFDEN} utility to aid at calculating, e.g.,
 charge-density difference:\\[0.5em]
@@ -682,7 +681,7 @@ difden_run difden.CO-Rh(100)
 \end{tabular}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5.3.2 ILDOS}
+\head{4.3.2 ILDOS}
 
 ILDOS = integrated local density of states:\\[0.5em]
 {\black
@@ -699,7 +698,7 @@ N(E_{\rm min},E_{\rm max},\vr) =
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5.3.2 ILDOS}
+\head{4.3.2 ILDOS}
 With aid of PWTK, a series of ILDOSes can be calculated using the following snippet:
 {
   \codecolor\small
@@ -724,13 +723,13 @@ The full PWTK script for calculating a series of ILDOSes of
 CO@Rh(100) is provided by file \file{ildos.pwtk}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{5.3.3 PDOS and MOPDOS}
+\head{4.3.3 PDOS and MOPDOS}
 
 The PWTK script \file{pdos.pwtk} is a bit more lengthy/elaborate. It
 calculates PDOS (projected-density-of-states) to atomic orbitals,
 MOPDOS (molecular-orbital projected-density-of-states) to
-molecular-orbitals of CO, and it plots molecular-orbitals
-($\sign(\psi(\vr))\psi^2(\vr)$) of CO.
+molecular-orbitals of CO, and it plots signed molecular-orbital
+densities ($\sign(\psi_i(\vr))\psi_i^2(\vr)$) of CO.
 
 For further details, see \file{README.md} and the \file{pdos.pwtk}
 script itself. The purpose of this script is to demonstrate a bit more

@@ -31,10 +31,10 @@
 \rightheader{\hspace{-0.8cm}\includegraphics[width=4.5cm]{figs/QE.png}}
 Topics of Day-2 hands-on session:
 \begin{enumerate}
-\item How to make basic convergence tests (\file{example1.Si})
-\item How to deal with metals (\file{example2.Al})
+\item How to make basic convergence tests (\file{example1.Si/})
+\item How to deal with metals (\file{example2.Al/})
 \item How to deal with ultrasoft pseudopotentials and with spin polarization
-  (\file{example1.Fe})
+  (\file{example3.Fe/})
 \end{enumerate}
 b
 To get the latest version of the exercises, move to \file{Day-2/} directory and execute:\\[0.5em]
@@ -42,12 +42,12 @@ To get the latest version of the exercises, move to \file{Day-2/} directory and 
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{1. Bulk system: Silicon}
-\rightfooter{Example: \file{Day-2/example1.Si}}
+\rightfooter{Example: \file{Day-2/example1.Si/}}
 %
 Self-consistent calculation (and a series of tests) for Silicon in the
 diamond structure:
 \begin{itemize}
-\item move to \file{Day-2/example1.Si} directory
+\item move to \file{Day-2/example1.Si/} directory
 \item look at the input file \file{pw.si.scf.in}. It is composed of three
 ``namelists'' \nml{\&CONTROL} (note that \var{calculation = 'scf'}
 is the default value), \nml{\&SYSTEM}, \nml{\&ELECTRONS}, followed 
@@ -137,7 +137,7 @@ Look at the directory specified by \var{outdir} (in our case
 {\small\gray (to see only these files, you may need to use
 \code{ls \$ESPRESSO\_TMPDIR/silicon.*})}\\
 
-The directory contains a data directory (\file{silicon.save}) with
+The directory contains a data directory (\file{silicon.save/}) with
 binary data files for further processing and an XML file
 (\file{silicon.xml}) with general information on the run.  The name of
 the various files is determined by the value of the \var{prefix}
@@ -317,17 +317,17 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Convergence w.r.t. the kinetic energy cutoff (III)}
-\rightfooter{Example: \file{Day-2/example1.Si/ex1.ecutwfc}}
+\rightfooter{Example: \file{Day-2/example1.Si/ex1.ecutwfc/}}
 \rightheader{}
 % 
 \begin{itemize}
 \item To run the convergence test via the Unix shell-script move to
-  \file{ex1.ecutwfc.classic} sub-directory (read the
+  \file{ex1.ecutwfc.classic/} sub-directory (read the
   \file{README.md} file) and execute\\[0.5em]
   \exec{./ecutwfc.sh}
 
 \item To run the convergence test via the PWTK script move to
-  \file{ex1.ecutwfc} sub-directory (read the
+  \file{ex1.ecutwfc/} sub-directory (read the
   \file{README.md} file) and execute\\[0.5em]
   \exec{pwtk ecutwfc.pwtk}
 \end{itemize}
@@ -356,7 +356,7 @@ Absolute values of total energy do not have any physical meaning
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Convergence w.r.t. k-points}
-\rightfooter{Example: \file{Day-2/example1.Si/ex2.kpoints}}
+\rightfooter{Example: \file{Day-2/example1.Si/ex2.kpoints/}}
 %
 % HERE
 A sufficiently dense grid of k-points is needed in order to account
@@ -419,7 +419,7 @@ M.L. Cohen, Phys. Rev. B {\bf 8}, 5747 (1973))}
 %
 The PWTK script for testing the convergence with respect to k-points is
 located in
-\file{Day-2/example1.Si/ex2.kpoints} directory (see \file{README.md}
+\file{Day-2/example1.Si/ex2.kpoints/} directory (see \file{README.md}
 for detailed instructions).
 
 Within this directory execute:\\[0.5em]
@@ -431,7 +431,7 @@ You should get a plot like this one:\\[-3cm]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Equation of State: silicon}
-\rightfooter{Example: \file{Day-2/example1.Si/ex3.alat}}
+\rightfooter{Example: \file{Day-2/example1.Si/ex3.alat/}}
 %
 Equilibrium in Si is determined by the minimum-energy lattice
 parameter alone: there are no forces on atoms, by symmetry (you can
@@ -462,7 +462,7 @@ With PWTK this can be achieved with the following snippet:
 \head{Equation of State: silicon (II)}
 
 The corresponding PWTK script is located in
-\file{Day-2/example1.Si/ex3.alat} directory (see \file{README.md} for
+\file{Day-2/example1.Si/ex3.alat/} directory (see \file{README.md} for
 detailed instructions).
 
 \parbox{0.5\textwidth}{
@@ -507,7 +507,7 @@ $a_3\qquad E(a_3)$\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Band Structure of Silicon}
-\rightfooter{Example: \file{Day-2/example1.Si/ex4.bands}}
+\rightfooter{Example: \file{Day-2/example1.Si/ex4.bands/}}
 %
 The scheme to calculate the bands (spaghetti plot) is the following:
 \parbox{0.7\textwidth}{
@@ -559,7 +559,7 @@ containing information on symmetry labels of the various bands.
 The snippet for running all three calculations manually is:\\[0.5em]
 \exec{pw.x -in pw.Si.scf.in > pw.Si.scf.out}\\
 \exec{pw.x -in pw.Si.bands.in > pw.Si.bands.out}\\
-\exec{pw.x -in bands.Si.in > bands.Si.scf.out}\\[0.5em]
+\exec{bands.x -in bands.Si.in > bands.Si.scf.out}\\[0.5em]
 {\bf  but} we will use a PWTK script instead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -570,7 +570,7 @@ calculations for plotting the bands, proceed as follows:\\
 \parbox{0.65\textwidth}{
   \begin{itemize}
   \item move to directory
-    \file{Day-2/example1.Si/ex4.bands} and read the \file{README.md} file
+    \file{Day-2/example1.Si/ex4.bands/} and read the \file{README.md} file
   \item set suitable values for \var{celldm(1)}, \var{ecutwfc}, and
     \card{K\_POINTS}
   \item and execute: ~\code{pwtk bands.pwtk}
@@ -589,7 +589,7 @@ calculations for plotting the bands, proceed as follows:\\
 they are automatically inherited for subsequent calculations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Auxiliary program plotbands.x} 
+\head{Auxiliary program plotband.x} 
 \prog{plotband.x} prompts for terminal input:
 {\codecolor
 \begin{verbatim}
@@ -616,7 +616,7 @@ $M$ labels irreducible representations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{2. A metallic example: Aluminum}
-\rightfooter{Example: \file{Day-2/example2.Al}}
+\rightfooter{Example: \file{Day-2/example2.Al/}}
 
 %
 Aluminum is even simpler than Silicon: one atom per unit cell
@@ -624,7 +624,7 @@ in an fcc lattice.\\
 {\bf\burgundy BUT:} it is a metal, only valence bands and a few k-points will
 not suffice.
 \begin{itemize}
-\item move to the \file{Day-2/example2.Al} directory
+\item move to the \file{Day-2/example2.Al/} directory
 \item read the \prog{pw.x} input file \file{pw.al.scf.in}
 \item notice the presence of new variables: \var{occupations},
 \var{smearing}, \var{degauss};
@@ -641,7 +641,7 @@ not suffice.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Convergence with respect to k-points, degauss, and smearing} 
-\rightfooter{Example: \file{Day-2/example2.Al/ex1.degauss}}
+\rightfooter{Example: \file{Day-2/example2.Al/ex1.degauss/}}
 %
 This is a {\it ``three-dimensional''} convergence test, where we will
 vary the number of k-points and values of \var{degauss} and
@@ -677,7 +677,7 @@ With PWTK this can be achieved with the following snippet:
 \head{Convergence with respect to k-points, degauss, and smearing (II)} 
 %
 \begin{itemize}
-\item move to \file{Day-2/example2.Al/ex1.degauss} directory
+\item move to \file{Day-2/example2.Al/ex1.degauss/} directory
 \item execute: ~\code{pwtk degauss.pwtk} 
 \end{itemize}
 \vspace{-1em}
@@ -694,13 +694,13 @@ must have some overlap, or else the advantage of broadening is lost!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{How to plot charge-density}
-\rightfooter{Example: \file{Day-2/example2.Al/ex2.chdens}}
+\rightfooter{Example: \file{Day-2/example2.Al/ex2.chdens/}}
 %
-Example \file{Day-2/example2.Al/ex2.chdens} shows how to calculate the
+Example \file{Day-2/example2.Al/ex2.chdens/} shows how to calculate the
 valence and the all electron charge density (the latter requires a PAW
 potential and a very large cutoff energy)
 \begin{itemize}
-\item move to \file{Day-2/example2.Al/ex2.chdens} directory ({\it
+\item move to \file{Day-2/example2.Al/ex2.chdens/} directory ({\it
     chdens} is an acronym for charge-density)
 \item execute: ~\code{pwtk 1-chdens.pwtk}\\
   this script calculates and ``plots'' the valence charge density;
@@ -736,13 +736,13 @@ potential and a very large cutoff energy)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{3. A magnetic example: Iron}
-\rightfooter{Example: \file{Day-2/example3.Fe}}
+\rightfooter{Example: \file{Day-2/example3.Fe/}}
 %
 Iron has two remarkable features: it is magnetic
 and it requires an Ultrasoft PP (USPP) since its localized 3d atomic 
 states are very hard.
 \begin{itemize}
-\item move to the \file{Day-2/example3.Fe} directory and read the
+\item move to the \file{Day-2/example3.Fe/} directory and read the
   \prog{pw.x} input file \file{pw.fe\_fm.scf.in}
 \item the structure is bcc (\var{ibrav=3}) with one atom per unit cell
 \item notice the presence of variables \var{nspin} and 
@@ -811,7 +811,7 @@ by:\\[1em]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Convergence check for USPP}
-\rightfooter{Example: \file{Day-2/example3.Fe/ex1.ecut}}
+\rightfooter{Example: \file{Day-2/example3.Fe/ex1.ecut/}}
 %
 For computational efficiency, it is convenient to keep \var{ecutwfc}
 as low as possible, while \var{ecutrho} is less critical
@@ -851,7 +851,7 @@ A PWTK script to make convergence check for USPP is provided, i.e.:
 
 \parbox{0.55\textwidth}{
 \begin{itemize}
-\item move to directory:\\ \file{Day-2/example3.Fe/ex1.ecut}
+\item move to directory:\\ \file{Day-2/example3.Fe/ex1.ecut/}
 \item execute: ~\code{pwtk ecut.pwtk}
 \item you should obtain such a plot\\
   {\small (notice that curves for $dual=8$ and $12$\\almost coincide)}
@@ -868,10 +868,10 @@ A PWTK script to make convergence check for USPP is provided, i.e.:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Density of States (DOS) and Projected DOS (PDOS)}
-\rightfooter{Example: \file{Day-2/example3.Fe/ex2.dos}}
+\rightfooter{Example: \file{Day-2/example3.Fe/ex2.dos/}}
 %
 \begin{enumerate}
-\item move to \file{Day-2/example3.Fe/ex2.dos} directory and
+\item move to \file{Day-2/example3.Fe/ex2.dos/} directory and
 \item edit the \file{dos.pwtk} script and set \var{ecutwfc} and
   \var{ecutrho} to appropriate values
 \item execute: ~\code{pwtk dos.pwtk}\\
