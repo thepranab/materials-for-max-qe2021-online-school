@@ -47,6 +47,8 @@ tmp_pkgs=$qemodes.tar.gz
 opt_pkgs="$pwgui.tgz $pwtk.tar.gz" 
 # DO NOT TOUCH
 
+$SUDO cp ./ev.x /usr/bin/
+
 $SUDO mkdir -p /opt/bin
 
 function tar_open() {
