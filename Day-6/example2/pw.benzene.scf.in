@@ -3,7 +3,7 @@
     restart_mode='from_scratch',
     prefix='Benzene'
     pseudo_dir = '../../pseudo',
-    outdir='/tmp',
+    outdir='./tmp',
 /
 &SYSTEM
     ibrav = 6,

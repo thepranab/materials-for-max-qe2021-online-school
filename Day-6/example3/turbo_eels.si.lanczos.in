@@ -1,6 +1,6 @@
 &lr_input
   prefix = 'silicon',
-  outdir='/tmp',
+  outdir='./tmp',
   restart_step = 50,
   restart = .false.
 /
