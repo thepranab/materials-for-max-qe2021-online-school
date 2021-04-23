@@ -3,7 +3,7 @@
     restart_mode='from_scratch',
     prefix='Si'
     pseudo_dir = '../../pseudo'
-    outdir='./tmp/'
+    !outdir='./tmp/'
     verbosity='high'
  /                                              
  &system

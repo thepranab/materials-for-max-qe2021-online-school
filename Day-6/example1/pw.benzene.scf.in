@@ -2,8 +2,8 @@
     calculation = 'scf'
     restart_mode='from_scratch',
     prefix='Benzene'
-    pseudo_dir = '../../pseudo'
-    outdir='./tmp',
+    !pseudo_dir = '../../pseudo'
+    !outdir='./tmp',
 /
 &SYSTEM
     ibrav = 6,

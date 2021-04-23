@@ -1,6 +1,6 @@
 &lr_input
   prefix = 'Benzene',
-  outdir = './tmp',
+  !outdir = './tmp',
   itermax0 = 500,
   itermax  = 500,
   extrapolation = 'no',

@@ -24,5 +24,8 @@
     Lanczos iterations in two ways:
     - without extrapolation (extrapolation = 'no')  for 500, 750, 1000, 1250, and 1500 iterations;
     - with    extrapolation (extrapolation = 'osc') for 500, 750, 1000, 1250, and 1500 iterations.
-    Use the "restart" keyword to do this.
+    Note 1: Use the "restart" keyword to do this.
+    Note 2: For each new calculation, change the name of the input and output files 
+            (e.g. turbo_eels.si.lanczos.500.in, turbo_eels.si.lanczos.500.out;
+                  turbo_spectrum.si.500.in,     turbo_spectrum.si.500.out)
     What conclusion can you make by comparing the results?

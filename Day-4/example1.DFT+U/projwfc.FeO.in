@@ -1,6 +1,6 @@
 &projwfc
     prefix='FeO'
-    outdir='./tmp/'
+    !outdir='./tmp/'
     ngauss = 0,
     degauss = 0.005,
     Emin = -15.0,
