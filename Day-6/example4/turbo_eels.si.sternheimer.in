@@ -1,6 +1,6 @@
 &lr_input
   prefix = 'silicon',
-  !outdir='./tmp'
+  outdir='/tmp'
 /
 &lr_control
   calculator = 'sternheimer',

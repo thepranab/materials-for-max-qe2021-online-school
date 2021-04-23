@@ -1,6 +1,6 @@
 &lr_input
   prefix = 'silicon',
-  !outdir = './tmp',
+  outdir = '/tmp',
   eels = .true.
   itermax0 = 500,
   itermax  = 500,

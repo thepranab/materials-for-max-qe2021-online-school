@@ -1,6 +1,6 @@
 &lr_input
   prefix = 'Benzene',
-  !outdir='./tmp',
+  outdir='/tmp',
   restart_step = 100,
   restart = .false.
 /

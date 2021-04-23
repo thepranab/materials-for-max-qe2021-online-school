@@ -1,6 +1,6 @@
 &lr_input
   prefix = 'Benzene',
-  !outdir = './tmp'
+  outdir = '/tmp'
 /
 &lr_dav
   if_dft_spectrum = .true.
