@@ -1,6 +1,6 @@
 #!/bin/sh
 export OMP_NUM_THREADS=1
-export PW=/home/pietro/repositories/q-e/bin/pw.x
+export PW=pw.x
 if test -e magmom.dat
 then
 	mv magmom.dat magmom.dat_old
