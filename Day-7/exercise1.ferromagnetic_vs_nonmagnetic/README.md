@@ -58,29 +58,29 @@ and perform  a Density of states calculation in both cases.
 
   * `fe.scf.in` the input file for the self consistent calculation at the optimized constant.
     * The file is set for   alat=5.2127 a.u.
-    * We have set  `nspin=2` with `starting_magnetization=0.0`. This make the program start a spin polarized calculation with a spin-symmetric starting configuration that ends up to non-magnetic ground state.
+    * We have set  `nspin=2` with `starting_magnetization=0.0`. In this way the program will start a spin polarized calculation from a  spin-symmetric configuration. Such symmetry is preserved during the self consistent calculation and will thus  end up to non-magnetic ground state.
     * The k-point mesh has been made denser (14 14 14) for more accurate properties at equilibrium volume:
   * run the calculation:
 
-                             `pw.x < fe.scf.in > fe.scf.out`
+      `pw.x < fe.scf.in > fe.scf.out`
 
-  * Then we perform  a non-self consistent run using the `fe.nscf.in` input file.  
-    * We have set `occupations=tetrahedra_opt` this is costless because we are doing an scf calculation and is useful to pass this option to `dos.x` and `projwfc.x` programs later.
+  * Then run a non-self consistent calculation using the `fe.nscf.in` input file.   
+    * We have set `occupations=tetrahedra_opt`.  The `occupation` type  specified in input does not affect the result nscf calculation but  this option will be passed to  `dos.x` and `projwfc.x` programs later.
     * We increase the k-point mesh to 20 20 20. This is feasible for nscf calculations and produce a better quality DOS and pDOS.
   `pw.x < fe.nscf.in >> fe.nscf.out`
 
-* Now we can evaluate the total dos by using the `dos.x` application. The input `fe.dos.in` selects the energy region between 5 and 25 eV in order to consider only the d bands of Fe.  Type the command:
+* Now we can evaluate the total dos by using `dos.x`. The input `fe.dos.in` selects the energy region between 5 and 25 eV in order to consider only the _3d_ bands.  Type the command:
 `dos.x < fe.dos.in >  fe.dos.out`
 
-* It produces the file:   `fe.dos` the header indicates the format of the file plus the value of the Fermi Energy.
+* `dos.x` produces the file: `fe.dos` the header indicates the format of the file plus the value of the Fermi Energy.
 
 `#  E (eV)   dosup(E)     dosdw(E)   Int dos(E) EFermi = 21.345 eV`
 
-* The DOS being produced with `nspin=2` is distinguished in two spin channels. We may verify that, in this case,  the solution is symmetric and DOS of the 2 channels are equal.  We can plot the spin-up and spin-down DOS.  
+* Being produced with `nspin=2` the file contains the DOS for the two spin channels. In  this case the 2 channels are equal because the solution is symmetric.  We can plot the spin-up and spin-down DOS.  
   * Start  `gnuplot` and type the commands:
   1. `gnuplot> set parametric`
   1. `gnuplot> Ef=21.345`
-  1. `p "fe.dos" u 1:2 w l lw 4 t "Majority", "fe.dos" u 1:3 w l lw 4 t "Minority", Ef,3.0  w i lw 4    t "Fermi Energy"`
+  1. `p "fe.dos" u 1:2 w l lw 4 t "Majority", "fe.dos" u 1:(-$3) w l lw 4 t "Minority", Ef,t w i lw 4    t "Fermi Energy"`
 
 * Now repeat the above steps for the magnetic case:
 
@@ -93,24 +93,28 @@ and perform  a Density of states calculation in both cases.
     * for plotting with gnuplot:
       1. `gnuplot> set parametric`
       1. `gnuplot> Ef=20.044`
-      1. `p "fe.dos" u 1:2 w l lw 4 t "Majority", "fe.dos" u 1:3 w l lw 4 t "Minority", Ef,3.0  w i lw 4    t "Fermi Energy"`
+      1. `p "fe.dos" u 1:2 w l lw 4 t "Majority", "fe.dos" u 1:(-$3) w l lw 4 t "Minority", Ef,t  w i lw 4    t "Fermi Energy"`
 * The the energy peaks are now shifted with respect to each other by the so-called exchange splitting that favors the magnetic solution.
 
 
 ## Local  dos for the magnetic solution: insights into the exchange splitting.
 
-_We want now to verify that exchange splitting affects the bands deriving from the partially filled d shell of Fe._
-We will project the  bands affected by the exchange splitting into the atomic wavefunctions corresponding to the valence atomic  states included in the pseudopotential file `3S 4S 3P 4P 3D`
-To do this we will use  the program `projwfc.x`, in `./magnetic/conv` is already present the needed input file `fe.pdos.in`.
+_We now verify that the  exchange splitting affects the bands deriving from the partially filled 3d shell of Fe._
+Using `projwfc.x` we project the states affected by the exchange splitting into the atomic wavefunctions corresponding to the valence atomic  states of the Fe pseudopotential: `3S 4S 3P 4P 3D`
+To do this we use the input file `fe.dos.in` contained in the  `./magnetic/conv` directory.
 
 * run the program with using the `fe.pdos.in` input file:
 
 `projwfc.x < fe.pdos.in >> fe.pdos.out`
 
 * The program produces a projection file for each of the atomic states.
-`'fe.pdos_atm#1(Fe)_wfc#1(s)'  'fe.pdos_atm#1(Fe)_wfc#3(p)'  'fe.pdos_atm#1(Fe)_wfc#5(d)' 'fe.pdos_atm#1(Fe)_wfc#2(s)'  'fe.pdos_atm#1(Fe)_wfc#4(p)'`
+  1. `'fe.pdos_atm#1(Fe)_wfc#1(s)'  --> 3s
+  4. 'fe.pdos_atm#1(Fe)_wfc#2(s)'   --> 4s
+  2. 'fe.pdos_atm#1(Fe)_wfc#3(p)'   --> 3p 
+  5. 'fe.pdos_atm#1(Fe)_wfc#4(p)'`  --> 4p
+  3. 'fe.pdos_atm#1(Fe)_wfc#5(d)'   -->  3d
 
-* Inspecting the pdos files you will find that the projected DOS are small for all the atomic states except the d.
+* Inspecting the pdos files you will find that the projected DOS are small for all the atomic states except the _3d_.
 
 * We can plot the projected the DOS into d-states of Fe, using the file: fe.pdos_atm#1(Fe)_wfc#5(d). The header illustrates the format of the file:
 `# E (eV)  ldosup(E)  ldosdw(E) pdosup(E)  pdosdw(E)  pdosup(E)  pdosdw(E)  pdosup(E)  pdosdw(E)  pdosup(E)  pdosdw(E)  pdosup(E)  pdosdw(E)`
