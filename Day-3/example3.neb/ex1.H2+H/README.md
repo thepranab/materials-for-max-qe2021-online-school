@@ -11,7 +11,7 @@ product(s)).
 
 This is a simple H transfer reaction, i.e., H + H2 --> H2 + H. In this
 example only the first and last-images (`FIRST_IMAGE` and
-`LAST_IMAGE`) are specified in the input. The reaction path is
+`LAST_IMAGE`) are specified in the nput. The reaction path is
 discretized into seven images (`num_of_images = 7`) and the `neb.x`
 code constructs the initial reaction path via linear interpolation
 between the first- and last-image (seven images in total are
@@ -23,7 +23,7 @@ You can visualize the initial reaction path by:
 
 To run the example, execute:
 
-     neb.x -inp neb.H2+H.in > neb.H2+H.out &
+     neb.x -in neb.H2+H.in > neb.H2+H.out &
 
 When calculation finishes you can analyze the output (`neb.H2+H.out`);
 check how many steps was needed to converge the calculation and what
@@ -59,7 +59,7 @@ Can you spot the difference with respect to the first example?
 
 To run the example, execute:
 
-    neb.x -inp neb.H2+H.w-inter-image.in > neb.H2+H.w-inter-image.out &
+    neb.x -in neb.H2+H.w-inter-image.in > neb.H2+H.w-inter-image.out &
 
 When calculation finishes, analyze the output
 (`neb.H2+H..w-inter-image.out`). You will notice that in this case much
