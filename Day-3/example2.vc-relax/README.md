@@ -19,7 +19,7 @@ Steps to perform:
    
 2. To run the example, execute:
 
-       pw.x < pw.Zn.vc-relax.in > pw.Zn.vc-relax.out &
+       pw.x -in pw.Zn.vc-relax.in > pw.Zn.vc-relax.out &
 
 
 3. When calculation finishes, analyze the output: it consists of
@@ -40,7 +40,7 @@ Example-2 is analogous to example-1, just the structure is different.
 **Beware** that it is **computationally heavier** than the example-1. To run
 the example, execute:
 
-       pw.x < pw.urea.vc-relax.in > pw.urea.vc-relax.out &
+       pw.x -in pw.urea.vc-relax.in > pw.urea.vc-relax.out &
 
 
 ### How to run example-2 (molecular crystal of urea) on the HCP cluster
