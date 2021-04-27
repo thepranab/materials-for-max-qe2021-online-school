@@ -107,6 +107,17 @@ QE-2021 school to aid at submitting jobs to HPC cluster(s). These are:
 } \hskip 1cm
 \parbox{8cm}{ \includegraphics[width=8cm]{figs/graphane.pdf}}
 
+As a reminder, the honeycomb lattice is of hexagonal type, with the lattice
+parameter $a$. In periodic representation there is a second parameter $c$. The lattice
+vectors are:\\
+%
+\centerline{$\displaystyle
+  {\bf a}_1=(a,0,0), \quad {\bf a_2}=(-{a\over 2},{a\sqrt{3}\over 2},0),
+  \quad {\bf a}_3=(0,0,c)$}
+%
+
+\vspace*{-3mm} % To enforce single pages
+
 \begin{itemize}
 \item File \file{pw.graphane.relax.in} is a modified version of\\
   \file{pw.graphene1x1.scf.in} with:
@@ -322,7 +333,7 @@ You can visualize this path with \prog{xcrysden}:
 
 To run the example execute:
 
-\exec{ neb.x -inp neb.H2+H.in > neb.H2+H.out \& }
+\exec{ neb.x -in neb.H2+H.in > neb.H2+H.out \& }
 
 When the calculation finishes analyze the output
 (\file{neb.H2+H.out}). Pay attention to the {\em number of steps} required
@@ -372,7 +383,7 @@ shown schematically below:
 
 To run this example type:
 
-{\small \exec{ neb.x -inp neb.H2+H.w-inter-image.in > neb.H2+H.w-inter-image.out \& }}
+{\small \exec{ neb.x -in neb.H2+H.w-inter-image.in > neb.H2+H.w-inter-image.out \& }}
 
 The final reaction barrier should be the same as in the previous
 calculation, however convergence should require fewer steps.
@@ -599,6 +610,16 @@ this.\\
 
 \centerline{\includegraphics[width=0.475\textwidth]{figs/PES-2D.png}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\head{Bonus exercise}
+\rightfooter{Example: \file{Day-3/example4.pwtk/ex3.CO@Rh100/}}
+
+\vspace*{5mm}
+
+\begin{center}
+Please do not worry if you do not manage this during the session:\\You can
+perform it later as homework.
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{4.3 PWTK: analysis of electronic structure of CO@Rh(100)}
@@ -725,10 +746,34 @@ CO@Rh(100) is provided by file \file{ildos.pwtk}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{4.3.3 PDOS and MOPDOS}
 
+MOPDOS = molecular orbital-projected DOS:\\[-0.5em]
+\begin{center}
+{\black
+$\displaystyle
+N(E;v)
+ = \sum_i\sum_{\vk}
+  \int_{\vr} |\psi_{i,\vk}^*(\vr)\psi_{v,\vk}^{\mathrm{mol}}(\vr)| \times
+  \delta(\epsilon-\epsilon_{i,\vk}) d\vr\ .$
+}
+\end{center}
+
+Contribution of molecular orbitals in combined system: Hybridisation,
+polarisation, ...
+\begin{center}
+  \includegraphics[width=0.57\textwidth]{figs/moproj-CO-Rh100.png}
+\end{center}
+
+Molecular orbitals of CO:\\
+\begin{center}
+HOMO-4 ($3\sigma$), HOMO-3 ($4\sigma^*$), HOMO-2 and HOMO-1 ($1\pi$)\\
+  \includegraphics[width=0.4\textwidth]{figs/psi2-montage-CO-Rh100.png}\\
+HOMO ($5\sigma$), LUMO and LUMO+1 ($2\pi^*$)
+\end{center}
+
 The PWTK script \file{pdos.pwtk} is a bit more lengthy/elaborate. It
 calculates PDOS (projected-density-of-states) to atomic orbitals,
-MOPDOS (molecular-orbital projected-density-of-states) to
-molecular-orbitals of CO, and it plots signed molecular-orbital
+MOPDOS (molecular orbital-projected density of states) onto the
+molecular orbitals of CO, and it plots signed molecular-orbital
 densities ($\sign(\psi_i(\vr))\psi_i^2(\vr)$) of CO.
 
 For further details, see \file{README.md} and the \file{pdos.pwtk}
