@@ -1,6 +1,6 @@
 Phonons on a uniform q-grid
  &inputph
-  prefix='',           ! Specify a prefix
+  prefix='',           ! Specify a prefix (it has to be the same as in pw.AlAs.in)
   tr2_ph = 1.0d-14,
   amass(1) =            ! Specify atomic mass of Al
   amass(2) =            ! Specify atomic mass of As
