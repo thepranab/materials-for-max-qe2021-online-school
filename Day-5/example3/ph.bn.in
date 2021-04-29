@@ -2,7 +2,7 @@ Phonon calculation for 2D hexagonal BN
  &inputph
   tr2_ph=1.0d-15,
   prefix='bn',
-  outdir='./out'
+!  outdir='./tmp'
   fildyn='bn.disp.dyn',
   ldisp=.true.
   nq1=6, 

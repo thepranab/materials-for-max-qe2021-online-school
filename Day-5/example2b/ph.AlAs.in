@@ -8,6 +8,6 @@ Phonons on a uniform q-grid
   nq1 =                 ! Specify a uniform q-grid
   nq2 =  
   nq3 =  
-  outdir='./out'
+!  outdir='./tmp'
   fildyn='AlAs.dyn',
  /
