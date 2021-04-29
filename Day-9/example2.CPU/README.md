@@ -2,16 +2,20 @@
 
 In this section we only make use of CPUs and try to optimize the time to solution keeping the amount of compute power fixed.
 
+-------
+
 ## 1. Pool parallelism
 
 Optimize the number of kpoint pools, starting with 1 up to 8 (what are the admissible values for this option?). 
 The jobscript file to be used on Marconi100 is already available in this folder and is also reported below for your convenience.
 
-```
+---
+
+~~~~~{.bash}
 #!/bin/bash
 #SBATCH --nodes=1              # number of nodes
 #SBATCH --ntasks-per-node=16   # number of MPI per node
-#SBATCH --cpus-per-task=4      # number of HW threads per task (equal to OMP_NUM_THREADS*4)
+#SBATCH --cpus-per-task=4      # number of HW threads per task
 #SBATCH --mem=230000MB
 #SBATCH --time 00:30:00         # format: HH:MM:SS
 #SBATCH -p m100_usr_prod
@@ -28,7 +32,9 @@ export OMP_NUM_THREADS=1
 
 # Run pw.x with default options for npool and ndiag
 mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee no_options
-```
+~~~~~
+
+-------
 
 1. First, **submit the job as is**, with npool set to 1. 
 2. Second, **open the job-script file** (`job.sh`) and **change the number of pools to be used `-npool X`**, with X={2,4,8}. Don't forget to rename the output file as well.
@@ -40,6 +46,7 @@ The execution time can be obtained by looking at one of the last lines of the ou
 
 the WALL time is the value you want to note down (if you wonder what CPU time is, [check wikipedia](https://en.wikipedia.org/wiki/CPU_time) ).
 
+-------
 
 You should be able to produce a plot similar to this one:
 
@@ -47,11 +54,13 @@ You should be able to produce a plot similar to this one:
 
 Congrats! With the same computational resources, the time to solution is almost halved!
 
+---
+
 Pool parallelism can be actually much better than what you obtained in this example.
 Indeed for this small input file the parallelization on plane waves
 is good enough, especially because all our MPI processes reside on a single node and inter-process communication is fast.
 
-
+-------
 
 ## 2. Parallel diagonalization
 
@@ -69,6 +78,8 @@ In this second part we want to speedup the code by solving the dense eigenvalue 
 3. Check the time to solution. Did you manage to reduce the WALL time?
 
 Unfortunately you'll notice that the simulation is actually **taking longer**.
+
+-------
 
 There are two reasons for this:
 
