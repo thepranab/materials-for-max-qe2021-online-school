@@ -1,8 +1,8 @@
  &control
     calculation='scf'
     restart_mode='from_scratch',
-    pseudo_dir='../../pseudo'
-    outdir='./out'
+!    pseudo_dir='../../pseudo'
+!    outdir='./tmp'
     prefix='AlAs',
  /
  &system    

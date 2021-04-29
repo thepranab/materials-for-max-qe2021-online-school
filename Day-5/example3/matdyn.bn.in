@@ -1,6 +1,6 @@
  &input
     asr='simple', 
-    flfrc='bn881.fc', 
+    flfrc='bn661.fc', 
     flfrq='bn.freq', 
     q_in_band_form=.true., 
     loto_2d=.true.,

@@ -2,8 +2,8 @@
    calculation='scf'
    restart_mode='from_scratch',
    prefix='bn',
-   pseudo_dir = '../../pseudo',
-   outdir='./out'
+!   pseudo_dir = '../../pseudo',
+!   outdir='./tmp'
  /
  &system
     ibrav=  4, 

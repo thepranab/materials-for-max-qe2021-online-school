@@ -1,5 +1,5 @@
  &input
-   fildyn='',        ! Specify fildyn name the same as in AlAs.ph.in
+   fildyn='',        ! Specify fildyn name the same as in ph.AlAs.in
    zasr='simple', 
    flfrc='AlAs444.fc'
  /

@@ -4,7 +4,7 @@ Phonons at Gamma
   tr2_ph = 1.0d-14,
   amass(1) = 26.98,
   amass(2) = 74.92,
-  outdir='./out'
+!  outdir='./tmp'
   fildyn='AlAs.dyn',
   epsil = .true.
  /
