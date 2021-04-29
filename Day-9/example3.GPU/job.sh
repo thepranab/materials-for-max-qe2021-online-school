@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --ntasks-per-node=2     # number of tasks per node
-#SBATCH --ntasks-per-socket=2   # number of tasks per socket
-#SBATCH --cpus-per-task=8      # number of HW threads per task (equal to OMP_NUM_THREADS*4)
-#SBATCH --gres=gpu:2            # this refers to the number of requested gpus per node, and can vary between 1 and 4
+#SBATCH --ntasks-per-node=2     # number of MPI per node
+#SBATCH --ntasks-per-socket=2   # number of MPI per socket
+#SBATCH --cpus-per-task=8       # number of HW threads per task (equal to OMP_NUM_THREADS*4)
+#SBATCH --gres=gpu:2            # this refers to the number of requested gpus per node
 #SBATCH --mem=230000MB
 #SBATCH --time 00:10:00         # format: HH:MM:SS
 #SBATCH -A cin_QEdevel1_4 

@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --nodes=1              # number of nodes
-#SBATCH --ntasks-per-node=16     # number of tasks per node
+#SBATCH --ntasks-per-node=16   # number of MPI per node
 #SBATCH --cpus-per-task=4      # number of HW threads per task (equal to OMP_NUM_THREADS*4)
 #SBATCH --mem=230000MB
-#SBATCH --time 00:30:00         # format: HH:MM:SS
+#SBATCH --time 00:30:00        # format: HH:MM:SS
 #SBATCH -A cin_QEdevel1_4 
 #SBATCH -p m100_usr_prod 
 #SBATCH -J qeschool
