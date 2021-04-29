@@ -12,6 +12,6 @@
 
         mpirun -np 2 ph.x < ph.AlAs.in > ph.AlAs.out
 
-3. Impose the acoustic sum rule at the Gamma point and add the non-analitic LO-TO splitting
+3. Impose the acoustic sum rule at the Gamma point and add the non-analytic LO-TO splitting
 
         mpirun -np 2 dynmat.x < dynmat.AlAs.in > dynmat.AlAs.out
