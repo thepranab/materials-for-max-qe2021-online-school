@@ -1,6 +1,6 @@
 # Preparing QE
 
-We will first prepare an HPC ready installation of QE. This exercise will show how to compile QE and check for relevant libraries in the context of standard or accelerated systems.
+We will first prepare an HPC ready installation of QE. This exercise will show how to compile QE and check for relevant libraries in the context of standard and accelerated systems.
 
 ------
 
@@ -9,10 +9,10 @@ We will first prepare an HPC ready installation of QE. This exercise will show h
 Download the last release, extract it and rename it with the commands below:
 
 ~~~~~{.bash}
-    wget https://gitlab.com/QEF/q-e/-/archive/qe-6.7MaX-Release/q-e-qe-6.7MaX-Release.tar.bz2
-    tar xjf q-e-qe-6.7MaX-Release.tar.bz2
-    mv q-e-qe-6.7MaX-Release qe-cpu
-    cd qe-cpu
+wget https://gitlab.com/QEF/q-e/-/archive/qe-6.7MaX-Release/q-e-qe-6.7MaX-Release.tar.bz2
+tar xjf q-e-qe-6.7MaX-Release.tar.bz2
+mv q-e-qe-6.7MaX-Release qe-cpu
+cd qe-cpu
 ~~~~~
 
 ----
@@ -21,17 +21,19 @@ For the CPU version we will use hpc-sdk and SpectrumMPI which are a good combina
 The FFTW library is also required. The environment is setup using the following modules. 
 
 ~~~~~{.bash}
-    module purge
-    module load hpc-sdk/2020--binary spectrum_mpi/10.3.1--binary fftw/3.3.8--spectrum_mpi--10.3.1--binary  
+module purge
+module load hpc-sdk/2020--binary spectrum_mpi/10.3.1--binary fftw/3.3.8--spectrum_mpi--10.3.1--binary  
 ~~~~~
 
 ---
 
-Configure QE with
+Configure QE with the following option, that will select PGI compilers (now rebranded hpc-sdk) and SpectrumMPI
 
 ~~~~~{.bash}
-     ./configure  CC=pgcc F77=pgf90 FC=pgf90 F90=pgf90 MPIF90=mpipgifort
+./configure  CC=pgcc F77=pgf90 FC=pgf90 F90=pgf90 MPIF90=mpipgifort
 ~~~~~
+
+---
 
 1. **...check that relevant libraries have been detected**, namely on this system, blas, lapack from hpc-sdk and fftw3:
 
@@ -47,11 +49,11 @@ If you plan to run large simulations or you happen to run with accelerators, Ope
 
 ---
 
-We will only need `pw.x` so we compile it with the command
+We will only benchmark `pw.x`. Let's compile it with the command
 
     make -j pw
 
-Enjoy some tea or coffe while you wait 3 minutes or so.
+Now enjoy tea or coffe while you wait 3 minutes or so.
 
 ---
 

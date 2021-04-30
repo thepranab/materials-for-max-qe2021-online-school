@@ -52,7 +52,7 @@ You should be able to produce a plot similar to this one:
 
 ![](pool.png)
 
-Congrats! With the same computational resources, the time to solution is almost halved!
+Congrats! With the same computational resources, the time to solution is reduced by 1/3!
 
 ---
 
@@ -70,16 +70,20 @@ In this second part we want to speedup the code by solving the dense eigenvalue 
 
 2. Inspect the beginning of the output file and look for this message
 
+```
+Subspace diagonalization in iterative solution of 
+the eigenvalue problem:
+one sub-group per band group will be used
+custom distributed-memory algorithm 
+(size of sub-group:  2*  2 procs)
+```
 
-     Subspace diagonalization in iterative solution of the eigenvalue problem:
-     one sub-group per band group will be used
-     custom distributed-memory algorithm (size of sub-group:  2*  2 procs)
+---
 
 3. Check the time to solution. Did you manage to reduce the WALL time?
 
 Unfortunately you'll notice that the simulation is actually **taking longer**.
 
--------
 
 There are two reasons for this:
 

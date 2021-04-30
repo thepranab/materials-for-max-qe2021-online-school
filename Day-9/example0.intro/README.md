@@ -2,7 +2,7 @@
 
 This exercise is to provide some basic practical notions about how GPU acceleration works.
 
-The source file code_cpu.f90 is a minimal program to perform a matrix-matrix product on the CPU using the DGEMM subroutine from the BLAS libraries.
+The source file `code_cpu.f90` is a minimal program to perform a matrix-matrix product on the CPU using the DGEMM subroutine from the BLAS libraries.
 
 
 
@@ -23,7 +23,7 @@ In this case you will be using the BLAS libraries provided with the nvfortran co
 
 ---
 
-The source file code_gpu.f90 does the same calculation as code_cpu.f90, but on the GPU, using the cuDGEMM subroutine from the cuBLAS libraries.
+The source file `code_gpu.f90` does the same calculation as `code_cpu.f90`, but on the GPU, using the cuDGEMM subroutine from the cuBLAS libraries.
 In order to compile the code you load the CUDA module
 
 	module load autoload cuda
@@ -50,14 +50,15 @@ nvfortran -o code_gpu.x code_gpu.f90 -Mcuda -Mcudalib=cublas
 
 Unfortunately in Quantum ESPRESSO things are a bit more complicated than this, because often the matrices are inizialized on the CPU and then need to be 
 moved to the GPU in order to perfom the computations. Sometimes also the result of the computation needs to be moved back to the CPU memory. 
+
 This operations are usually referred to as "off-loadings" or "data transfer" between host and device memories.
-The source code code_mix.f90 shows this in a very simplified manner.  
+The source code `code_mix.f90` shows this in a very simplified manner.  
 
 ---
 
-1. Have a look at the code_mix.f90 file and find the data transfers between host and device memories.
+1. Have a look at the `code_mix.f90` file and find the data transfers between host and device memories.
 
-2. Launch code_mix and code_gpu for large matrix sizes, and compare the elapsed times. What can you say? 
+2. Launch `code_mix` and `code_gpu` for large matrix sizes, and compare the elapsed times. What can you say? 
 
 ~~~~~bash
 ./code_mix.x SIZE
