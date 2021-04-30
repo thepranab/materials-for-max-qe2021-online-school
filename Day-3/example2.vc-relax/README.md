@@ -32,6 +32,17 @@ Steps to perform:
 
        xcrysden --pwo pw.Zn.vc-relax.out
 
+5. You can run the full 2D scan over the two parametres with
+
+       pwtk Zn-scan.pwtk
+
+   This takes somewhat longer as the self-consistent DFT cycle is executed
+   over several pairs of a, c.
+
+The resulting potential-energy-surface can be visualized as:
+
+       gnuplot plot2D.gp
+
 
 ### Example-2: molecular crystal of urea
 ----------------------------------------
