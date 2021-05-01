@@ -1,15 +1,15 @@
-# Optimize CPU execution
+# Exercise 2: optimize CPU execution
 
 In this section we only make use of CPUs and try to optimize the time to solution keeping the amount of compute power fixed.
 
--------
+------------------------------------------------------------------------
 
 ## 1. Pool parallelism
 
 Optimize the number of kpoint pools, starting with 1 up to 8 (what are the admissible values for this option?). 
 The jobscript file to be used on Marconi100 is already available in this folder and is also reported below for your convenience.
 
----
+------------------------------------------------------------------------
 
 ~~~~~{.bash}
 #!/bin/bash
@@ -34,7 +34,7 @@ export OMP_NUM_THREADS=1
 mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee no_options
 ~~~~~
 
--------
+------------------------------------------------------------------------
 
 1. First, **submit the job as is**, with npool set to 1. 
 2. Second, **open the job-script file** (`job.sh`) and **change the number of pools to be used `-npool X`**, with X={2,4,8}. Don't forget to rename the output file as well.
@@ -44,9 +44,13 @@ The execution time can be obtained by looking at one of the last lines of the ou
 
     PWSCF        :   5m53.84s CPU   5m58.18s WALL
 
-the WALL time is the value you want to note down (if you wonder what CPU time is, [check wikipedia](https://en.wikipedia.org/wiki/CPU_time) ).
+the WALL time is the value you want to note down 
+(the CPU time is the amount of time spent by the CPU processing `pw.x` 
+instructions, which is a considerable portion of the whole execution time,
+but neglects, for example, I/O. 
+For more details [check wikipedia](https://en.wikipedia.org/wiki/CPU_time)).
 
--------
+------------------------------------------------------------------------
 
 You should be able to produce a plot similar to this one:
 
@@ -54,13 +58,13 @@ You should be able to produce a plot similar to this one:
 
 Congrats! With the same computational resources, the time to solution is reduced by 1/3!
 
----
+------------------------------------------------------------------------
 
 Pool parallelism can be actually much better than what you obtained in this example.
 Indeed for this small input file the parallelization on plane waves
 is good enough, especially because all our MPI processes reside on a single node and inter-process communication is fast.
 
--------
+------------------------------------------------------------------------
 
 ## 2. Parallel diagonalization
 
@@ -78,7 +82,7 @@ custom distributed-memory algorithm
 (size of sub-group:  2*  2 procs)
 ```
 
----
+------------------------------------------------------------------------
 
 3. Check the time to solution. Did you manage to reduce the WALL time?
 

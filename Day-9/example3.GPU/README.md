@@ -1,9 +1,9 @@
-# Running with GPUs
+# Exercise 3: running with GPUs
 
 To run the accelerated version you are supposed to couple **each MPI with a single GPU**. 
 Therefore this time your jobscript is setup to request **two MPI processes and 2 GPUs** with your submission script.
 
----
+------------------------------------------------------------------------
 
 The jobscript file to be used on Marconi100 is already available in this folder and is also reported below for your convenience.
 
@@ -84,7 +84,7 @@ For small inputs, one can possibly obtain some additional performance by oversub
 
 Try to increase the number of MPI processes used to run this job by changing the jobscript as shown below:
 
----
+------------------------------------------------------------------------
 
 
 
@@ -115,7 +115,7 @@ Try to increase the number of MPI processes used to run this job by changing the
 
 ## Compare with theoretical performance
 
-The ratio between the peak performance of the GPU and the CPU is about a factor 10. 
+The ratio between the peak performance of the GPU and the CPU is about a factor 20. 
 
 1. **Evaluate the ratio between the best time to solution of your CPU and GPU tests.**
    Do your results reproduce the ideal ratio? Why not?
