@@ -4,12 +4,15 @@ USE cublas  ! cuBLAS libraries
 implicit none
   character(10) :: arg
   integer :: n, i, j
-  real(8), parameter :: ONE = 1.0d0, ZERO=0.0d0
-  real(8), allocatable :: A(:,:), B(:,:), C(:,:)
+  double precision, parameter :: ONE = 1.0d0, ZERO=0.0d0
+  double precision, allocatable :: A(:,:), B(:,:), C(:,:)
   attributes(device) :: A, B, C                      ! matrices on device
-  real(8) :: alpha, beta, trace
+  double precision :: alpha, beta, trace
   integer :: time
-  integer :: t1, t2
+  integer :: t1, t2, t3, t4
+  integer :: istat
+
+  t1 = time()
 
 ! get n from command line 
   call get_command_argument(1, arg)  
@@ -36,11 +39,13 @@ implicit none
   end do 
   write(*,'(A,f24.6)') 'Check init: ', trace 
 
-  t1 = time()
+  istat = cudaDeviceSynchronize()
+  t2 = time()
 
   call DGEMM('N', 'N', n, n, n, alpha, A, n, B, n, beta, C, n)  ! this is now a cuDGEMM 
 
-  t2 = time()
+  istat = cudaDeviceSynchronize()
+  t3 = time()
 
   trace = ZERO 
 !$cuf kernel do(1)
@@ -49,9 +54,14 @@ implicit none
       trace = trace + C(i,j)
     end do 
   end do 
-  write(*,'(A,f24.6)') 'Check trace: ', trace 
-  write(*,'(A, I5)') 'Clock time elapsed: ', t2 - t1
-  
+
   deallocate( A, B, C) 
+
+  istat = cudaDeviceSynchronize()
+  t4 = time()
+
+  write(*,'(A,f24.6)') 'Check trace: ', trace 
+  write(*,'(A, I5)') 'Full time:    ', t4 - t1
+  write(*,'(A, I5)') 'Product time: ', t3 - t2
 
 end program

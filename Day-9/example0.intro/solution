@@ -18,6 +18,8 @@ nvfortran -o code_mix.x code_mix.f90    -Mcuda -Mcudalib=cublas
 SIZE=${1}
 
 ./code_cpu.x ${SIZE}   
+echo ' '
 ./code_gpu.x ${SIZE}   
+echo ' '
 ./code_mix.x ${SIZE}   
 
