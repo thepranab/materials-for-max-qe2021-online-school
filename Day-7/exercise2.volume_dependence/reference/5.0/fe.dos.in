@@ -1,0 +1,6 @@
+ &dos
+    outdir='./tempdir/',
+    prefix='fe50',
+    fildos='fe50.dos',
+    Emin=10.0, Emax=30.0, DeltaE=0.05
+ /

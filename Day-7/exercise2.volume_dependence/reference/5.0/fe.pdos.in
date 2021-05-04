@@ -1,0 +1,6 @@
+ &projwfc
+    outdir='./tempdir/',
+    prefix='fe50'
+    Emin=15.0, Emax=30.0, DeltaE=0.1
+    !ngauss=1, degauss=0.02
+ /
