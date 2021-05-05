@@ -17,7 +17,8 @@ installdir=$(pwd)
 $SUDO $APT update
 $SUDO $APT install \
       virtualbox-guest-utils virtualbox-guest-x11 \
-      ssh rsync make gfortran gcc quantum-espresso xcrysden \
+      ssh sshpass openconnect rsync \
+      make gfortran gcc quantum-espresso xcrysden \
       libblas-dev libfftw3-dev liblapack-dev openmpi-common libopenmpi-dev \
       tcllib tk iwidgets4 bwidget \
       vim emacs gnuplot imagemagick mencoder bc\
@@ -45,11 +46,13 @@ fi
 
 tmp_pkgs=$qemodes.tar.gz
 opt_pkgs="$pwgui.tgz $pwtk.tar.gz" 
+
 # DO NOT TOUCH
 
-$SUDO cp ./ev.x /usr/bin/
-
 $SUDO mkdir -p /opt/bin
+
+$SUDO cp ./ev.x /usr/bin/
+$SUDO cp ./sissa-openconnect /opt/bin/
 
 function tar_open() {
     if test $# -ne 2; then
@@ -144,14 +147,16 @@ else
 fi
 
 # define remote HPC aliases environmental variables
-cp $installdir/remote.sh $HOME/.bash_hpc
-if test "x$(grep bash_hpc $HOME/.bashrc)" == "x"; then
+if test "x$(grep post-install/hpc.rc $HOME/.bashrc)" == "x"; then
     echo '
 # source HPC functions and aliases
-. $HOME/.bash_hpc
+if test -f $HOME/QE-2021/post-install/hpc.rc; then
+   # N.B. hpc.rc is a link to one of arnes.rc, ictp.rc, or sissa.rc
+   . $HOME/QE-2021/post-install/hpc.rc
+fi
 ' >> $HOME/.bashrc
 else
-    echo "~/.bash_hpc already sources from ~/.bashrc"
+    echo "post-install/hpc.rc already sources from ~/.bashrc"
 fi
 
 # fix for firefox add-on so it can open *md files
@@ -175,11 +180,22 @@ EOF
 else
     echo "default apps already set in mimeapps.list, skipping ... " 
 fi
+
+# install ovito
+(
+    cd /tmp
+    wget https://www.ovito.org/download/master/ovito-basic-3.4.4-x86_64.tar.xz
+    tar Jxvf ovito-basic-3.4.4-x86_64.tar.xz -C /opt
+    rm -f ovito-basic-3.4.4-x86_64.tar.xz
+    $SUDO ln -s /opt/ovito-basic-3.4.4-x86_64/bin/ovito /opt/bin/ovito
+)
+
 #
 # clone exercises git repository 
 #
 git clone $exercises $HOME/QE-2021
 
+# make Day-X links
 for i in {1..10}; do
     ln -s  $HOME/QE-2021/Day-$i  $HOME/Desktop/Day-$i
 done

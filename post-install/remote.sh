@@ -1,7 +1,6 @@
-NPROC=${NPROC:-8}
-
-HPC_HOST=hpc
-sbatch_options="--nodes=1 --ntasks=\$NPROC --ntasks-per-node=\$NPROC --reservation=qe2021"; # --mem-per-cpu=2048M
+NPROC=${NPROC:-20}
+HPC_HOST=${HPC_HOST:-hpc}
+sbatch_options=${sbatch_options:-"--nodes=1 --ntasks=\$NPROC --ntasks-per-node=\$NPROC"}
 
 lastarg() {
     # get the last argument
@@ -156,8 +155,12 @@ error while executing: remote_pwtk $@
     script=submit.$input
     HERE="~${PWD#$HOME}"
 
-    echo "SLURM {
-$(cat $input)
+    opts=$(eval echo $sbatch_options)
+    
+    echo "
+SLURM $opts {
+prefix mpirun -np $NPROC
+import $input
 }" > $script
 
     hpc_mkcwd
@@ -165,7 +168,7 @@ $(cat $input)
 
     echo "
 ------------------------------------------------------------------------
-Submitting to HPC cluster:  
+Submitting to HPC cluster (requested number of processors = $NPROC):  
 
    pwtk $input > $log
 ------------------------------------------------------------------------

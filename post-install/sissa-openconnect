@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if test ! -f ~/.ssh/user -a ! -f ~/.ssh/passwd; then
+    echo "
+Improper environment. Aborting ...
+"
+    exit 1
+fi
+   
+user=$(cat ~/.ssh/user)
+
+echo "
+You will need to enter sudo password. Please type:  qe2021
+"
+
+cat ~/.ssh/passwd | sudo openconnect -b --user=$user --passwd-on-stdin vpn.sissa.it 

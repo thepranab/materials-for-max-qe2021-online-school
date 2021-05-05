@@ -1,0 +1,7 @@
+# SLURM options for HPC cluster @ ICTP (argo.ictp.it) in Trieste
+
+export NPROC=32
+export sbatch_options="--nodes=1 --ntasks-per-node=\$NPROC --cpus-per-task=1 --account=cmsp --partition=cmsp --time=00:30:00 --hint=nomultithread --reservation=qe2021"
+
+source $HOME/QE-2021/post-install/remote.sh
+

@@ -1,0 +1,7 @@
+# SLURM options for HPC cluster @ SISSA in Trieste
+
+export NPROC=20
+export sbatch_options="--nodes=1 --ntasks-per-node=\$NPROC --cpus-per-task=1 --partition=regular2 --reservation=qe2021"
+
+source $HOME/QE-2021/post-install/remote.sh
+

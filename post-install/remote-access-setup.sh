@@ -6,12 +6,17 @@
 userinput() {
     echo "
 Please input your $1:"
-    read reply 
-    echo -n "The $1 is \"$reply\". Is this correct [y|n] : "
+    read reply
+    
+    echo -n "
+The $1 is \"$reply\". Is this correct [y|n] : "
     read answer
+
     if test "$answer" != "y"; then
-	echo "The reply $reply was wrong, exiting ..."
-	exit 1 
+	#echo "The reply $reply was wrong, exiting ..."
+	#exit 1
+        echo "Retrying ..."
+        userinput $1
     fi
 } 
 
@@ -34,39 +39,81 @@ Generating ssh-key in $pathtokey
 # let's make the ssh-key that will be used to connect to HPC
 mkdir -p $pathtokey
 hpckey="$pathtokey/id_rsa_hpc"
-ssh-keygen -t rsa -f $hpckey
+#ssh-keygen -t rsa -f $hpckey
 
-#
-# 1. let's make a ssh alias that will link the "hpc" with the actual HPC computer
-#
-# 2. this way all the users will only use "hpc" alias, irrespectively of the actual supercomputer used.
-# 
-cat <<EOF >> $HOME/.ssh/config
+
+ssh_alias() {    
+    # 1. let's make a ssh alias that will link the "hpc" with the actual HPC computer
+    #
+    # 2. this way all the users will only use "hpc" alias,
+    #    irrespectively of the actual supercomputer used.
+    
+    cat >> $HOME/.ssh/config <<EOF 
 Host hpc
  HostName $host 
  User $user
  IdentityFile $hpckey
 EOF
-
+}
+ 
 arnes=$(echo $host | grep arnes.si)
+ictp=$(echo $host | grep ictp.it)
+sissa=$(echo $host | grep sissa.it)
 
-if test "x$arnes" = "x"; then
-    #
-    # default
-    #
-    echo "
-BEWARE: you will have to input your password twice
-" 
-
-    scp $hpckey.pub hpc:~/
-    ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
+hpc_link() {
+    # make a link to hpc.rc
+    ln -sf $HOME/QE-2021/post-install/$1 $HOME/QE-2021/post-install/hpc.rc
+}
+username() {
+    echo $user > ~/.ssh/user
+    chmod 600 ~/.ssh/user
+}
+passwd() {
+    userinput password
+    passwd=$reply
+    echo $passwd > ~/.ssh/passwd
+    chmod 600 ~/.ssh/passwd
+}
+copy_sshkey() {
+    sshpass -f ~/.ssh/passwd scp $hpckey.pub hpc:~/
+    sshpass -f ~/.ssh/passwd ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
 
     echo "
 Please access the HPC cluster by typing: 
 
 ssh hpc
 "
-else
+}
+
+
+if test "x$ictp" != "x"; then
+    #
+    # ICTP
+    #
+    ssh_alias
+    hpc_link ictp.rc
+    passwd
+    copy_sshkey
+
+elif test "x$sissa" != "x"; then
+    #
+    # SISSA
+    #
+    ssh_alias
+    hpc_link sissa.rc 
+    username
+    passwd    
+    ./sissa-openconnect
+    sleep 2; echo "... please wait a bit ..."; sleep 2
+    copy_sshkey
+    
+elif test "x$arnes" != "x"; then
+    #
+    # ARNES
+    #
+    ssh_alias
+    hpc_link arness.rc
+    
     #
     # peculiarity for the ***.arnes.si HPC cluster
     #
@@ -98,5 +145,14 @@ After the ssh-key was successfully entered to https://fido.sling.si, wait
 for a while and then try to access the HPC cluster by typing: 
 
 ssh hpc
+"
+else
+    #
+    # unsupported HPC
+    #
+    echo "
+WARNING: It seems that you mistyped the name of the HPC computer.
+
+Please retry and execute $0 again.
 "
 fi
