@@ -39,7 +39,7 @@ Generating ssh-key in $pathtokey
 # let's make the ssh-key that will be used to connect to HPC
 mkdir -p $pathtokey
 hpckey="$pathtokey/id_rsa_hpc"
-#ssh-keygen -t rsa -f $hpckey
+ssh-keygen -t rsa -f $hpckey
 
 
 ssh_alias() {    
@@ -155,4 +155,10 @@ WARNING: It seems that you mistyped the name of the HPC computer.
 
 Please retry and execute $0 again.
 "
+    exit 1
 fi
+
+echo "
+For this setup to take the full effect, it is recommended to close
+this terminal window and open a new one.
+"
