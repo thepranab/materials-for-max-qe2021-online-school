@@ -13,7 +13,7 @@ if { [::pwtk::pwi::getNAtoms] == 0 } {
 }
 
 
-# auxiliary procedure
+# auxiliary procedures
 proc runPROJWFC_and_copy_xml {name} {
     # ARGUMENT
     #   name -- name to be used in I/O files
@@ -26,9 +26,21 @@ proc runPROJWFC_and_copy_xml {name} {
     #   The name of the copied atomic_proj.xml file
     
     runPROJWFC projwfc.$name.in
-    
+
     set prefix [::pwtk::input::namelistGetVarValue CONTROL prefix trim]
-    file copy -force [outdir]/$prefix.save/atomic_proj.xml proj.$name.xml
+
+    # copy atomic_proj.xml file: beware outdir can be implicit !
+    set xml [outdir]/$prefix.save/atomic_proj.xml    
+    if { ! [file exists $xml] } {
+        global env
+        if { [info exists env(ESPRESSO_TMPDIR)] } {
+            set xml $env(ESPRESSO_TMPDIR)/$prefix.save/atomic_proj.xml
+        }
+        if { ! [file exists $xml] } {
+            set xml ./$prefix.save/atomic_proj.xml
+        }        
+    }
+    file copy -force $xml proj.$name.xml
     return proj.$name.xml
 }
 
