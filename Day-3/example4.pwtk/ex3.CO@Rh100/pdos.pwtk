@@ -13,7 +13,7 @@ if { [::pwtk::pwi::getNAtoms] == 0 } {
 }
 
 
-# auxiliary procedures
+# auxiliary procedure
 proc runPROJWFC_and_copy_xml {name} {
     # ARGUMENT
     #   name -- name to be used in I/O files
@@ -28,18 +28,10 @@ proc runPROJWFC_and_copy_xml {name} {
     runPROJWFC projwfc.$name.in
 
     set prefix [::pwtk::input::namelistGetVarValue CONTROL prefix trim]
-
+    if { $prefix == {} } { set prefix pwscf }
+    
     # copy atomic_proj.xml file: beware outdir can be implicit !
-    set xml [outdir]/$prefix.save/atomic_proj.xml    
-    if { ! [file exists $xml] } {
-        global env
-        if { [info exists env(ESPRESSO_TMPDIR)] } {
-            set xml $env(ESPRESSO_TMPDIR)/$prefix.save/atomic_proj.xml
-        }
-        if { ! [file exists $xml] } {
-            set xml ./$prefix.save/atomic_proj.xml
-        }        
-    }
+    set xml [outdir_query -hard]/$prefix.save/atomic_proj.xml    
     file copy -force $xml proj.$name.xml
     return proj.$name.xml
 }
@@ -96,10 +88,10 @@ input_pushpop {
 	set part_xml [runPROJWFC_and_copy_xml CO]
 
 	
-	# plot all molecular-orbitals of CO (valence and LUMO) 
+	# plot all signed molecular-orbital densities of CO (valence and LUMO) 
 	
 	input_pushpop {
-	    printTitle MOs "Calculating all MOs of CO fragment"
+	    printTitle MOs "Calculating all MO densities of CO fragment"
 	    
 	    # pw.x calc with gamma K-point (required for signed psi^2)
 	    outdir_postfix CO.gamma
