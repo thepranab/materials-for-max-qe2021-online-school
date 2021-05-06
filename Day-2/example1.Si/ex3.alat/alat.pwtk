@@ -27,7 +27,7 @@ close $fid
 exec gnuplot plot.gp
 
 # let's run ev.x to get the precise lattice parameter
-exec ev.x < ev.murnaghan.in 
+catch { exec ev.x < ev.murnaghan.in }
 
 # printout the results
 print [readFile ev.murnaghan.out]
