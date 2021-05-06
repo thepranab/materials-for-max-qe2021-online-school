@@ -46,7 +46,10 @@ nvfortran -o code_gpu.x code_gpu.f90 -Mcuda -Mcudalib=cublas
 	./code_gpu.x SIZE
 ~~~~~
 
-Compare the "Product times" with the theoretical peak performance reported for Marconi100: 0.8 TFlops per node (32 cores) and 7.8 TFlops per GPU 
+Compare the "Product times" with the theoretical peak performance reported for Marconi100:
+
+* 0.8 TFlops per node (32 cores) and,
+* 7.8 TFlops per GPU
 
 ------------------------------------------------------------------------
 
