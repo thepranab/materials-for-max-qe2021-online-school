@@ -1,46 +1,75 @@
 # How to run calculations remotely on the HPC cluster
 
 Some examples take too long on a laptop computer, hence they will be
-run remotely on the HPC cluster. Several utility commands have been
-implemented specially for the QE-2021 school to aid at submitting jobs
-to HPC cluster. These are:
+run remotely on the HPC cluster. The conventional way to run
+calculations remotely is to:
 
-* `remote_mpirun` -- this is like `mpirun`, but it automatically
+1. Copy the need files to remote computer via `scp` or `rsync`.
+2. Log to the remote computer via `ssh`.
+3. Create a batch shell-script.
+4. Submit the script to batch queuing system (e.g. Slurm).
+
+**BUT** to avoid the above four-steps and to make remote running as easy
+as possible, **read the section below**, where it is explained how to
+run remotely with a single command!
+
+## Convenience commands for remote running during the QE-2021 school
+
+Several utility commands have been implemented specifically for the
+QE-2021 school to aid at submitting jobs to HPC cluster (hence they
+are non-standard). These are:
+
+* **`remote_mpirun`** -- this is like `mpirun`, but it automatically
   submits the calculation to a queuing system on the "hpc" HPC
   system. 
   
   For example, a `pw.x` calculation can be submitted as:
   
-        remote_mpirun pw.x -inp pw.file.in
+        remote_mpirun pw.x -in pw.file.in
 		
-  where `pw.file.in` is the name of the `pw.x` input file. **BEWARE:**
-  stdin/stdout redirection does not work for `remote_mpirun`,
-  hence you must use `-inp` option (i.e., do note use `<`
-  redirection operator). You do not need to specify the number of
-  processors, because the default is set to `-np 8`.
+  where `pw.file.in` is the name of the `pw.x` input file. 
+  
+  **BEWARE:** 
+  1. stdin/stdout redirection does not work for `remote_mpirun`, hence
+  you must use the `-in` (or `-inp`) option (i.e., do note use the `<`
+  redirection operator).
+
+  2. You do not need to specify the number of processors, because
+  default is set to 20 processors.
+  
+  3. The number of processors can be requested via the `NPROC`
+     variable as, e.g.:
+     
+          NPROC=8 remote_mpirun pw.x -in pw.file.in
 
 
-* `remote_pwtk` -- this automatically submits the PWTK
+* **`remote_pwtk`** -- this automatically submits the PWTK
   script to queuing system on the "hpc" HPC system. Example:
   
         remote_pwtk script.pwtk
 	
-  where `script.pwtk` is the name of the PWTK script.
+  where `script.pwtk` is the name of the PWTK script.  The number
+  of processors (default is `NPROC=20`) can be requested via the
+  `NPROC` variable as, e.g.:
+
+        NPROC=8 remote_pwtk script.pwtk
 
 
-* `remote_sbatch` -- automatically submits the Unix-shell
+* **`remote_sbatch`** -- automatically submits the Unix-shell
   script to queuing system on the "hpc"  HPC system. Example:
 
         remote_sbatch script.sh
 		
-  where `script.sh` is the name of the Unix-shell script.
-  
-#### Few other utility commands for "remote" usage
+  where `script.sh` is the name of the Unix-shell script. The number
+  of processors, different from default is requested via the
+  `NPROC` variable (see above).
 
-* `hpc` -- this makes `ssh` to "hpc" HPC login node, such that the
+## Few other utility commands for "remote" usage
+
+* **`hpc`** -- this makes `ssh` to "hpc" HPC login node, such that the
   user will be located in the same directory as used locally
 
-* `rsync_to_hpc` -- copies specified files to the "hpc"
+* **`rsync_to_hpc`** -- copies specified files to the "hpc"
   cluster to the same directory as is currently
   used locally. Example:
 
@@ -49,12 +78,10 @@ to HPC cluster. These are:
   This will copy all `*.in` files from local directory to the
   same directory on the "hpc" cluster.
 
-* `rsync_from_hpc` -- download the specified file from the
+* **`rsync_from_hpc`** -- download the specified file from the
   "hpc" cluster from the same directory as is
   currently used locally. Example:
 
         rsync_from_hpc '*.out'
 		
   This will copy all `*.out` files from the "hpc" cluster.
-
-
