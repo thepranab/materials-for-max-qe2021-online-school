@@ -53,6 +53,7 @@ $SUDO mkdir -p /opt/bin
 
 $SUDO cp ./ev.x /usr/bin/
 $SUDO cp ./sissa-openconnect /opt/bin/
+$SUDO cp ./kill-openconnect  /opt/bin/
 
 function tar_open() {
     if test $# -ne 2; then
