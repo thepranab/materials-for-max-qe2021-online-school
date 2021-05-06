@@ -9,6 +9,10 @@ if test -e energies.dat
 then 
 	mv energies.dat energies.dat_old
 fi
+if test -e magnetization.dat
+then
+	mv magnetization.dat magnetization.dat_old
+fi
 for latt in 4.5 4.6 4.7 4.8 4.9 5.0 5.1 5.2 5.3 5.39 5.5 5.6 5.7 5.8 5.9 6.0; do 
 echo 'running ' $latt
 cat >fe.scf.$latt.in <<EOF 
@@ -41,5 +45,6 @@ EOF
 mpirun -np 2 $PW  -nk 2 -i  fe.scf.$latt.in  >fe.scf.$latt.out  
 echo $latt 'done'
 echo $latt `grep ! fe.scf.$latt.out | awk '{print "   "$5}'` >> energies.dat 
-echo $latt `grep Magnetic\ moment -A 1 fe.scf.$latt.out | grep atom\ \ \ 1 | awk '{print "   "$7}'` >> magmom.dat
+#echo $latt `grep Magnetic\ moment -A 1 fe.scf.$latt.out | grep atom\ \ \ 1 | awk '{print "   "$7}'` >> magmom.dat
+echo $latt `grep total\ magnetization fe.scf.$latt.out | tail -1 | awk '{print "   "$4}'` >> magnetization.dat 
 done 
