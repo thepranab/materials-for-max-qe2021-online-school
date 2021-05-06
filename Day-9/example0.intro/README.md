@@ -17,7 +17,7 @@ and then load the nvfortran compiler with
 ------------------------------------------------------------------------
 
 Then, you can compile the code appending the -lblas flag in order to link the BLAS libraries. 
-In this case you will be using the BLAS libraries provided with the nvfortran compiler in the hpc-sdk package.
+In this case you will be using the BLAS libraries provided with the `nvfortran` compiler in the `hpc-sdk` package.
 
 	nvfortran -o code_cpu.x code_cpu.f90  -lblas 
 
@@ -46,12 +46,12 @@ nvfortran -o code_gpu.x code_gpu.f90 -Mcuda -Mcudalib=cublas
 	./code_gpu.x SIZE
 ~~~~~
 
-    Compare the "Product times" with the theoretical peak performance reported for Marconi100: 0.8 TFlops per node (32 cores) and 7.8 TFlops per GPU 
+Compare the "Product times" with the theoretical peak performance reported for Marconi100: 0.8 TFlops per node (32 cores) and 7.8 TFlops per GPU 
 
 ------------------------------------------------------------------------
 
-Unfortunately in Quantum ESPRESSO things are a bit more complicated than this, because often the matrices are inizialized on the CPU and then need to be 
-moved to the GPU in order to perfom the computations. Sometimes also the result of the computation needs to be moved back to the CPU memory. 
+Unfortunately in Quantum ESPRESSO things are a bit more complicated than this, because often the matrices are initialized on the CPU and then need to be 
+moved to the GPU in order to perform the computations. Sometimes also the result of the computation needs to be moved back to the CPU memory. 
 
 This operations are usually referred to as "off-loadings" or "data transfer" between host and device memories.
 The source code `code_mix.f90` shows this in a very simplified manner.  
@@ -62,12 +62,16 @@ The source code `code_mix.f90` shows this in a very simplified manner.
 
 2. Launch `code_mix` and `code_gpu` for large matrix sizes, and compare the elapsed times. What can you say? 
 
-	./code_mix.x SIZE
+```
+    ./code_mix.x SIZEs
+```
 
 ------------------------------------------------------------------------
 
 NOTE:
 As a reference, for a matrix size of 8192, the times should be something around:
+
+```
 code_cpu.x
   Full time:       66.449  
   Product time:    63.170  
@@ -77,4 +81,4 @@ code_gpu.x
 code_mix.x
   Full time:        4.236  
   Product time:     0.365  
-
+```
