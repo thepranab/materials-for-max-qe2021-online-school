@@ -60,20 +60,19 @@ The source code `code_mix.f90` shows this in a very simplified manner.
 
 2. Launch `code_mix` and `code_gpu` for large matrix sizes, and compare the elapsed times. What can you say? 
 
+	./code_mix.x SIZE
+
 ------------------------------------------------------------------------
 
 NOTE:
-As a reference, for a matrix size of 120000, the times should be something around:
-
-```
+As a reference, for a matrix size of 8192, the times should be something around:
 code_cpu.x
-  Full time:      199
-  Product time:   193
+  Full time:       65.374  
+  Product time:    62.176  
 code_gpu.x
-  Full time:        1
-  Product time:     1
+  Full time:        0.700  
+  Product time:     0.440  
 code_mix.x
-  Full time:        7
-  Product time:     2
-```
+  Full time:        4.001  
+  Product time:     0.623 
 
