@@ -8,11 +8,10 @@ implicit none
   double precision, allocatable :: A(:,:), B(:,:), C(:,:)
   attributes(device) :: A, B, C                      ! matrices on device
   double precision :: alpha, beta, trace
-  integer :: time
-  integer :: t1, t2, t3, t4
+  real :: t1, t2, t3, t4
   integer :: istat
 
-  t1 = time()
+  call cpu_time(t1)
 
 ! get n from command line 
   call get_command_argument(1, arg)  
@@ -40,12 +39,12 @@ implicit none
   write(*,'(A,f24.6)') 'Check init: ', trace 
 
   istat = cudaDeviceSynchronize()
-  t2 = time()
+  call cpu_time(t2)
 
   call DGEMM('N', 'N', n, n, n, alpha, A, n, B, n, beta, C, n)  ! this is now a cuDGEMM 
 
   istat = cudaDeviceSynchronize()
-  t3 = time()
+  call cpu_time(t3)
 
   trace = ZERO 
 !$cuf kernel do(1)
@@ -58,10 +57,10 @@ implicit none
   deallocate( A, B, C) 
 
   istat = cudaDeviceSynchronize()
-  t4 = time()
+  call cpu_time(t4)
 
   write(*,'(A,f24.6)') 'Check trace: ', trace 
-  write(*,'(A, I5)') 'Full time:    ', t4 - t1
-  write(*,'(A, I5)') 'Product time: ', t3 - t2
+  write(*,'(A, F15.3)') 'Full time:    ', t4 - t1
+  write(*,'(A, F15.3)') 'Product time: ', t3 - t2
 
 end program
