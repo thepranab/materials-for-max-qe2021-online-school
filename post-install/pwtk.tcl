@@ -3,23 +3,30 @@
 # pwtk == PWscf's ToolKit
 #
 # This is a main configuration file for Pwtk. It contains some custom
-# definitions, such as the PWscf executables and alike.
+# definitions, e.g., directories and how to run QE executables ...
 #
 # ------------------------------------------------------------------------
 
+# get the number of available processors
+set np [exec nproc]
+while { [catch {exec mpirun -n $np echo yes}] } {
+    set np [expr { $np > 2 ? $np / 2 : 1 }]
+}
 
 #
 # HOW TO RUN QUANTUM ESPRESSO EXECUTABLES ...
 # 
 # They are run as: prefix bin_dir/program postfix
 
-prefix  ""
-postfix ""
+if { $np > 1 } {
+    prefix mpirun -n $np
+}
+#postfix ""
 
 # default directories ...
 
-outdir_prefix /tmp
-wfcdir_prefix /tmp
+outdir /tmp
+wfcdir /tmp
 
 # directory with pseudo-potentials
 
