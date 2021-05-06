@@ -38,6 +38,8 @@ implicit none
   end do 
   write(*,'(A,f24.6)') 'Check init: ', trace 
 
+  call DGEMM('N', 'N', n, n, n, ZERO, A, n, B, n, ZERO, C, n)  ! cuBLAS init time 
+
   istat = cudaDeviceSynchronize()
   call cpu_time(t2)
 

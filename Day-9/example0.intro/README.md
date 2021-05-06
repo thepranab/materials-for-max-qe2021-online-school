@@ -46,6 +46,8 @@ nvfortran -o code_gpu.x code_gpu.f90 -Mcuda -Mcudalib=cublas
 	./code_gpu.x SIZE
 ~~~~~
 
+    Compare the "Product times" with the theoretical peak performance reported for Marconi100: 0.8 TFlops per node (32 cores) and 7.8 TFlops per GPU 
+
 ------------------------------------------------------------------------
 
 Unfortunately in Quantum ESPRESSO things are a bit more complicated than this, because often the matrices are inizialized on the CPU and then need to be 
@@ -67,12 +69,12 @@ The source code `code_mix.f90` shows this in a very simplified manner.
 NOTE:
 As a reference, for a matrix size of 8192, the times should be something around:
 code_cpu.x
-  Full time:       65.374  
-  Product time:    62.176  
+  Full time:       66.449  
+  Product time:    63.170  
 code_gpu.x
-  Full time:        0.700  
-  Product time:     0.440  
+  Full time:        0.785  
+  Product time:     0.167  
 code_mix.x
-  Full time:        4.001  
-  Product time:     0.623 
+  Full time:        4.236  
+  Product time:     0.365  
 

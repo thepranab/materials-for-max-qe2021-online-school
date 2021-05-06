@@ -60,9 +60,8 @@ Congrats! With the same computational resources, the time to solution is reduced
 
 ------------------------------------------------------------------------
 
-Pool parallelism can be actually much better than what you obtained in this example.
-Indeed for this small input file the parallelization on plane waves
-is good enough, especially because all our MPI processes reside on a single node and inter-process communication is fast.
+Please consider that pool parallelism could be much more effective than this, especially when the system size is larger and calculations are distributed among multiple nodes, 
+since it can strongly reduce the slow inter-node communications.
 
 ------------------------------------------------------------------------
 
@@ -84,14 +83,14 @@ custom distributed-memory algorithm
 
 ------------------------------------------------------------------------
 
-3. Check the time to solution. Did you manage to reduce the WALL time?
+3. Check the time to solution. 
 
-Unfortunately you'll notice that the simulation is actually **taking longer**.
+In this exercise we showed an easy way to use the parallel diagonalization, exlpoiting the internal -- suboptimal -- QE libraries. 
 
+However, you might not be able to observe significant speedups since:
 
-There are two reasons for this:
+1. the eigenvalue problem is too small to take fully advantage of it,
+2. the internal QE libraries are suboptimal, whereas other libraries, e.g. Scalapack or ELPA, usually provide better performance. 
 
-1. the eigenvalue is too small to take advantage of parallel diagonalization,
-2. we didn't use optimized libraries for this task. The code is using a suboptimal parallel eigensolver. Two common options to improve in this case are linking Scalapack or ELPA libraries.
-
+Please keep in mind that for larger systems, and using optimied libraries, the parallel diagonalization is a powerful option to strongly reduce the computational time to solution. 
 

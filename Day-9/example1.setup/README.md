@@ -32,10 +32,10 @@ module load hpc-sdk/2020--binary spectrum_mpi/10.3.1--binary fftw/3.3.8--spectru
 
 ------------------------------------------------------------------------
 
-Configure QE with the following option, that will select PGI compilers (now rebranded hpc-sdk) and SpectrumMPI
+Configure QE with the following option, that will select nvfortran compilers from the hpc-sdk package and SpectrumMPI
 
 ~~~~~{.bash}
-./configure  CC=pgcc F77=pgf90 FC=pgf90 F90=pgf90 MPIF90=mpipgifort
+./configure  MPIF90=mpipgifort
 ~~~~~
 
 ------------------------------------------------------------------------
@@ -49,8 +49,7 @@ Configure QE with the following option, that will select PGI compilers (now rebr
        FFT_LIBS= -lfftw3 
 ~~~~~
 
-*Note:* we did not enable OpenMP in this case since we will be dealing with small input file.
-If you plan to run large simulations or you happen to run with accelerators, OpenMP is important and we will indeed enable it in the next section.
+*Note:* we did not enable OpenMP in this case since we will be dealing with small input files.
 
 ------------------------------------------------------------------------
 
@@ -58,7 +57,7 @@ We will only benchmark `pw.x`. Let's compile it with the command
 
     make -j pw
 
-Now enjoy tea or coffe while you wait 3 minutes or so.
+Now enjoy an espresso while you wait 3 minutes or so.
 
 ------------------------------------------------------------------------
 
@@ -67,6 +66,7 @@ Now enjoy tea or coffe while you wait 3 minutes or so.
 Now go back to the folder of example1 and download the last release of the GPU accelerated version of QE
 
 ~~~~~{.bash}
+cd ..
 wget https://gitlab.com/QEF/q-e-gpu/-/archive/qe-gpu-6.7/q-e-gpu-qe-gpu-6.7.tar.bz2
 tar xjf q-e-gpu-qe-gpu-6.7.tar.bz2
 mv q-e-gpu-qe-gpu-6.7 qe-gpu
@@ -77,19 +77,21 @@ cd qe-gpu
 
 ---
 
-For the GPU version you _must_ use the HPC-SDK which provides a CUDA Fortran compiler. The other libraries remain the same,
-except for cuda
+For the GPU version you _must_ load the cuda module together with the HPC-SDK package. The other libraries remain the same.
 
 ~~~~~{.bash}
     module purge
     module load    hpc-sdk/2020--binary    spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  cuda/11.0
 ~~~~~
 
-Configure with
+You must also specify the cuda version when launching the configure script
 
 ~~~~~{.bash}
-    ./configure CC=pgcc F77=pgf90 FC=pgf90 F90=pgf90 MPIF90=mpipgifort --enable-openmp --with-cuda=$CUDA_HOME --with-cuda-runtime=11.0 --with-cuda-cc=70 
+    ./configure MPIF90=mpipgifort --enable-openmp --with-cuda=$CUDA_HOME --with-cuda-runtime=11.0 --with-cuda-cc=70 
 ~~~~~
+
+*Note:* in the next QE releases, it will be sufficient to load only hpc-sdk, and not also cuda, in order to run and compile QE. 
+*Note:* Please note that in this case we also enabled OpenMP, which is useful when running large simulations. 
 
 ------------------------------------------------------------------------
 
@@ -104,8 +106,8 @@ Configure with
       FFT_LIBS=
 ~~~~~
 
-You'll notice that the code is using the internal version of FFTW (`-D__FFTW` instead of `-D__FFTW3`).
-This is not an issue in this case since 99% of the FFTs will be performed on the GPU with optimized CUDA libraries.
+You'll notice that FFT_LIBS field is now empty because the code is using the internal version of FFTW, rather than FFTW3 (`-D__FFTW` instead of `-D__FFTW3`).
+This is not an issue in this case since 99% of the FFTs will be performed on the GPU with optimized CUDA libraries (cuFFT).
 
 ------------------------------------------------------------------------
 

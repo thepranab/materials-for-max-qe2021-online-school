@@ -1,6 +1,6 @@
 # Exercise 3: running with GPUs
 
-To run the accelerated version you are supposed to couple **each MPI with a single GPU**. 
+To run the GPU-accelerated version you are supposed to couple **each MPI with a single GPU**. 
 Therefore this time your jobscript is setup to request **two MPI processes and 2 GPUs** with your submission script.
 
 ------------------------------------------------------------------------
@@ -19,7 +19,7 @@ The jobscript file to be used on Marconi100 is already available in this folder 
 #SBATCH -p m100_usr_prod 
 #SBATCH -J qeschool
 
-module load hpc-sdk/2020--binary spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  
+module load hpc-sdk/2020--binary spectrum_mpi/10.3.1--binary  fftw/3.3.8--spectrum_mpi--10.3.1--binary  cuda/11.0
 
 export QE_ROOT=../example1.setup/qe-gpu/
 export PW=$QE_ROOT/bin/pw.x
@@ -49,7 +49,7 @@ Moreover, this run should be much faster than any of the previous CPU tests, **t
 
 ------------------------------------------------------------------------
 
-4. Now try to **exploit the entire CPU with OpenMP**.
+4. Now try to **further improve the performance by better exploiting the CPU cores with OpenMP**.
 
 Change the environment variable set by the following command
 
@@ -63,7 +63,8 @@ with X=2,4,8.
 
 5. You'll notice a small improvement and, eventually a saturation. 
 
-Once again, OpenMP is effective only for large simulation, but in this case it is used to take advantage of idle CPU cores as much as possible.
+Since the number of MPI processes in this case is bounded by the number of GPUs, the CPU remains partially idle. 
+OpenMP can be thus used to better deploy the idle CPU cores. 
 
 ------------------------------------------------------------------------
 
@@ -74,7 +75,8 @@ You can improve the previous result with pool parallelism. This time you will be
 1. **Modify the original jobscript**, set `-npool 2`, submit the job.
 2. **Check the time to solution.**
 
-You should observe a substantial **reduction of the time to solution** which is now about **3/4 of your previous test**. This improvement is actually due to FFTs that are now performed without communications on a single GPU.
+You should observe a substantial **reduction of the time to solution** which is now about **3/4 of your previous test**. 
+This improvement is actually due to the fact that FTs are now performed without communications, on a single GPU.
 
 ------------------------------------------------------------------------
 
