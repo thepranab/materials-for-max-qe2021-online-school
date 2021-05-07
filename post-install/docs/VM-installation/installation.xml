@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="page.xsl"?>
+
+<page name="Installation">
+  <card>
+
+    <p>
+      <h1>QE-2021 Virtual Machine</h1>
+    </p>
+        
+    <p>
+      An all-inclusive <b>QE-2021 Virtual Machine</b> that contains
+      simulation software and material required for the <a
+      href="http://indico.ictp.it/event/9616/">QE-2021</a> hands-on
+      courses is available to download from these locations:
+      <blockquote>
+        <ul>
+          <li> <a href="http://qe2021.ijs.si/download/QE2021.ova">http://qe2021.ijs.si/download/QE2021.ova</a></li>
+          <li> <!--<a href="https://users.ictp.it/~igirotto/QE2021.ova">-->https://users.ictp.it/~igirotto/QE2021.ova<!--</a>--><br/>
+          (Beware that the size of the virtual machine is 2.5G)</li>
+        </ul>
+      </blockquote>
+    </p>
+    <p>
+      <i>QE-2021 Virtual Machine</i> image is the same irrespective of
+      which operating system you use (Linux, Mac OS, or Windows).
+      QE-2021 Virtual Machine depends on the <a
+      href="https://www.virtualbox.org/">VirtualBox</a> virtualization
+      software (version >= 6.0) and is based on <a
+      href="https://www.debian.org/">Debian OS</a>.
+    </p>
+    
+    <h2>Hardware requirements</h2>
+
+    <p>
+      Your computer (laptop) must support <b>virtualization</b> and
+      have about <b>10G</b> of free disk space.
+    </p>
+    
+    <h2>Installation instructions</h2>
+
+    <p>
+      To install <b>QE-2021 Virtual Machine</b> follow these steps:
+      <ol>
+
+        <li>Download and install <b><a
+        href="https://www.virtualbox.org/">VirtualBox</a></b> (click a
+        large blue "Download VirtualBox 6.1" button therein).</li>
+        
+        <li>After <b>VirtualBox</b> is installed and <b>QE-2021
+        Virtual Machine</b> downloaded from one of the above provided
+        links, import the <i>QE-2021 Virtual Machine</i> by either
+        double clicking it or from <b>File->Import Appliance</b> menu
+        of the <i>VirtualBox</i> program.</li>
+      </ol>
+    </p>
+
+    <h2>How to login</h2>
+
+    <p>
+      Once <b>QE-2021 Virtual Machine</b> is <i>imported</i> into
+      VirtualBox, click the green "Start" arrow on the VirtualBox
+      manager window. After <b>QE-2021 Virtual Machine</b> is booted,
+      login screen appears. To login use:
+      <blockquote>
+        username: <b>user</b><br/>
+        password: <b>qe2021</b><br/>
+      </blockquote>
+    </p>
+
+    <h2>Keyboard settings</h2>
+    <p>
+      By default a system is set to US keyboard. You can change this
+      or add new keyboards by going to (upper left corner of the
+      Desktop environment):
+      <b>System->Preferences->Hardware->Keyboard</b><br/>
+      <img class="snapshot" src="images/keyboard1-cr.png" width="602" height="465"/><br/>
+      The following window appears (new keyboard layouts can be added by clicking the "+Add" button):<br/>
+      <img class="snapshot" src="images/keyboard2.png" width="429" height="432"/><br/>
+      The keyboards can then be switched an the right part of the
+      top-panel:<br/>
+      <img class="snapshot" src="images/keyboard3-cr.png" width="350" height="173"/><br/>
+    </p>
+
+    <h2>Increasing the number of CPUs</h2>
+
+    <p>
+      If your computer has more than one CPU then you can increase the
+      number of CPUs that <i>QE-2021 Virtual Machine</i> will use as
+      to make the calculations run faster. This can be done as
+      follows: close the QE2021 virtual-machine and in the
+      <i>VirtualBox Manager</i> select the <i>QE2021 Virtual
+      Machine</i> but do not start it. Then press the <i>Settings</i>
+      button and in the window that appears select <i>System</i> tab
+      and increase the number of CPUs accordingly.<br/>
+      <img class="snapshot" src="images/cpus.png" width="510" height="397"/>
+    </p>
+    
+    <h2>Troubleshooting</h2>
+    
+    <p>
+      On some laptops <b>virtualization is disabled</b> by default, if
+      you encounter any issues, this is the first thing to check.  In
+      general you should <b> reboot </b> the system, enter the <b>
+      BIOS </b> and search for a <b> virtualization </b> option and
+      make sure it is enabled. Some general instruction on how to do
+      this are available <b><a
+      href="https://helpdeskgeek.com/how-to/enable-virtualization-in-the-bios/">
+      here</a></b>.
+    </p>
+
+    <h3>Black screen issue</h3>
+    <p>
+      If you get a black screen, you may need to increase the video
+      memory in the Settings. Close the <i>QE2021 Virtual Machine</i> and
+      then in the <i>VirtualBox Manager</i> select the <i>QE2021 Virtual
+      Machine</i> but do not start it. Then press the <i>Settings</i>
+      button and in the window that appears select Display tab and
+      increase the Video Memory to the maximum.<br/>
+      <img class="snapshot" src="images/video-memory.png" width="510" height="397"/>
+    </p>
+    
+    <h3>Notice to MAC users</h3>
+
+    <p>
+      If <b>QE-2021 Virtual Machine</b> opens in a small window, it is
+      possible to solve the problem as follows:
+      <ol>
+        <li>login (see below) without trying to resize the window</li>
+        <li>once desktop environment of <i>QE-2021 Virtual Machine</i>
+        appears, click on <tt>Cmd+C button</tt></li>
+        <li> if <tt>Cmd+C</tt> doesn't solve the problem, use the
+        following menu on the "VirtualBox VM": <b>View->Virtual Screen
+        1->Scale to ...</b> (you need to select appropriate value of scaling)</li>
+      </ol>
+    </p>
+
+    <h3>Other issues</h3>
+    <p>
+      If there are any other issues or if you are unable to load the
+      <i>QE-2021 Virtual Machine</i>, try to search for tips on the
+      internet. As a last resort, we will try to help you on-line
+      at the beginning of the school.
+    </p>
+</card>
+</page>
