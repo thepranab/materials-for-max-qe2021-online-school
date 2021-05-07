@@ -30,7 +30,7 @@ $SUDO $APT autoremove
 $SUDO $APT clean
 
 pwgui=PWgui-6.7
-pwtk=pwtk-1.0.4
+pwtk=pwtk-2.0
 qemodes=QE-modes-6.7
 analisi=analisi_0.2.1-1
 # input link to exercises gitlab here
