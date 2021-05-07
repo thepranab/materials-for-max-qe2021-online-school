@@ -1,0 +1,70 @@
+# define pw.x input data
+
+CONTROL {
+    calculation='scf'
+    restart_mode='from_scratch',
+    !pseudo_dir = '~/QE-2021/pseudo', ! uncomment if ESPRESSO_PSEUDO variable is unset
+    !outdir='./tempdir/'
+    prefix='fe'
+}
+
+SYSTEM {
+    ibrav = 3, nat= 1, ntyp= 1,
+    nspin = 2,  starting_magnetization(1)=0.7,
+    ecutwfc = 70, ecutrho = 850.0,
+    occupations='smearing', smearing='marzari-vanderbilt', degauss=0.02
+}
+ELECTRONS {
+    diagonalization='david'
+    conv_thr = 1.0e-8
+    mixing_beta = 0.7
+}
+ATOMIC_SPECIES {
+    Fe 55.845 Fe.pbe-spn-rrkjus_psl.0.2.1.UPF
+}
+ATOMIC_POSITIONS alat {
+    Fe 0.0 0.0 0.0
+}
+K_POINTS AUTOMATIC  {
+    10 10 10 1 1 1  
+}
+
+
+
+# open result files
+
+set e  [open energies.dat w]
+set m1 [open magnetization.dat w]
+set m2 [open magmom.dat w]
+
+# perform pw.x calcs for different lattic constant
+
+foreach alat [seq 4.5 0.1 6.0] {
+    SYSTEM " celldm(1) = $alat "
+    runPW pw.fe.scf.$alat.in
+
+    # extract total energy
+    set Etot [pwo_totene pw.fe.scf.$alat.out]
+
+    # extract total magnetization
+    set Mtot [pwo_totmag pw.fe.scf.$alat.out]
+    
+    # extract atomic magnetic moment ...
+    # Either:
+    #    atom   1 (R=0.357)  charge= ......   magn=  ......
+    set magM [::pwtk::grep_field magn= pw.fe.scf.$alat.out end end]
+    # Or:
+    #    atom:    1    charge:   .......    magn:    ......    constr:    0.0000
+    if { $magM == {} } {
+        set magM [::pwtk::grep_field magn: pw.fe.scf.$alat.out end-2 end]
+    }
+
+    # write results 
+    puts $e  "$alat    $Etot"
+    puts $m1 "$alat    $Mtot"
+    puts $m2 "$alat    $magM"
+}
+
+close $e
+close $m1
+close $m2
