@@ -77,7 +77,7 @@
       <img class="snapshot" src="images/keyboard1-cr.png" width="602" height="465"/><br/>
       The following window appears (new keyboard layouts can be added by clicking the "+Add" button):<br/>
       <img class="snapshot" src="images/keyboard2.png" width="429" height="432"/><br/>
-      The keyboards can then be switched an the right part of the
+      The keyboards can then be switched on the right part of the
       top-panel:<br/>
       <img class="snapshot" src="images/keyboard3-cr.png" width="350" height="173"/><br/>
     </p>
@@ -93,7 +93,7 @@
       Machine</i> but do not start it. Then press the <i>Settings</i>
       button and in the window that appears select <i>System</i> tab
       and increase the number of CPUs accordingly.<br/>
-      <img class="snapshot" src="images/cpus.png" width="510" height="397"/>
+      <img class="snapshot" src="images/cpus-composite.png" width="764" height="421"/>
     </p>
     
     <h2>Troubleshooting</h2>
@@ -117,7 +117,17 @@
       Machine</i> but do not start it. Then press the <i>Settings</i>
       button and in the window that appears select Display tab and
       increase the Video Memory to the maximum.<br/>
-      <img class="snapshot" src="images/video-memory.png" width="510" height="397"/>
+      <img class="snapshot" src="images/video-memory-composite.png" width="764" height="421"/>
+    </p>
+
+    <h3>Issue with VirtualBox on Windows 10</h3>
+
+    <p>
+      It has been reported that sometimes virtual machine does not
+      start on Windows 10, despite virtualization being enabled in the
+      BIOS. In this case, see
+      <a
+      href="https://superuser.com/questions/1391838/virtual-box-is-not-working-on-windows-10">Virtual box is not working on windows 10</a>.
     </p>
     
     <h3>Notice to MAC users</h3>
