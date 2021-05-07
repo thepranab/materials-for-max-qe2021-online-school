@@ -1,0 +1,11 @@
+# a simple test of how PWTK works for cp.x
+foreach inp {
+    cp.water8.1-bomd.in
+    cp.water8.2-cpmd.in
+    cp.water8.3-nose-hoover.in
+    cp.water8.4-cg.in
+    cp.water8.5-nve.in
+} {
+    load_fromCPI $inp
+    runCP $inp
+}
