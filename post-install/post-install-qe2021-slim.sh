@@ -186,7 +186,7 @@ fi
 (
     cd /tmp
     wget https://www.ovito.org/download/master/ovito-basic-3.4.4-x86_64.tar.xz
-    tar Jxvf ovito-basic-3.4.4-x86_64.tar.xz -C /opt
+    $SUDO tar Jxvf ovito-basic-3.4.4-x86_64.tar.xz -C /opt
     rm -f ovito-basic-3.4.4-x86_64.tar.xz
     $SUDO ln -s /opt/ovito-basic-3.4.4-x86_64/bin/ovito /opt/bin/ovito
 )
