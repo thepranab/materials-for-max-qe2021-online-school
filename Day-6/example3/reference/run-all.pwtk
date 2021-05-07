@@ -1,0 +1,34 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#
+# BEWARE: both turbo_eels.x and turbo_spectrum.x use LR_INPUT namelists,
+#         hence a caution is needed in PWTK not to mess it up.
+#------------------------------------------------------------------------
+
+# run pw.x calculation by utilizing input file directly
+run pw.x pw.si.scf.in
+
+# load turbo_eels.x 
+load_fromEELSI turbo_eels.si.lanczos.in
+
+# let's do turbo calcs ...
+foreach iter [seq 500 250 1500] {
+    foreach {ext maxiter} "
+        no   $iter
+        osc  20000
+    " {        
+        LR_CONTROL "itermax = $iter"
+        runEELS turbo_eels.lanczos.$ext.$iter.in
+
+        # use input-stacking not to mess the LR_INPUT of turbo_lanczos.x
+        input_pushpop {
+            load_fromSPECI turbo_spectrum.si.in
+            LR_INPUT " itermax0 = $iter
+                       itermax  = $maxiter
+                       extrapolation = '$ext' "
+            runSPECTRUM turbo_spectrum.$ext.$iter.in
+        }
+        # for subsequent calcs use restart mode for turbo_lanczos.x
+        LR_INPUT { restart = .true. }
+    }
+}
