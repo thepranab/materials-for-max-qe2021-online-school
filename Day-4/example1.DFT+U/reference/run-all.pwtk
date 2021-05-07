@@ -1,0 +1,41 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#------------------------------------------------------------------------
+
+# load pw.x input file
+load_fromPWI pw.FeO.scf.in
+
+# load projwfc.x input file
+load_fromPRI projwfc.FeO.in
+
+# load hpx. input file
+load_fromHPI hp.FeO.in
+
+
+# utility proc for NSCF calculation
+proc nscf {input} {
+    input_pushpop {
+        CONTROL { calculation = 'nscf' }
+        SYSTEM  { nbnd = 35 }
+        K_POINTS automatic { 6 6 6   0 0 0 }
+        runPW $input        
+    }
+}
+
+# DFT
+runPW pw.FeO.scf.in
+nscf  pw.FeO.nscf.in
+runPROJWFC projwfc.FeO.in
+
+# DFT+U
+input_pushpop {
+    SYSTEM { Hubbard_U(1) = 4.6, Hubbard_U(2) = 4.6 }
+
+    runPW pw.FeO_DFT+U.scf.in
+    nscf  pw.FeO_DFT+U.nscf.in
+    runPROJWFC projwfc.FeO_DFT+U.in
+}
+
+# HP
+runPW pw.FeO.scf.in
+runHP hp.FeO.in 

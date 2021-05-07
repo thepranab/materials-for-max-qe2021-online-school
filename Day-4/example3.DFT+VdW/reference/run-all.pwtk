@@ -1,0 +1,35 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#------------------------------------------------------------------------
+
+# load pw.x input file
+load_fromPWI pw.graphite.vc-relax.in
+
+# clear input_dft & vdw_corr variables
+SYSTEM {
+    input_dft =
+    vdw_corr  =
+}
+
+foreach {fnl pseudo} {
+    vdw-DF   C.pbe-rrkjus.UPF
+    vdw-DF2  C.pbe-rrkjus.UPF
+    rVV10    C.pbe-rrkjus.UPF
+    DFT-D    C.pbe-rrkjus.UPF
+    DFT-D3   C.pbe-rrkjus.UPF
+    PBE      C.pbe-rrkjus.UPF
+    PZ       C.pz-rrkjus.UPF
+} {
+    input_pushpop {
+        switch -glob $fnl {
+            vdw* - rVV* {
+                SYSTEM " input_dft = '$fnl' "
+            }
+            DFT-D* {
+                SYSTEM " vdw_corr  = '$fnl' "
+            }
+        }
+        ATOMIC_SPECIES " C  12.011  $pseudo "
+        runPW pw.graphite.vc-relax.$fnl.in
+    }
+}
