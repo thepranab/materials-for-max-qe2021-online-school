@@ -1,0 +1,42 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#------------------------------------------------------------------------
+
+load_fromPWI pw.AlAs.in
+runPW pw
+
+
+load_fromPHI ph.AlAs.in
+# add input-data that is missing in ph.AlAs.in
+INPUTPH {
+    prefix = 'AlAs'
+    nq1 = 4
+    nq2 = 4
+    nq3 = 4
+    amass(Al) = 26.98154
+    amass(As) = 74.92160
+}
+runPH ph
+
+
+load_fromQ2RI q2r.AlAs.in
+# add input-data that is missing in q2r.AlAs.in
+Q2R { fildyn='AlAs.dyn' }
+runQ2R q2r
+
+
+load_fromMDI matdyn.AlAs.in
+# add input-data that is missing in matdyn.AlAs.in
+MATDYN {
+    asr = 'crystal'
+    amass(Al) = 26.98154
+    amass(As) = 74.92160
+}
+runMATDYN matdyn
+
+
+# plotband.x does not support -in flag and parallel execution
+run -serial -ihandle "<" plotband.x plotband.AlAs.in
+
+# alternative:
+#exec plotband.x < plotband.AlAs.in > plotband.AlAs.out
