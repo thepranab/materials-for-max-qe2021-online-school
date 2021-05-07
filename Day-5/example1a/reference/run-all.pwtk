@@ -2,11 +2,20 @@
 # This is a PWTK script that runs all the QE calculations of the exercise
 #------------------------------------------------------------------------
 
+## either:
+#run pw.x pw.Si.in; # this avoids loading the input file into PWTK
+# or:
 load_fromPWI pw.Si.in
 runPW pw
 
+## either:
+#run ph.x ph.Si.in; # this avoids loading the input file into PWTK
+# or:
 load_fromPHI ph.Si.in
 runPH ph
 
+## either:
+#run dynmat.x ph.Si.in; # this avoids loading the input file into PWTK
+# or:
 load_fromDMI dynmat.Si.in
 runDYNMAT dynmat
