@@ -12,7 +12,7 @@ cat >fe.scf.$latt.in <<EOF
     calculation='scf'
     restart_mode='from_scratch',
     !pseudo_dir = './pseudo/',
-    outdir='./tempdir/'
+    !outdir='./tempdir/'
     prefix='fe'
  /
  &system
