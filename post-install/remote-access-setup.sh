@@ -128,7 +128,7 @@ To complete the remote-access setup for $host, the just generated key:
 needs to be input into the online-form that will open in the firefox
 automatically. The $hpckey.pub to copy-paste is:
 
-`cat $$hpckey.pub`
+`cat $hpckey.pub`
 
 To login to the on-line form use the \"username\" and \"password\"
 that you received. Do not forget to click the \"Save\" button on the
