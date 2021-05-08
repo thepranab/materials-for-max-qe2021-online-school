@@ -112,7 +112,7 @@ elif test "x$arnes" != "x"; then
     # ARNES
     #
     ssh_alias
-    hpc_link arness.rc
+    hpc_link arnes.rc
     
     #
     # peculiarity for the ***.arnes.si HPC cluster
@@ -121,12 +121,19 @@ elif test "x$arnes" != "x"; then
     echo "
 *** IMPORTANT ***
 
-To complete the remote-access setup for $host, the just generated key:
+To complete the remote-access setup for $host, 
+the just generated key:
 
    $hpckey.pub
 
 needs to be input into the online-form that will open in the firefox
-automatically. The $hpckey.pub to copy-paste is:
+automatically.
+
+Press <Enter> to continue ..."
+    read ans
+
+    echo "
+The $hpckey.pub to copy-paste is:
 
 `cat $hpckey.pub`
 
