@@ -5,6 +5,14 @@
 
 For basic Linux commands, see [Linux Command Line Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/linux-command-line/).
 
+**Some useful programs:**
+* PDF viewer:  `atril`
+* text editor: `emacs`
+* simple text editor: `pluma`
+* file browser: `caja`
+* text-based calculator in the terminal: `bc -l` (type Ctrl-D
+  to exit)
+
 ------------------------------------------------------------------------
 
 ## Basic git usage
@@ -14,6 +22,14 @@ school gitlab repository, execute in the terminal from any exercise
 folder or subfolder:
 
     git pull
+
+Note that from Day-2 on, the `git pull` may fail due to changed files
+from the preceding day(s). In this case:
+
+    git stash apply
+    git pull
+
+------------------------------------------------------------------------
 
 For addition documentation on the git usage, see [Git Cheat
 Sheet](https://cheatography.com/samcollett/cheat-sheets/git/).
