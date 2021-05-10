@@ -70,7 +70,7 @@ That means selecting plane wave cutoff, pseudopotentials, etc.
     nstep  = 100,\\
     iprint = 10,\\
     isave  = 1000,\\
-    ! tprnfor = .TRUE.,\\
+    tprnfor = .TRUE.,\\
     dt    = 5.0d0,\\
     prefix = 'h2o',\\
     pseudo\_dir='../pseudo',\\
@@ -145,10 +145,43 @@ If you want to open the jupyter notebook file, you have to go inside the \code{D
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{See what was produced}
+\begin{itemize}
+  \item download results from the cluster
+  \item you see a number of files (everything in Hartree atomic unit):
+	  \begin{itemize}
+		  \item \code{h2o.cel} file that contains the transposed cell vectors
+		  \item \code{h2o.pos} unwrapped positions of the atoms, same atomic order of the input files (!)
+		  \item \code{h2o.vel} atomic velocities, same atomic order of the input file (!)
+		  \item \code{h2o.evp} thermodynamic data. At first you should look at this
+		  \item ...
+	  \end{itemize}
+\end{itemize}
 
-explain output file and output columns
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{h2o.evp}
+First line of file
+\code{\#   nfi    time(ps)        ekinc        T\_cell(K)     Tion(K)          etot               enthal               econs               econt          Volume        Pressure(GPa) }
+\begin{itemize}
+	\item \code{ekinc} $K_{ELECTRONS}$
+	\item \code{enthal} $E_{DFT}+PV$ 
+	\item \code{etot} $E_{DFT}$ potential energy of the system
+	\item \code{econs} $E_{DFT} + K_{NUCLEI}$ this is something that is a constan of motion in the limit where the electronic fictitious mass is zero. It has a physical meaning.
+	\item \code{econt} $E_{DFT} + K_{IONS} + K_{ELECTRONS}$ this is a constant of motion of the lagrangian. If the dt is small enough this will be up to a very good precision a costant. It is not a physical quantity, since $K_{ELECTRONS}$ has \emph{nothing} to do with the quantum kinetic energy of the electrons.
+\end{itemize}
 
+Note that if the verlet algorithm is not used there is no $K_{ELECTRONS}$, since they don't have a velocity defined
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{See the trajectory}
+To see the trajectory we convert the output file to something that is readable from, for example, ovito. In the VM there is a simple python script that you can call for this purpose:
+
+\code{cp2lammpstrj.py h2o -n 24 --minimal --not-ordered  -t 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 -o h2o\_txtlammps}
+
+then you can open the file \code{h2o\_txtlammps.lammps} with ovito:
+
+\code{ovito h2o\_txtlammps.lammps}
+
+Now you can see the atoms! They didn't move a lot with such a small number of steps...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{CPMD start}
@@ -165,12 +198,13 @@ Now we will modify the input file of the BOMD to do the verlet integration of th
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Output produced }
+After syncing again the files, look at \code{h2o.evp}. Now you see that the \code{ekinc} column is not zero! Verify that the constant of motion is conserved with a good approximation. That means that the highest frequency of the system are sampled with a reasonable rate during the integration of the equation. Remember that we have fast oscillating electronic degrees of freedom.
 
-explain kinetic energy
+If you look again at the trajectory (after executing again the commands to convert it), you'll see that it's longer. Every time the trajectory data is appendend to the output files \code{h2o.???}
 
-constant of motion
+Maybe you noticed the file \code{h2o.for}. This contains the computed force, and is printed only if in the input you have \code{tprnfor = .true.}. Note that there is a factor two between \code{cp.x}'s forces and \code{pw.x}'s one. Do you think that they are more or less the same?
 
-force issue
+(OPTIONAL) You can, as an experiment, try to pick a timestep, copy and paste atomic positions inside a \code{pw.x} input file and compute the force. Then plot forces CP vs forces PW. How are the ratios distributed?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Nose-Hoover thermostat}
