@@ -9,15 +9,23 @@ Convergence tests are typically performed by making a series of
 calculations with aid of shell-scripts, e.g., see
 the shell-script: `ex1.ecutwfc.classic/ecutwfc.sh`
 
-Instead of shell-scripts one can also use PWTK scripts, which are
-simpler/cleaner. **PWTK** (pwtk.quantum-espresso.org) stands for *PWscf
-ToolKit*. It is a Tcl-scripting interface for PWscf set of programs
-contained in the Quantum-ESPRESSO.
+Instead of shell-scripts one can also use [PWTK](http://pwtk.ijs.si/)
+scripts, which are simpler/cleaner. [PWTK](http://pwtk.ijs.si/) stands
+for *PWscf ToolKit*; it is a Tcl-scripting interface for
+[Quantum-ESPRESSO](https://www.quantum-espresso.org/).
 
 To see the difference between traditional Unix shell-scripts and PWTK
-scripts, compare
-`ex1.ecutwfc.classic/ecutwfc.sh`  vs  `ex1.ecutwfc/ecutwfc.pwtk`
+scripts, compare `ex1.ecutwfc.classic/ecutwfc.sh` vs
+`ex1.ecutwfc/ecutwfc.pwtk`
 
+**Logic of examples:** convergence tests for Si bulk consist of the
+following steps: 
+1. converge the basis-set 
+2. converge the k-points 
+3. with converged basis-set and k-points calculate lattice-parameter
+   of Si bulk
+4. with converged basis-set, k-points, and lattice parameter, 
+   calculate band structure of Si bulk.
 
 **Description of examples:**
 

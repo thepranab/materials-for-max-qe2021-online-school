@@ -9,7 +9,7 @@ foreach k { 2 4 6 8 } {
     K_POINTS automatic "$k $k $k 1 1 1"
     runPW $name.in
     
-    set Etot [::pwtk::pwo::totene $name.out]
+    set Etot [pwo_totene $name.out]
     puts $fid "$k $Etot"    
 } 
 
