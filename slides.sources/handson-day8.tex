@@ -22,6 +22,7 @@
   {\burgundy\LARGE\bf QE-2021: Hands-on session -- Day-8}\\[2em]
   {\burgundy\LARGE (Ab Initio Molecular Dynamics)}
   ~\\[1.5em]
+  \large Riccardo Bertossa
   %\large Pietro Delugas, Anton Kokalj, Paolo Giannozzi, Xiang Mei Duan,\\
   %Matic Pober\v{z}nik, Unmesh Mondal, Matej Hu\v{s}, Yaning Cui
 \end{center}
@@ -54,7 +55,7 @@ We are going to integrate the following equation of motions:
 \begin{equation}
 	M_I\ddot R_I = -\nabla_{R_I} E_{DFT}(\{R_J\}_{J\in\text{nuclei}})
 \end{equation}
-That will be discretized according to a Verlet scheme. We have to select all the parameters that are needed to evaulate the forces via the Hellman-Feynman theorem.
+That will be discretized according to a Verlet scheme. We have to select all the parameters that are needed to evaluate the forces via the Hellman-Feynman theorem.
 That means selecting plane wave cutoff, pseudopotentials, etc.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -70,7 +71,7 @@ That means selecting plane wave cutoff, pseudopotentials, etc.
     nstep  = 100,\\
     iprint = 10,\\
     isave  = 1000,\\
-    ! tprnfor = .TRUE.,\\
+    tprnfor = .TRUE.,\\
     dt    = 5.0d0,\\
     prefix = 'h2o',\\
     pseudo\_dir='../pseudo',\\
@@ -139,16 +140,49 @@ It is possible to modify some parameters on the fly while the simulation is runn
 \head{BOMD run and tips on initial state}
 Ok, now try to run the input file on the cluster!\\
 \code{remote\_mpirun cp.x -in cp.water8.1-bomd.in}\\
-While it runs you can have a look on how it was created the input file. I took a water molecule, rotate it randomly and then apply other rotation matrixes of some symmetry groups to get a filled cell. A different option could be starting from a crystal, that is usually simpler for structures like say NaCl.
+While it runs you can have a look on how it was created the input file. I took a water molecule, rotate it randomly and then apply other rotation matrices of some symmetry groups to get a filled cell. A different option could be starting from a crystal, that is usually simpler for structures like say NaCl.
 
 If you want to open the jupyter notebook file, you have to go inside the \code{Day-8/misc} folder, open a terminal and install some python code (if not already done) with \code{pip install jupyter numpy scipy k3d}, then you can open the notebook with \code{~/.local/bin/jupyter notebook} and play with it. Learning python is beyond the scope of this tutorial, but I think is good to know that those tools exists.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{See what was produced}
+\begin{itemize}
+  \item download results from the cluster
+  \item you see a number of files (everything in Hartree atomic unit):
+	  \begin{itemize}
+		  \item \code{h2o.cel} file that contains the transposed cell vectors
+		  \item \code{h2o.pos} unwrapped positions of the atoms, same atomic order of the input files (!)
+		  \item \code{h2o.vel} atomic velocities, same atomic order of the input file (!)
+		  \item \code{h2o.evp} thermodynamic data. At first you should look at this
+		  \item ...
+	  \end{itemize}
+\end{itemize}
 
-explain output file and output columns
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{h2o.evp}
+First line of file
+\code{\#   nfi    time(ps)        ekinc        T\_cell(K)     Tion(K)          etot               enthal               econs               econt          Volume        Pressure(GPa) }
+\begin{itemize}
+	\item \code{ekinc} $K_{ELECTRONS}$
+	\item \code{enthal} $E_{DFT}+PV$ 
+	\item \code{etot} $E_{DFT}$ potential energy of the system
+	\item \code{econs} $E_{DFT} + K_{NUCLEI}$ this is something that is a constant of motion in the limit where the electronic fictitious mass is zero. It has a physical meaning.
+	\item \code{econt} $E_{DFT} + K_{IONS} + K_{ELECTRONS}$ this is a constant of motion of the lagrangian. If the dt is small enough this will be up to a very good precision a constant. It is not a physical quantity, since $K_{ELECTRONS}$ has \emph{nothing} to do with the quantum kinetic energy of the electrons.
+\end{itemize}
 
+Note that if the verlet algorithm is not used there is no $K_{ELECTRONS}$, since they don't have a velocity defined
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{See the trajectory}
+To see the trajectory we convert the output file to something that is readable from, for example, ovito. In the VM there is a simple python script that you can call for this purpose:
+
+\code{cp2lammpstrj.py h2o -n 24 --minimal --not-ordered  -t 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 -o h2o\_txtlammps}
+
+then you can open the file \code{h2o\_txtlammps.lammps} with ovito:
+
+\code{ovito h2o\_txtlammps.lammps}
+
+Now you can see the atoms! They didn't move a lot with such a small number of steps...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{CPMD start}
@@ -158,23 +192,23 @@ Now we will modify the input file of the BOMD to do the verlet integration of th
     \item set \verb\calculation = 'restart'\ to start from a previously stopped calculation
     \item set \verb\ndw = 51\ (increase by one the number of the folder where the code will write the restart file)
     \item set \verb\nstep = 1000\ if you want to run for 1000 steps
-    \item set \verb\electron_dynamics = 'verlet'\ to set the verlet algorithm to integrate the Car-Parrinello equation of morion
+    \item set \verb\electron_dynamics = 'verlet'\ to set the verlet algorithm to integrate the Car-Parrinello equation of motion
     \item set \verb\ion_velocities = 'default'\ to read the velocity from the specified restart file
     \item remove the \verb\AUTOPILOT\ card
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Output produced }
+After syncing again the files, look at \code{h2o.evp}. Now you see that the \code{ekinc} column is not zero! Verify that the constant of motion is conserved with a good approximation. That means that the highest frequency of the system are sampled with a reasonable rate during the integration of the equation. Remember that we have fast oscillating electronic degrees of freedom. Verify what happens to the instantaneous temperature of the system.
 
-explain kinetic energy
+If you look again at the trajectory (after executing again the commands to convert it), you'll see that it's longer. Every time the trajectory data is appended to the output files \code{h2o.???}
 
-constant of motion
-
-force issue
+Maybe you noticed the file \code{h2o.for}. This contains the computed force, and is printed only if in the input you have \code{tprnfor = .true.}. Note that there is a factor two between \code{cp.x}'s forces and \code{pw.x}'s one. Do you think that they are more or less the same?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Nose-Hoover thermostat}
 
+To have the system equilibrated at a particular temperature we use a thermostat. We have to do the following changes to the input file:
 
 \begin{itemize}
     \item set the number of steps to 1000 with \verb\nstep = 1000\
@@ -188,27 +222,80 @@ force issue
     \end{itemize}
 \end{itemize}
 
+Change the input file and submit it to the cluster!
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{See what happened}
+Now it is possible to follow again the same steps to inspect the result of the simulation. Always keep an eye to the constant of motion and to the electronic fictitious kinetic energy! Did the electron's kinetic energy increase?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{CG step}
+Before proceding with the "production" NVE simulation, usually it is a good idea to minimize again the electronic ground state and recompute again the atomic velocities with the projection trick. So let's modify again the input file. As usual increase by one \code{ndr} and \code{ndw}, then:
+\begin{itemize}
+    \item set the number of steps to 1 with \verb\nstep = 1\
+    \item increase by one both \verb\ndr\ and \verb\ndw\
+    \item change \verb\electron_dynamics = 'cg'\
+    \item change \verb\ion_temperature = 'not_controlled'\
+\end{itemize}
+In this way we start again with the electronic wavefunctions "from scratch". Run it on the cluster, it should be fast.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{final NVE simulation}
+Now we start the final NVE run, that will be the longest. No news here, it is the same as the previous verlet run, but with different \code{ndr}, \code{ndw} and \code{nstep}
+
+\begin{itemize}
+\item increase by one both \verb\ndr\ and \verb\ndw\ 
+\item set \verb\nstep = 10000\ 
+\item set again verlet for electrons \verb\electron_dynamics = 'verlet'\ 
+\end{itemize}
+
+submit this calculation and wait for the result. In the meantime you can experiment with some previous optional tasks, if not altready done.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{look at the trajectory}
 
+Wow, after copying the data back to our local directory we find out a lot of trajectory! You can convert it to the LAMMPS format using the known python script \code{cp2lammps.py} and look at it. Woah, the atoms are going outside of the simulation cell!
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{$g(r)$ plot}
+
+Now it is time to calculate something from the trajectory that the cluster computed for us. We will use the C++ code \url{https://github.com/rikigigi/analisi} that is already installed inside the VM. This code reads the LAMMPS binary format (the binary format is by far faster to load). So first we run the script to convert the CP trajectory to LAMMPS binary:
+
+\code{cp2analisi.py h2o h2o\_lammps 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1}
+
+this will generate the file \code{h2o\_lammps.bin} that will be used for the post processing calculation run by \code{analisi}
+
+\code{analisi -i h2o.bin -F 1.0 10.0 -g 100 -S 1 > gofr}
+
+will generate the $g(r)$ plot inside the file \code{gofr}.
+To visualize it you can type the following commands inside gnuplot:
+
+\code{
+\$ gnuplot\\
+gnuplot>  pl ’gofr’ u 2:3 w l, ’’ u 2:5 w l, ’’ u 2:7 w l
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{mean square displacement plot}
 
+You can see also the MSD plot. This is useful for knowing if the system is diffusive (so it may be a liquid) or not.
+
+\code{
+analisi -i h2o.bin -q -B 2 > msd
+}
+
+and then visualize it with gnuplot
+
+\code{
+\$ gnuplot \\
+gnuplot> pl 'msd' u 0:1 w l, '' u 0:3 w l
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{force comparison between CP and BO}
+(OPTIONAL) You can, as an experiment, try to pick a timestep, copy and paste atomic positions inside a \code{pw.x} input file and compute the force. Then plot forces CP vs forces PW. How are the ratios distributed?
+
 
 
 \end{document}

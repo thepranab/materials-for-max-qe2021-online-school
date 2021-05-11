@@ -14,7 +14,7 @@ foreach dual { 4 8 12 } {
                 ecutrho = $ecutwfc*$dual "
         runPW $name.in
 
-        set Etot [::pwtk::pwo::totene $name.out]
+        set Etot [pwo_totene $name.out]
         puts $fid "$ecutwfc $Etot"
     } 
 
