@@ -26,10 +26,13 @@
       <body>
 	<div id="logo">
 	  <img src="images/qe2021-header.png" width="100%" alt="QE 2021 title page image"/>
-	  <br/>
-	  &#160;
+	  <br/><small>
+          (Virtual event from 17 till 28 May 2021: more details at
+          <a
+              href="http://indico.ictp.it/event/9616/">http://indico.ictp.it/event/9616/</a>)
+        </small>
 	</div>
-        	
+        
 	<xsl:apply-templates/>
         
         <div id="logo">
