@@ -70,8 +70,7 @@ username() {
 }
 passwd() {
     echo "
-You will need to input HPC password twice!
-"
+You will need to input HPC password twice!"
     userinput "HPC password"
     passwd=$reply
     echo $passwd > ~/.ssh/passwd
