@@ -46,24 +46,25 @@ is needed to setup the remote access.
    and `<username>` for the actual username (use the login accounts that
    you received).
 
-3. Copy the generated public ssh-key `/home/user/.ssh/id_rsa.pub` to the
+3. Copy the generated public ssh-key `/home/user/.ssh/id_rsa_hpc.pub` to the
    HPC cluster. This step is specific and depends on which HPC cluster
    is used, in particular:
    
    - **Arnes users:** those of you who are allocated to Arnes cluster
    (`hpc-login1.arnes.si`) should copy the generated public ssh-key
-   `/home/user/.ssh/id_rsa.pub` to https://fido.sling.si online form
+   `/home/user/.ssh/id_rsa_hpc.pub` to https://fido.sling.si online form
    (do not forget to press the "Save" button on the online-form.
    
    - **ICTP users:** those of you who are allocated to ICTP cluster
    (`argo.ictp.it`) should copy the generated public ssh-key
-   `/home/user/.ssh/id_rsa.pub` to `argo.ictp.it` computer and append
+   `/home/user/.ssh/id_rsa_hpc.pub` to `argo.ictp.it` computer and append
    it there to the `~/.ssh/authorized_keys` file.
    
    - **SISSA users:** those of you who are allocated to SISSA cluster
    (`frontend1.hpc.sissa.it`) need to activate VPN to connect to the
    cluster and to this end, two scripts are provided: (1)
    `sissa-openconnect` activates the VPN and (2) `kill-openconnect`
-   closes the VPN. Once VPN is activated copy the generated public ssh-key
-   `/home/user/.ssh/id_rsa.pub` to `frontend1.hpc.sissa.it` computer and append
-   it there to the `~/.ssh/authorized_keys` file.
+   closes the VPN. Once VPN is activated copy the generated public
+   ssh-key `/home/user/.ssh/id_rsa_hpc.pub` to
+   `frontend1.hpc.sissa.it` computer and append it there to the
+   `~/.ssh/authorized_keys` file.
