@@ -163,7 +163,7 @@
     <p>
       On high DPI screens, text and icons in the VM may appear too
       tiny. This issue can be solved as illustrated by the below
-      snapshot via the <i>View</i> menu of the the VM main window.<br/>
+      snapshot via the <i>View</i> menu of the VM main window.<br/>
       <img class="snapshot" src="images/mac-screen-resolution.jpg" width="600" height="522"/>
     </p>
       

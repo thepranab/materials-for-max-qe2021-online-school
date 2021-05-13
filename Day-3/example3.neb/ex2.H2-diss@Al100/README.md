@@ -33,8 +33,8 @@ PWTK script.
 
 3. The example be run by `pwtk neb.pwtk >& neb.log &`.  **BUT
    BEWARE:** this example takes **several tens of minutes** on a laptop
-   computer, hence run it remotely on the HCP cluster. To submit the
-   `neb.pwtk` calculation to the HCP cluster, use:
+   computer, hence run it remotely on the HPC cluster. To submit the
+   `neb.pwtk` calculation to the HPC cluster, use:
    
         remote_pwtk neb.pwtk
 		
