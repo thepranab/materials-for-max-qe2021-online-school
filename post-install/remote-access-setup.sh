@@ -76,6 +76,10 @@ passwd() {
 }
 copy_sshkey() {
     sshpass -f ~/.ssh/passwd scp $hpckey.pub hpc:
+    echo "
+... wait for 5 seconds ...
+"
+    sleep 5    
     sshpass -f ~/.ssh/passwd ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
 
     echo "
