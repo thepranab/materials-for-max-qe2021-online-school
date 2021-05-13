@@ -39,7 +39,7 @@ is needed to setup the remote access.
         Host hpc
           HostName <hostname>
           User     <username>
-          IdentityFile /home/user/.ssh/id_rsa
+          IdentityFile /home/user/.ssh/id_rsa_hpc
           
    where `<hostname>` stands for the actual hostname (either
    `hpc-login1.arnes.si`, `argo.ictp.it`, or `frontend1.hpc.sissa.it`)
