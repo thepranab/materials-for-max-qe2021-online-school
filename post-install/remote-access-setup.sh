@@ -69,8 +69,6 @@ username() {
     chmod 600 ~/.ssh/user
 }
 passwd() {
-    echo "
-You will need to input HPC password twice!"
     userinput "HPC password"
     passwd=$reply
     echo $passwd > ~/.ssh/passwd

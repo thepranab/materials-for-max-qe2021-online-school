@@ -13,8 +13,4 @@ echo "
 You will need to enter sudo password. Please type:  qe2021
 "
 
-# PRECAUTION: if openconnect is already running, kill it or else it will hang
-sudo killall -9 openconnect 2>&1 /dev/null
-
-
 cat ~/.ssh/passwd | sudo openconnect -b --user=$user --passwd-on-stdin vpn.sissa.it 
