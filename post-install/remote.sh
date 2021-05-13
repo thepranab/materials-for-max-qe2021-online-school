@@ -181,7 +181,7 @@ Submitting to HPC cluster (requested number of processors = $NPROC):
 # PURPOSE: execute "squeue -u $USER" on the HPC cluster
 #------------------------------------------------------------------------
 remote_squeue () {
-    ssh -x -n -f $HPC_HOST "squeue -u \$USER"
+    ssh -x -n -f $HPC_HOST "echo; squeue -u \$USER"
 }
 
 
