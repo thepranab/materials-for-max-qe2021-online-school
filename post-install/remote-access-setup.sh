@@ -75,7 +75,7 @@ passwd() {
     chmod 600 ~/.ssh/passwd
 }
 copy_sshkey() {
-    sshpass -f ~/.ssh/passwd scp $hpckey.pub hpc:~/
+    sshpass -f ~/.ssh/passwd scp $hpckey.pub hpc:
     sshpass -f ~/.ssh/passwd ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
 
     echo "
