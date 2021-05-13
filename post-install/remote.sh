@@ -177,6 +177,14 @@ Submitting to HPC cluster (requested number of processors = $NPROC):
     rm -f $script
 }
 
+#------------------------------------------------------------------------
+# PURPOSE: execute "squeue -u $USER" on the HPC cluster
+#------------------------------------------------------------------------
+remote_squeue () {
+    ssh -x -n -f $HPC_HOST "squeue -u \$USER"
+}
+
+
 hpc() {
     HERE="~${PWD#$HOME}"
     ssh -t $HPC_HOST "cd $HERE; bash";
