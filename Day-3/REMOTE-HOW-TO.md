@@ -24,7 +24,7 @@ Those of you who were allocated to:
   hang if it is already running.
 
 
-## Conventional way to run remotely (not used during the school)
+## Conventional way to run remotely (usually not used during the school)
 The conventional way to run calculations remotely is to:
 
 1. Copy the need files to remote computer via `scp` or `rsync`.
