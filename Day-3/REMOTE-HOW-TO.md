@@ -20,7 +20,7 @@ Those of you who were allocated to:
 
         kill-openconnect; sissa-openconnect
       
-  The *kill-openconnect* commands is just a precaution, because openconnect will
+  The *kill-openconnect* command is just a precaution, because openconnect will
   hang if it is already running.
 
 
