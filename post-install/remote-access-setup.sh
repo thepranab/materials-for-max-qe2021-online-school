@@ -105,7 +105,7 @@ elif test "x$sissa" != "x"; then
     hpc_link sissa.rc 
     username
     passwd    
-    ./sissa-openconnect
+    sissa-openconnect
     sleep 2; echo "... please wait a bit ..."; sleep 2
     copy_sshkey
     
