@@ -53,7 +53,7 @@ is needed to setup the remote access.
    - **Arnes users:** those of you who are allocated to Arnes cluster
    (`hpc-login1.arnes.si`) should copy the generated public ssh-key
    `/home/user/.ssh/id_rsa_hpc.pub` to https://fido.sling.si online form
-   (do not forget to press the "Save" button on the online-form.
+   (do not forget to press the "Save" button on the online-form).
    
    - **ICTP users:** those of you who are allocated to ICTP cluster
    (`argo.ictp.it`) should copy the generated public ssh-key

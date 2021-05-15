@@ -18,10 +18,14 @@ Those of you who were allocated to:
   virtual-private-network (VPN) at the beginning of each hands-on
   session with:
 
-        kill-openconnect; sissa-openconnect
+        sissa-openconnect
       
-  The *kill-openconnect* command is just a precaution, because openconnect will
-  hang if it is already running.
+  Beware that *openconnect* will hang if it is already running. If this
+  happens, then (1) kill it with `kill-openconnect`, (2) restart the
+  network as described [here](../post-install/docs/restart-network.md), 
+  and (3) execute again `sissa-openconnect`.
+
+- **ICTP cluster** (argo.ictp.it): there are no specifics.
 
 
 ## Conventional way to run remotely (usually not used during the school)
