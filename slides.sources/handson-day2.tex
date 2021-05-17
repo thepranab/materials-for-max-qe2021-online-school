@@ -18,13 +18,13 @@
 ~\\
 \vspace*{4cm}
 \MyLogo{~}
-\vspace{5em}
+\vspace{3em}
 \begin{center}
   {\burgundy\LARGE\bf QE-2021: Hands-on session -- Day-2}\\[2em]
   {\burgundy\LARGE (Convergence-tests calculations)}
   ~\\[1.5em]
-  %\large Anton Kokalj, Pietro Delugas,\\
-  %Matic Pober\v{z}nik, Cristiano Malica, Subrahmanyam Sappati, Lei Qiao
+  \large Anton Kokalj, Pietro Delugas, Paolo Giannozzi, \\
+  Matic Pober\v{z}nik, Cristiano Malica, Subrahmanyam Sappati, Lei Qiao
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -41,6 +41,13 @@ Topics of Day-2 hands-on session:
 
 To get the latest version of the exercises, move to \file{Day-2/} directory and execute:\\[0.5em]
 \exec{git pull}
+
+{\bf Beware:} if you changed some input files in \file{Day-1/} then
+\file{git pull} will fail and you will need to do:\\[0.5em]
+\exec{git stash}\\
+\exec{git pull}\\
+\exec{git stash apply}\\
+
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{1. Bulk system: Silicon}
