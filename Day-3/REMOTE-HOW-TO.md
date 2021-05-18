@@ -25,6 +25,15 @@ Those of you who were allocated to:
   network as described [here](../post-install/docs/restart-network.md), 
   and (3) execute again `sissa-openconnect`.
 
+  The slurm reservation name in SISSA needs to be updated each during each 
+  session and in the afternoon after 14:00. To update the reservation name 
+  simply type the command:
+
+       update_sissa_reservation_name
+
+  Then close the terminal and open a new one. The command has to be executed
+  after you have activated the VPN.  
+
 - **ICTP cluster** (argo.ictp.it): there are no specifics.
 
 
