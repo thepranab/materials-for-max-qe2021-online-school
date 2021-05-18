@@ -31,9 +31,28 @@ into the CO pi* LUMO orbital.
                  more elaborate script)
 
 For further explanation of what each script does, see the comments
-within the PWTK scripts. To run the whole example, execute:
+within the PWTK scripts. To run the whole example locally, execute:
 
        pwtk run-all.pwtk >& run-all.log &
+
+**Beware** that this example takes a while! **Hence, run it remotely
+instead**, i.e.:
+
+       NPROC=8 pwtk run-all.pwtk
+ 
+Note that this example will not run on more than 8 processors (which
+is why `NPROC=8` is used), because one among calculations is the
+calculation of isolated CO molecule, which is a very small system.
+
+After calculations are finished, download the calculated files from
+the HPC cluster to the local host (virtual machine) as:
+
+
+       rsync_from_hpc . 
+       
+Beware that the size of all files is large! You do not need locally
+the `*.pp` files, hence perhaps you can download only the
+*needed* files (`*.in`, `*.out`, `*.xsf`, `*pdos*`).
 
 ------------------------------------------------------------------------
 

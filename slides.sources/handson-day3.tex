@@ -15,13 +15,13 @@
 ~\\
 \vspace*{4cm}
 \MyLogo{~}
-\vspace{5em}
+\vspace{3em}
 \begin{center}
   {\burgundy\LARGE\bf QE-2021: Hands-on session -- Day-3}\\[2em]
   {\burgundy\LARGE (Structural relaxations + NEB; PWTK)}
   ~\\[1.5em]
-    %\large Ari Paavo Seitsonen, Anton Kokalj, Pietro Delugas,\\
-  %Matic Poberžnik, Mandana Safari, Unmesh Mondal, Tao Jiang
+    \large Ari Paavo Seitsonen, Anton Kokalj, Pietro Delugas,\\
+  Matic Pober\v{z}nik, Unmesh Mondal, Felice Conte, Tao Jiang
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -45,6 +45,10 @@ Topics of Day-3 hands-on session:
 To get the latest version of the exercises, move to \file{Day-3/} directory and execute:\\[0.5em]
 \exec{git pull}
 
+{\bf Beware:} if you changed some input files in \file{Day-1/} then
+\file{git pull} will fail and you will need to do:\\[0.5em]
+\exec{git stash; git pull; git stash apply}\\
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{How to run calculations remotely on the ``hpc'' HPC cluster}
 \rightheader{}
@@ -64,32 +68,58 @@ QE-2021 school to aid at submitting jobs to HPC cluster(s). These are:
   \cmd{remote\_mpirun}, hence you must use \flag{-in} (or \flag{-inp})
   option (i.e., do note use ``\cmd{<}'' redirection operator). You do
   not need to specify the number of processors, because the default is
-  set to \flag{-np~8}.  \vspace{0.5em}
+  set to \flag{-np~20}.
+
+  A different number of processors, say 8, can be requested
+  as:\\[0.5em]
+  \exec{NPROC=8 remote\_mpirun pw.x -in pw.file.in}  
+  \vspace{0.5em}
+  
 \item \cmd{\bf remote\_pwtk} -- this automatically submits the PWTK
   script to queuing system on the ``hpc'' HPC system. Example:\\[0.5em]
   \exec{remote\_pwtk script.pwtk}\\[0.5em]
   where \file{script.pwtk} is the name of the PWTK script.
-\vspace{0.5em}
+  \vspace{0.5em}
+\clearpage
 \item \cmd{\bf remote\_sbatch} -- automatically submits the Unix-shell
-  script to queuing system on the ``hpc''  HPC system. Example:\\[0.5em]
+  script to queuing system on the ``hpc''  HPC system. Examplee:\\[0.5em]
   \exec{remote\_sbatch script.sh}\\[0.5em]
   where \file{script.sh} is the name of the Unix-shell script.
+  \vspace{0.5em}
 
-\clearpage
+\item \cmd{\bf remote\_squeue} -- this checks the status of the job in the queuing
+  system on the ``hpc'' HPC system. Example:\\[0.5em]
+  \exec{remote\_squeue}
+  {\green\burgundy
+    \begin{verbatim}
+        JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+     26098354       all submit.n    qe001  R       0:27      1 wn150
+\end{verbatim}}
+    Where status (ST) R stands for running and PD for pending.
+  \vspace{0.5em}
+  
 \item \cmd{\bf hpc} -- this makes \cmd{ssh} to ``hpc'' HPC login node,
   such that the user will be located in the same directory as used
-  locally \vspace{0.5em}
+  locally
+  \vspace{0.5em}
+  
 \item \cmd{\bf rsync\_to\_hpc} -- copies specified files to the
   ``hpc'' cluster to the same directory as is currently
   used locally. Example:\\[0.5em]
-  \exec{rsync\_to\_hpc *.in}\\[0.5em]
+  \exec{rsync\_to\_hpc '*.in'}\\[0.5em]
   This will copy all \file{*.in} files from local directory to the
-  same directory on the ``hpc'' cluster.  \vspace{0.5em}
+  same directory on the ``hpc'' cluster, whereas:\\[0.5em]
+  \exec{rsync\_to\_hpc .}\\[0.5em]
+  will copy all the files in the current directory to the same
+  directory on the ``hpc'' cluster.
+  \vspace{0.5em}
+  
 \item \cmd{\bf rsync\_from\_hpc} -- download the specified file from
   the ``hpc'' cluster from the same directory as is
   currently used locally. Example:\\[0.5em]
-  \exec{rsync\_from\_hpc *.out}\\[0.5em]
-  This will copy all \file{*.out} files from the ``hpc'' cluster.
+  \exec{rsync\_from\_hpc '*.out'}\\[0.5em]
+  This will copy all \file{*.out} files from the ``hpc'' cluster to
+  the local host (virtual machine).
 \end{itemize}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -417,7 +447,7 @@ PWTK script to manage these two calculations.
     the HPC cluster, i.e.:\\
     \exec{remote\_pwtk neb.pwtk}}
 \item To download the calculated output files, use:\\
-  \exec{rsync\_from\_hpc *.out}\\[0.5em]  
+  \exec{rsync\_from\_hpc '*.out'}\\[0.5em]  
   Give the remote computer some time to make the calculation. To
   download other data files that were produced by \prog{neb.x}, use:\\[0.5em]
   \exec{rsync\_from\_hpc .}
@@ -656,6 +686,29 @@ specific task(s), in particular:
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\head{4.3 PWTK: analysis of electronic structure of CO@Rh(100)}
+
+To run the whole example locally, execute:\\[0.5em]
+\exec{pwtk run-all.pwtk}
+
+{\bf Beware} that this example takes a while! Hence, run it remotely
+instead, i.e.:\\[0.5em]
+\exec{NPROC=8 pwtk run-all.pwtk}\\[0.5em]
+Note that this example will not run on more than 8 processors (that
+why \cmd{NPROC=8}), because one among calculations is the calculation
+of isolated CO molecule, which is a very small system.
+
+After calculations are finished, download the calculated files from the
+HPC cluster to the local
+host (virtual machine) as:\\[0.5em]
+\exec{rsync\_from\_hpc .}\\[0.5em]
+Beware that the size of all files is large! You do not need locally
+the \file{*.pp} files, hence perhaps you can download only the
+{\it needed} files (\file{*.in}, \file{*.out}, \file{*.xsf},
+\file{*pdos*}).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{4.3.1 DIFDEN utility}
 
 PWTK has a {\em DIFDEN} utility to aid at calculating, e.g.,
@@ -763,7 +816,7 @@ polarisation, ...
   \includegraphics[width=0.57\textwidth]{figs/moproj-CO-Rh100.png}
 \end{center}
 
-Molecular orbitals of CO:\\
+Signed molecular-orbitals densities of CO:\\
 \begin{center}
 HOMO-4 ($3\sigma$), HOMO-3 ($4\sigma^*$), HOMO-2 and HOMO-1 ($1\pi$)\\
   \includegraphics[width=0.4\textwidth]{figs/psi2-montage-CO-Rh100.png}\\
