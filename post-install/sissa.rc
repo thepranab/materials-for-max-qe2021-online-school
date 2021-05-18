@@ -2,10 +2,12 @@
 
 export NPROC=20
 
-oc=`ps -A | grep openconnect`
-if test "x$oc" != "x"; then                             
-    SLURM_RESERVATION=`ssh -x -n -f $HPC_HOST 'echo $SLURM_RESERVATION'`
+if test -f $HOME/sissa_slurm_reservation; then
+   SLURM_RESERVATION=`cat $HOME/sissa_slurm_reservation`
+   export SLURM_RESERVATION
 fi
+
+
 
 if [ -z $SLURM_RESERVATION ] 
   then
