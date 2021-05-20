@@ -118,7 +118,7 @@ Submitting to HPC cluster:
    sbatch $opts $script > $log
 ------------------------------------------------------------------------
 "
-    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $opts $script > $log 2>&1"
+    ssh -x -n -f $HPC_HOST "cd $HERE; export NPROC=$NPROC; sbatch $opts $script > $log 2>&1"
 }
 
 
