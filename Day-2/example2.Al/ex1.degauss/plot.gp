@@ -3,7 +3,7 @@ set format y "%6.3f"
 set ylabel "Total energy (Ry)"
 set xlabel "smearing (Ry)"
 
-set xrange [0.0:0.1]
+#set xrange [0.0:0.1]
 set xtics 0.0,0.02
 set yrange [-4.197:]
 

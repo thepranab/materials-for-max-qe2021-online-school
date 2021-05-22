@@ -13,8 +13,8 @@
     ntyp = 1,
     ecutwfc = 20.0,
     ecutrho = 200.0,
-
-    occupations = 'tetrahedra'
+    nbnd=8
+    !occupations = 'tetrahedra'
  /
  
  &ELECTRONS

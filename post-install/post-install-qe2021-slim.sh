@@ -21,7 +21,7 @@ $SUDO $APT install \
       make gfortran gcc quantum-espresso xcrysden \
       libblas-dev libfftw3-dev liblapack-dev openmpi-common libopenmpi-dev \
       tcllib tk iwidgets4 bwidget \
-      vim emacs gnuplot imagemagick mencoder bc\
+      vim emacs gnuplot elpa-gnuplot-mode imagemagick mencoder bc \
       gperiodic caja-open-terminal python3-setuptools git \
       python3-dev python3-pip python3-numpy
 

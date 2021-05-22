@@ -6,7 +6,7 @@ Improper environment. Aborting ...
 "
     exit 1
 fi
-   
+
 user=$(cat ~/.ssh/user)
 
 echo "

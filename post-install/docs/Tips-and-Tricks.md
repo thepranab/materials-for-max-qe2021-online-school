@@ -26,8 +26,12 @@ folder or subfolder:
 Note that from Day-2 on, the `git pull` may fail due to changed files
 from the preceding day(s). In this case:
 
-    git stash apply
+    git stash 
     git pull
+
+To recover your local changes to files execute:
+
+    git stash apply
 
 ------------------------------------------------------------------------
 

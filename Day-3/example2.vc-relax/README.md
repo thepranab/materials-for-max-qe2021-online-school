@@ -24,7 +24,7 @@ Steps to perform:
 
 3. When calculation finishes, analyze the output: it consists of
    several SCF steps, followed by calculation of forces and stress
-   tensor, and generation of new cell parameters and atomic positions
+   tensor, and generation of new cell parameters and atomic positions.
 
 
 4. To visualize the evolution of the structure during structural
@@ -32,12 +32,13 @@ Steps to perform:
 
        xcrysden --pwo pw.Zn.vc-relax.out
 
-5. You can run the full 2D scan over the two parametres with
+5. Instead of vc-relax, you can run the full 2D scan over the two
+   lattice parameters with
 
        pwtk Zn-scan.pwtk
 
    This takes somewhat longer as the self-consistent DFT cycle is executed
-   over several pairs of a, c.
+   over several pairs of *a*, *c*.
 
 The resulting potential-energy-surface can be visualized as:
 
@@ -54,10 +55,10 @@ the example, execute:
        pw.x -in pw.urea.vc-relax.in > pw.urea.vc-relax.out &
 
 
-### How to run example-2 (molecular crystal of urea) on the HCP cluster
+### How to run example-2 (molecular crystal of urea) on the HPC cluster
 ----------------------------------------
 
-To submit the `pw.urea.vc-relax.in` calculation to the HCP cluster, use:
+To submit the `pw.urea.vc-relax.in` calculation to the HPC cluster, use:
 
       remote_mpirun pw.x -in pw.urea.vc-relax.in
 

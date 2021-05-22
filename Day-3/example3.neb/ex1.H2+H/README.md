@@ -62,6 +62,6 @@ To run the example, execute:
     neb.x -in neb.H2+H.w-inter-image.in > neb.H2+H.w-inter-image.out &
 
 When calculation finishes, analyze the output
-(`neb.H2+H..w-inter-image.out`). You will notice that in this case much
+(`neb.H2+H.w-inter-image.out`). You will notice that in this case much
 smaller number of steps was needed to achieve convergence. Check if
 the activation energy barrier is the same as in the first case?

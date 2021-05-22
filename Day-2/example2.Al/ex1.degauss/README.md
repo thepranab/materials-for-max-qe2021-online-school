@@ -19,7 +19,3 @@
          1. uncomment `#restart true` line
          2. add 0.15 and 0.2 to line `foreach degauss {0.003 0.01 0.03 0.1} {`
       2. run `degauss.pwtk` script again: `pwtk degauss.pwtk`
-      3. to visualize the new results:
-         1. edit Gnuplot `plot.gp` script and change line 
-         `set xrange [0.0:0.1]` to `set xrange [0.0:0.2]`
-         2. replot with: `gnuplot plot.gp`

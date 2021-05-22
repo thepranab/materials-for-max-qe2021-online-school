@@ -69,13 +69,15 @@ username() {
     chmod 600 ~/.ssh/user
 }
 passwd() {
-    userinput password
+    userinput "HPC password"
     passwd=$reply
     echo $passwd > ~/.ssh/passwd
     chmod 600 ~/.ssh/passwd
 }
 copy_sshkey() {
-    sshpass -f ~/.ssh/passwd scp $hpckey.pub hpc:~/
+    # the first time, the user needs to answer yes
+    scp $hpckey.pub hpc:
+    sleep 1
     sshpass -f ~/.ssh/passwd ssh -t hpc 'cat $HOME/id_rsa_hpc.pub >> $HOME/.ssh/authorized_keys ; rm $HOME/id_rsa_hpc.pub'
 
     echo "
@@ -103,7 +105,7 @@ elif test "x$sissa" != "x"; then
     hpc_link sissa.rc 
     username
     passwd    
-    ./sissa-openconnect
+    sissa-openconnect
     sleep 2; echo "... please wait a bit ..."; sleep 2
     copy_sshkey
     
