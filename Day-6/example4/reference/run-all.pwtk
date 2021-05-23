@@ -5,9 +5,13 @@ proc copy_dat {q1} {
 }
 
 # run pw.x by utilizing the input-file directly without loading it into PWTK
+load_fromPWI pw.si.scf.in
+CONTROL " outdir = $env(ESPRESSO_TMPDIR) "
 run pw.x pw.si.scf.in
 
+# run EELS 
 load_fromEELSI turbo_eels.si.sternheimer.in
+LR_INPUT " outdir = $env(ESPRESSO_TMPDIR) "
 runEELS turbo_eels.sternheimer.in
 copy_dat 0.866
 
