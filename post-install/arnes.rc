@@ -1,7 +1,7 @@
 # SLURM options for Arnes HPC cluster in Ljubljana
 
 export NPROC=20
-export sbatch_options="--nodes=1 --ntasks=\$NPROC --time=00:30:00 --mem-per-cpu=2G --reservation=qe2021"
+export sbatch_options="--nodes=1 --ntasks=\$NPROC --time=03:00:00 --mem-per-cpu=2G --reservation=qe2021"
 
 source $HOME/QE-2021/post-install/remote.sh
 
