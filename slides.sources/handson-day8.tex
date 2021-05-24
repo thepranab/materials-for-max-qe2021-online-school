@@ -236,6 +236,41 @@ Now you can see the atoms! They didn't move a lot with such a small number of st
 \head{restart files}
 The \code{ndw} (number directory write) specify a part of the name of the folder where restart files are written. Note that the wavefunctions of the last two steps are saved, to allow the next verlet algorithm to restart with the correct wfc velocity.
 
+NB: since the code does not read the old timestep from the restart files, if you change the timestep in the newer run you have to tell the code what was the old timestep with the options showed before.
+
+\head {Wavefunction's velocity}
+To start to integrate the CP equation of motions we need to set the velocities of the nuclei (and those are simple) and the velocity of the electronic degrees of freedom. We cannot directly use the 2 wavefunctions at different timesteps because the DFT solver can choose any phase that it want in the two points (remember that there are unitary transformations that do not change the expectation values of the observables). So we fix this freedom by using the \emph{parallel transport gauge}
+\begin{align}
+	P(t) = \sum_{v}|\psi_v(t)\rangle\langle\psi_v(t)|\\
+	|\psi\rangle = P|\psi\rangle\\
+	|\dot\psi\rangle = \dot P|\psi\rangle + P |\dot\psi\rangle\\
+\end{align}
+The parallel transport gauge is equivalent to say that $P |\dot\psi\rangle=0$.
+
+\head {Wavefunction's velocity}
+It is possible to compute in a consistent way the wavefunctions at two consecutive timesteps in BOMD, and use those ground state to initialize the verlet algorithm for the CP equation of motion. 
+\begin{align}
+	P(t) = \sum_{v}|\psi_v(t)\rangle\langle\psi_v(t)|\\
+	|\psi(t)\rangle = |\psi(t-dt)\rangle + dt\dot P |\psi(t-dt)\rangle
+\end{align}
+The numerical time derivative of the projector $P(t)$ is well defined and does not depend on the gauge of $|\psi\rangle$.
+
+{\small Note: now (2021-05-26) this is implemented only when using CG with norm conserving pseudo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{CP equation of motions}
+The CP lagrangian is:
+\begin{equation}
+    \sum_v\frac{1}{2}\mu\int_{\Omega}d^3r|\dot\psi_v|^2+\sum_I\frac{1}{2}M_I\dot R_I^2-E_{DFT}[\{\psi_v\},\{R_I\}] + \sum_{i,j}\Lambda_{ij}\left(\int_{\Omega}d^3r\psi_i^*\psi_j-\delta_{ij}\right)
+\end{equation}
+From that you can derive the equation of motions that are:
+\begin{align}
+    \mu\ddot\psi_v(r,t)&=-\frac{\delta E}{\delta\psi_v^*}(r,t)+\sum_{j}\Lambda_{vj}\psi_j \\
+    M_I\ddot R_I &= - \nabla_{R_I} E
+\end{align}
+$\mu$ is a parameter, $\Lambda_{iij}$ are the lagrangian multipliers needed to keep the wavefunctions orthonormal. In the limit where $\mu \to 0$ the approximation is exact, but you'll have to use an infinitely small timestep.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{CPMD start}
@@ -247,6 +282,7 @@ Now we will modify the input file of the BOMD to do the verlet integration of th
     \item set \verb\ndw = 51\ (increase by one the number of the folder where the code will write the restart file)
     \item set \verb\nstep = 1000\ if you want to run for 1000 steps
     \item set \verb\electron_dynamics = 'verlet'\ to set the verlet algorithm to integrate the Car-Parrinello equation of motion
+    \item set \verb\emass = 50.d\ $\mu$ parameter
     \item set \verb\ion_velocities = 'default'\ to read the velocity from the specified restart file
     \item remove the \verb\AUTOPILOT\ card
 \end{itemize}
@@ -265,14 +301,14 @@ Maybe you noticed the file \code{h2o.for}. This contains the computed force, and
 To have the system equilibrated at a particular temperature we use a thermostat. We have to do the following changes to the input file:
 
 \begin{itemize}
-    \item set the number of steps to 1000 with \verb\nstep = 1000\
+    \item set the number of steps to 5000 with \verb\nstep = 5000\
     \item increase by one \verb\ndr\ and \verb\ndw\
     \item set the Nose-Hoover thermostat (namelist \verb\IONS\):
     \begin{itemize}
         \item set nose: \verb\ion_temperature = 'nose'\
         \item temperature: \verb\tempw = 600.d0\
-        \item nose frequency: \verb\fnosep = 5.d0\ 
-        \item number of thermostat in the NH chain: \verb\nhpcl = 3\ 
+%        \item nose frequency: \verb\fnosep = 5.d0\ 
+%        \item number of thermostat in the NH chain: \verb\nhpcl = 3\ 
     \end{itemize}
 \end{itemize}
 
@@ -280,7 +316,7 @@ Change the input file and submit it to the cluster!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{See what happened}
-Now it is possible to follow again the same steps to inspect the result of the simulation. Always keep an eye to the constant of motion and to the electronic fictitious kinetic energy! Did the electron's kinetic energy increase?
+Now it is possible to follow again the same steps to inspect the result of the simulation. Always keep an eye to the constant of motion and to the electronic fictitious kinetic energy!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{CG step}
