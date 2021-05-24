@@ -21,7 +21,7 @@
     conv_thr =  1.0d-7,
     startingpot='atomic',
     startingwfc='atomic',
-    electron_maxstep=6
+    electron_maxstep=4
  /
 
  &ions
