@@ -48,7 +48,7 @@ Large Quantum ESPRESSO temporary files (i.e. those written to
       ~/QE-2021/post-install/clean-outdir.sh
     
 Beware that automatic deletion of files is dangerous, hence use this
-script at your own risk. This script can be utilized both in the
+script **at your own risk**. This script can be utilized both in the
 virtual-machine as well as in the HPC cluster (but prior to running
 this script, you should execute `git stash; git pull; git stash apply`
 on the HPC cluster).
