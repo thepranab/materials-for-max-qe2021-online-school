@@ -1,0 +1,24 @@
+# auxiliary routine (copy *.dat files)
+proc copy_dat {q1} {
+    file copy -force silicon.plot_chi.dat silicon.plot_chi.q1$q1.dat
+    file copy -force silicon.plot_eps.dat silicon.plot_eps.q1$q1.dat
+}
+
+# run pw.x by utilizing the input-file directly without loading it into PWTK
+load_fromPWI pw.si.scf.in
+CONTROL " outdir = $env(ESPRESSO_TMPDIR) "
+run pw.x pw.si.scf.in
+
+# run EELS 
+load_fromEELSI turbo_eels.si.sternheimer.in
+LR_INPUT " outdir = $env(ESPRESSO_TMPDIR) "
+runEELS turbo_eels.sternheimer.in
+copy_dat 0.866
+
+# scan over q1 from 0.1 till 1.3 with step of 0.3
+foreach q1 [seq 0.1 0.3 1.3] {
+    LR_CONTROL " q1 = $q1 "
+    runEELS turbo_eels.sternheimer.q1$q1.in
+    copy_dat $q1
+}
+

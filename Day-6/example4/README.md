@@ -25,3 +25,4 @@
 
  5. Compute and plot the plasmon dispersion, i.e. compute EELS for
     |q| = 0.1, 0.3, 0.5, 0.7, 0.9, 1.1, 1.3 a.u. along the [100] direction.
+

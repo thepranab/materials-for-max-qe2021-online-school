@@ -3,6 +3,9 @@
 
 ### Topic of the day: Time-dependent density-functional-perturbation-theory (TDDFPT)
 
+**NOTE:** before you start, please do the following: 1) `git stash` 2)
+`git pull` 3) `git stash apply` 4) close the terminal 5) open a new
+terminal and start working on the hands-on.
 
 **Example 1:** Calculation of the absorption spectrum of benzene molecule (C6H6) using the `turbo_davidson.x` code
 
