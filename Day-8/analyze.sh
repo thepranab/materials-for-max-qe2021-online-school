@@ -3,6 +3,9 @@
 PREF=h2o
 
 cp2lammpstrj.py -n 24 --minimal --not-ordered -t 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 -o "$PREF" "$PREF"
+if [ "$(wc -l ${PREF}.evp | awk '{print $1}')" -ge 612 ]
+then 
+echo "writing binary files and analyzing them..."
 for T in pos vel cel evp
 do
 if [ "$T" == "evp" ]
@@ -16,3 +19,7 @@ done
 cp2analisi.py "$PREF.last" "$PREF" 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1
 analisi -i "${PREF}.bin" -q -B 2 > msd 2> /dev/null
 analisi -i "${PREF}.bin" -F 0.0 10.0 -g 100 -S 1 > gofr 2> /dev/null
+else
+echo "not writing files for production run"
+fi
+echo "done"
