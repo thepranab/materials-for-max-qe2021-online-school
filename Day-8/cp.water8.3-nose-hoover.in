@@ -3,11 +3,10 @@
     restart_mode = 'restart',
     ndr = 51,
     ndw = 52,
-    nstep  = 1000,
+    nstep  = 5000,
     iprint = 10,
     isave = 1000,
-    ! tstress = .TRUE.,
-    ! tprnfor = .TRUE.,
+    tprnfor = .TRUE.,
     dt    = 5.0d0,
     prefix = 'h2o',
     pseudo_dir='../pseudo',
@@ -21,7 +20,6 @@
  /
  &electrons
     emass = 50.d0,
-    emass_cutoff = 2.5d0,
     electron_dynamics = 'verlet',
  /
  &ions
@@ -30,12 +28,10 @@
     ion_velocities = 'default',
     tempw=600.d0,
     ion_temperature = 'nose',
-    fnosep = 5.d0,
-    nhpcl=3,
-
+    nhpcl = 3,
+    fnosep = 10.0
  /
  &cell
-    cell_dynamics = 'none',
  /
 ATOMIC_SPECIES
  O  16.0d0   O_ONCV_PBE-1.2.upf
