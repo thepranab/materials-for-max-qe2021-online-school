@@ -36,7 +36,7 @@ mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee no_options
 
 ------------------------------------------------------------------------
 
-1. First, **submit the job as is**, with npool set to 1. 
+1. First, **submit the job as is**, with npool set to 1 with the command  "sbatch job.sh"
 2. Second, **open the job-script file** (`job.sh`) and **change the number of pools to be used `-npool X`**, with X={2,4,8}. Don't forget to rename the output file as well.
 3. **Collect the time** taken by the code as a function of the number of k point pools.
 

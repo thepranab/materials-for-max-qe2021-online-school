@@ -16,4 +16,4 @@ export PW=$QE_ROOT/bin/pw.x
 
 export OMP_NUM_THREADS=1
 
-mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee no_options
+mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee pw.CuO.scf.npool01.ndiag01.log 

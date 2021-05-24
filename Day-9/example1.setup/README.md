@@ -22,7 +22,7 @@ cd qe-cpu
 ------------------------------------------------------------------------
 
 
-For the CPU version we will use hpc-sdk and SpectrumMPI which are a good combination on OpenPower machines.
+For the CPU version we will use hpc-sdk and SpectrumMPI which are a good combination for the OpenPower machines of Marconi100.
 The FFTW library is also required. The environment is setup using the following modules. 
 
 ~~~~~{.bash}
@@ -58,6 +58,14 @@ We will only benchmark `pw.x`. Let's compile it with the command
     make -j pw
 
 Now enjoy an espresso while you wait 3 minutes or so.
+
+------------------------------------------------------------------------
+
+Check that your installation works by running in parallel a quick random test from the test-suite
+
+    mpirun -np 2 PW/src/pw.x   -inp test-suite/pw_dft/dft1.in
+
+and check "JOB DONE".
 
 ------------------------------------------------------------------------
 
@@ -102,7 +110,7 @@ You must also specify the cuda version when launching the configure script
     [...]
     The following libraries have been found:
       BLAS_LIBS=-lblas 
-      LAPACK_LIBS=-L/cineca/prod/opt/compilers/hpc-sdk/2020/ binary/Linux_ppc64le/2020/profilers/Nsight_Systems/ host-linux-ppc64le -llapack -lblas 
+      LAPACK_LIBS=-L/cineca/prod/opt/compilers/hpc-sdk/2020/binary/Linux_ppc64le/2020/profilers/Nsight_Systems/host-linux-ppc64le -llapack -lblas 
       FFT_LIBS=
 ~~~~~
 
@@ -117,6 +125,19 @@ Compile again the code
     make -j pw
 
 Congratulations, now you have both a "standard" and an "accelerated" version of `pw.x` to be used in the following exercises.
+
+------------------------------------------------------------------------
+
+Check that your installation works by running in parallel a quick random test from the test-suite
+
+    mpirun -np 2 PW/src/pw.x   -inp test-suite/pw_dft/dft1.in
+
+check "JOB DONE". 
+
+Also check that the job has really employed GPUs, by checking that string "GPU acceleration is ACTIVE." was printed in the output and that GPU times 
+are reported alongside WALL times at the end of the calculation.
+
+------------------------------------------------------------------------
 
 
 
