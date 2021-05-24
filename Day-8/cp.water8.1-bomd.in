@@ -2,13 +2,11 @@
     title = 'Water 8 molecules',
     calculation = 'cp',
     restart_mode = 'from_scratch',
-    ndr = 50,
     ndw = 50,
     nstep  = 100,
     iprint = 10,
     isave = 1000,
-    ! tstress = .TRUE.,
-    ! tprnfor = .TRUE.,
+    tprnfor = .TRUE.,
     dt    = 5.0d0,
     prefix = 'h2o',
     pseudo_dir='../pseudo',
@@ -21,8 +19,6 @@
     ecutwfc = 50.0,
  /
  &electrons
-    emass = 50.d0,
-    emass_cutoff = 2.5d0,
     electron_dynamics = 'cg',
  /
  &ions
@@ -32,7 +28,6 @@
     tempw=600.d0
  /
  &cell
-    cell_dynamics = 'none',
  /
 ATOMIC_SPECIES
  O  16.0d0   O_ONCV_PBE-1.2.upf
