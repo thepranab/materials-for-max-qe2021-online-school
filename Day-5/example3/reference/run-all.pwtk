@@ -1,0 +1,22 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#------------------------------------------------------------------------
+
+load_fromPWI pw.bn.in
+runPW pw
+
+
+load_fromPHI ph.bn.in
+runPH ph
+
+
+load_fromQ2RI q2r.bn.in
+runQ2R q2r
+
+
+load_fromMDI matdyn.bn.in
+runMATDYN matdyn
+
+
+# plotband.x does not support -in flag and parallel execution
+run -serial -ihandle "<" plotband.x plotband.bn.in

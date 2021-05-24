@@ -71,7 +71,7 @@ and check "JOB DONE".
 
 ## GPU version
 
-Now go back to the folder of example1 and download the last release of the GPU accelerated version of QE
+Now go back to the folder of `example1` and download the last release of the GPU accelerated version of QE
 
 ~~~~~{.bash}
 cd ..

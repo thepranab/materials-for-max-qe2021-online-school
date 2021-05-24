@@ -1,7 +1,7 @@
  &control
     calculation='bands',
-    pseudo_dir = './pseudo/',
-    outdir='./tempdir/',
+    !pseudo_dir = './pseudo/',
+    !outdir='./tempdir/',
     prefix='ni',
  /
  &system

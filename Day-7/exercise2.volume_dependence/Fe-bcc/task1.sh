@@ -1,10 +1,6 @@
 #!/bin/sh
 export OMP_NUM_THREADS=1
-export PW=pw.x
-if test -e magmom.dat
-then
-	mv magmom.dat magmom.dat_old
-fi 
+export PW=pw.x 
 if test -e energies.dat
 then 
 	mv energies.dat energies.dat_old
@@ -20,7 +16,7 @@ cat >fe.scf.$latt.in <<EOF
     calculation='scf'
     restart_mode='from_scratch',
     !pseudo_dir = '~/QE-2021/pseudo', ! uncomment if ESPRESSO_PSEUDO variable is unset
-    outdir='./tempdir/'
+    !outdir='./tempdir/'
     prefix='fe'
  /
  &system

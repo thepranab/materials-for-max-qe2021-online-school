@@ -1,0 +1,17 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#------------------------------------------------------------------------
+
+load_fromPWI pw.Si.in
+runPW pw
+
+load_fromPHI ph.Si.in
+runPH ph
+
+load_fromQ2RI q2r.Si.in
+runQ2R q2r
+
+load_fromMDI matdyn.Si.in
+runMATDYN matdyn
+
+run plotband.x plotband.Si.in

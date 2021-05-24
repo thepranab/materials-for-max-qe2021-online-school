@@ -1,0 +1,13 @@
+load_fromPWI conv/fe.scf.in
+
+set fid [open energies.dat w]
+
+foreach alat [seq 4.6 0.1 5.9] {    
+    SYSTEM " celldm(1) = $alat "
+    runPW pw.fe.scf.$alat
+    
+    set Etot [pwo_totene pw.fe.scf.$alat.out]
+    puts $fid "$alat  $Etot"
+}
+
+close $fid

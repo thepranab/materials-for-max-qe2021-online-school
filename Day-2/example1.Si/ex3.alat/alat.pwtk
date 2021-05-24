@@ -16,7 +16,7 @@ foreach alat [seq 9.7 0.1 10.7] {
     SYSTEM "celldm(1) = $alat"
     runPW $name.in
 
-    set Etot [::pwtk::pwo::totene $name.out]
+    set Etot [pwo_totene $name.out]
     puts $fid "$alat $Etot"    
 } 
 

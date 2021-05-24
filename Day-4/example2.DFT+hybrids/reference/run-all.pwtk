@@ -1,0 +1,18 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#------------------------------------------------------------------------
+
+# load pw.x input file
+load_fromPWI pw.Si.scf.in
+
+foreach x {.true. .false.} {
+    printTitle "Performing calculations for x_gamma_extrapolation = $x"
+
+    foreach q {1 2 4 8} {
+        print "q-mesh set to: $q x $q x $q\n"
+
+        SYSTEM " x_gamma_extrapolation = $x
+                 nqx1=$q, nqx2=$q, nqx3=$q "
+        runPW pw.Si.scf.x_gamma_ext=${x}q=${q}.in
+    }
+}

@@ -14,7 +14,7 @@
     ecutwfc = 20.0,
     ecutrho = 200.0,
 
-    occupations='tetrahedra'
+    occupations='tetrahedra_opt'
  /
  
  &ELECTRONS

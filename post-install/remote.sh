@@ -63,6 +63,7 @@ Submitting to HPC cluster via sbatch:
 ------------------------------------------------------------------------
 "
     opts=$(eval echo $sbatch_options)
+    ssh -x -n -f $HPC_HOST "cd $HERE; echo $opts > checkfile"
     ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $opts $script.sh > $script.log 2>&1"
 }
 
@@ -117,7 +118,7 @@ Submitting to HPC cluster:
    sbatch $opts $script > $log
 ------------------------------------------------------------------------
 "
-    ssh -x -n -f $HPC_HOST "cd $HERE; sbatch $opts $script > $log 2>&1"
+    ssh -x -n -f $HPC_HOST "cd $HERE; export NPROC=$NPROC; sbatch $opts $script > $log 2>&1"
 }
 
 
@@ -177,6 +178,14 @@ Submitting to HPC cluster (requested number of processors = $NPROC):
     rm -f $script
 }
 
+#------------------------------------------------------------------------
+# PURPOSE: execute "squeue -u $USER" on the HPC cluster
+#------------------------------------------------------------------------
+remote_squeue () {
+    ssh -x -n -f $HPC_HOST "echo; squeue -u \$USER"
+}
+
+
 hpc() {
     HERE="~${PWD#$HOME}"
     ssh -t $HPC_HOST "cd $HERE; bash";
@@ -216,4 +225,11 @@ rsync_from_hpc() {
     # Purpose: will rsync file from crysden:$(pwd)/file to here
     HERE="~${PWD#$HOME}"
     rsync -avu $HPC_HOST:$HERE/$1 .
+}
+
+update_sissa_reservation_name(){
+SLURM_RESERVATION=`ssh -x -n -f $HPC_HOST 'echo $SLURM_RESERVATION'`
+cat > ~/sissa_slurm_reservation << EOF
+$SLURM_RESERVATION
+EOF
 }

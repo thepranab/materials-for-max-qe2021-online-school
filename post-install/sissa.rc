@@ -1,7 +1,19 @@
 # SLURM options for HPC cluster @ SISSA in Trieste
 
 export NPROC=20
-export sbatch_options="--nodes=1 --ntasks-per-node=\$NPROC --cpus-per-task=1 --partition=regular1 --time=00:30:00 --exclusive"
 
+if test -f $HOME/sissa_slurm_reservation; then
+   SLURM_RESERVATION=`cat $HOME/sissa_slurm_reservation`
+   export SLURM_RESERVATION
+fi
+
+
+
+if [ -z $SLURM_RESERVATION ] 
+  then
+     export sbatch_options="--nodes=1 --ntasks=\$NPROC --ntasks-per-node=\$NPROC --cpus-per-task=1 --partition=regular1 --time=06:00:00 --exclusive"
+  else
+     export sbatch_options="--nodes=1 --ntasks=\$NPROC --ntasks-per-node=\$NPROC --cpus-per-task=1 --partition=regular1 --time=06:00:00 --exclusive --reservation=$SLURM_RESERVATION"
+fi
 source $HOME/QE-2021/post-install/remote.sh
 

@@ -5,8 +5,10 @@
 \usepackage[top=2cm, bottom=2cm, outer=0cm, inner=0cm]{geometry}
 \usepackage{listings}
 \usepackage{amsmath}
+\usepackage[pdftex,colorlinks=false,urlbordercolor={0.667 0.110 0.094}]{hyperref}
 
 \input{aliases}
+\def\pwtk{\href{http://pwtk.ijs.si}{PWTK}}
 
 \begin{document}
 \AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{figs/qe2021-background-4x3.png}}
@@ -16,13 +18,13 @@
 ~\\
 \vspace*{4cm}
 \MyLogo{~}
-\vspace{5em}
+\vspace{3em}
 \begin{center}
   {\burgundy\LARGE\bf QE-2021: Hands-on session -- Day-2}\\[2em]
   {\burgundy\LARGE (Convergence-tests calculations)}
   ~\\[1.5em]
-  %\large Anton Kokalj, Pietro Delugas,\\
-  %Matic Pober\v{z}nik, Cristiano Malica, Subrahmanyam Sappati, Lei Qiao
+  \large Anton Kokalj, Pietro Delugas, Paolo Giannozzi, \\
+  Matic Pober\v{z}nik, Cristiano Malica, Subrahmanyam Sappati, Lei Qiao
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -36,9 +38,16 @@ Topics of Day-2 hands-on session:
 \item How to deal with ultrasoft pseudopotentials and with spin polarization
   (\file{example3.Fe/})
 \end{enumerate}
-b
+
 To get the latest version of the exercises, move to \file{Day-2/} directory and execute:\\[0.5em]
 \exec{git pull}
+
+{\bf Beware:} if you changed some input files in \file{Day-1/} then
+\file{git pull} will fail and you will need to do:\\[0.5em]
+\exec{git stash}\\
+\exec{git pull}\\
+\exec{git stash apply}\\
+
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \head{1. Bulk system: Silicon}
@@ -115,11 +124,12 @@ up to 1, they are normalized by the code\\[1em]
 {\bf Frequently Asked Question:} where do I find special k-points 
 and their weights?\\
 {\gray Answer: 1) in papers, 2) use an auxiliary code \prog{kpoints.x}, 
-  3) use uniform grids}
+  3) {\bf use uniform grids}}
 
-\item  If a uniform grid is chosen: Monkhorst-Pack parameters
-(H.J. Monkhorst and J.D. Pack, {\sl Phys. Rev. B} {\bf 13}, 5188 (1976)),
-and offsets along the three directions
+\item If a uniform grid is chosen: specify Monkhorst-Pack parameters
+  {\small ({\sl Phys. Rev. B} {\bf 13}, 5188 (1976))} and offsets
+  along the three directions {\gray (uniform k-point grids are covered
+    in more detail in section 1.2 below)}.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,8 +182,27 @@ with 4 electrons. The system is a non-magnetic insulator, so just the
 lowest 4 (= 8/2) valence bands (Kohn-Sham states) are computed.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Convergence w.r.t. the kinetic energy cutoff}
+\head{1. Convergence tests for Si bulk}
+
+Convergence tests for Si bulk consist of the following steps:
+\begin{enumerate}
+\item convergence with respect to basis-set, i.e., kinetic energy
+  cutoff (variable \var{ecutwfc})
+\item convergence with respect to k-points (card \var{K\_POINTS})
+
+\item with converged \var{ecutwfc} and k-points, determine the lattice
+  parameter of Si bulk
+
+\item Bonus: with converged parameters (\var{ecutwfc}, k-points, and
+  lattice parameter), calculate a band structure of Si-bulk
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\head{1.1 Convergence w.r.t.\@{} the kinetic energy cutoff}
 %
+\rightheader{\hspace{-0.8cm}\includegraphics[width=3.4cm]{figs/QE.png}}
+
 The kinetic energy cutoff \var{ecutwfc} (in Ry) determines the size of
 the Plane-Wave (PW) basis set used to expand wave-functions (i.e.
 Kohn-Sham orbitals) \\
@@ -181,12 +210,13 @@ Kohn-Sham orbitals) \\
   \var{ecutrho=4*ecutwfc}, which is OK for norm-conserving PPs)}
 
 \begin{itemize}
-\item A manual test of convergence w.r.t. kinetic energy cutoff entails the
-following tasks\\({\bf BEWARE: we will {\burgundy not} do it manually})
+\item A manual test of convergence w.r.t.\@{} kinetic energy cutoff entails the
+following tasks\\({\bf BEWARE: we will {\burgundy not} do it manually!})
 \begin{enumerate}
-\item change value of \var{ecutwfc} in \file{pw.si.scf.in} 
-  input to, e.g., 16, 20, 24, 28, 32 Ry
-\item for each value of \var{ecutwfc}, run \prog{pw.x} and collect the final energy
+\item change \var{ecutwfc} in the \file{pw.si.scf.in} input to, e.g.,
+  16, 20, 24, 28, 32 Ry
+\item for each value of \var{ecutwfc}, run \prog{pw.x} and collect the
+  final total energy
 \item collect the data in a file, say \file{si.etot\_vs\_ecut}
   (i.e. each line should contain two values: \var{ecutwfc} and ``total-energy'')
 \item plot the energies collected in \file{si.etot\_vs\_ecut} using your preferred
@@ -199,11 +229,12 @@ following tasks\\({\bf BEWARE: we will {\burgundy not} do it manually})
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{\burgundy Convergence w.r.t. kinetic energy cutoff (II)}
+\head{\burgundy 1.1 Convergence w.r.t.\@{} kinetic energy cutoff (II)}
+\rightheader{\hspace{-0.8cm}\includegraphics[width=3.4cm]{figs/QE.png}}
 %
 To make convergence tests easier and faster, scripts are commonly
 used. To this end, Unix shell-scripts have been traditionally used,
-yet there are other more "fancy" alternatives, e.g., PWTK
+yet there are other more "fancy" alternatives, e.g., \pwtk\
 scripts.\vspace{-1em}
 {\small
   \begin{itemize}
@@ -229,7 +260,7 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
 \head{\burgundy PWTK scripting: basics}
 \vspace{-1em}
 \begin{itemize}
-\item PWTK scripts are basically Tcl-scripts, hence they use Tcl-syntax
+\item \pwtk\ scripts are basically Tcl-scripts, hence they use Tcl-syntax
 
   \vspace{-0.5em}
 \item namelists and cards have the same names as in QE (with a few
@@ -261,13 +292,13 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
   where \file{Fe} is one among atomic species defined in the \card{ATOMIC\_SPECIES} card.
 
   \vspace{-0.5em}  
-\item PWTK script are case sensitive, i.e.,
+\item PWTK scripts are case sensitive, i.e.,
   {\codecolor\verb+CONTROL { ... }+} is OK,\\
   but {\codecolor\verb+control { ... }+} is not; namelist variables
   are also case sensitive!
 
   \vspace{-0.5em}
-\item namelist {\bf variables can be set on-the fly} (we will use this
+\item namelist {\bf variables can be set on the fly} (we will use this
   heavily)
 
   \vspace{-0.5em}
@@ -290,12 +321,12 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
   to unset the \var{outdir} variable, use:\\[0.5em]
   {\codecolor\verb+CONTROL { outdir = }+}
 
-\item today we will use the following PWTK functions:
+\item today we will use the following \pwtk\ functions:
   \begin{itemize}
   \item \code{load\_fromPWI} -- loads input data from an existing
     \prog{pw.x} input file
     \vspace{0.2em}
-  \item \code{::pwtk::pwo::totene} -- returns the converged total energy
+  \item \code{pwo\_totene} -- returns the converged total energy
     from \prog{pw.x} output\vspace{0.2em}
   \item \code{seq} -- like the Unix \prog{seq} command (returns a
     sequence of numbers)\vspace{0.2em}
@@ -308,17 +339,18 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
   \item \code{runPROJWFC} -- ... for the \var{projwfc.x} program
   \end{itemize}
 \item PWTK web-site:\\
-  \file{http://pwtk.ijs.si/} ~or~ \file{http://pwtk.quantum-espresso.org/}
+  \file{\url{http://pwtk.ijs.si/}} ~or~ \file{\url{http://pwtk.quantum-espresso.org/}}
   \item PWTK documentation is available at:\\
-    \file{http://pwtk.ijs.si/toc\_index.html}
+    \file{\url{http://pwtk.ijs.si/documentation.html}}
 \end{itemize}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Convergence w.r.t. the kinetic energy cutoff (III)}
+\head{1.1 Convergence w.r.t.\@{} the kinetic energy cutoff (III)}
 \rightfooter{Example: \file{Day-2/example1.Si/ex1.ecutwfc/}}
 \rightheader{}
+%\rightheader{\hspace{-0.8cm}\includegraphics[width=3.4cm]{figs/QE.png}}
 % 
 \begin{itemize}
 \item To run the convergence test via the Unix shell-script move to
@@ -337,32 +369,35 @@ The basic philosophy is to {\bf keep the syntax close to original input syntax}!
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Convergence w.r.t. the kinetic energy cutoff (IV)}
+\head{1.1 Convergence w.r.t.\@{} the kinetic energy cutoff (IV)}
 %
+%\rightheader{\hspace{-0.8cm}\includegraphics[width=3.4cm]{figs/QE.png}}
+
 \begin{center}
 \includegraphics[width=10cm]{figs/ecut.png}
 \end{center}
 \vspace{-2cm}
 {\burgundy Notes:}
 \begin{itemize}
-\item Convergence w.r.t the cutoff is a property of the {\em pseudopotential(s) used}.
+\item Convergence w.r.t.\@{} cutoff is a property of the {\em pseudopotential(s) used}.
 \item 
 Convergence of the {\em absolute energy} is typically slower than convergence of
 {\em interesting physical properties}, e.g. structure.
 \item 
 Absolute values of total energy do not have any physical meaning 
-(and depend upon the specific PP): only energy {\em differences} do
+(and depend upon the specific pseudopotential): only energy {\em
+  differences} have meaning
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Convergence w.r.t. k-points}
+\head{1.2 Convergence w.r.t.\@{} k-points}
 \rightfooter{Example: \file{Day-2/example1.Si/ex2.kpoints/}}
-%
-% HERE
+\rightheader{\hspace{-0.8cm}\includegraphics[width=4.5cm]{figs/QE.png}}
+
 A sufficiently dense grid of k-points is needed in order to account
 for {\em periodicity}.
 
-To test the convergence w.r.t. k-points, you need to edit
+To test the convergence w.r.t.\@{} k-points, you need to edit
 the \card{K\_POINTS} card and request {\em automatic} Monkhorst-Pack
 grids:
 %
@@ -389,7 +424,7 @@ For example, with PWTK this can be achieved with the following snippet:
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Convergence w.r.t. k-points (II)}
+\head{1.2 Convergence w.r.t.\@{} k-points (II)}
 %
 Description of the \card{K\_POINTS} card for {\em automatic} mode:
 {\cardcolor
@@ -408,14 +443,14 @@ three \card{k1 k2 k3} numbers, either 0 or 1, mean {\em ``grid starts
 Also note that:
 \begin{itemize}
 \item  Convergence is not necessarily monotonic: 
-  there is no variational principle w.r.t. number of k-points
-\item  The \card{2 2 2~~1 1 1} Monkhorst-Pack grid is the same as 
+  there is no variational principle w.r.t.\@{} number of k-points
+\item {\gray The \card{2 2 2~~1 1 1} Monkhorst-Pack grid is the same as 
   the ``two Chadi-Cohen points'' {\small (see: D.J. Chadi and
-M.L. Cohen, Phys. Rev. B {\bf 8}, 5747 (1973))}
+M.L. Cohen, Phys. Rev. B {\bf 8}, 5747 (1973))}}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Convergence w.r.t. k-points (III)}
+\head{1.2 Convergence w.r.t.\@{} k-points (III)}
 %
 The PWTK script for testing the convergence with respect to k-points is
 located in
@@ -430,18 +465,18 @@ You should get a plot like this one:\\[-3cm]
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Equation of State: silicon}
+\head{1.3 Equation of State: silicon}
 \rightfooter{Example: \file{Day-2/example1.Si/ex3.alat/}}
 %
 Equilibrium in Si is determined by the minimum-energy lattice
-parameter alone: there are no forces on atoms, by symmetry (you can
+parameter alone: there are no forces on atoms due to symmetry (you can
 verify this by setting \var{tprnfor=.true.} in namelist
 \nml{\&CONTROL} and looking for forces reprinted at the end).
 
 To find the lattice parameter:
 \begin{itemize}
-\item Choose suitable values for \var{ecutwfc} and the k-point 
-grid {\small (e.g. \var{30} Ry and \var{4 4 4 1 1 1})}
+\item Choose suitable values for \var{ecutwfc} and k-point 
+grid {\small (e.g. \var{30} Ry and \var{4 4 4~~1 1 1})}
 \item Run \prog{pw.x} for values of \var{celldm(1)} ranging from
   9.7 to 10.7 in steps of 0.1 a.u.
 \end{itemize}
@@ -459,7 +494,7 @@ With PWTK this can be achieved with the following snippet:
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Equation of State: silicon (II)}
+\head{1.3 Equation of State: silicon (II)}
 
 The corresponding PWTK script is located in
 \file{Day-2/example1.Si/ex3.alat/} directory (see \file{README.md} for
@@ -487,7 +522,7 @@ detailed instructions).
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Equation of State: silicon (III)}
+\head{1.3 Equation of State: silicon (III)}
 %
 Use the code \prog{ev.x} to fit your results to a
 phenomenological equation-of-state (EOS, e.g. Murnaghan) and to get
@@ -506,7 +541,7 @@ $a_3\qquad E(a_3)$\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Band Structure of Silicon}
+\head{1.4 Band Structure of Silicon}
 \rightfooter{Example: \file{Day-2/example1.Si/ex4.bands/}}
 %
 The scheme to calculate the bands (spaghetti plot) is the following:
@@ -537,7 +572,7 @@ the \prog{bands.x} calculation\\
 {\em Important:} the k-point path must be continuous in k-space
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Band Structure of Silicon (II)}
+\head{1.4 Band Structure of Silicon (II)}
 %
 The input for the \prog{bands.x} program is the following:
 {\codecolor
@@ -563,13 +598,13 @@ The snippet for running all three calculations manually is:\\[0.5em]
 {\bf  but} we will use a PWTK script instead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Band Structure of Silicon (III)}
+\head{1.4 Band Structure of Silicon (III)}
 %
 To execute the PWTK script that will perform all the needed
 calculations for plotting the bands, proceed as follows:\\
 \parbox{0.65\textwidth}{
   \begin{itemize}
-  \item move to directory
+  \item move to directory\\
     \file{Day-2/example1.Si/ex4.bands/} and read the \file{README.md} file
   \item set suitable values for \var{celldm(1)}, \var{ecutwfc}, and
     \card{K\_POINTS}
@@ -593,7 +628,7 @@ they are automatically inherited for subsequent calculations.
 \prog{plotband.x} prompts for terminal input:
 {\codecolor
 \begin{verbatim}
-$ plotband.x 
+• plotband.x 
 Input file > Si.bands.dat
 Reading    8 bands at     39 k-points
 Range:   -5.6940   16.4680eV  Emin, Emax > -5.6940   16.4680
@@ -640,19 +675,20 @@ not suffice.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Convergence with respect to k-points, degauss, and smearing} 
+\head{2.1 Convergence with respect to k-points, degauss, and smearing} 
 \rightfooter{Example: \file{Day-2/example2.Al/ex1.degauss/}}
+\rightheader{}
 %
-This is a {\it ``three-dimensional''} convergence test, where we will
-vary the number of k-points and values of \var{degauss} and
-\var{smearing} variables. In particular, we will vary:
+This is a {\it ``three-dimensional''} convergence test, where the
+number of k-points and values of \var{degauss} and \var{smearing}
+variables are varied. In particular, we will vary:
 \begin{enumerate}
 \item[]
   \begin{itemize}
   \item \var{smearing} variable, possible values:
     \flag{'gauss'} (or \flag{'g'}), \flag{'marzari-vanderbilt'} (or
     \flag{'m-v'}), \flag{'methfessel-paxton'} (or \flag{'m-p'})
-  \item \var{degauss} variable, in range from 0.001 to 0.1
+  \item \var{degauss} variable, in range from 0.003 to 0.1
   \item k-points using the {\em automatic} grids of \card{4 4 4},
     ~\card{8 8 8}, ~\card{12 12 12}, and \card{16 16 16}    
   \end{itemize}
@@ -662,7 +698,7 @@ With PWTK this can be achieved with the following snippet:
 \begin{verbatim}
     foreach nk {4 8 12 16} {
         foreach smear {'gauss'  'm-p'  'm-v'} {
-            foreach degauss {0.001 0.003 0.01 0.03 0.1} {
+            foreach degauss {0.003 0.01 0.03 0.1} {
                 SYSTEM " smearing = $smear  
                          degauss  = $degauss "
                 K_POINTS automatic "$nk $nk $nk   1 1 1"
@@ -674,7 +710,7 @@ With PWTK this can be achieved with the following snippet:
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Convergence with respect to k-points, degauss, and smearing (II)} 
+\head{2.1 Convergence with respect to k-points, degauss, and smearing} 
 %
 \begin{itemize}
 \item move to \file{Day-2/example2.Al/ex1.degauss/} directory
@@ -684,17 +720,20 @@ With PWTK this can be achieved with the following snippet:
 Notice how much slower the convergence is for metals than for insulators!
 
 Both \flag{m-v} and \flag{m-p} depend much less upon \var{degauss} and
-allow for faster and safer convergence than simple gaussian
+allow for faster and safer convergence than simple Gaussian
 broadening. For Al and \flag{m-v} or \flag{m-p} smearing, good
 convergence is achieved for a \card{12 12 12} k-point grid and
 \var{degauss} $\sim 0.01$ to $0.05$ Ry.\\[1em]
 \centerline{\includegraphics[width=1.0\textwidth]{figs/smearing.pdf}}
-{\small\gray Beware that you cannot reduce the broadening too much: the energy levels
-must have some overlap, or else the advantage of broadening is lost!}
+{\small\gray Beware that you cannot reduce the broadening too much:
+  the energy levels must have some overlap, or else the advantage of
+  broadening is lost!}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{How to plot charge-density}
+\head{2.2 How to plot charge-density}
 \rightfooter{Example: \file{Day-2/example2.Al/ex2.chdens/}}
+\rightheader{\hspace{-0.8cm}\includegraphics[width=4.5cm]{figs/QE.png}}
 %
 Example \file{Day-2/example2.Al/ex2.chdens/} shows how to calculate the
 valence and the all electron charge density (the latter requires a PAW
@@ -706,7 +745,7 @@ potential and a very large cutoff energy)
   this script calculates and ``plots'' the valence charge density;
   notice that the electron charge is located mainly in interstitial
   regions (due to the use of a pseudo-potential, there is {\it almost
-    no} charge in close vicinity of nuclei; see next page);
+    no} charge in close vicinity of nuclei; see the next page)
 \item the scheme to calculate and plot the charge-density is:
   \begin{enumerate}
   \item make an SCF \prog{pw.x} calculation
@@ -720,7 +759,7 @@ potential and a very large cutoff energy)
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{How to plot charge-density (II)}
+\head{2.2 How to plot charge-density (II)}
 
 \begin{itemize}
 \item to calculate all-electron {\bf valence} and {\bf total} charge densities,
@@ -729,36 +768,38 @@ potential and a very large cutoff energy)
   (note that \var{plot\_num=17} for all-electron valence density and
   \var{plot\_num=21} for all-electron total density)
 
-\item comparison between PP valence-density vs.\@{} all-electron densities
+\item comparison between pseudopotential (PP) valence-density vs.\@{} all-electron densities
   (valence and total):
 \end{itemize}
 \centerline{\includegraphics[width=1.0\textwidth]{figs/Al-chdens.pdf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{3. A magnetic example: Iron}
+\head{3. A magnetic example: Iron bulk}
 \rightfooter{Example: \file{Day-2/example3.Fe/}}
 %
-Iron has two remarkable features: it is magnetic
-and it requires an Ultrasoft PP (USPP) since its localized 3d atomic 
-states are very hard.
+Fe has two remarkable features: it is magnetic and it ``calls for'' an
+Ultrasoft PP (USPP) since its localized 3d atomic states are very
+hard.
 \begin{itemize}
 \item move to the \file{Day-2/example3.Fe/} directory and read the
   \prog{pw.x} input file \file{pw.fe\_fm.scf.in}
 \item the structure is bcc (\var{ibrav=3}) with one atom per unit cell
-\item notice the presence of variables \var{nspin} and 
-of \var{starting\_magnetization}, indicating LSDA
-(\var{nspin=2}) with unconstrained total magnetization and
-initial symmetry broken; plus, variables for {\em metallic} calculations
+\item notice (i) variables \var{nspin} and of
+  \var{starting\_magnetization}, indicating spin-polarized calculation
+  (\var{nspin=2}) with unconstrained total magnetization with only the
+  initial guess for the magnetization given and (ii) variables for
+  {\em metallic} system (\var{occupations}, \var{smearing},
+  \var{degauss})
 \item notice that this calculation uses GGA (PBE): it is specified
 inside the PP file (can be guessed from the PP file name),
 reprinted on output as "Exchange-correlation"
 \item also notice that with USPP, it is typically needed to set
-\var{ecutrho} $ > 4 \times $\var{ecutwfc}
+\var{ecutrho $ > 4 * $ecutwfc}
 (it should be at least 8 to 12 times larger)
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Magnetic structures}
+\head{3. Magnetic structures}
 %
 Run \prog{pw.x} in the usual way (\code{pw.x -in
   pw.fe\_fm.scf.in > pw.fe\_fm.scf.out}). In the output, notice:
@@ -781,9 +822,11 @@ Run \prog{pw.x} in the usual way (\code{pw.x -in
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Magnetic structures: going antiferromagnetic}
+\head{3. Magnetic structures: going antiferromagnetic}
+\rightheader{\hspace{-0.8cm}\includegraphics[width=3.4cm]{figs/QE.png}}
+
 \begin{itemize}
-  \item in order to reach antiferromagnetic states, you need to:
+  \item To reach antiferromagnetic states, you need to:
   \begin{itemize}
   \item introduce a {\burgundy supercell} with two sublattices of 
     different species of atoms (even if they are the same,
@@ -810,8 +853,10 @@ by:\\[1em]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Convergence check for USPP}
+\head{3.1 Convergence tests for ultrasoft pseudopotential(s)}
 \rightfooter{Example: \file{Day-2/example3.Fe/ex1.ecut/}}
+\rightheader{}%\hspace{-0.8cm}\includegraphics[width=3.4cm]{figs/QE.png}}
+
 %
 For computational efficiency, it is convenient to keep \var{ecutwfc}
 as low as possible, while \var{ecutrho} is less critical
@@ -845,7 +890,8 @@ The corresponding PWTK snippet is:
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Convergence check for USPP (II)}
+\head{3.1 Convergence tests for ultrasoft pseudopotential(s)}
+%\head{Convergence check for USPP (II)}
 
 A PWTK script to make convergence check for USPP is provided, i.e.:
 
@@ -867,8 +913,10 @@ A PWTK script to make convergence check for USPP is provided, i.e.:
   phases (the latter being a slightly more complicated structure)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Density of States (DOS) and Projected DOS (PDOS)}
+\head{3.2 Density of States (DOS) and Projected DOS (PDOS)}
 \rightfooter{Example: \file{Day-2/example3.Fe/ex2.dos/}}
+\rightheader{}
+
 %
 \begin{enumerate}
 \item move to \file{Day-2/example3.Fe/ex2.dos/} directory and
@@ -881,7 +929,7 @@ A PWTK script to make convergence check for USPP is provided, i.e.:
 \centerline{\includegraphics[width=1.0\textwidth]{figs/fe-dos+pdos.pdf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{Density of States (DOS) and Projected DOS (PDOS)}
+\head{3.2 Density of States (DOS) and Projected DOS (PDOS)}
 The scheme to calculate DOS and PDOS consists of:\vspace{-0.8em}
 \begin{enumerate}
 \item an SCF \prog{pw.x} calculation (\var{calculation='scf'})\vspace{-0.8em}

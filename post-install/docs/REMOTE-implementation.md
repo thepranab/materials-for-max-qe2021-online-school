@@ -28,5 +28,5 @@ file, depending on which HPC computer was setup for use.
   
 If you want to run remotely by changing the default settings, you can do it via, e.g.:
 
-    sbatch_options="--option1=value1 --option2=value2 ..."  NPROC=value  remote_mpirun pw.x inputfile.in
+    sbatch_options="--option1=value1 --option2=value2 ..."  NPROC=value  remote_mpirun pw.x -in inputfile.in
   

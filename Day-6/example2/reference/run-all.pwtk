@@ -1,0 +1,35 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#
+# BEWARE: both turbo_lanczos.x and turbo_spectrum.x use LR_INPUT namelists,
+#         hence a caution is needed in PWTK not to mess it up.
+#------------------------------------------------------------------------
+
+# run pw.x calculation by utilizing input file directly
+run pw.x pw.benzene.scf.in
+
+# load turbo_lanczos.x input file
+load_fromLANI turbo_lanczos.benzene.in
+
+
+# let's do turbo calcs ...
+foreach iter { 500 1000 1500 } {
+    foreach {ext maxiter} "
+        no   $iter
+        osc  20000
+    " {        
+        LR_CONTROL "itermax = $iter"
+        runLANCZOS turbo_lanczos.$ext.$iter.in
+        
+        # use input-stacking not to mess the LR_INPUT of turbo_lanczos.x
+        input_pushpop {
+            load_fromSPECI turbo_spectrum.benzene.in
+            LR_INPUT " itermax0 = $iter
+                       itermax  = $maxiter
+                       extrapolation = '$ext' "
+            runSPECTRUM turbo_spectrum.$ext.$iter.in
+        }
+        # for subsequent calcs use restart mode for turbo_lanczos.x
+        LR_INPUT { restart = .true. }
+    }
+}

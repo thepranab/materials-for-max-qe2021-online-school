@@ -1,5 +1,5 @@
 &BANDS
-    outdir='./tempdir/',
+    !outdir='./tempdir/',
     prefix='ni',
     filband='ni.spinup.band_data',
     spin_component = 1,

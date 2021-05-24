@@ -2,7 +2,7 @@
     calculation='scf',
     restart_mode='from_scratch',
     !pseudo_dir = '~/QE-2021/pseudo/',
-    outdir='./tempdir/',
+    !outdir='./tempdir/',
     prefix='ni',
  /
  &system

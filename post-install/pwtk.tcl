@@ -26,6 +26,7 @@ if { $np > 1 } {
 # default directories ...
 
 outdir /tmp
+outdir_prefix /tmp
 #wfcdir /tmp
 
 # directory with pseudo-potentials

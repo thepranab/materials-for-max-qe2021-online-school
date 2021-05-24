@@ -1,8 +1,44 @@
 # How to run calculations remotely on the HPC cluster
 
 Some examples take too long on a laptop computer, hence they will be
-run remotely on the HPC cluster. The conventional way to run
-calculations remotely is to:
+run remotely on the HPC cluster, which up to Day-8 is either
+hpc-login1.arnes.si, frontend1.hpc.sissa.it, or argo.ictp.it.
+
+## Specifics
+
+Those of you who were allocated to:
+- **Arnes cluster** (hpc-login1.arnes.si): do not read output files on
+  the cluster (or download them from the cluster), while calculation
+  is running. This will likely lead to file corruption. Instead check
+  the status of calculation with either `remote_squeue` from the
+  virtual-machine or `squeue -u $USER` on the cluster and only when
+  the calculation is completed read or download the files.
+
+- **SISSA cluster** (frontend1.hpc.sissa.it): activate
+  virtual-private-network (VPN) at the beginning of each hands-on
+  session with:
+
+        sissa-openconnect
+      
+  Beware that *openconnect* will hang if it is already running. If this
+  happens, then (1) kill it with `kill-openconnect`, (2) restart the
+  network as described [here](../post-install/docs/restart-network.md), 
+  and (3) execute again `sissa-openconnect`.
+
+  The slurm reservation name in SISSA needs to be updated during each
+  session and in the afternoon after 14:00. To update the reservation
+  name simply type the command:
+
+       update_sissa_reservation_name
+
+  Then close the terminal and open a new one. The command has to be executed
+  after you have activated the VPN.  
+
+- **ICTP cluster** (argo.ictp.it): there are no specifics.
+
+
+## Conventional way to run remotely (usually not used during the school)
+The conventional way to run calculations remotely is to:
 
 1. Copy the need files to remote computer via `scp` or `rsync`.
 2. Log to the remote computer via `ssh`.
@@ -69,6 +105,9 @@ are non-standard). These are:
 * **`hpc`** -- this makes `ssh` to "hpc" HPC login node, such that the
   user will be located in the same directory as used locally
 
+* **`remote_squeue`** -- displays user's jobs in Slurm queue on the
+  "hpc" cluster (i.e. executes `squeue -u $USER` remotely)
+  
 * **`rsync_to_hpc`** -- copies specified files to the "hpc"
   cluster to the same directory as is currently
   used locally. Example:

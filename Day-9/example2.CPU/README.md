@@ -85,12 +85,12 @@ custom distributed-memory algorithm
 
 3. Check the time to solution. 
 
-In this exercise we showed an easy way to use the parallel diagonalization, exlpoiting the internal -- suboptimal -- QE libraries. 
+In this exercise we showed an easy way to use the parallel diagonalization, exploiting the internal -- suboptimal -- QE libraries. 
 
 However, you might not be able to observe significant speedups since:
 
 1. the eigenvalue problem is too small to take fully advantage of it,
 2. the internal QE libraries are suboptimal, whereas other libraries, e.g. Scalapack or ELPA, usually provide better performance. 
 
-Please keep in mind that for larger systems, and using optimied libraries, the parallel diagonalization is a powerful option to strongly reduce the computational time to solution. 
+Please keep in mind that for larger systems, and using optimized libraries, the parallel diagonalization is a powerful option to strongly reduce the computational time to solution. 
 

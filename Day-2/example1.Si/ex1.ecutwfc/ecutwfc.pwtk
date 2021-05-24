@@ -17,7 +17,7 @@ foreach ecut [seq 12 4 40] {
     runPW $name.in
 
     # extract the "total energy" and write it to file
-    set Etot [::pwtk::pwo::totene $name.out]
+    set Etot [pwo_totene $name.out]
     puts $fid "$ecut $Etot"
 } 
 

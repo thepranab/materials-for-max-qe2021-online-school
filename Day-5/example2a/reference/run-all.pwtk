@@ -1,0 +1,12 @@
+#------------------------------------------------------------------------
+# This is a PWTK script that runs all the QE calculations of the exercise
+#------------------------------------------------------------------------
+
+load_fromPWI pw.AlAs.in
+runPW pw
+
+load_fromPHI ph.AlAs.in
+runPH ph
+
+load_fromDMI dynmat.AlAs.in
+runDYNMAT dynmat
