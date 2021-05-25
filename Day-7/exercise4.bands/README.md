@@ -82,10 +82,10 @@ high-symmetry point: -0.5000 0.5000 0.5000   x coordinate   3.7802
        the file `ni.noncolin.data.3`. All values in this case are either 1/2 or -1/2 as expected. 
     * the program `plot_noncolin_bands.f90` reads this values and writes them together with the band structure in the file  `my_bands.data`.
        * compile the program: 
-                  gfortran -o mino.x plot_noncolin_bands.f90 
+                  gfortran -o plot_noncolin_bands.x plot_noncolin_bands.f90 
        * copy `ni.noncolin.data.3` to `ni.noncolin.data.s` 
        * run the program
-                 ./mino.x ni.noncolin.data  
+                 ./plot_noncolin_bands.x ni.noncolin.data  
     * use gnuplot and the script `bands_noncollin.gp` to plot the bands in this case. 
       * start `gnuplot and type the command:
                 gnuplot> load "bands_noncollin.gp"  
