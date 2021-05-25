@@ -5,7 +5,8 @@
 #SBATCH --gres=gpu:2            # this refers to the number of requested gpus per node
 #SBATCH --mem=230000MB
 #SBATCH --time 00:10:00         # format: HH:MM:SS
-#SBATCH -A cin_QEdevel1_4 
+#SBATCH --reservation=s_tra_qe
+#SBATCH -A tra21_qe
 #SBATCH -p m100_usr_prod 
 #SBATCH -J qeschool
 

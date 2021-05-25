@@ -4,7 +4,8 @@
 #SBATCH --cpus-per-task=4      # number of HW threads per task (equal to OMP_NUM_THREADS*4)
 #SBATCH --mem=230000MB
 #SBATCH --time 00:30:00        # format: HH:MM:SS
-#SBATCH -A cin_QEdevel1_4 
+#SBATCH --reservation=s_tra_qe
+#SBATCH -A tra21_qe
 #SBATCH -p m100_usr_prod 
 #SBATCH -J qeschool
 
