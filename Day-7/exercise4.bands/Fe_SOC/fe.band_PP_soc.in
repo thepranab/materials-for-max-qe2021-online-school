@@ -1,0 +1,6 @@
+&BANDS
+    !outdir='./tempdir/',
+    prefix='fe',
+    filband='fe.noncolin.data',
+    lsigma(3)=.true.
+/

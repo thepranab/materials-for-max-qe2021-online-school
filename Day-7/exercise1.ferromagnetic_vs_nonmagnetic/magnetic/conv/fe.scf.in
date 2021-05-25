@@ -7,11 +7,12 @@
  /
  &system
     ibrav = 3, celldm(1) =5.197, nat= 1, ntyp= 1,
-    nspin = 2,  starting_magnetization(1)=0.7,
+    nspin = 2,  starting_magnetization(1)=0.26,
     ecutwfc = 70, ecutrho = 850,
     occupations='smearing', smearing='marzari-vanderbilt', degauss=0.02
  /
  &electrons
+    startingwfc='random'
     diagonalization='david'
     conv_thr = 1.0e-8
     mixing_beta = 0.7

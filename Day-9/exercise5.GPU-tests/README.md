@@ -1,4 +1,4 @@
-# Exercise 3: running with GPUs
+# Exercise 5: running with GPUs
 
 To run the GPU-accelerated version you are supposed to couple **each MPI with a single GPU**. 
 Therefore this time your jobscript is setup to request **two MPI processes and 2 GPUs** with your submission script.
@@ -21,7 +21,7 @@ The jobscript file to be used on Marconi100 is already available in this folder 
 
 module load hpc-sdk/2020--binary spectrum_mpi/10.3.1--binary  fftw/3.3.8--spectrum_mpi--10.3.1--binary  cuda/11.0
 
-export QE_ROOT=../example1.setup/qe-gpu/
+export QE_ROOT=../exercise4.GPU-setup/qe-gpu/
 export PW=$QE_ROOT/bin/pw.x
 export OMP_NUM_THREADS=1 # This sets OpenMP parallelism
 
@@ -104,7 +104,7 @@ Try to increase the number of MPI processes used to run this job by changing the
     
     module load    hpc-sdk/2020--binary    spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  
     
-    export QE_ROOT=../example1.setup/qe-gpu/
+    export QE_ROOT=../exercise4.GPU-setup/qe-gpu/
     
     export PW=$QE_ROOT/bin/pw.x
     

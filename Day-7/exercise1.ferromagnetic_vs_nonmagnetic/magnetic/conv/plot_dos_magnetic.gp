@@ -170,4 +170,5 @@ set ytics font "Helvetica,14"
 Ef = 20.044
 ## Last datafile plotted: "fe.dos"
 p "fe.dos" u 1:2 w l lw 4 t "Majority", "fe.dos" u 1:(-$3) w l lw 4 t "Minority", Ef,t w i lw 4 t "Fermi Energy"
+pause -1
 #    EOF

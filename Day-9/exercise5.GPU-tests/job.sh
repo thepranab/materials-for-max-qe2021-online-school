@@ -5,13 +5,14 @@
 #SBATCH --gres=gpu:2            # this refers to the number of requested gpus per node
 #SBATCH --mem=230000MB
 #SBATCH --time 00:10:00         # format: HH:MM:SS
-#SBATCH -A cin_QEdevel1_4 
+#SBATCH --reservation=s_tra_qe
+#SBATCH -A tra21_qe
 #SBATCH -p m100_usr_prod 
 #SBATCH -J qeschool
 
 module load    hpc-sdk/2020--binary    spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  cuda/11.0
 
-export QE_ROOT=../example1.setup/qe-gpu/
+export QE_ROOT=../exercise4.GPU-setup/qe-gpu/
 
 export PW=$QE_ROOT/bin/pw.x
 

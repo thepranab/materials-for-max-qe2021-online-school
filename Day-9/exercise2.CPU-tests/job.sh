@@ -4,13 +4,14 @@
 #SBATCH --cpus-per-task=4      # number of HW threads per task (equal to OMP_NUM_THREADS*4)
 #SBATCH --mem=230000MB
 #SBATCH --time 00:30:00        # format: HH:MM:SS
-#SBATCH -A cin_QEdevel1_4 
+#SBATCH --reservation=s_tra_qe
+#SBATCH -A tra21_qe
 #SBATCH -p m100_usr_prod 
 #SBATCH -J qeschool
 
 module load    hpc-sdk/2020--binary    spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  
 
-export QE_ROOT=../example1.setup/qe-cpu/
+export QE_ROOT=../exercise1.CPU-setup/qe-cpu/
 
 export PW=$QE_ROOT/bin/pw.x
 

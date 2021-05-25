@@ -31,7 +31,6 @@ _In this part of the exercise you will  compare the total energies for  non-magn
   solution. Furthermore, the equilibrium lattice constant for the ferromagnetic solution
   is larger than the non-magnetic solution.
 
-  * Comment: the ferromagnetic solution favors volume expansion. why?
 
 ## Total dos for non_magnetic and magnetic solution: the exchange splitting.
 

@@ -1,6 +1,6 @@
-# Exercise 0: (very) basic concepts about GPUs
+# Exercise 3: (very) basic concepts about GPUs
 
-This exercise is to provide some basic practical notions about how GPU acceleration works.
+This exercise is meant to provide some basic practical notions about how GPU acceleration works.
 
 The source file `code_cpu.f90` is a minimal program to perform a matrix-matrix product on the CPU using the DGEMM subroutine from the BLAS libraries.
 

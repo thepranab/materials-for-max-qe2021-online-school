@@ -1,6 +1,6 @@
 # Exercise 2: optimize CPU execution
 
-In this section we only make use of CPUs and try to optimize the time to solution keeping the amount of compute power fixed.
+In this section we will try to optimize the time to solution keeping the amount of compute power fixed.
 
 ------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ The jobscript file to be used on Marconi100 is already available in this folder 
 
 module load    hpc-sdk/2020--binary    spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  
 
-export QE_ROOT=../example1.setup/qe-cpu/
+export QE_ROOT=../exercise1.CPU-setup/qe-cpu/
 
 export PW=$QE_ROOT/bin/pw.x
 
@@ -31,7 +31,7 @@ export PW=$QE_ROOT/bin/pw.x
 export OMP_NUM_THREADS=1 
 
 # Run pw.x with default options for npool and ndiag
-mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee no_options
+mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee pw.CuO.scf.npool01.ndiag01.log  
 ~~~~~
 
 ------------------------------------------------------------------------
