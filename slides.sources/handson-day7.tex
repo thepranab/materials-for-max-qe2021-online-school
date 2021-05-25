@@ -327,8 +327,8 @@ structures of the  two solutions.
         to the Murnaghan EOS. 
       \item Use the data in the file \file{magnetization.dat} to see how the magnetization 
         changes when we change the lattice constant. 
-      \item Compute the electronic structure for  3 different values of lattice constant and 
-      estimate the the exchange splittig as we did in exercise 1. 
+      \item {\bf Assignment} Compute the electronic structure for  3 different values of lattice 
+      constant and estimate the the exchange splitting as we did in exercise 1. 
     \end{enumerate}
   \end{itemize} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -363,7 +363,79 @@ structures of the  two solutions.
 Spilling Parameter:   0.0543
 \end{Verbatim}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Head{Format of \code{projwfc.x} output}
+\begin{itemize}
+  \item The total DOS and the sum of projected DOS are written to file
+  \file{<filpdos>.pdos\_tot}.
+  \begin{itemize}
+    \item The format for the collinear, spin-unpolarized case and the
+    non-collinear, spin-orbit case is:
+    \vspace{0.5em}
+    \begin{Verbatim}[frame=single,fontsize=\small]
+        E DOS(E) PDOS(E)
+        ...
+    \end{Verbatim}
+  
+    \item The format for the collinear, spin-polarized case is:
+      \vspace{0.5em}
+      \begin{Verbatim}[frame=single,fontsize=\small]
+        E DOSup(E) DOSdw(E)  PDOSup(E) PDOSdw(E)
+        ...
+      \end{Verbatim}
+    \item The format for the non-collinear, non spin-orbit case is:
+      \vspace{0.5em}
+      \begin{Verbatim}[frame=single,fontsize=\small]
+        E DOS(E) PDOSup(E) PDOSdw(E)
+        ...
+      \end{Verbatim}
 
+    \end{itemize}
+  \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Head{Format of the projection files}
+  {\small
+  In the collinear case and the non-collinear, non spin-orbit case
+  projected DOS are written to file \file{<filpdos>.pdos\_atm\#N(X)\_wfc\#M(l)},
+  where N = atom number , X = atom symbol, M = wfc number, l=s,p,d,f
+  (one file per atomic wavefunction found in the pseudopotential file)
+  }
+  \begin{itemize}
+    \item The format for the collinear, spin-unpolarized case is:
+    \vspace{0.5em}
+      \begin{Verbatim}[frame=single,fontsize=\small]
+      E LDOS(E) PDOS_1(E) ... PDOS_2l+1(E)
+      ...
+      \end{Verbatim}
+
+  where 
+  \begin{itemize}
+    \item LDOS = $\sum_{m=1,2l+1} {PDOS\_{m(E)}}$
+    \item PDOS\_m(E) = projected DOS on atomic wfc with component m
+  \end{itemize}
+
+\item  The format for the collinear, spin-polarized case and the
+  non-collinear, non spin-orbit case is as above with
+  two components for both  LDOS(E) and PDOS\_m(E)
+  \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Head {Orbital order }
+\begin{itemize}
+\item for l=1:
+\begin{enumerate}
+  \item $p_z$     (m=0)
+  \item $p_x$     (real combination of m=+/-1 with cosine)
+  \item $p_y$     (real combination of m=+/-1 with sine)
+\end{enumerate}
+\item for l=2:
+\begin{enumerate}
+  \item $d_{z^2}$    (m=0)
+  \item $d_{zx}$    (real combination of m=+/-1 with cosine)
+  \item $d_{zy}$    (real combination of m=+/-1 with sine)
+  \item $d_{x^2-y^2}$ (real combination of m=+/-2 with cosine)
+  \item $d_{xy}$    (real combination of m=+/-2 with sine)
+\end{enumerate}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \Head{Exercise 4: plotting bands}
 \rightfooter{Exercise 4: plotting bands}
 \begin{itemize}
