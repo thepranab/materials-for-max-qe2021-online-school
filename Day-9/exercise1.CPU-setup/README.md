@@ -7,7 +7,7 @@ We will first prepare an HPC ready installation of QE. This exercise will show h
 First connect to the Marconi100 HPC cluster: 
 
 ~~~~~{.bash}
-ssh ssh USER@login01-ext.m100.cineca.it  
+ssh USER@login01-ext.m100.cineca.it  
 ~~~~~
 
 with the password you find on the Slack workspace.
@@ -30,7 +30,7 @@ You can check that pwd returns this directory:
 
 ------------------------------------------------------------------------
 
-Download the last release, extract it and rename it with the commands below:
+Download the last release of QE, extract it and rename it with the commands below:
 
 ~~~~~{.bash}
 cd exercise1.CPU-setup/ 

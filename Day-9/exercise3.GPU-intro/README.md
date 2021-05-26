@@ -2,9 +2,18 @@
 
 This exercise is meant to provide some basic practical notions about how GPU acceleration works.
 
+------------------------------------------------------------------------
+
+Let's go to the exercise3 folder in your $CINECA_SCRATCH directory
+
+~~~~~{.bash}
+cd $CINECA_SCRATCH  
+cd Day-9/exercise3.GPU-intro/
+~~~~~
+
+------------------------------------------------------------------------
+
 The source file `code_cpu.f90` is a minimal program to perform a matrix-matrix product on the CPU using the DGEMM subroutine from the BLAS libraries.
-
-
 
 In order to compile the code, you first purge all modules with
 

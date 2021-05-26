@@ -1,6 +1,19 @@
 # Exercise 4: preparing QE (GPU version)
 
-Now download the last release of the GPU accelerated version of QE
+We will now prepare a GPU installation of QE. 
+
+------------------------------------------------------------------------
+
+Let's go to the exercise4 folder in your $CINECA_SCRATCH directory
+
+~~~~~{.bash}
+cd $CINECA_SCRATCH  
+cd Day-9/exercise4.GPU-setup/           
+~~~~~
+
+------------------------------------------------------------------------
+
+Download the last release of the GPU accelerated version of QE, extract it and rename it with the commands below:
 
 ~~~~~{.bash}
 wget https://gitlab.com/QEF/q-e-gpu/-/archive/qe-gpu-6.7/q-e-gpu-qe-gpu-6.7.tar.bz2
@@ -60,10 +73,14 @@ Check that your installation works by running in parallel a quick random test fr
 
     mpirun -np 2 PW/src/pw.x   -inp test-suite/pw_dft/dft1.in
 
-check "JOB DONE". 
+You should find this error:
 
-Also check that the job has really employed GPUs, by checking that string "GPU acceleration is ACTIVE." was printed in the output and that GPU times 
-are reported alongside WALL times at the end of the calculation.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     Error in routine readpp (2):
+     file /m100/home/usertrain/a08trd1e/espresso/pseudo/Si.pz-vbc.UPF not found
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+because it cannot find the pseudopotential, but it is fine because it means that the installation was successfully done.
 
 ------------------------------------------------------------------------
 
