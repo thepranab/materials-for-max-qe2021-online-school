@@ -17,7 +17,9 @@ Due to the particular configuration of this cluster, it is convenient to work in
 For this reason, once you are logged in the cluster, run these commands 
 
 ~~~~~{.bash}
-cp -r   materials-for-max-qe2021-online-school/Day-9/  $CINECA_SCRATCH  
+cd materials-for-max-qe2021-online-school/  
+git pull  
+cp -r   Day-9/  $CINECA_SCRATCH  
 cd $CINECA_SCRATCH  
 cd Day-9/
 pwd
