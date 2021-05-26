@@ -63,7 +63,7 @@ This is not an issue in this case since 99% of the FFTs will be performed on the
 
 Compile again the code
 
-    make -j pw
+    make -j4 pw
 
 Congratulations, now you have both a "standard" and an "accelerated" version of `pw.x` to be used in the following exercises.
 

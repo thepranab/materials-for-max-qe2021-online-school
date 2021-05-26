@@ -79,7 +79,7 @@ Configure QE with the following option, that will select nvfortran compilers fro
 
 We will only benchmark `pw.x`. Let's compile it with the command
 
-    make -j pw
+    make -j4 pw
 
 Now enjoy an espresso while you wait 3 minutes or so.
 
