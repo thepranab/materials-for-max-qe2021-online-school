@@ -12,7 +12,7 @@
 
 module load    hpc-sdk/2020--binary    spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  cuda/11.0
 
-export QE_ROOT=../exercise4.GPU-setup/qe-gpu/
+export QE_ROOT=/m100_scratch/usertrain/a08trd1f/Day-9/exercise4.GPU-setup/qe-gpu/
 
 export PW=$QE_ROOT/bin/pw.x
 

@@ -11,7 +11,7 @@
 
 module load    hpc-sdk/2020--binary    spectrum_mpi/10.3.1--binary   fftw/3.3.8--spectrum_mpi--10.3.1--binary  
 
-export QE_ROOT=../exercise1.CPU-setup/qe-cpu/
+export QE_ROOT=/m100_scratch/usertrain/a08trd1f/Day-9/exercise1.CPU-setup/qe-cpu/
 
 export PW=$QE_ROOT/bin/pw.x
 

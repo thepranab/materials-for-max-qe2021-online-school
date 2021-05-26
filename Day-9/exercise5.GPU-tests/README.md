@@ -26,7 +26,7 @@ export PW=$QE_ROOT/bin/pw.x
 export OMP_NUM_THREADS=1 # This sets OpenMP parallelism
 
 # Run pw.x with default options for npool and ndiag
-mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee no_options
+mpirun  ${PW} -npool 1 -ndiag 1 -inp pw.CuO.scf.in | tee pw.CuO.scf.npool01.ndiag01.log
 ~~~~~
 
 
@@ -110,7 +110,7 @@ Try to increase the number of MPI processes used to run this job by changing the
     
     export OMP_NUM_THREADS=1
     
-    mpirun  ${PW} -npool 4 -ndiag 1 -inp pw.CuO.scf.in | oversubscription
+    mpirun  ${PW} -npool 4 -ndiag 1 -inp pw.CuO.scf.in | tee pw.CuO.scf.npool04.ndiag01.log 
 ~~~~~
 
 ------------------------------------------------------------------------
