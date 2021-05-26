@@ -4,21 +4,45 @@ We will first prepare an HPC ready installation of QE. This exercise will show h
 
 ------------------------------------------------------------------------
 
+First connect to the Marconi100 HPC cluster: 
+
+~~~~~{.bash}
+ssh ssh USER@login01-ext.m100.cineca.it  
+~~~~~
+
+with the password you find on the Slack workspace.
+
+Due to the particular configuration of this cluster, it is convenient to work in the directory $CINECA_SCRATCH.
+
+For this reason, once you are logged in the cluster, run these commands 
+
+~~~~~{.bash}
+cp -r   materials-for-max-qe2021-online-school/Day-9/  $CINECA_SCRATCH  
+cd $CINECA_SCRATCH  
+cd Day-9/
+pwd
+~~~~~
+
+to copy the folder materials-for-max-qe2021-online-school/Day-9/ to $CINECA_SCRATCH and move inside the Day-9 folder inside $CINECA_SCRATCH.
+You can check that pwd returns this directory:
+
+/m100_scratch/usertrain/USER/Day-9 
+
+------------------------------------------------------------------------
+
 Download the last release, extract it and rename it with the commands below:
 
 ~~~~~{.bash}
+cd exercise1.CPU-setup/ 
 wget https://gitlab.com/QEF/q-e/-/archive/qe-6.7MaX-Release/q-e-qe-6.7MaX-Release.tar.bz2
 tar xjf q-e-qe-6.7MaX-Release.tar.bz2
 mv q-e-qe-6.7MaX-Release qe-cpu
 cd qe-cpu
 ~~~~~
 
-
 *Note:* for the copy-paste friendly version, open the `README.md` file in each directory. Alternatively you can [click here](https://gitlab.com/QEF/q-e/-/releases) to jump to the web-page with QE releases.
 
-
 ------------------------------------------------------------------------
-
 
 For the CPU version we will use hpc-sdk and SpectrumMPI which are a good combination for the OpenPower machines of Marconi100.
 The FFTW library is also required. The environment is setup using the following modules. 
@@ -63,5 +87,15 @@ Check that your installation works by running in parallel a quick random test fr
 
     mpirun -np 2 PW/src/pw.x   -inp test-suite/pw_dft/dft1.in
 
-and check "JOB DONE".
+
+You should find this error:
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     Error in routine readpp (2):
+     file /m100/home/usertrain/a08trd1e/espresso/pseudo/Si.pz-vbc.UPF not found
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+because it cannot find the pseudopotential, but it is fine because it means that the installation was successfully done.
+
+
 

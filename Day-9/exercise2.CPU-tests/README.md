@@ -4,6 +4,15 @@ In this section we will try to optimize the time to solution keeping the amount 
 
 ------------------------------------------------------------------------
 
+Let's go to the exercise2 folder in your $CINECA_SCRATCH directory
+
+~~~~~{.bash}
+cd $CINECA_SCRATCH  
+cd Day-9/exercise2.CPU-tests/
+~~~~~
+
+------------------------------------------------------------------------
+
 ## 1. Pool parallelism
 
 Optimize the number of kpoint pools, starting with 1 up to 8 (what are the admissible values for this option?). 
